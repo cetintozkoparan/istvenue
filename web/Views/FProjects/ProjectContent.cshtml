@@ -1,0 +1,76 @@
+﻿@model web.Models.ProjectWrapperModel
+@{
+    ViewBag.Title = @Model.p.Name;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<script src="/js/jquery.bxslider.min.js" type="text/javascript"></script>
+<link href="~/css/bxslider.css" rel="stylesheet" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.referenceSlider').bxSlider({
+            pagerCustom: '#bx-pager'
+        });
+    });
+</script>
+
+<div class="main2Left">
+    <div class="urunler leftMenu">
+        <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.projects.ToUpper()</span></h2>
+        <ul>
+            @foreach (var ps in Model.ps)
+            {
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_projects/@ps.PageSlug/@ps.ProjectId">@ps.Name</a></li>
+            }
+        </ul>
+    </div>
+</div>
+<div class="main2Right">
+    <div class="pagenav">
+        <ul>
+            <li><a href="/">@SharedRess.SharedStrings.homepage</a></li>
+            <li><a class="last selected" href="#">@SharedRess.SharedStrings.projects</a></li>
+        </ul>
+    </div>
+    <h3 class="pageTitle">@Model.p.Name</h3>
+    <div class="pageContent">
+        <div class="partners">
+            @Html.Raw(Model.p.Content)
+            @if (Model.photos.Count != 0)
+            {
+                <div id="referenceSlideContent">
+                <ul class="referenceSlider">
+                    @foreach (var item in Model.photos)
+                    {
+                        <li><img src="@item.Thumbnail" width="418" height="312" /></li>    
+                    }
+                </ul>
+
+                <div id="bx-pager">
+                    @{int i = 0;}
+                    @foreach (var item in Model.photos)
+                    {
+                        
+                    <a data-slide-index="@i" href="">
+                        <img src="@item.Thumbnail" width="93" height="70" /></a>
+                        { i++; }
+
+                    }
+
+                </div>
+            </div>
+            }
+            <br />
+            @if (Model.p.ProjectFile != null)
+            { 
+                <div style="border-bottom:1px solid #dedede"></div>
+                
+                <img style="margin-bottom:-12px" src="/Content/Images/Front/@(Model.p.ProjectFile.Split('.')[1].ToString()).png" title="@(Model.p.ProjectFile.Split('.')[1].ToString())" width="32" height="32">
+                
+                <a href="@Model.p.ProjectFile" title="@Model.p.Name" style="line-height:50px; color:#ED1C24; text-decoration:none">
+                    @ProjectsRess.ProjectsStrings.projectdetailfile
+                </a>
+            }
+            </div>
+        </div>
+    </div>

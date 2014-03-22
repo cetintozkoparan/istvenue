@@ -1,0 +1,34 @@
+﻿@model List<Tuple<string, string>>
+@{
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<style type="text/css">
+    .biz { width:800px;}
+    .biz ul li a { background: url(/img/arrow.png) left top no-repeat;}
+    .biz ul li a:hover { background: url(/img/arrow2.png) left top no-repeat;}
+    .highlight { background-color: #FFFF88;}
+</style>
+ <div class="biz">
+    <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.searchresult.ToUpper()</span></h2>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="@item.Item2">@item.Item1.ToUpper()</a></li>
+            <li style="margin-top: -10px;margin-left: 21px;margin-bottom: 10px;color: #ed1c24;">http://www.kontrolmatik.com@(item.Item2)</li>
+        }
+    </ul>
+</div>
+<script src="~/js/jquery.highlight.js" charset="windows-1254"></script>
+<script>
+    $(document).ready(function () {
+        //alert(html_entity_decode("@ViewBag.SearchTextUpper"));
+        $(".biz").highlight("@ViewBag.SearchTextLower");
+        $(".biz").highlight(html_entity_decode("@ViewBag.SearchTextUpper"));
+
+        function html_entity_decode(str) {
+            var ta = str.replace("&#220;", "Ü").replace("&#214;", "Ö").replace("&#199;", "Ç");
+            return ta;
+        }
+    });
+</script>

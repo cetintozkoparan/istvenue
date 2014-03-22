@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DAL.Entities.News>
+@{
+    ViewBag.Title = @SharedRess.SharedStrings.menu_news.ToUpper();
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+<style>.newsSection {
+min-height: 205px;
+
+}</style>
+<div class="main2Left">
+    <div class="urunler leftMenu">
+        <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.menu_news.ToUpper()</span></h2>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@item.PageSlug/@item.NewsId">@item.Header</a></li>
+            }
+        </ul>
+    </div>
+</div>
+<div class="main2Right">
+    <div class="pagenav">
+        <ul>
+            <li><a href="/">@SharedRess.SharedStrings.homepage</a></li>
+            <li><a class="last selected" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews">@SharedRess.SharedStrings.menu_news.ToUpper()</a></li>
+        </ul>
+    </div>
+    <h3 class="pageTitle">@SharedRess.SharedStrings.menu_news.ToUpper()</h3>
+    <div class="pageContent">
+        <div class="main2Right">
+            <div class="pageContent">
+
+                @{ int i = 0;}
+                @foreach (var item in Model)
+                {
+                    {i++;}
+                    if (i % 2 == 1)
+                    {
+                        <div class="newsSection">
+                            <div class="newsContent">
+                                <div class="referenceImage">
+                                    <img width="166" height="135" src="@item.NewsImage" alt="@item.Header" />
+                                </div>
+                                <div class="referenceRight">
+                                    <h3>@item.Header</h3>
+                                    <p>@item.Spot</p>
+                                    <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@item.PageSlug/@item.NewsId" class="newsDetailBtn">@SharedRess.SharedStrings.newsdetail</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="newsSection">
+                            <div class="newsContent">
+                                <div class="referenceImage">
+                                    <img width="166" height="135" src="@item.NewsImage" alt="@item.Header" />
+                                </div>
+                                <div class="referenceRight">
+                                    <h3>@item.Header</h3>
+                                    <p>@item.Spot</p>
+                                    <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@item.PageSlug/@item.NewsId" class="newsDetailBtn">@SharedRess.SharedStrings.newsdetail</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+               
+                }
+            </div>
+        </div>
+    </div>
+</div>

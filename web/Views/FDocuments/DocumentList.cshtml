@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DAL.Entities.Document>
+@{
+    ViewBag.Title = @SharedRess.SharedStrings.documents;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+<style type="text/css">
+    .biz { width:600px;}
+</style>
+ <div class="biz">
+    <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.documents.ToUpper()</span></h2>
+    <ul>
+        @foreach (var doc in Model)
+        {
+            <li><a href="@doc.DocumentFile">@doc.Name.ToUpper()</a></li>
+        }
+    </ul>
+</div>
+
+@*<div class="main_content mainpage pageheight" style="">
+    <div class="wrapper mainpage grid_12">
+        <div class="content_page page">
+            <h2 style="width: 800px; float: left;">@ViewBag.title
+            </h2>
+            <button type="button" onclick="history.go(-1)" style="cursor:pointer">&lt;&lt; @SharedRess.SharedStrings.goback</button>
+            <hr class="wide">
+
+            <ul class="fileList">
+                @foreach (var doc in Model)
+                {
+                    <li style="height: 130px;"><a href="@doc.DocumentFile" title="@doc.Name" target="_blank">
+                        <img src="/Content/Images/Front/@(doc.DocumentFile.Split('.')[1].ToString()).png" title="@(doc.DocumentFile.Split('.')[1].ToString())" width="32" height="32">@doc.Name</a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+    </div>
+</div>*@

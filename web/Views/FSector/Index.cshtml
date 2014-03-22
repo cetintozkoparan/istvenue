@@ -1,0 +1,71 @@
+﻿@model web.Models.SectorWrapperModel
+@{
+    ViewBag.Title = @SharedRess.SharedStrings.sectors;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<div class="main2Left">
+    <div class="urunler leftMenu">
+        <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.sectors.ToUpper()</span></h2>
+        <ul>
+            @foreach (var group in Model.sectorgroups)
+            {
+                <li>
+                    <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors/@group.PageSlug/@group.SectorGroupId">@group.GroupName</a>
+                    <ul>
+                        @{Html.RenderAction("subsectors", "FSector", new { id = group.SectorGroupId });}
+                    </ul>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="main2Right">
+    <div class="pagenav">
+        <ul>
+            <li><a href="/">@SharedRess.SharedStrings.homepage</a></li>
+            @if (this.ViewContext.RouteData.Values["sid"] != null)
+            {
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors">@SharedRess.SharedStrings.sectors</a></li>        
+                <li><a href="#" class="last selected">@ViewBag.grpname</a></li>        
+            }
+            else if (this.ViewContext.RouteData.Values["gid"] != null)
+            {
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors">@SharedRess.SharedStrings.sectors</a></li>        
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors/@Model.sectorgrp.PageSlug/@Model.sectorgrp.SectorGroupId" class="last selected">@Model.sectorgrp.GroupName</a></li>        
+            }
+            else
+            {
+                <li><a class="last selected" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors">@SharedRess.SharedStrings.sectors</a></li>        
+            }
+        </ul>
+    </div>
+    <h3 class="pageTitle">
+        @if (this.ViewContext.RouteData.Values["sid"] != null)
+        {
+            @Html.Raw(Model.sector.Name)
+        }else if (this.ViewContext.RouteData.Values["gid"] != null)
+        {
+            @Html.Raw(Model.sectorgrp.GroupName)
+        }
+        else
+        { 
+            @SharedRess.SharedStrings.sectors
+        }
+    </h3>
+    <div class="pageContent">
+        @if (this.ViewContext.RouteData.Values["sid"] != null)
+        {
+            @Html.Raw(Model.sector.Content)
+        }
+        else if (this.ViewContext.RouteData.Values["gid"] != null)
+        {
+            @Html.Raw(Model.sectorgrp.GroupContent)
+        }else
+        { 
+            @Html.Raw(Model.oursectors.Content)
+        }
+    </div>
+</div>
+

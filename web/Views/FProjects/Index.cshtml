@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DAL.Entities.Projects>
+@{
+    ViewBag.Title = @SharedRess.SharedStrings.projects;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+<div class="main2">
+    <div class="pagenav topPagenav">
+          <ul>
+            <li><a href="#">Anasayfa</a></li>
+            <li><a href="#" class="last">Referanslar</a></li>
+          </ul>
+        </div>
+    <div class="pageBanner">
+    <img src="img/referanslar.jpg" alt="referanslar" />
+    </div>
+      <div class="main2Left">
+        <div class="urunler leftMenu">
+          <h2 class="sectionTitle"><span>REFERANSLAR</span></h2>
+          <ul>
+            <li><a class="selected"  href="#">Enerji Tesisleri</a></li>
+            <li><a href="#">Ulaşım ve Raylı Sistemler</a></li>
+            <li><a href="#">Endüstriyel Tesisler</a></li>
+            <li><a href="#">Kamu Yapıları</a></li>
+            <li><a href="#">Havalimanları</a></li>
+            <li><a href="#">Hastaneler</a></li>
+            <li><a href="#">Bina Tekniği</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main2Right">
+        <h3 class="pageTitle">TÜM REFERANSLAR</h3>
+        <div class="pageContent">
+          <div class="referenceSection">
+              <div class="referenceContent">
+              <div class="referenceImage"><img src="img/referans_01.jpg" alt="referans" /></div>
+              <div class="referenceRight">
+              <h3>Erbil Gas Power Station (EGPS) 132KV Substation</h3>
+              <p>Erbil Gas Power Station (EGPS)  Located in the south if Erbil governorate, about 22 Kilometers from Erbil city...</p>
+              <a href="#" class="projectDetailBtn">Proje Detay</a>
+              </div>
+              </div>
+              <div class="referenceContent lastreference">
+              <div class="referenceImage"><img src="img/referans_01.jpg" alt="referans" /></div>
+              <div class="referenceRight">
+              <h3>Erbil Gas Power Station (EGPS) 132KV Substation</h3>
+              <p>Erbil Gas Power Station (EGPS)  Located in the south if Erbil governorate, about 22 Kilometers from Erbil city...</p>
+              <a href="#" class="projectDetailBtn">Proje Detay</a>
+              </div>
+              </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="main_content mainpage pageheight" style="">
+    <div class="wrapper mainpage grid_12">
+        <div class="content_page page">
+            <h2>@ProjectsRess.ProjectsStrings.projects</h2>
+            <hr class="wide" />
+            <div class="ulListe">
+                <ul id="newslist">
+                    @foreach (var project in Model)
+                    {
+                    <li>
+                        <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_projects/@project.PageSlug/@project.ProjectId">
+                            <span class="Left">@project.Name</span>
+                        </a>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

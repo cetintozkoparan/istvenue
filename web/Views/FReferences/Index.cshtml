@@ -1,0 +1,82 @@
+﻿@model web.Models.ProjectReferencesWrapperModel
+@{
+    ViewBag.Title = @SharedRess.SharedStrings.references;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+<style>
+    .referenceSection {min-height: 170px;}
+    .referenceRight p { width:100%;}
+</style>
+<div class="pagenav topPagenav">
+    <ul>
+        <li><a href="/">@SharedRess.SharedStrings.homepage</a></li>
+        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references" class="last">@SharedRess.SharedStrings.references</a></li>
+    </ul>
+</div>
+<div class="pageBanner">
+<img src="/img/referanslar.jpg" alt="referanslar" />
+</div>
+<div class="main2Left">
+<a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references/@SharedRess.SharedStrings.menu_completedprojects" class="projectLink">@SharedRess.SharedStrings.completedprojects.ToUpper()</a>
+<a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references/@SharedRess.SharedStrings.menu_ongoingprojects" class="projectLink">@SharedRess.SharedStrings.ongoingprojects.ToUpper()</a>
+    <div class="urunler leftMenu">
+        <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.references.ToUpper()</span></h2>
+        <ul>
+              @foreach (var group in Model.projectreferencegroup)
+              {
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references/@group.PageSlug/@group.ProjectReferenceGroupId">@group.GroupName</a></li>
+              }
+        </ul>
+    </div>
+</div>
+
+<div class="main2Right">
+    <h3 class="pageTitle">@ReferencesRess.ReferencesStrings.references.ToUpper()
+        @if (this.ViewContext.RouteData.Values["gid"] != null)
+        {
+            @Html.Raw("| ");
+            <span>@ViewBag.GroupName</span>
+        }
+        else
+        if (this.ViewContext.RouteData.Values["devam"] != null)
+        {
+            @Html.Raw("| ");
+            <span>@ViewBag.DevamTamam</span>
+        }
+    </h3>
+        <div class="pageContent">
+          
+              @{ int i = 0;}
+              @foreach (var reference in Model.projectreference)
+              {
+                  <div class="referenceSection">
+                  @{i++;}
+                  @if (i%2 == 1)
+                  {
+                      <div class="referenceContent">
+                        <div class="referenceImage"><img src="@reference.Logo" width="166" height="135" alt="@reference.Name" /></div>
+                        <div class="referenceRight">
+                            <h3>@reference.Name</h3>
+                            <p>@reference.SubTitle
+                            </p>
+                            <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references/@reference.ProjectReferenceGroupId/@reference.PageSlug/@reference.ProjectReferenceId" class="projectDetailBtn">@SharedRess.SharedStrings.projectedetail</a>
+                        </div>
+                      </div>
+                  }
+                  else
+                  {
+                      <div class="referenceContent lastreference">
+                        <div class="referenceImage"><img src="@reference.Logo" width="166" height="135" alt="@reference.Name" /></div>
+                        <div class="referenceRight">
+                            <h3>@reference.Name</h3>
+                            <p>@reference.SubTitle
+                            </p>
+                            <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references/@reference.ProjectReferenceGroupId/@reference.PageSlug/@reference.ProjectReferenceId" class="projectDetailBtn">@SharedRess.SharedStrings.projectedetail</a>
+                        </div>
+                    </div>
+                   
+                  }
+                </div>
+              }
+    </div>
+</div>

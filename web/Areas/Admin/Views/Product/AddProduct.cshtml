@@ -1,0 +1,138 @@
+﻿@model DAL.Entities.Product
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Areas/Admin/Views/Shared/adminlayout.cshtml";
+}
+
+<link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.msgbox.css" rel="stylesheet" />
+<link href="~/Areas/Admin/Content/styles/forms.css" rel="stylesheet" />
+<script src="~/Areas/Admin/Content/scripts/plugins/jquery.MultiFile.js"></script>
+
+@Html.Partial("product_leftbar")
+
+<div id="page-content" class="container_12">
+    <div id="page-header">
+        <h2>ÜRÜN BİLGİLERİ</h2>
+    </div>
+    <section class="grid_12 form">
+        @Html.Hidden("ProcessMessage", (object)@ViewBag.ProcessMessage)
+        @using (Html.BeginForm("AddProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.Hidden("hdfieldcategory")
+            @Html.Hidden("hdfieldtaglist")
+            @Html.ValidationSummary(true)
+            <input type="submit" value="Kaydet" id="btnsave" />
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Ürün Bilgileri</a></li>
+                    <li><a href="#tabs-2">Ürün Açıklaması</a></li>
+                </ul>
+                <div id="tabs-1">
+
+                    <p>
+                        @Html.Label("Dil")
+                        @Html.DropDownListFor(d => d.Language, (IEnumerable<SelectListItem>)ViewBag.LanguageList, "Dil Seçiniz...", new { @class = "required" })
+                        @Html.ValidationMessageFor(m => m.Language)
+                    </p>
+                    <p>
+                        @Html.Label("Ürün Grubu")
+                        @Html.DropDownListFor(m => m.ProductGroupId, (IEnumerable<SelectListItem>)ViewBag.grouplist, "Ürün Grubu Seçiniz...", new { @class = "required" })
+                        @Html.ValidationMessageFor(m => m.ProductGroupId)
+                        <img src="/Areas/Admin/Content/images/icons/16/loader.gif" id="imgloader" class="imgloader" />
+                    </p>
+                    <p id="g1" style="display: none">
+                        @Html.Label("Ürün Alt Grubu")
+                        @Html.DropDownListFor(m => m.ProductSubGroupId, (IEnumerable<SelectListItem>)ViewBag.subgrouplist, "Ürün Alt Grubu Seçiniz...", new { @class = "required" })
+                        @Html.ValidationMessageFor(m => m.ProductSubGroupId)
+                        <img src="/Areas/Admin/Content/images/icons/16/loader.gif" id="imgloader2" class="imgloader" />
+                    </p>
+                    <p id="g2" style="display: none">
+                        @Html.Label("Ürün Alt Grubu")
+                        @Html.DropDownListFor(m => m.ProductSubbestGroupId, (IEnumerable<SelectListItem>)ViewBag.subbestgrouplist, new { @class = "required" })
+                        @Html.ValidationMessageFor(m => m.ProductSubbestGroupId)
+                        <img src="/Areas/Admin/Content/images/icons/16/loader.gif" id="imgloader3" class="imgloader" />
+                    </p>
+                    <p id="g3" style="display: none">
+                        @Html.Label("Ürün Alt Grubu")
+                        @Html.DropDownListFor(m => m.ProductSubSubbestGroupId, (IEnumerable<SelectListItem>)ViewBag.subsubbestgrouplist, new { @class = "required" })
+                        @Html.ValidationMessageFor(m => m.ProductSubSubbestGroupId)
+                        <img src="/Areas/Admin/Content/images/icons/16/loader.gif" id="imgloader4" class="imgloader" />
+                    </p>
+                    <p>
+                        @Html.LabelFor(m => m.Name)
+                        @Html.TextBoxFor(m => m.Name, new { @class = "textwidth50", Rows = "5" })
+                        @Html.ValidationMessageFor(m => m.Name)
+                    </p>
+                    <p>
+                        @Html.LabelFor(m => m.Code)
+                        @Html.TextBoxFor(m => m.Code, new { @class = "textwidth50" })
+                        @Html.ValidationMessageFor(m => m.Code)
+                    </p>
+                    <p>
+                        @Html.LabelFor(m => m.Brand)
+                        @Html.TextBoxFor(m => m.Brand, new { @class = "textwidth50" })
+                        @Html.ValidationMessageFor(m => m.Brand)
+                    </p>
+                    <p>
+                        @Html.LabelFor(m => m.Year)
+                        @Html.TextBoxFor(m => m.Year, new { @class = "textwidth50" })
+                        @Html.ValidationMessageFor(m => m.Year)
+                    </p>
+                    <p style="display: none">
+                        @Html.LabelFor(m => m.Price)
+                        @*   @Html.TextBoxFor(m=>m.Price, new { @class="textwidth10"})*@
+                        @Html.TextBox("txtPrice", null, new { @class = "textwidth10" })
+
+                        @Html.ValidationMessage("1212")
+                    </p>
+                    <p>
+                        <label for="txtname" class="label2">Ürün Döküman</label>
+                        <input type="file" name="uploadtechfile" id="uploadtechfile" />
+                    </p>
+                    <p>
+                        <label for="txtname">Ürün Video</label>
+                        <input type="file" name="uploadvideo" id="uploadvideo" />
+                    </p>
+                    <fieldset>
+                        <legend>Ürün Resmi</legend>
+                        <div id="uploadPartial">
+                            @Html.Partial("_imageUploadAndCrop")
+                        </div>
+                    </fieldset>
+                    <p style="float: left; margin-right: 4px !important;">
+                        <label>Ürün Fotoğrafları</label>
+                    </p>
+                    <div style="width: 249px; width: 25%; float: left">
+                        <input type="file" style="width: 99%" name="attachments" class="multi" />
+                    </div>
+                    <div style="height: 40px; clear: both;"></div>
+                </div>
+
+                <div id="tabs-2">
+                    <p>
+                        @Html.TextAreaFor(m => m.Content, new { id = "txtcontent", @class = "required" })
+                        @Html.ValidationMessageFor(m => m.Content)
+                    </p>
+                </div>
+            </div>
+        
+        }
+
+    </section>
+</div>
+@section Scripts {
+    <link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.ui.all.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.msgbox.css" rel="stylesheet" />
+    <script src="~/Areas/Admin/Content/scripts/plugins/numeric.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/plugins/jquery.msgbox.min.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/myscripts/MessageBox.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/plugins/jquery.validate.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/plugins/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/pagescripts/product/addProduct.js"></script>
+    <script src="~/Areas/Admin/Content/CKEditor/ckeditor/ckeditor.js"></script>
+    <script src="~/Areas/Admin/Content/CKEditor/ckfinder/ckfinder.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/myscripts/CKEditorCreate.js"></script>
+
+}
+
+

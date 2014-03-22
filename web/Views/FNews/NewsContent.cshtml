@@ -1,0 +1,52 @@
+﻿@model web.Models.NewsWrapperModel
+@{
+    ViewBag.Title = @Model.news.Header;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<div class="main2Left">
+    <div class="urunler leftMenu">
+        <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.menu_news.ToUpper()</span></h2>
+        <ul>
+            @foreach (var item in Model.allnews)
+            {
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@item.PageSlug/@item.NewsId">@item.Header</a></li>
+            }
+        </ul>
+    </div>
+</div>
+<div class="main2Right">
+    <div class="pagenav">
+        <ul>
+           <li><a href="/">@SharedRess.SharedStrings.homepage</a></li>
+                @if (this.ViewContext.RouteData.Values["hid"] != null)
+                {
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews">@SharedRess.SharedStrings.menu_news.ToUpper()</a></li>        
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@this.ViewContext.RouteData.Values["header"].ToString()/@this.ViewContext.RouteData.Values["hid"].ToString()" class="last selected">@Model.news.Header</a></li>        
+                    <li style="float:right">@Convert.ToDateTime(Model.news.TimeCreated).ToShortDateString()</li>
+                }else {
+                    <li><a class="last selected" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news">@SharedRess.SharedStrings.menu_allnews</a></li>
+                }
+        </ul>
+    </div>
+    <h3 class="pageTitle">@Model.news.Header</h3>
+    <div class="pageContent">
+        <div class="main2Right">
+            <div class="pageContent">
+                <div class="newsWrapperDetail">
+                    <div class="newsSectionDetail">
+                        <div class="newsContentDetail">
+                            <div class="newsImageDetail">
+                                <img src="@Model.news.NewsImage" width="300" height="225" alt="haber" /></div>
+                            <div class="newsRightDetail">
+                                <h3 class="newsHeadingDetail">@Model.news.Header</h3>
+                                <h4 class="newsSpotDetail">@Model.news.Spot</h4>
+                                <p class="newsDetailArticle">@Html.Raw(Model.news.Content)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

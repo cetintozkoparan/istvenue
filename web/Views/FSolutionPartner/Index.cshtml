@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DAL.Entities.SolutionPartner>
+@{
+    ViewBag.Title = @SharedRess.SharedStrings.solutionpartners;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+    @{ Html.RenderAction("main2Left", "FShared"); }
+
+<div class="main2Right">
+        <div class="pagenav">
+          <ul>
+            <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
+            <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_aboutus">@SharedRess.SharedStrings.aboutus</a></li>
+            <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_solutionpartners" class="last selected">@SharedRess.SharedStrings.solutionpartners</a></li>
+          </ul>
+        </div>
+        <h3 class="pageTitle">@SharedRess.SharedStrings.solutionpartners.ToUpper()</h3>
+        <div class="pageContent">
+          <table cellpadding="0" cellspacing="0" class="partners">
+            @foreach (var sp in Model)
+            {
+                <tr>
+                  <td width="250" align="center" valign="top"><img src="@sp.Logo" /></td>
+                  <td><h4><a href="@sp.Link" target="_blank">@sp.SolutionPartnerName</a></h4>
+                    <p>@Html.Raw(sp.Content)</p></td>
+                </tr>
+            }
+          </table>
+        </div>
+      </div>

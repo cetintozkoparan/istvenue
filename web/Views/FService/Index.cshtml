@@ -1,0 +1,72 @@
+﻿@model web.Models.ServiceWrapperModel
+@{
+    ViewBag.Title = @SharedRess.SharedStrings.services;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<div class="main2Left">
+    <div class="urunler leftMenu">
+        <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.services.ToUpper()</span></h2>
+        <ul>
+            @foreach (var group in Model.servicegroups)
+            {
+                <li>
+                    <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services/@group.PageSlug/@group.ServiceGroupId">@group.GroupName</a>
+                    <ul>
+                        @{Html.RenderAction("subservices", "FService", new { id = group.ServiceGroupId });}
+                    </ul>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="main2Right">
+    <div class="pagenav">
+        <ul>
+            <li><a href="/">@SharedRess.SharedStrings.homepage</a></li>
+            @if (this.ViewContext.RouteData.Values["sid"] != null)
+            {
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a></li>        
+                <li><a href="#" class="last selected">@ViewBag.grpname</a></li>        
+            }
+            else if (this.ViewContext.RouteData.Values["gid"] != null)
+            {
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a></li>        
+                <li><a class="last selected" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services/@Model.servivegrp.PageSlug/@Model.servivegrp.ServiceGroupId" class="last selected">@Model.servivegrp.GroupName</a></li>        
+            }
+            else
+            {
+                <li><a class="last selected" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a></li>        
+            }
+
+        </ul>
+    </div>
+    <h3 class="pageTitle">
+        @if (this.ViewContext.RouteData.Values["sid"] != null)
+        {
+            @Html.Raw(Model.service.Name)
+        }else if (this.ViewContext.RouteData.Values["gid"] != null)
+        {
+            @Html.Raw(Model.servivegrp.GroupName)
+        }
+        else
+        { 
+            @SharedRess.SharedStrings.services
+        }
+    </h3>
+    <div class="pageContent">
+        @if (this.ViewContext.RouteData.Values["sid"] != null)
+        {
+            @Html.Raw(Model.service.Content)
+        }else if (this.ViewContext.RouteData.Values["gid"] != null)
+        {
+            @Html.Raw(Model.servivegrp.Content)
+        }
+        else
+        { 
+            @Html.Raw(Model.ourservices.Content)
+        }
+    </div>
+</div>
+

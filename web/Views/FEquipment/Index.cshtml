@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DAL.Entities.Equipment>
+@{
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<div class="pagenav topPagenav">
+    <ul>
+        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
+        <li><a class="last" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_equipments">@SharedRess.SharedStrings.equipments</a></li>
+    </ul>
+</div>
+<div class="pageBanner">
+<img src="/img/hakkimizda.jpg" />
+</div>
+    @Html.Partial("_main2Left")
+    <div class="main2Right">
+        
+        <h3 class="pageTitle">@SharedRess.SharedStrings.equipments.ToUpper()</h3>
+        <div class="pageContent">
+            @foreach(var m in Model)
+                {
+                    
+                    <h3 style="font-weight:bold; margin-bottom:3px;">@m.Name</h3>
+                
+                    <p>@m.Content</p>
+                
+                }
+            
+        </div>
+    </div>
