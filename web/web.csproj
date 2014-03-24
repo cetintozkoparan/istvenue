@@ -63,12 +63,6 @@
       <HintPath>..\packages\log4net.2.0.2\lib\net40-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Practices.Unity">
-      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration">
-      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
-    </Reference>
     <Reference Include="NotFoundMvc">
       <HintPath>..\packages\NotFoundMvc.1.0.0\lib\net40\NotFoundMvc.dll</HintPath>
     </Reference>
@@ -262,9 +256,6 @@
     <Compile Include="Helpers\Enums\EnumMailUser.cs" />
     <Compile Include="Helpers\Enums\InstituionalTypes.cs" />
     <Compile Include="Areas\Admin\ImageHelperNew.cs" />
-    <Compile Include="IoC\CustomControllerActivator.cs" />
-    <Compile Include="IoC\UnityControllerFactory .cs" />
-    <Compile Include="IoC\UnityDependencyResolver.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ContactWrapperModel.cs" />
     <Compile Include="Models\MediaAssetUploadModel.cs" />
@@ -2546,8 +2537,11 @@
     <Content Include="Content\Styles\style.css" />
     <Content Include="Content\Styles\validationEngine.jquery.css" />
     <Content Include="css\bxslider.css" />
+    <Content Include="css\jquery.bxslider.css" />
+    <Content Include="css\main.css" />
     <Content Include="css\reset.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\supersized.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Admin\Views\Web.config" />
@@ -2627,6 +2621,78 @@
     <Content Include="Areas\Admin\Views\HumanResource\EditHumanResourcePosition.cshtml" />
     <Content Include="Areas\Admin\Views\HumanResource\HumanResourcePositions.cshtml" />
     <Content Include="Areas\Admin\Views\Updates\Index.cshtml" />
+    <Content Include="Images\arsa.jpg" />
+    <Content Include="Images\bulletList.png" />
+    <Content Include="Images\degertunali.jpg" />
+    <Content Include="Images\giris_yazi.png" />
+    <Content Include="Images\hakkimizda.jpg" />
+    <Content Include="Images\headerBg.png" />
+    <Content Include="Images\headerBg_y.png" />
+    <Content Include="Images\leasing.jpg" />
+    <Content Include="Images\linkedin.png" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\lukskonut.jpg" />
+    <Content Include="Images\mainslider\slider_01.jpg" />
+    <Content Include="Images\mainslider\slider_01_en.jpg" />
+    <Content Include="Images\mainslider\slider_01_en_y.jpg" />
+    <Content Include="Images\mainslider\slider_01_y.jpg" />
+    <Content Include="Images\mainslider\slider_01_y1.jpg" />
+    <Content Include="Images\mainslider\slider_02.jpg" />
+    <Content Include="Images\mainslider\slider_03.jpg" />
+    <Content Include="Images\misyon.jpg" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\office.jpg" />
+    <Content Include="Images\otel.jpg" />
+    <Content Include="Images\ourteam.jpg" />
+    <Content Include="Images\perakende.jpg" />
+    <Content Include="Images\prev.png" />
+    <Content Include="Images\referanslar\alfaromeo.jpg" />
+    <Content Include="Images\referanslar\algida.jpg" />
+    <Content Include="Images\referanslar\aygaz.jpg" />
+    <Content Include="Images\referanslar\calve.jpg" />
+    <Content Include="Images\referanslar\carat.jpg" />
+    <Content Include="Images\referanslar\dlapiper.jpg" />
+    <Content Include="Images\referanslar\doritos.jpg" />
+    <Content Include="Images\referanslar\dove.jpg" />
+    <Content Include="Images\referanslar\fiat.jpg" />
+    <Content Include="Images\referanslar\footecone.jpg" />
+    <Content Include="Images\referanslar\kraftfoods.jpg" />
+    <Content Include="Images\referanslar\magnum.jpg" />
+    <Content Include="Images\referanslar\oger.jpg" />
+    <Content Include="Images\referanslar\ogilvy.jpg" />
+    <Content Include="Images\referanslar\pepsico.jpg" />
+    <Content Include="Images\referanslar\pfizer.jpg" />
+    <Content Include="Images\referanslar\philips.jpg" />
+    <Content Include="Images\referanslar\referans_01.jpg" />
+    <Content Include="Images\referanslar\referans_02.jpg" />
+    <Content Include="Images\referanslar\referans_03.jpg" />
+    <Content Include="Images\referanslar\referans_04.jpg" />
+    <Content Include="Images\referanslar\referans_05.jpg" />
+    <Content Include="Images\referanslar\reimax.jpg" />
+    <Content Include="Images\referanslar\rinso.jpg" />
+    <Content Include="Images\referanslar\ruffles.jpg" />
+    <Content Include="Images\referanslar\suzuki.jpg" />
+    <Content Include="Images\referanslar\ttnet.jpg" />
+    <Content Include="Images\referanslar\turktelekom.jpg" />
+    <Content Include="Images\referanslar\unilever.jpg" />
+    <Content Include="Images\referanslar\vodafone.jpg" />
+    <Content Include="Images\rentIcon.png" />
+    <Content Include="Images\rent_1.jpg" />
+    <Content Include="Images\saleIcon.png" />
+    <Content Include="Images\sale_1.jpg" />
+    <Content Include="Images\sanayivelojistik.jpg" />
+    <Content Include="Images\satisvedevralma.jpg" />
+    <Content Include="Images\serviceImage.jpg" />
+    <Content Include="Images\showcase\slide_01.jpg" />
+    <Content Include="Images\showcase\slide_02.jpg" />
+    <Content Include="Images\stratejivedanismanlik.jpg" />
+    <Content Include="Images\ticariHizmetler.png" />
+    <Content Include="Images\ticariHizmetlerEng.png" />
+    <Content Include="Images\UnderConst.jpg" />
+    <Content Include="Images\vizyon.jpg" />
+    <Content Include="Images\yapimAsamasinda.jpg" />
+    <Content Include="Images\yapimAsamasindaEng.jpg" />
     <Content Include="img\bx_loader.gif" />
     <Content Include="img\checked.gif" />
     <Content Include="img\contactFaxImg.png" />
@@ -2700,6 +2766,10 @@
     <Content Include="Areas\Admin\Views\ProductSubSubbestGroup\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ProductSubSubbestGroup\product_leftbar.cshtml" />
     <Content Include="Areas\Admin\Views\Institutional\Create.cshtml" />
+    <Content Include="Images\mainslider\Thumbs.db" />
+    <Content Include="Images\referanslar\Thumbs.db" />
+    <Content Include="Images\showcase\Thumbs.db" />
+    <Content Include="Images\Thumbs.db" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />
@@ -2744,12 +2814,17 @@
     <Content Include="img\whiteTrans.png" />
     <Content Include="img\yuksekgerilim.jpg" />
     <Content Include="js\additional-methods.js" />
+    <Content Include="js\jquery-1.11.0.min.js" />
     <Content Include="js\jquery-1.8.3.min.js" />
     <Content Include="js\jquery.bxslider.min.js" />
     <Content Include="js\jquery.easing.js" />
     <Content Include="js\jquery.highlight.js" />
     <Content Include="js\jquery.slidorion.min.js" />
     <Content Include="js\jquery.validate.js" />
+    <Content Include="js\showcaseCustom.js" />
+    <Content Include="js\sliderCustom.js" />
+    <Content Include="js\sliderCustom_en.js" />
+    <Content Include="js\supersized.3.2.7.min.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
@@ -2907,6 +2982,7 @@
     <Content Include="Views\Shared\_subsubbestproductgroups.cshtml" />
     <Content Include="Views\FInstitutional\Page.cshtml" />
     <Content Include="Views\Shared\_topaboutus.cshtml" />
+    <Content Include="Views\Shared\Eskifrontlayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

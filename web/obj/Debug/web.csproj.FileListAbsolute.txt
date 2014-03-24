@@ -190,8 +190,6 @@ C:\Users\cetoz\Desktop\istvenue\web\bin\DotNetOpenAuth.OpenId.dll
 C:\Users\cetoz\Desktop\istvenue\web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
 C:\Users\cetoz\Desktop\istvenue\web\bin\EntityFramework.dll
 C:\Users\cetoz\Desktop\istvenue\web\bin\log4net.dll
-C:\Users\cetoz\Desktop\istvenue\web\bin\Microsoft.Practices.Unity.Configuration.dll
-C:\Users\cetoz\Desktop\istvenue\web\bin\Microsoft.Practices.Unity.dll
 C:\Users\cetoz\Desktop\istvenue\web\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\cetoz\Desktop\istvenue\web\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\cetoz\Desktop\istvenue\web\bin\Newtonsoft.Json.dll
@@ -214,8 +212,6 @@ C:\Users\cetoz\Desktop\istvenue\web\bin\DAL.pdb
 C:\Users\cetoz\Desktop\istvenue\web\bin\CaptchaMvc.pdb
 C:\Users\cetoz\Desktop\istvenue\web\bin\CaptchaMvc.xml
 C:\Users\cetoz\Desktop\istvenue\web\bin\log4net.xml
-C:\Users\cetoz\Desktop\istvenue\web\bin\Microsoft.Practices.Unity.xml
-C:\Users\cetoz\Desktop\istvenue\web\bin\Microsoft.Practices.Unity.Configuration.xml
 C:\Users\cetoz\Desktop\istvenue\web\bin\EntityFramework.xml
 C:\Users\cetoz\Desktop\istvenue\web\bin\Newtonsoft.Json.xml
 C:\Users\cetoz\Desktop\istvenue\web\bin\System.Net.Http.Formatting.xml
@@ -267,3 +263,4 @@ C:\Users\cetoz\Desktop\istvenue\web\obj\Debug\web.csproj.GenerateResource.Cache
 C:\Users\cetoz\Desktop\istvenue\web\obj\Debug\en\web.resources.dll
 C:\Users\cetoz\Desktop\istvenue\web\obj\Debug\web.dll
 C:\Users\cetoz\Desktop\istvenue\web\obj\Debug\web.pdb
+C:\Users\cetoz\Desktop\istvenue\web\bin\NotFoundMvc.pdb
