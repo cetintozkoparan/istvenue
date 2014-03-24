@@ -1,0 +1,8 @@
+C:\Users\cetoz\Documents\GitHub\soncalisma\deneysan_Data\bin\Debug\deneysan_Data.dll.config
+C:\Users\cetoz\Documents\GitHub\soncalisma\deneysan_Data\bin\Debug\deneysan_Data.dll
+C:\Users\cetoz\Documents\GitHub\soncalisma\deneysan_Data\bin\Debug\deneysan_Data.pdb
+C:\Users\cetoz\Documents\GitHub\soncalisma\deneysan_Data\bin\Debug\EntityFramework.dll
+C:\Users\cetoz\Documents\GitHub\soncalisma\deneysan_Data\bin\Debug\EntityFramework.xml
+C:\Users\cetoz\Documents\GitHub\soncalisma\deneysan_Data\obj\Debug\deneysan_Data.dll
+C:\Users\cetoz\Documents\GitHub\soncalisma\deneysan_Data\obj\Debug\deneysan_Data.pdb
+C:\Users\cetoz\Documents\GitHub\soncalisma\deneysan_Data\obj\Debug\deneysan_DAL.csprojResolveAssemblyReference.cache

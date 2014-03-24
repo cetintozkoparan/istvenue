@@ -1,0 +1,9 @@
+C:\Users\cetoz\Documents\GitHub\yenicalisma\SERVICE\bin\Release\SERVICE.dll
+C:\Users\cetoz\Documents\GitHub\yenicalisma\SERVICE\bin\Release\SERVICE.pdb
+C:\Users\cetoz\Documents\GitHub\yenicalisma\SERVICE\bin\Release\DAL.dll
+C:\Users\cetoz\Documents\GitHub\yenicalisma\SERVICE\bin\Release\EntityFramework.dll
+C:\Users\cetoz\Documents\GitHub\yenicalisma\SERVICE\bin\Release\DAL.pdb
+C:\Users\cetoz\Documents\GitHub\yenicalisma\SERVICE\bin\Release\EntityFramework.xml
+C:\Users\cetoz\Documents\GitHub\yenicalisma\SERVICE\obj\Release\SERVICE.csprojResolveAssemblyReference.cache
+C:\Users\cetoz\Documents\GitHub\yenicalisma\SERVICE\obj\Release\SERVICE.dll
+C:\Users\cetoz\Documents\GitHub\yenicalisma\SERVICE\obj\Release\SERVICE.pdb
