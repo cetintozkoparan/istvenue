@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="aboutus" xml:space="preserve">
-    <value>Kontrolmatik Hakkında</value>
+    <value>Hakkımızda</value>
   </data>
   <data name="address" xml:space="preserve">
     <value>Adres</value>
@@ -335,5 +335,53 @@
   </data>
   <data name="ournews" xml:space="preserve">
     <value>BİZDEN HABERLER</value>
+  </data>
+  <data name="addressandgooglemap" xml:space="preserve">
+    <value>Adres Bilgileri ve Google Map</value>
+  </data>
+  <data name="advancedsearch" xml:space="preserve">
+    <value>Detaylı Arama</value>
+  </data>
+  <data name="careeropportunities" xml:space="preserve">
+    <value>Kariyer Olanakları</value>
+  </data>
+  <data name="contactus" xml:space="preserve">
+    <value>Bize Ulaşın</value>
+  </data>
+  <data name="copyright" xml:space="preserve">
+    <value>Tüm hakları saklıdır, Copyright 2014.</value>
+  </data>
+  <data name="featuredproperties" xml:space="preserve">
+    <value>Öne Çıkan Gayrimenkuller</value>
+  </data>
+  <data name="firmsandbrands" xml:space="preserve">
+    <value>Firmalar ve Markalar</value>
+  </data>
+  <data name="leaveyourbrief" xml:space="preserve">
+    <value>Brifing Bırakın, Geri Dönelim</value>
+  </data>
+  <data name="marketnews" xml:space="preserve">
+    <value>Piyasa Analizleri / Sektörden Haberler</value>
+  </data>
+  <data name="news" xml:space="preserve">
+    <value>Haberler</value>
+  </data>
+  <data name="onpress" xml:space="preserve">
+    <value>Basında Venue İstanbul</value>
+  </data>
+  <data name="otheroperations" xml:space="preserve">
+    <value>Diğer Faaliyetlerimiz</value>
+  </data>
+  <data name="ourservices" xml:space="preserve">
+    <value>Hizmetlerimiz</value>
+  </data>
+  <data name="ourteam" xml:space="preserve">
+    <value>Ekibimiz</value>
+  </data>
+  <data name="searchestate" xml:space="preserve">
+    <value>Gayrimenkul Arama</value>
+  </data>
+  <data name="whyus" xml:space="preserve">
+    <value>Neden Biz?</value>
   </data>
 </root>

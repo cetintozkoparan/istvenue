@@ -1,69 +1,101 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
+<html>
+<!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>Venue İstanbul - Ticari Gayrimenkul Hizmetleri.</title>
-<meta name="description" content="Ticari gayrimenkul ve lüks konut piyasasında yaratıcı, yenilikçi, müşteri odaklı ve butik tarzda hizmet veren güvenilir bir gayrimenkul firması arayanların aklına gelen ilk firma olmaktır.">
-<meta name="keywords" content="gayrimenkul, lüks konut, kiralık lüks Konut, satılık konut, satılık lüks konut, kiralık işyeri, satılık işyeri, emlak, kiralık satılık mülkler, konut, işyeri, apartman, ev, villa, daire, dubleks, tripleks, müstakil.">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="~/css/reset.css">
-<link rel="stylesheet" type="text/css" href="~/css/main.css">
-<link rel="stylesheet" href="~/css/supersized.css" type="text/css" media="screen" />
-<script type="text/javascript" src="~/js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="~/js/supersized.3.2.7.min.js"></script>
-<script type="text/javascript" src="~/js/sliderCustom.js"></script>
-<!-- InstanceEndEditable -->  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- InstanceBeginEditable name="doctitle" -->
+    <title>Venue İstanbul - Ticari Gayrimenkul Hizmetleri.</title>
+    <meta name="description" content="Ticari gayrimenkul ve lüks konut piyasasında yaratıcı, yenilikçi, müşteri odaklı ve butik tarzda hizmet veren güvenilir bir gayrimenkul firması arayanların aklına gelen ilk firma olmaktır.">
+    <meta name="keywords" content="gayrimenkul, lüks konut, kiralık lüks Konut, satılık konut, satılık lüks konut, kiralık işyeri, satılık işyeri, emlak, kiralık satılık mülkler, konut, işyeri, apartman, ev, villa, daire, dubleks, tripleks, müstakil.">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="~/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/supersized.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="~/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="~/js/supersized.3.2.7.min.js"></script>
+    @*<script type="text/javascript" src="~/js/sliderCustom.js"></script>*@
+    <!-- InstanceEndEditable -->
 </head>
 <body>
-    <div class="bg">
-        <div class="wrapper2">
-            <div class="header2">
-                <a href="/" class="logo2">
-                    <img src="/img/logo.png" border="0" /></a>
-                <div class="search">
-                    @{ Html.RenderAction("_search", "FSearch"); }
-                </div>
-                <ul class="topMenu">
-                    <li>@Html.ActionLink("TR", "ChangeCulture", "FHome", new { lang = "tr", returnUrl = this.Request.RawUrl }, null)</li>
+    <div id="header">
+        <div id="headerContent">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="~/images/logo.png" alt="venueistanbul" /></a>
+            </div>
+            <div id="sitemap">
+                <ul>
+                    <li class="first"><a href="~/siteharitasi.html">Site Haritası</a></li>
                     <li>@Html.ActionLink("EN", "ChangeCulture", "FHome", new { lang = "en", returnUrl = this.Request.RawUrl }, null)</li>
-                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_contactdetails" class="last">@SharedRess.SharedStrings.contact.ToUpper()</a></li>
+                    <li>@Html.ActionLink("TR", "ChangeCulture", "FHome", new { lang = "tr", returnUrl = this.Request.RawUrl }, null)</li>
                 </ul>
-                <div class="mainMenuContent">
-                    <ul class="firstMenu">
-                        @*<li class="m1"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_aboutus">@SharedRess.SharedStrings.aboutus</a>*@
-                        <li class="m1"><a href="#">@SharedRess.SharedStrings.aboutus</a>
-                            @{ Html.RenderAction("topaboutus", "FShared"); }                            
-                        </li>
-                        @*<li class="m2"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a>*@
-                        <li class="m2"><a href="#">@SharedRess.SharedStrings.services</a>
-                            @{ Html.RenderAction("topservices", "FShared"); }
-                        </li>
-                        @*<li class="m3"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors">@SharedRess.SharedStrings.sectors</a>*@
-                        <li class="m3"><a href="#">@SharedRess.SharedStrings.sectors</a>
-                            @{ Html.RenderAction("topsectors", "FShared"); }
-                        </li>
-                        @*<li class="m4"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_products">@SharedRess.SharedStrings.products</a>*@
-                        <li class="m4"><a href="#">@SharedRess.SharedStrings.products</a>
-                            @{ Html.RenderAction("topproducts", "FShared"); }
-                        </li>
-                        @*<li class="m5"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references">@SharedRess.SharedStrings.references</a>*@
-                        <li class="m5"><a href="#">@SharedRess.SharedStrings.references</a>
-                            @{ Html.RenderAction("topreferences", "FShared"); }
-                        </li>
+            </div>
+            <div id="commercial">
+                <img src="~/images/ticariHizmetler.png" alt="ticari hizmetler" /></div>
+            <ul id="mainMenu">
+                <li class="firstList"><a href="~/">@SharedRess.SharedStrings.homepage.ToUpper()</a></li>
+                <li><a href="hakkimizda.html">@SharedRess.SharedStrings.aboutus.ToUpper()</a>
+                    <ul class="subMenu">
+                        <li><a href="vizyonvemisyon.html">@SharedRess.SharedStrings.visionmision</a></li>
+                        <li><a href="ekibimiz.html">@SharedRess.SharedStrings.ourteam</a></li>
+                        <li><a href="digerfaaliyetlerimiz.html">@SharedRess.SharedStrings.otheroperations</a></li>
                     </ul>
-                </div>
-            </div>
-            <div class="main2">
-                @RenderBody()
-            </div>
-            
+                </li>
+                <li><a href="hizmetlerimiz.html">@SharedRess.SharedStrings.services.ToUpper()</a>
+                    <ul class="subMenu">
+                        <li><a href="hizmetler.html">@SharedRess.SharedStrings.services</a></li>
+                        <li><a href="sektorler.html">@SharedRess.SharedStrings.sectors</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">@SharedRess.SharedStrings.references.ToUpper()</a>
+                    <ul class="subMenu">
+                        <li><a href="referanslar.html">@SharedRess.SharedStrings.firmsandbrands</a></li>
+                        <li><a href="nedenbiz.html">@SharedRess.SharedStrings.whyus</a></li>
+                    </ul>
+                </li>
+                <li><a href="haberler.html">@SharedRess.SharedStrings.news.ToUpper()</a>
+                    <ul class="subMenu">
+                        <li><a href="piyasaanalizleri.html">@SharedRess.SharedStrings.marketnews</a></li>
+                        <li><a href="basindavenueistanbul.html">@SharedRess.SharedStrings.onpress</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">@SharedRess.SharedStrings.contactus.ToUpper()</a>
+                    <ul class="subMenu">
+                        <li><a href="adresbilgileri.html">@SharedRess.SharedStrings.addressandgooglemap</a></li>
+                        <li><a href="kariyer.html">@SharedRess.SharedStrings.careeropportunities</a></li>
+                    </ul>
+                </li>
+                <li class="lastList"><a href="#">@SharedRess.SharedStrings.searchestate.ToUpper()</a><ul class="subMenu">
+                    <li><a href="onecikangayrimenkuller.html">@SharedRess.SharedStrings.featuredproperties</a></li>
+                    <li><a href="detayliarama.html">@SharedRess.SharedStrings.advancedsearch</a></li>
+                    <li><a href="briefbirak.html">@SharedRess.SharedStrings.leaveyourbrief</a></li>
+                </ul>
+                    <form action="#" method="get" class="searchForm">
+                        <input type="text" name="q" id="searchform" value="@SharedRess.SharedStrings.searchinsite" onfocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;">
+                    </form>
+                </li>
+            </ul>
         </div>
-		<div class="footerWrapper2">
-		<div class="footer2">
-                @{ Html.RenderAction("footer", "FShared"); }
-            </div>
-			</div>
     </div>
-</body>
-</html>
+    <!-- InstanceBeginEditable name="content" -->
+    <style type="text/css">
+        #footer {
+            position: fixed;
+            bottom: 0px;
+        }
+    </style>
+    <div id="container">
+        <div id="content">
+                @RenderBody()
+        </div>
+
+    </div>
+    <!-- InstanceEndEditable -->
+    <div id="footer">
+        <div class="footerInner">
+            <div class="copyRight">
+                <p>@SharedRess.SharedStrings.copyright</p>
+                <p class="design">Design by <span class="wortec"><a href="http://www.wortec.net" target="_blank">WORTEC</a></span></p>
+            </div>
+        </div>
+    </div>

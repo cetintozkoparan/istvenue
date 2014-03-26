@@ -1,277 +1,61 @@
 ﻿@model web.Models.HomePageWrapperModel
 @{
-    ViewBag.Title = "Kontrolmatik | Anasayfa";
+    Layout = "~/Views/Shared/frontlayout.cshtml";
 }
+<script>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Kontrolmatik | Anasayfa</title>
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
-    <style type="text/css">
-        a { color: #777; text-decoration:none }
-        a:hover { text-decoration:underline }
-    </style>
-        <!-- css3-mediaqueries.js for IE less than 9 -->
- <!--[if lt IE 9]>
-<script src="~/js/css3-mediaqueries.js"></script>
-<![endif]-->
-</head>
-<body id="noBg">
-    <div class="mainSlider">
-        <ul class="bxslider">
-            @foreach (var item in Model.photos)
-            {
-                <li>
-                    <img width="1440" height="450" src="@item.Path" />
-                    @if (@item.Title != null || @item.Title != "")
-                    {
-                        <p>@item.Title</p>    
-                    }
-                    <div class="blackBg"></div>
-                </li>
-            }
-        </ul>
-    </div>
-    <div class="wrapper">
-        <div class="header">
-            <a href="/" class="logo">
-                <img src="/img/logo.png" border="0" /></a>
-            <div class="search">
-                @{ Html.RenderAction("_search", "FSearch"); }
-            </div>
-            <ul class="topMenu">
-                <li>@Html.ActionLink("TR", "ChangeCulture", "FHome", new { lang = "tr", returnUrl = this.Request.RawUrl }, null)</li>
-                <li>@Html.ActionLink("EN", "ChangeCulture", "FHome", new { lang = "en", returnUrl = this.Request.RawUrl }, null)</li>
-                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_contactdetails" class="last">@SharedRess.SharedStrings.contact.ToUpper()</a></li>
-            </ul>
-            <ul class="mainMenu">
-                <li class="l1 menuItem"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_aboutus">@SharedRess.SharedStrings.aboutus</a></li>
-                @*<li class="l2 menuItem"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a>*@
-                <li class="l2 menuItem"><a href="#">@SharedRess.SharedStrings.services</a>
-                    <div class="menuContent">
-                       <h2>@SharedRess.SharedStrings.services</h2>
-                            @{ int sg = 0; }
-                            @foreach (var group in Model.servicegroups)
-                            {
-                                sg++;
-                                if (sg % 3 == 1)
-                                {
-                                    @(new HtmlString("<ul>"));
-                                    @(new HtmlString("<li><a href=/" + @SharedRess.SharedStrings.menu_culture + "/" + @SharedRess.SharedStrings.menu_services + "/" + @group.PageSlug + "/" + @group.ServiceGroupId + ">" + group.GroupName + "</a></li>"));
-                                }
-                                else
-                                {
-                                    @(new HtmlString("<li><a href=/" + @SharedRess.SharedStrings.menu_culture + "/" + @SharedRess.SharedStrings.menu_services + "/" + @group.PageSlug + "/" + @group.ServiceGroupId + ">" + group.GroupName + "</a></li>"));
-                                }
+    jQuery(function ($) {
+        $.ajax({
+            url: 'FHome/GetImages',
+            success: function (data) {
+                if (data != "") {
+                    $.supersized({
+                        // Functionality
+                        slideshow: 1,			// Slideshow on/off
+                        autoplay: 1,			// Slideshow starts playing automatically
+                        start_slide: 1,			// Start slide (0 is random)
+                        stop_loop: 0,			// Pauses slideshow on last slide
+                        random: 0,			// Randomize slide order (Ignores start slide)
+                        slide_interval: 6000,		// Length between transitions
+                        transition: 1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+                        transition_speed: 1000,		// Speed of transition
+                        new_window: 1,			// Image links open in new window/tab
+                        pause_hover: 0,			// Pause slideshow on hover
+                        keyboard_nav: 1,			// Keyboard navigation on/off
+                        performance: 1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+                        image_protect: 1,			// Disables image dragging and right click with Javascript
 
-                                if (sg % 3 == 0 || sg == Model.servicegroups.Count())
-                                {
-                                    @(new HtmlString("</ul>"));
-                                }
-                            }
-                    </div>
-                </li>
-                @*<li class="l3 menuItem"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors">@SharedRess.SharedStrings.sectors</a>*@
-                <li class="l3 menuItem"><a href="#">@SharedRess.SharedStrings.sectors</a>
-                    <div class="menuContent">
-                        <h2>@SharedRess.SharedStrings.sectors</h2>
-                        @{ int k = 0; }
-                        @foreach (var group in Model.sectorgroup)
-                        {
-                            k++;
-                            if (k % 4 != 0)
-                            {
-                            <div class="sektor">
-                                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors/@group.PageSlug/@group.SectorGroupId">@group.GroupName
-                                    <img alt="@group.GroupName" src="@group.SectorGroupLogo" style="float:right" />
-                                </a>
-                            </div>    
-                            }
-                            else
-                            {
-                            <div class="sektor last">
-                                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors/@group.PageSlug/@group.SectorGroupId">@group.GroupName
-                                    <img alt="@group.GroupName" src="@group.SectorGroupLogo" style="float:right" />
-                                </a>
-                            </div>
-                            }
-                        }
+                        // Size & Position						   
+                        min_width: 0,			// Min width allowed (in pixels)
+                        min_height: 0,			// Min height allowed (in pixels)
+                        vertical_center: 1,			// Vertically center background
+                        horizontal_center: 1,			// Horizontally center background
+                        fit_always: 0,			// Image will never exceed browser width or height (Ignores min. dimensions)
+                        fit_portrait: 1,			// Portrait images will not exceed browser height
+                        fit_landscape: 0,			// Landscape images will not exceed browser width
 
-                    </div>
-                </li>
-               @* <li class="l4 menuItem"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_products">@SharedRess.SharedStrings.products</a>*@
-                <li class="l4 menuItem"><a href="#">@SharedRess.SharedStrings.products</a>
-                    <div class="menuContent">
-                        <h2>@SharedRess.SharedStrings.products</h2>
-                        @{ k = 0; }
-                        @foreach (var group in Model.prodgroups)
-                        {
-                            k++;
-                            if (k % 4 != 0)
-                            {
-                            <div class="sektor">
-                                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_products/@group.PageSlug/@group.ProductGroupId">@group.GroupName
-                                </a>
-                            </div>    
-                            }
-                            else
-                            {
-                            <div class="sektor last">
-                                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_products/@group.PageSlug/@group.ProductGroupId">@group.GroupName
-                                </a>
-                            </div>
-                            }
-                        }
-                        @*@{ int p = 0; }
-                        @foreach (var prd in Model.allproducts)
-                        {
-                            p++;
-                            if (p % 5 == 1)
-                            {
-                                @(new HtmlString("<ul>"));
-                                @(new HtmlString("<li><a href=/" + @SharedRess.SharedStrings.menu_culture + "/" + @SharedRess.SharedStrings.menu_productdetail + "/" + @prd.ProductGroup.PageSlug + "/" + @prd.ProductSubGroup.PageSlug + "/" + @prd.PageSlug + "/" + @prd.ProductId + ">" + prd.Name + "</a></li>"));
-                            }
-                            else
-                            {
-                                @(new HtmlString("<li><a href=/" + @SharedRess.SharedStrings.menu_culture + "/" + @SharedRess.SharedStrings.menu_productdetail + "/" + @prd.ProductGroup.PageSlug + "/" + @prd.ProductSubGroup.PageSlug + "/" + @prd.PageSlug + "/" + @prd.ProductId + ">" + prd.Name + "</a></li>"));
-                            }
+                        // Components							
+                        slide_links: false,	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+                        thumb_links: 0,			// Individual thumb links for each slide
+                        thumbnail_navigation: 0,			// Thumbnail navigation
+                        slides: data
+                            //[			// Slideshow Images
+                            //                                { image: '/images/mainslider/slider_01.jpg' },
+                            //                                { image: '/images/mainslider/slider_02.jpg' },
+                            //                                { image: '/images/mainslider/slider_03.jpg' },
 
-                            if (p % 5 == 0 || p == Model.allproducts.Count())
-                            {
-                                @(new HtmlString("</ul>"));
-                            }
-                            
-                        }*@
-                    </div>
-                </li>
-                <li class="l5 menuItem"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references">@SharedRess.SharedStrings.references</a></li>
-            </ul>
-        </div>
-        <div class="main">
-            <div class="projects">
-                <h2 class="sectionTitle"><span>@ProjectsRess.ProjectsStrings.projects.ToUpper()</span></h2>
-                @{int i = 0;}
-                @foreach (var project in Model.projects)
-                {
-                    i++;
-                    if (i != 4)
-                    {
-                    <div class="project">
-                        <div class="projectImg">
-                            <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_projects/@project.PageSlug/@project.ProjectId">
-                                <img width="235" height="200" src="@project.Logo" /><span> @project.Name</span></a>
-                        </div>
-                        <p>@project.SubTitle</p>
-                    </div>
-                    }
-                    else
-                    {
-                    <div class="project last">
-                        <div class="projectImg">
-                            <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_projects/@project.PageSlug/@project.ProjectId">
-                                <img width="235" height="200" src="@project.Logo" /><span> @project.Name</span></a>
-                        </div>
-                        <p>@project.SubTitle</p>
-                    </div>
-                    }
+                            //]
+                        ,
+
+                        // Theme Options			   
+                        progress_bar: 1,			// Timer for each slide							
+                        mouse_scrub: 0
+
+                    });
                 }
-            </div>
-            <div class="biz">
-                <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.our.ToUpper()</span></h2>
-                <ul>
-                    @foreach (var doc in Model.docs)
-                    {
-                        <li><a href="@doc.DocumentFile">@doc.Name.ToUpper()</a></li>
-                    }
-                    <li class="last"><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_documents/@ViewBag.docgroupSlug/@ViewBag.docgroupid">@SharedRess.SharedStrings.more</a></li>
-                </ul>
-            </div>
-            <div class="bizdenHaberler">
-                <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.ournews</span></h2>
-                <div id="news" class="slidorion">
-                    <div class="slider">
-                        @foreach (var newsitem in Model.news)
-                        {
-                            <div class="slide">
-                                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">
-                                    <img src="@newsitem.NewsImage" alt="@newsitem.Header" width="235">
-                                </a>
-                            </div>
-                        }
-
-
-                    </div>
-
-                    <div class="accordion">
-                        @foreach (var newsitem in Model.news)
-                        {
-                            <div class="headers">@newsitem.Header</div>
-                            <div class="content">
-                                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news/@newsitem.PageSlug/@newsitem.NewsId">
-                                    @newsitem.Spot
-                                </a>
-                            </div>
-                        }
-                        <a class="allNews" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_allnews">@HomeRess.HomeStrings.allnews</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-	<div class="footerWrapper">
-	        <div class="footer">
-            <div class="footerLeft">
-                <ul>
-                    <ul>
-                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_aboutus">@SharedRess.SharedStrings.aboutus</a></li>
-                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a></li>
-                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors">@SharedRess.SharedStrings.sectors</a></li>
-                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_products">@SharedRess.SharedStrings.products</a></li>
-                        <li><a class="last" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references">@SharedRess.SharedStrings.references</a></li>
-                    </ul>
-                </ul>
-                <p>
-                    <span>@SharedRess.SharedStrings.address:</span> @Model.contact.Address<br />
-                    <span>@SharedRess.SharedStrings.phone:</span> @Model.contact.Phone<br />
-                    <span>@SharedRess.SharedStrings.fax:</span> @Model.contact.Fax<br />
-                    <span>@SharedRess.SharedStrings.email:</span> <a href="mailto:@(Model.contact.Email)">@Model.contact.Email</a>
-                </p>
-            </div>
-            <div class="footerRight">
-                <p>
-                    <img src="/img/logoFooter.png" style="margin-bottom: -4px; margin-right: 2px;" />
-                    Copyright 2013
-                </p>
-                <p>Designed and Development <a href="http://www.wortec.net">WORTEC</a></p>
-            </div>
-        </div>
-		</div>
-    <script src="~/js/jquery-1.8.3.min.js" type="text/javascript"></script>
-    <script src="~/Content/Scripts/modernizr-2.0.4.min.js" type="text/javascript"></script>
-    <script src="~/js/jquery.bxslider.min.js" type="text/javascript"></script>
-    <script src="~/js/jquery.easing.js" type="text/javascript"></script>
-    <script src="~/js/jquery.slidorion.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.bxslider').bxSlider({
-                auto: true,
-                captions: true,
-                mode: 'fade',
-                speed: 2000
-            });
-            $(".logo").animate({ top: "0" }, { queue: false, duration: 1000 });
-            $(".bxslider").animate({ opacity: "1" }, { queue: false, duration: 2000 });
-            $('#news').slidorion({
-                speed: 500,
-                interval: 6000,
-                effect: 'slideLeft'
-            });
+            }
         });
 
-    </script>
-</body>
-</html>
+    });
+
+</script>

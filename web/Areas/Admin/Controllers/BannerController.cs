@@ -29,7 +29,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult Add()
         {
-            ImageHelperNew.DestroyImageCashAndSession(1440, 450);
+            ImageHelperNew.DestroyImageCashAndSession(1920, 1080);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -69,7 +69,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult Edit()
         {
-            ImageHelperNew.DestroyImageCashAndSession(1440, 450);
+            ImageHelperNew.DestroyImageCashAndSession(1920, 1080);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
