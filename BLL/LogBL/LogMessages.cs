@@ -86,6 +86,13 @@ namespace BLL.LogBL
         public static string NewsDeleted = "Haber Silindi";
         public static string NewsNotDeleted = "Haber Silinemedi";
 
-       // public static string AdminNotLoginMessage = "Sisteme giriş hatası"
+        public static string UserAdded = "Yeni Kullanıcı Eklendi";
+        public static string UserNotAdded = "Yeni Kullanıcı Eklenemedi";
+        public static string UserEdited = "Kullanıcı Düzenlendi";
+        public static string UserNotEdited = "Kullanıcı Düzenlendi";
+        public static string UserDeleted = "Kullanıcı Silindi";
+        public static string UserNotDeleted = "Kullanıcı Silinemedi";
+
+        // public static string AdminNotLoginMessage = "Sisteme giriş hatası"
     }
 }

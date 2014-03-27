@@ -18,6 +18,7 @@ namespace BLL.LogBL
         BankaBilgisi,
         CozumOrtaklari,
         InsanKaynaklari,
-        Login
+        Login,
+        Kullanici
     }
 }

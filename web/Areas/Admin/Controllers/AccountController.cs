@@ -56,5 +56,95 @@ namespace web.Areas.Admin.Controllers
 
         }
 
+
+        public ActionResult New()
+        {
+            return View();
+
+        }
+        [HttpPost]
+        public ActionResult New(AdminUser model)
+        {
+
+            if (ModelState.IsValid)
+            {
+                ViewBag.ProcessMessage = AccountManager.AddNewUser(model);
+                ModelState.Clear();
+                // Response.Redirect("/yonetim/haberduzenle/" + newsmodel.NewsId);
+                return View();
+            }
+            else
+                return View();
+
+        }
+
+        public ActionResult Index()
+        {
+            var list = AccountManager.GetUserList();
+            return View(list);
+
+        }
+
+
+        [AllowAnonymous]
+        public JsonResult DeleteUser(int id)
+        {
+            bool isdelete = AccountManager.Delete(id);
+            //if (isdelete)
+            return Json(isdelete);
+            //  else return false;
+        }
+
+        public ActionResult Edit()
+        {
+            if (RouteData.Values["id"] != null)
+            {
+                int nid = 0;
+                bool isnumber = int.TryParse(RouteData.Values["id"].ToString(), out nid);
+                if (isnumber)
+                {
+                    AdminUser bank = AccountManager.GetUserInfoById(nid);
+                    return View(bank);
+                }
+                else
+                    return View();
+            }
+            else
+                return View();
+        }
+
+        [HttpPost]
+        public ActionResult Edit(AdminUser model, string txtpassword)
+        {
+
+
+            if (RouteData.Values["id"] != null)
+            {
+                int nid = 0;
+                bool isnumber = int.TryParse(RouteData.Values["id"].ToString(), out nid);
+                if (isnumber)
+                {
+                    model.AdminUserId = nid;
+                    if (!string.IsNullOrEmpty(txtpassword))
+                    {
+                        model.Password = txtpassword;
+                    }
+                    ViewBag.ProcessMessage = AccountManager.EditUser(model);
+                    return View(model);
+                }
+                else
+                {
+                    ViewBag.ProcessMessage = false;
+                    return View(model);
+                }
+            }
+            else
+                return View();
+
+
+
+
+        }
+
     }
 }

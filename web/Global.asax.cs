@@ -23,8 +23,8 @@ namespace web
             AreaRegistration.RegisterAllAreas();
             
             log4net.Config.XmlConfigurator.Configure();
-            var migrator = new DbMigrator(new DAL.Context.Configration());
-            //migrator.Update();  
+         //   var migrator = new DbMigrator(new DAL.Context.Configration());
+         //   migrator.Update();  
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

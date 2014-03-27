@@ -54,7 +54,7 @@ namespace web.Areas.Admin.Controllers
                 {
                     newmodel.Path = "/Content/images/front/noimage.jpeg";
                 }
-
+                
                 newmodel.Online = true;
                 newmodel.SortOrder = 9999;
                 newmodel.TimeCreated = DateTime.Now;
@@ -131,7 +131,7 @@ namespace web.Areas.Admin.Controllers
                     if (isnumber)
                     {
                         Photomodel.PhotoId = nid;
-                        ViewBag.ProcessMessage = PhotoManager.Edit(nid, Photomodel.Title, Photomodel.Path);
+                        ViewBag.ProcessMessage = PhotoManager.Edit(nid, Photomodel.Title, Photomodel.Path,Photomodel.Link);
                         return View(Photomodel);
                     }
                     else

@@ -134,13 +134,13 @@ namespace web.Areas.Admin.Controllers
         /// <param name="uploadedFileMeta">The uploaded file meta.</param>
         /// <returns></returns>
         [Authorize]
-        public ActionResult FileUpload(MediaAssetUploadModel uploadedFileMeta)
+        public ActionResult FileUpload(web.Models.MediaAssetUploadModel uploadedFileMeta)
         {
             Guid newImageId = new Guid();
             try
             {
                 Session["UploadType"] = "Tek Fotoğraf";
-                newImageId = ProcessUploadedImage(uploadedFileMeta);
+               // newImageId = ProcessUploadedImage(uploadedFileMeta);
             }
             catch (Exception ex)
             {

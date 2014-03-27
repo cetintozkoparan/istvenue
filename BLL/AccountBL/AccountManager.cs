@@ -52,5 +52,130 @@ namespace BLL.AccountBL
                 }
             }
         }
+
+        public static bool AddNewUser(AdminUser record)
+        {
+            using (MainContext db = new MainContext())
+            {
+                try
+                {
+                    db.AdminUser.Add(record);
+                    db.SaveChanges();
+
+                    LogtrackManager logkeeper = new LogtrackManager();
+                    logkeeper.LogDate = DateTime.Now;
+                    logkeeper.LogProcess = EnumLogType.Kullanici.ToString();
+                    logkeeper.Message = LogMessages.UserAdded;
+                    logkeeper.User = HttpContext.Current.User.Identity.Name;
+                    logkeeper.Data = record.FullName;
+                    logkeeper.AddInfoLog(logger);
+
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+
+        }
+
+        public static List<AdminUser> GetUserList()
+        {
+            using (MainContext db = new MainContext())
+            {
+                var list = db.AdminUser.ToList();
+                return list;
+            }
+        }
+
+        public static bool Delete(int id)
+        {
+            using (MainContext db = new MainContext())
+            {
+                try
+                {
+                    var record = db.AdminUser.FirstOrDefault(d => d.AdminUserId == id);
+                    db.AdminUser.Remove(record);
+
+                    db.SaveChanges();
+
+                    LogtrackManager logkeeper = new LogtrackManager();
+                    logkeeper.LogDate = DateTime.Now;
+                    logkeeper.LogProcess = EnumLogType.Kullanici.ToString();
+                    logkeeper.Message = LogMessages.UserDeleted;
+                    logkeeper.User = HttpContext.Current.User.Identity.Name;
+                    logkeeper.Data = record.FullName;
+                    logkeeper.AddInfoLog(logger);
+
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static AdminUser GetUserInfoById(int nid)
+        {
+            using (MainContext db = new MainContext())
+            {
+                try
+                {
+                    AdminUser record = db.AdminUser.Where(d => d.AdminUserId == nid).SingleOrDefault();
+                    if (record != null)
+                        return record;
+                    else
+                        return null;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
+
+
+        public static bool EditUser(AdminUser model)
+        {
+            using (MainContext db = new MainContext())
+            {
+                try
+                {
+                    AdminUser record = db.AdminUser.Where(d => d.AdminUserId == model.AdminUserId).SingleOrDefault();
+                    if (record != null)
+                    {
+                        record.FullName = model.FullName;
+                        record.Email = model.Email;
+
+                        if (!string.IsNullOrEmpty(model.Password))
+                        {
+                            record.Password = model.Password;
+                        }
+
+                        db.SaveChanges();
+
+                        LogtrackManager logkeeper = new LogtrackManager();
+                        logkeeper.LogDate = DateTime.Now;
+                        logkeeper.LogProcess = EnumLogType.Kullanici.ToString();
+                        logkeeper.Message = LogMessages.UserEdited;
+                        logkeeper.User = HttpContext.Current.User.Identity.Name;
+                        logkeeper.Data = record.FullName;
+                        logkeeper.AddInfoLog(logger);
+
+                        return true;
+                    }
+                    else
+                        return false;
+
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

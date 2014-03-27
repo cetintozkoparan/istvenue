@@ -221,7 +221,6 @@
     <Compile Include="Areas\Admin\Controllers\ProductGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjectController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReferenceController.cs" />
-    <Compile Include="Areas\Admin\Controllers\TeklifController.cs" />
     <Compile Include="Areas\Admin\Controllers\UpdatesController.cs" />
     <Compile Include="Areas\Admin\Filters\AuthenticateUser.cs" />
     <Compile Include="Areas\Admin\Helpers\ImageHelper.cs" />
@@ -229,7 +228,6 @@
     <Compile Include="Areas\Admin\Helpers\PhotoType.cs" />
     <Compile Include="Areas\Admin\Helpers\Utility.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
-    <Compile Include="Areas\Admin\Models\TeklifModel.cs" />
     <Compile Include="Controllers\FSectorController.cs" />
     <Compile Include="Controllers\FEquipmentController.cs" />
     <Compile Include="Controllers\FServiceController.cs" />
@@ -241,7 +239,6 @@
     <Compile Include="Controllers\FCareerController.cs" />
     <Compile Include="Controllers\FInstitutionalController.cs" />
     <Compile Include="Controllers\FLinksController.cs" />
-    <Compile Include="Controllers\FOffersController.cs" />
     <Compile Include="Controllers\FProductsController.cs" />
     <Compile Include="Controllers\FNewsController.cs" />
     <Compile Include="Controllers\FProjectsController.cs" />
@@ -2770,6 +2767,12 @@
     <Content Include="Images\referanslar\Thumbs.db" />
     <Content Include="Images\showcase\Thumbs.db" />
     <Content Include="Images\Thumbs.db" />
+    <Content Include="Areas\Admin\Views\Account\account_leftbar.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Views\Account\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\New.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />

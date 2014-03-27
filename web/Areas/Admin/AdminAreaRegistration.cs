@@ -201,6 +201,11 @@ namespace web.Areas.Admin
             context.MapRoute("ik_indexx", "yonetim/insankaynaklari", new { action = "Index", Controller = "HumanResource" });
             context.MapRoute("ik_index2", "yonetim/insankaynaklari/{lang}", new { action = "Index", Controller = "HumanResource" });
 
+            //KULLANICILAR
+            context.MapRoute("newuseradd", "yonetim/yenikullanici", new { action = "New", Controller = "Account" });
+            context.MapRoute("userList", "yonetim/kullanicilar", new { action = "Index", Controller = "Account" });
+            context.MapRoute("useredit", "yonetim/kullaniduzenle/{id}", new { action = "Edit", Controller = "Account" });
+
 
             context.MapRoute("songuncellemeler", "yonetim/songuncellemeler", new { action = "Index", Controller = "Updates" });
 

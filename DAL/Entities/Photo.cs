@@ -22,6 +22,6 @@ namespace DAL.Entities
         public bool Online { get; set; }
         public int SortOrder { get; set; }
         public string Thumbnail { get; set; }
-        
+        public string Link { get; set; }
     }
 }

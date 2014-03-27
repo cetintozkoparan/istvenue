@@ -39,7 +39,10 @@
                     @Html.TextBoxFor(m => m.Title, new { @class = "textwidth50" })
                     @Html.ValidationMessageFor(m => m.Title)
                 </p>
-
+                 <p>
+                    @Html.LabelFor(m => m.Link)
+                    @Html.TextBoxFor(m => m.Link, new { @class = "textwidth50" })
+                </p>
                 <fieldset>
                     <legend>Fotoğraf</legend>
                     <div id="uploadPartial">

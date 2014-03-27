@@ -94,9 +94,7 @@
     <Compile Include="SearchBL\SearchManager.cs" />
     <Compile Include="SecurityBL\SecurityManager.cs" />
     <Compile Include="SolutionPartnerBL\SolutionPartnerManager.cs" />
-    <Compile Include="TeklifBL\TeklifUrun_Urun.cs" />
     <Compile Include="TeklifBL\EnumTeklifTip.cs" />
-    <Compile Include="TeklifBL\TeklifManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

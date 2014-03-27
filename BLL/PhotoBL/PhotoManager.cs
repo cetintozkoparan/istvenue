@@ -69,7 +69,7 @@ namespace BLL.PhotoBL
             }
         }
 
-        public static bool Edit(int id, string Title, string path)
+        public static bool Edit(int id, string Title, string path,string link)
         {
             using (MainContext db = new MainContext())
             {
@@ -80,6 +80,7 @@ namespace BLL.PhotoBL
                     if (path != null)
                     {
                         p.Path = path;
+                        p.Link = link;
                     }
                     db.SaveChanges();
                     return true;
