@@ -17,6 +17,9 @@ namespace web.Controllers
     public class slider
     {
         public string image { get; set; }
+        public string title { get; set; }
+        public string url { get; set; }
+        public string thumb { get; set; }
     }
 
     public class FHomeController : Controller
@@ -53,6 +56,9 @@ namespace web.Controllers
             {
                 slider s = new slider();
                 s.image = item.Path;
+                s.title = item.Title;
+                s.url = "http://www.google.com";
+                s.thumb = "";
                 slider.Add(s);
             }
 

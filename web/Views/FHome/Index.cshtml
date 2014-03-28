@@ -2,9 +2,25 @@
 @{
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
+<div id="slidecaption"></div>
+<style>
+#slidecaption {
+    height: 60px;
+    min-width: 150px;
+    max-width: 900px;    
+    width: expression(document.body.clientWidth < 152? "150px" : document.body.clientWidth > 902? "900px" : "auto");  
+    text-indent: 10px;
+    color: #FFFFFF;
+    background-color: #00517D; 
+    font: 400 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0 0 0 0;
+    line-height: 30px;
+}
+</style>
 <script>
 
     jQuery(function ($) {
+        
         $.ajax({
             url: 'FHome/GetImages',
             success: function (data) {
@@ -46,9 +62,8 @@
 
                             //]
                         ,
-
                         // Theme Options			   
-                        progress_bar: 1,			// Timer for each slide							
+                        progress_bar: 0,			// Timer for each slide							
                         mouse_scrub: 0
 
                     });
