@@ -19,6 +19,7 @@ namespace DAL.Context
         }
 
         public DbSet<AdminUser> AdminUser { get; set; }
+        public DbSet<Analytic> Analytic { get; set; }
         public DbSet<Gallery> Gallery { get; set; }
         public DbSet<GalleryGroup> GalleryGroup { get; set; }
         public DbSet<Institutional> Institutional { get; set; }
@@ -106,6 +107,9 @@ namespace DAL.Context
             modelBuilder.Entity<Log4Net_Error>().ToTable("Log4Net_Error");
             modelBuilder.Entity<ProdCategory>().ToTable("ProdCategory");
             modelBuilder.Entity<Page>().ToTable("Page");
+            modelBuilder.Entity<Analytic>().ToTable("Analytic");
+
+            
         }
     }
 }

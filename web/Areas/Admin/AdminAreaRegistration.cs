@@ -212,6 +212,8 @@ namespace web.Areas.Admin
             context.MapRoute("add_prodcategory_default", "yonetim/urun-kategorisi-ekle", new { action = "Add", Controller = "ProdCategory" });
             context.MapRoute("add_prodcategory", "yonetim/urun-kategorisi-ekle/{lang}", new { action = "Add", Controller = "ProdCategory" });
 
+            context.MapRoute("analyticpage", "yonetim/analitic", new { action = "Index", Controller = "Analytic" });
+
             context.MapRoute(
                 "Admin_defaultx",
                 "Admin/{controller}/{action}/{id}",
