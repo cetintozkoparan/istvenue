@@ -53,7 +53,7 @@ namespace BLL.AccountBL
             {
                 try
                 {
-                    Analytic anl = GetAnalytic();
+                    Analytic anl = db.Analytic.FirstOrDefault();
                     if (anl == null)
                     {
                         anl = new Analytic();
@@ -65,8 +65,8 @@ namespace BLL.AccountBL
                     else
                     {
                         anl.Code = code;
-                        //record.Code = record.Code;
                         db.SaveChanges();
+                        db.Commit();
                         return true;
                     }
                 }
@@ -82,28 +82,12 @@ namespace BLL.AccountBL
         {
             using (MainContext db = new MainContext())
             {
-                var list = db.Analytic.FirstOrDefault();
+                Analytic list = db.Analytic.FirstOrDefault();
                 return list;
             }
         }
 
    
-        public static bool EditUser(string code)
-        {
-            using (MainContext db = new MainContext())
-            {
-                try
-                {
-                    Analytic record = db.Analytic.FirstOrDefault();
-                    record.Code = code;
-                    db.SaveChanges();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    return false;
-                }
-            }
-        }
+     
     }
 }
