@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBL\AccountManager.cs" />
+    <Compile Include="Analytic\AnalyticManager.cs" />
     <Compile Include="BankBL\BankManager.cs" />
     <Compile Include="CertificateBL\CertificateManager.cs" />
     <Compile Include="ContactBL\ContactManager.cs" />

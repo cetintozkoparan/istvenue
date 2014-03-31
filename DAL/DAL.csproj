@@ -55,6 +55,7 @@
     <Compile Include="DBInteractions\IUnitOfWork.cs" />
     <Compile Include="DBInteractions\UnitOfWork.cs" />
     <Compile Include="Entities\AdminUser.cs" />
+    <Compile Include="Entities\Analytic.cs" />
     <Compile Include="Entities\BankInfo.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\CertificatePartner.cs" />

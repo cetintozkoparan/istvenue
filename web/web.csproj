@@ -189,6 +189,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AnalyticController.cs" />
     <Compile Include="Areas\Admin\Controllers\BankController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
     <Compile Include="Areas\Admin\Controllers\CertificateController.cs" />
@@ -2792,6 +2793,8 @@
     <Content Include="Areas\Admin\Views\OurTeam\Index.cshtml" />
     <Content Include="Areas\Admin\Views\OurTeam\Ourteam_leftbar.cshtml" />
     <Content Include="Areas\Admin\Views\Institutional\WhyUs.cshtml" />
+    <Content Include="Areas\Admin\Views\Analytic\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Analytic\_leftanalytic.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />
