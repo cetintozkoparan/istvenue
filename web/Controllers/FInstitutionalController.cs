@@ -17,15 +17,23 @@ namespace web.Controllers
 
         public ActionResult Index()
         {
-
             var aboutus = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Hakkimizda));
+            return View(aboutus);
+        }
+
+        public ActionResult WhyUs()
+        {
+            var aboutus = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.NedenBiz));
             return View(aboutus);
         }
 
         public ActionResult VisionMision()
         {
-            var visionmision = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Misyon));
-            return View(visionmision);
+            var misyon = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Misyon));
+            var vizyon = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Vizyon));
+            ViewBag.MisyonContent = misyon.Content;
+            ViewBag.VizyonContent = vizyon.Content;
+            return View();
         }
 
         public ActionResult Page(int pid)

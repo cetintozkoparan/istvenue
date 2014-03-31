@@ -4,20 +4,13 @@
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
 
-<div class="pagenav topPagenav">
-    <ul>
-        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_homepage">@SharedRess.SharedStrings.homepage</a></li>
-        <li><a class="last selected" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_aboutus">@SharedRess.SharedStrings.aboutus</a></li>
-    </ul>
-</div>
-<div class="pageBanner">
-<img src="/img/hakkimizda.jpg" />
-</div>
-    @{ Html.RenderAction("main2Left", "FShared"); }
-    <div class="main2Right">
-        
-    <h3 class="pageTitle">@SharedRess.SharedStrings.aboutus.ToUpper()</h3>
-    <div class="pageContent">
-        @Html.Raw(Model.Content)
-    </div>
-    </div>
+<div id="containerInner">
+  <div id="content">
+  <div class="fullSection">
+  <h1>@SharedRess.SharedStrings.aboutus.ToUpper()</h1>
+  </div> 
+  <div class="article"><p style="display:inline"><img class="alignLeft" src="~/images/hakkimizda.jpg" alt="hakkımızda" align="left" width="300"  />
+      @Html.Raw(Model.Content)
+  </div>
+  </div>
+  </div>

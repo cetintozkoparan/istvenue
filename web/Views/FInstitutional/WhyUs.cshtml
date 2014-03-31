@@ -1,0 +1,34 @@
+﻿@model DAL.Entities.Institutional
+@{
+    ViewBag.Title = @SharedRess.SharedStrings.aboutus;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<div id="containerInner">
+    <div id="content">
+        <div class="fullSection">
+            <h1>@SharedRess.SharedStrings.whyus.ToUpper()</h1>
+        </div>
+
+        <div class="article">
+            <div class="whyUs">
+                @Html.Raw(Model.Content)
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+@*<div id="containerInner">
+    <div id="content">
+        <div class="fullSection">
+            <h1>@SharedRess.SharedStrings.aboutus.ToUpper()</h1>
+        </div>
+        <div class="article">
+            <p style="display: inline">
+                <img class="alignLeft" src="~/images/hakkimizda.jpg" alt="hakkımızda" align="left" width="300" />
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+</div>*@

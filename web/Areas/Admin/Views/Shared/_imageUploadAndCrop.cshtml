@@ -83,11 +83,11 @@
             $(".preview-container").css("height","162");
             $("#main-pane").css("height","190");
         }else{
-                $("#preview-pane").css("width",@Session["_minwidth"].ToString());
-                $("#preview-pane").css("height",@Session["_minheight"].ToString());
-                $(".preview-container").css("width",@Session["_minwidth"].ToString());
-                $(".preview-container").css("height",@Session["_minheight"].ToString());
-                $("#main-pane").css("height",@(Convert.ToInt32(Session["_minheight"]) + 100));    
+                $("#preview-pane").css("width","@Session["_minwidth"].ToString()");
+                $("#preview-pane").css("height","@Session["_minheight"].ToString()");
+                $(".preview-container").css("width","@Session["_minwidth"].ToString()");
+                $(".preview-container").css("height","@Session["_minheight"].ToString()");
+                $("#main-pane").css("height","@(Convert.ToInt32(Session["_minheight"]) + 100)");    
         }
         
         var jcrop_api,

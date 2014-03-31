@@ -58,6 +58,7 @@ namespace DAL.Context
         public DbSet<Log4Net_Error> Log4Net_Error { get; set; }
         public DbSet<ProdCategory> ProdCategory { get; set; }
         public DbSet<Page> Page { get; set; }
+        public DbSet<OurTeam> OurTeam { get; set; }
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -106,6 +107,7 @@ namespace DAL.Context
             modelBuilder.Entity<Log4Net_Error>().ToTable("Log4Net_Error");
             modelBuilder.Entity<ProdCategory>().ToTable("ProdCategory");
             modelBuilder.Entity<Page>().ToTable("Page");
+            modelBuilder.Entity<OurTeam>().ToTable("OurTeam");
         }
     }
 }

@@ -22,10 +22,23 @@ namespace web.Areas.Admin
             //context.MapRoute("homepage_prm", "yonetim/{type}", new { action = "Index", Controller = "Home" });
             //context.MapRoute("homepage_all", "yonetim/teklif/tumteklifler", new { action = "AllList", Controller = "Home" });
             //context.MapRoute("homepage_detail", "yonetim/teklifdetay/{id}", new { action = "Details", Controller = "Home" });
-            context.MapRoute("instituional_mision_defaultx", "yonetim/kurumsal/misyon", new { action = "Misyon", Controller = "Institutional" });
-            context.MapRoute("instituional_vision_defaultx", "yonetim/kurumsal/hakkimizda", new { action = "Vizyon", Controller = "Institutional" });
-            context.MapRoute("instituional_visionx", "yonetim/kurumsal/hakkimizda/{lang}", new { action = "Vizyon", Controller = "Institutional" });
-            context.MapRoute("instituional_misionx", "yonetim/kurumsal/misyon/{lang}", new { action = "Misyon", Controller = "Institutional" });
+            context.MapRoute("instituional_misionx", "yonetim/kurumsal/misyon", new { action = "Misyon", Controller = "Institutional" });
+            context.MapRoute("instituional_visionx", "yonetim/kurumsal/vizyon", new { action = "Vizyon", Controller = "Institutional" });
+            context.MapRoute("instituional_hakkimizdax", "yonetim/kurumsal/hakkimizda", new { action = "Hakkimizda", Controller = "Institutional" });
+            context.MapRoute("instituional_nedenbizx", "yonetim/kurumsal/nedenbiz", new { action = "WhyUs", Controller = "Institutional" });
+
+            //context.MapRoute("instituional_ekibimizx", "yonetim/kurumsal/ekibimiz", new { action = "Ekibimiz", Controller = "OurTeam" });
+            context.MapRoute("instituional_danismanlarimizx", "yonetim/kurumsal/danismanlarimiz", new { action = "Danismanlarimiz", Controller = "OurTeam" });
+            context.MapRoute("instituional_uzmanlikalanlarimizx", "yonetim/kurumsal/uzmanlikalanlarimiz", new { action = "UzmanlikAlanlarimiz", Controller = "OurTeam" });
+
+            context.MapRoute("instituional_misionx2", "yonetim/kurumsal/misyon/{lang}", new { action = "Misyon", Controller = "Institutional" });
+            context.MapRoute("instituional_visionx2", "yonetim/kurumsal/vizyon/{lang}", new { action = "Vizyon", Controller = "Institutional" });
+            context.MapRoute("instituional_hakkimizdax2", "yonetim/kurumsal/hakkimizda/{lang}", new { action = "Hakkimizda", Controller = "Institutional" });
+            context.MapRoute("instituional_nedenbizx2", "yonetim/kurumsal/nedenbiz/{lang}", new { action = "WhyUs", Controller = "Institutional" });
+
+            //context.MapRoute("instituional_ekibimiz2", "yonetim/kurumsal/ekibimiz/{lang}", new { action = "Ekibimiz", Controller = "Institutional" });
+            context.MapRoute("instituional_danismanlarimiz2", "yonetim/kurumsal/danismanlarimiz/{lang}", new { action = "Danismanlarimiz", Controller = "OurTeam" });
+            context.MapRoute("instituional_uzmanlikalanlarimiz2", "yonetim/kurumsal/uzmanlikalanlarimiz/{lang}", new { action = "UzmanlikAlanlarimiz", Controller = "OurTeam" });
 
             context.MapRoute("instituional_yenisayfa", "yonetim/kurumsal/yeni", new { action = "Create", Controller = "Institutional" });
             context.MapRoute("instituional_indexx", "yonetim/kurumsal", new { action = "Index", Controller = "Institutional" });
@@ -42,6 +55,12 @@ namespace web.Areas.Admin
             context.MapRoute("newsx", "yonetim/haberler/{lang}", new { action = "Index", Controller = "News" });
             context.MapRoute("newsaddx", "yonetim/haberekle", new { action = "AddNews", Controller = "News" });
             context.MapRoute("newseditx", "yonetim/haberduzenle/{id}", new { action = "EditNews", Controller = "News" });
+
+            //EKİBİMİZ
+            context.MapRoute("ekibimiz_defaultx", "yonetim/ekibimiz", new { action = "Index", Controller = "OurTeam" }, null, new[] { "web.Areas.Admin.Controllers" });
+            context.MapRoute("ekibimizx", "yonetim/ekibimiz/{lang}", new { action = "Index", Controller = "OurTeam" });
+            context.MapRoute("ekibimizaddx", "yonetim/ekibimizekle", new { action = "AddOurTeam", Controller = "OurTeam" });
+            context.MapRoute("ekibimizeditx", "yonetim/ekibimizduzenle/{id}", new { action = "EditOurTeam", Controller = "OurTeam" });
 
             //PROJECTS
             context.MapRoute("service_defaultx", "yonetim/hizmetler", new { action = "Index", Controller = "Service" });

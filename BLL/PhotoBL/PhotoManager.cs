@@ -77,10 +77,10 @@ namespace BLL.PhotoBL
                 {
                     Photo p = db.Photo.First(d => d.PhotoId == id);
                     p.Title = Title;
+                    p.Link = link;
                     if (path != null)
                     {
                         p.Path = path;
-                        p.Link = link;
                     }
                     db.SaveChanges();
                     return true;

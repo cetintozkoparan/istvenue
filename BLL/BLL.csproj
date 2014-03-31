@@ -59,6 +59,7 @@
     <Compile Include="BankBL\BankManager.cs" />
     <Compile Include="CertificateBL\CertificateManager.cs" />
     <Compile Include="ContactBL\ContactManager.cs" />
+    <Compile Include="OurTeamBL\OurTeamManager.cs" />
     <Compile Include="InstituionalBL\MainContext.cs" />
     <Compile Include="InstituionalBL\PageManager.cs" />
     <Compile Include="ProdCategoryBL\ProdCategoryManager.cs">

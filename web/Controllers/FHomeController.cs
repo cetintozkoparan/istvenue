@@ -57,7 +57,7 @@ namespace web.Controllers
                 slider s = new slider();
                 s.image = item.Path;
                 s.title = item.Title;
-                s.url = "http://www.google.com";
+                s.url = item.Link;
                 s.thumb = "";
                 slider.Add(s);
             }

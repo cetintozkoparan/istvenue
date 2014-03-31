@@ -1,0 +1,15 @@
+﻿@model web.Models.ServiceWrapperModel
+@{
+    ViewBag.Title = @SharedRess.SharedStrings.services;
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+<div id="containerInner">
+    <div id="content">
+        <div class="fullSection">
+            <h1>@SharedRess.SharedStrings.ourservices</h1>
+        </div>
+        <div class="article">
+            @Html.Raw(Model.ourservices.Content)
+        </div>
+    </div>
+</div>

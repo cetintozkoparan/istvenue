@@ -78,10 +78,65 @@ namespace web.Areas.Admin.Controllers
             public string[] list { get; set; }
         }
 
-        public ActionResult Vizyon()
+        public ActionResult WhyUs()
+        {
+            string lang = FillLanguagesList();
+            var vision_info = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.NedenBiz));
+            return View(vision_info);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult WhyUs(Institutional record)
+        {
+            string lang = FillLanguagesList();
+            record.Language = lang;
+            record.TypeId = Convert.ToInt32(EnumInstituionalTypes.NedenBiz);
+            ViewBag.ProcessMessage = InstituionalManager.EditInstituional(record);
+            return View();
+        }
+
+        public ActionResult Hakkimizda()
         {
             string lang = FillLanguagesList();
             var vision_info = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Hakkimizda));
+            return View(vision_info);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Hakkimizda(Institutional record)
+        {
+            string lang = FillLanguagesList();
+            record.Language = lang;
+            record.TypeId = Convert.ToInt32(EnumInstituionalTypes.Hakkimizda);
+            ViewBag.ProcessMessage = InstituionalManager.EditInstituional(record);
+            return View();
+        }
+
+        public ActionResult Ekibimiz()
+        {
+            string lang = FillLanguagesList();
+            var vision_info = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Ekibimiz));
+            return View(vision_info);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Ekibimiz(Institutional record)
+        {
+            string lang = FillLanguagesList();
+            record.Language = lang;
+            record.TypeId = Convert.ToInt32(EnumInstituionalTypes.Ekibimiz);
+            ViewBag.ProcessMessage = InstituionalManager.EditInstituional(record);
+            return View();
+        }
+
+        
+        public ActionResult Vizyon()
+        {
+            string lang = FillLanguagesList();
+            var vision_info = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Vizyon));
             return View(vision_info);
         }
 
@@ -91,7 +146,7 @@ namespace web.Areas.Admin.Controllers
         {
             string lang = FillLanguagesList();
             record.Language = lang;
-            record.TypeId=Convert.ToInt32(EnumInstituionalTypes.Hakkimizda);
+            record.TypeId=Convert.ToInt32(EnumInstituionalTypes.Vizyon);
             ViewBag.ProcessMessage = InstituionalManager.EditInstituional(record);
             return View();
         }

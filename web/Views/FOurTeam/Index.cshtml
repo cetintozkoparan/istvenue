@@ -1,0 +1,48 @@
+﻿@model web.Models.OurTeamWrapperModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<div id="containerInner">
+    <div id="content" class="visionMainContent ourTeam">
+        <div class="fullSection vision">
+            <h1>@SharedRess.SharedStrings.ourteam</h1>
+        </div>
+        @foreach (var item in Model.ourTeam)
+        {
+            <div class="article articleFirst">
+                <img class="alignLeft" src="@item.Image" alt="@item.Name" align="left" />
+                <div class="visionContent">
+                    <h2>@SharedRess.SharedStrings.founders</h2>
+                    <p>
+                        <span class="manager">@item.Name</span></p>
+                        @Html.Raw(item.Content)
+                        <img class="linkedin" src="../images/linkedin.png" alt="linkedin" />
+                        <a class="managerLink" href="@item.Linkedin">Linkedin profili için tıklayınız</a>
+                </div>
+            </div>
+        }
+
+        <div class="article ourTeamContent">
+            <div class="visionContent">
+                <h2>@SharedRess.SharedStrings.advisors</h2>
+                @Html.Raw(Model.danismanlarimiz.Content)
+            </div>
+        </div>
+        <div class="article ourTeamContent">
+            <div class="visionContent">
+
+                <!--  <h2>Ekibimizle Tanışın</h2>-->
+                <img src="../images/ourteam.jpg" alt="ekibimiz" />
+                <!--  <p> Tüm gayrimenkul ihtiyaçlarınızı karşılayabilecek bir Venue İstanbul yetkilisiyle iletişime geçmek için aşağıdaki aracı kullanabilirsiniz. </p>-->
+            </div>
+        </div>
+        <div class="article ourTeamContent">
+            <div class="visionContent">
+                <h2>@SharedRess.SharedStrings.expertise</h2>
+                @Html.Raw(Model.danismanlarimiz.Content)                
+            </div>
+        </div>
+    </div>
+</div>

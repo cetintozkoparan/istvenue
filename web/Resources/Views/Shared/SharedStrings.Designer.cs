@@ -97,6 +97,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Danışmanlarımız.
+        /// </summary>
+        public static string advisors {
+            get {
+                return ResourceManager.GetString("advisors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Banka Bilgileri.
         /// </summary>
         public static string bankaccounts {
@@ -241,6 +250,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uzmanlık Alanlarımız.
+        /// </summary>
+        public static string expertise {
+            get {
+                return ResourceManager.GetString("expertise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fax.
         /// </summary>
         public static string fax {
@@ -264,6 +282,15 @@ namespace SharedRess {
         public static string firmsandbrands {
             get {
                 return ResourceManager.GetString("firmsandbrands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kurucular ve Yönetim.
+        /// </summary>
+        public static string founders {
+            get {
+                return ResourceManager.GetString("founders", resourceCulture);
             }
         }
         
@@ -520,6 +547,24 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to hizmetlerimiz.
+        /// </summary>
+        public static string menu_ourservices {
+            get {
+                return ResourceManager.GetString("menu_ourservices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ekibimiz.
+        /// </summary>
+        public static string menu_ourteam {
+            get {
+                return ResourceManager.GetString("menu_ourteam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to urun-detay.
         /// </summary>
         public static string menu_productdetail {
@@ -588,6 +633,24 @@ namespace SharedRess {
         public static string menu_visionmision {
             get {
                 return ResourceManager.GetString("menu_visionmision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to neden-biz.
+        /// </summary>
+        public static string menu_whyus {
+            get {
+                return ResourceManager.GetString("menu_whyus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Misyonumuz.
+        /// </summary>
+        public static string mision {
+            get {
+                return ResourceManager.GetString("mision", resourceCulture);
             }
         }
         
@@ -682,6 +745,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Müşterilerimiz.
+        /// </summary>
+        public static string ourcustomers {
+            get {
+                return ResourceManager.GetString("ourcustomers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BİZDEN HABERLER.
         /// </summary>
         public static string ournews {
@@ -772,6 +844,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kurucularımızın uzun iş hayatı boyunca hizmet verdiği firma ve markalardan bazıları.....
+        /// </summary>
+        public static string referencestext {
+            get {
+                return ResourceManager.GetString("referencestext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lütfen gerekli alanları eksiksiz ve doğru bir şekilde doldurunuz.
         /// </summary>
         public static string requiredfields {
@@ -844,7 +925,16 @@ namespace SharedRess {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vizyon&amp;Misyon.
+        ///   Looks up a localized string similar to Vizyonumuz.
+        /// </summary>
+        public static string vision {
+            get {
+                return ResourceManager.GetString("vision", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vizyonumuz ve Misyonumuz.
         /// </summary>
         public static string visionmision {
             get {

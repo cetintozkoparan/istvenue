@@ -6,14 +6,15 @@
 }
 @*sayfa css leri*@
 <link href="~/Areas/Admin/Content/styles/forms.css" rel="stylesheet" />
-
- 
+<style>
+    .cke_contents { height: auto !important;}
+</style>
 
 @Html.Partial("Instituional_leftbar")
 
 <div id="page-content" class="container_12">
     <div id="page-header">
-       <h2>VİZYON/MİSYON</h2>
+       <h2>MİSYON</h2>
     </div>  
   <section class="grid_12 form">
   
@@ -24,27 +25,19 @@
          @Html.Hidden("hdfieldtaglist")
         @Html.ValidationSummary(true)
         <fieldset>
-        <legend>Vizyonumuz / Misyonumuz</legend>
+        <legend>Misyonumuz</legend>
         <p>
             @Html.Label("Dil Seçimi")
             @Html.DropDownList("ddllanguage", (IEnumerable<SelectListItem>)ViewBag.LanguageList)
-           
-            
         </p>
-        
-              <br />
         <p>
             @Html.TextAreaFor(m => m.Content, new { id="txtcontent",@class="required"})
             @Html.ValidationMessageFor(m=>m.Content)
         </p>
-        <br />
-      
         <p>
             <input type="submit" value="Kaydet" id="btnsave" />
         </p>
     </fieldset>
-
-
     }
 </section>
 </div>
@@ -56,8 +49,6 @@
 <script src="~/Areas/Admin/Content/CKEditor/ckeditor/ckeditor.js"></script>
 <script src="~/Areas/Admin/Content/CKEditor/ckfinder/ckfinder.js"></script>
 <script src="~/Areas/Admin/Content/scripts/myscripts/CKEditorCreate.js"></script>
-
-
 <script src="~/Areas/Admin/Content/scripts/pagescripts/instituional/mision.js"></script>
 
 }

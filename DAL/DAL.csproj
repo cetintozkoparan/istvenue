@@ -58,6 +58,7 @@
     <Compile Include="Entities\BankInfo.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\CertificatePartner.cs" />
+    <Compile Include="Entities\OurTeam.cs" />
     <Compile Include="Entities\Page.cs" />
     <Compile Include="Entities\ProductSubSubbestGroup.cs" />
     <Compile Include="Entities\ProductSubbestGroup.cs" />
@@ -104,6 +105,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

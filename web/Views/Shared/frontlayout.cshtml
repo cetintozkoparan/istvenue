@@ -17,6 +17,7 @@
     <!-- InstanceEndEditable -->
 </head>
 <body>
+    <br />
     <div id="header">
         <div id="headerContent">
             <div id="logo">
@@ -34,23 +35,23 @@
                 <img src="~/images/ticariHizmetler.png" alt="ticari hizmetler" /></div>
             <ul id="mainMenu">
                 <li class="firstList"><a href="~/">@SharedRess.SharedStrings.homepage.ToUpper()</a></li>
-                <li><a href="hakkimizda.html">@SharedRess.SharedStrings.aboutus.ToUpper()</a>
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_aboutus">@SharedRess.SharedStrings.aboutus.ToUpper()</a>
                     <ul class="subMenu">
-                        <li><a href="vizyonvemisyon.html">@SharedRess.SharedStrings.visionmision</a></li>
-                        <li><a href="ekibimiz.html">@SharedRess.SharedStrings.ourteam</a></li>
-                        <li><a href="digerfaaliyetlerimiz.html">@SharedRess.SharedStrings.otheroperations</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_visionmision">@SharedRess.SharedStrings.visionmision</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_ourteam">@SharedRess.SharedStrings.ourteam</a></li>
+                        <li><a href="~/">@SharedRess.SharedStrings.otheroperations</a></li>
                     </ul>
                 </li>
-                <li><a href="hizmetlerimiz.html">@SharedRess.SharedStrings.services.ToUpper()</a>
+                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_ourservices">@SharedRess.SharedStrings.ourservices.ToUpper()</a>
                     <ul class="subMenu">
-                        <li><a href="hizmetler.html">@SharedRess.SharedStrings.services</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a></li>
                         <li><a href="sektorler.html">@SharedRess.SharedStrings.sectors</a></li>
                     </ul>
                 </li>
                 <li><a href="#">@SharedRess.SharedStrings.references.ToUpper()</a>
                     <ul class="subMenu">
-                        <li><a href="referanslar.html">@SharedRess.SharedStrings.firmsandbrands</a></li>
-                        <li><a href="nedenbiz.html">@SharedRess.SharedStrings.whyus</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references">@SharedRess.SharedStrings.firmsandbrands</a></li>
+                        <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_whyus">@SharedRess.SharedStrings.whyus</a></li>
                     </ul>
                 </li>
                 <li><a href="haberler.html">@SharedRess.SharedStrings.news.ToUpper()</a>
@@ -85,10 +86,7 @@
         }
     </style>
     <div id="container">
-        <div id="content">
-                @RenderBody()
-        </div>
-
+        @RenderBody()
     </div>
     <!-- InstanceEndEditable -->
     <div id="footer">
@@ -99,3 +97,5 @@
             </div>
         </div>
     </div>
+</body>
+</html>

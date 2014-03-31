@@ -193,6 +193,7 @@
     <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
     <Compile Include="Areas\Admin\Controllers\CertificateController.cs" />
     <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OurTeamController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductSubSubbestGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductSubbestGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProdCategoryController.cs">
@@ -228,6 +229,7 @@
     <Compile Include="Areas\Admin\Helpers\PhotoType.cs" />
     <Compile Include="Areas\Admin\Helpers\Utility.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Controllers\FOurTeamController.cs" />
     <Compile Include="Controllers\FSectorController.cs" />
     <Compile Include="Controllers\FEquipmentController.cs" />
     <Compile Include="Controllers\FServiceController.cs" />
@@ -255,6 +257,7 @@
     <Compile Include="Areas\Admin\ImageHelperNew.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ContactWrapperModel.cs" />
+    <Compile Include="Models\OurTeamWrapperModel.cs" />
     <Compile Include="Models\MediaAssetUploadModel.cs" />
     <Compile Include="Models\NewsWrapperModel.cs" />
     <Compile Include="Models\SectorSubWrapperModel.cs" />
@@ -1557,6 +1560,14 @@
     <Content Include="Areas\Admin\Content\scripts\pagescripts\certificate\Certificatelist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\banner\addbanner.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\banner\bannerlist.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\instituional\whyus.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\ourteam\addOurTeam.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\ourteam\editOurTeam.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\ourteam\OurTeamlist.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\instituional\danismanlarimiz.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\instituional\uzmanlikalanlarimiz.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\instituional\ekibimiz.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\instituional\vision.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\product\productsubsubbestgroup.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\product\productsubbestgroup.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\sectorgroups\addsectorgroup.js" />
@@ -2773,6 +2784,14 @@
     <Content Include="Areas\Admin\Views\Account\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Account\New.cshtml" />
+    <Content Include="Areas\Admin\Views\Institutional\Hakkimizda.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\UzmanlikAlanlarimiz.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\Danismanlarimiz.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\AddOurTeam.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\EditOurTeam.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\OurTeam\Ourteam_leftbar.cshtml" />
+    <Content Include="Areas\Admin\Views\Institutional\WhyUs.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />
@@ -2986,6 +3005,9 @@
     <Content Include="Views\FInstitutional\Page.cshtml" />
     <Content Include="Views\Shared\_topaboutus.cshtml" />
     <Content Include="Views\Shared\Eskifrontlayout.cshtml" />
+    <Content Include="Views\FOurTeam\Index.cshtml" />
+    <Content Include="Views\FService\Hizmetlerimiz.cshtml" />
+    <Content Include="Views\FInstitutional\WhyUs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

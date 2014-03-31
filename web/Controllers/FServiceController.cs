@@ -21,55 +21,18 @@ namespace web.Controllers
 
         public ActionResult Index()
         {
-            Service service = new Service();
-            OurServices ourservices = new OurServices();
-            ServiceGroup servicegrp = new ServiceGroup();
-            int grupID = 0;
-            if (RouteData.Values["sid"] != null)
-            {
-                service = ServiceManager.GetServiceById(Convert.ToInt32(RouteData.Values["sid"].ToString()));
-                ViewBag.grpname = ServiceGroupManager.GetServiceGroupById(service.ServiceGroupId).GroupName;
-                grupID = service.ServiceGroupId;
-            }else if (RouteData.Values["gid"] != null)
-            {
-                servicegrp = ServiceGroupManager.GetServiceGroupById(Convert.ToInt32(RouteData.Values["gid"].ToString()));
-                grupID = Convert.ToInt32(RouteData.Values["gid"].ToString());
-            }
-            else
-            {
-                ourservices = ServiceManager.GetOurServices(lang);
-            }
-            
-            var service_group_list = ServiceGroupManager.GetServiceGroupListForFront(grupID, lang);
-            
-            ServiceWrapperModel swm = new ServiceWrapperModel(servicegrp ,new List<Service>(), service_group_list,service,ourservices);
+            List<Service> services = new List<Service>();
+            services = ServiceManager.GetServiceListForFront(lang);
+            ServiceWrapperModel swm = new ServiceWrapperModel(null, services, null, null, null);
             return View(swm);
         }
 
-        public ActionResult subservices(int id)
+        public ActionResult Hizmetlerimiz()
         {
-            var sl = ServiceManager.GetServiceList(id);
-            var sg = ServiceGroupManager.GetServiceGroupById(id);
-            ServiceSubWrapperModel pswm = new ServiceSubWrapperModel(sl, sg);
-            return PartialView("_services", pswm);
+            OurServices services = new OurServices();
+            services = ServiceManager.GetOurServices(lang);
+            ServiceWrapperModel swm = new ServiceWrapperModel(null, null, null, null, services);
+            return View(swm);
         }
-
-        //public ActionResult ProductDetail(int pid)
-        //{
-        //    var product_group_list = ProductManager.GetProductGroupListForFront(lang);
-            
-        //    var product = ProductManager.GetProductById(pid);
-        //    var psg = ProductManager.GetProductSubGroupById(product.ProductSubGroupId);
-        //    var pg = ProductManager.GetProductGroupById(product.ProductGroupId);
-
-        //    ViewBag.grpid = pg.ProductGroupId;
-        //    ViewBag.sgid = psg.ProductSubGroupId;
-        //    ViewBag.subgrpname = psg.GroupName;
-        //    ViewBag.grpname = pg.GroupName;
-
-        //    ProductDetailWrapperModel model = new ProductDetailWrapperModel(product, product_group_list);
-            
-        //    return View(model);
-        //}
     }
 }

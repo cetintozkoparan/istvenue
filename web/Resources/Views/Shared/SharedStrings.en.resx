@@ -298,7 +298,7 @@
     <value>Tax Off.</value>
   </data>
   <data name="visionmision" xml:space="preserve">
-    <value>Vision&amp;Mision</value>
+    <value>Our Vision and Mision</value>
   </data>
   <data name="morebig" xml:space="preserve">
     <value>Show big map</value>
@@ -383,5 +383,35 @@
   </data>
   <data name="whyus" xml:space="preserve">
     <value>Why Us?</value>
+  </data>
+  <data name="mision" xml:space="preserve">
+    <value>Our Vision</value>
+  </data>
+  <data name="vision" xml:space="preserve">
+    <value>Our Vision</value>
+  </data>
+  <data name="menu_ourteam" xml:space="preserve">
+    <value>ourteam</value>
+  </data>
+  <data name="advisors" xml:space="preserve">
+    <value>Our Advisors</value>
+  </data>
+  <data name="expertise" xml:space="preserve">
+    <value>Our Fields Of Expertise</value>
+  </data>
+  <data name="founders" xml:space="preserve">
+    <value>Founders and Management</value>
+  </data>
+  <data name="menu_ourservices" xml:space="preserve">
+    <value>ourservices</value>
+  </data>
+  <data name="menu_whyus" xml:space="preserve">
+    <value>whyus</value>
+  </data>
+  <data name="ourcustomers" xml:space="preserve">
+    <value>Our Customers</value>
+  </data>
+  <data name="referencestext" xml:space="preserve">
+    <value>Some of the firms and brands that our founders/partners have provided services to during their long career life are as follows...</value>
   </data>
 </root>

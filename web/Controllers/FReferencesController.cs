@@ -18,37 +18,38 @@ namespace web.Controllers
 
         public ActionResult Index()
         {
-            var groups = ProjectReferenceGroupManager.GetProjectReferenceGroupListForFront(lang);
-            List<DAL.Entities.ProjectReferences> references = new List<DAL.Entities.ProjectReferences>();
-            int index = 0;
-            if (RouteData.Values["devam"] != null)
-            {
-                if (SharedRess.SharedStrings.menu_completedprojects.ToString().Equals(RouteData.Values["Devam"].ToString()))
-                {
-                    references = ProjectReferenceManager.GetCompletedProjectsForFront(false);
-                    ViewBag.DevamTamam = SharedRess.SharedStrings.completedprojects;
-                }
-                else
-                {
-                    references = ProjectReferenceManager.GetCompletedProjectsForFront(true);
-                    ViewBag.DevamTamam = SharedRess.SharedStrings.ongoingprojects;
-                }
-            }
-            else
-                if (RouteData.Values["gid"] != null)
-                {
-                    references = ProjectReferenceManager.GetProjectReferenceListForFront(Convert.ToInt32(RouteData.Values["gid"].ToString()));
-                    ViewBag.GroupName = ProjectReferenceGroupManager.GetProjectReferenceGroupById(Convert.ToInt32(RouteData.Values["gid"].ToString())).GroupName;
-                    index = groups.Select((v, i) => new { Group = v, index = i }).First(d => d.Group.ProjectReferenceGroupId == Convert.ToInt32(RouteData.Values["gid"].ToString())).index;
-                }
-                else
-                {
-                    references = ProjectReferenceManager.GetProjectReferenceListForFront(lang);
-                }
+            //var groups = ProjectReferenceGroupManager.GetProjectReferenceGroupListForFront(lang);
+            //List<DAL.Entities.ProjectReferences> references = new List<DAL.Entities.ProjectReferences>();
+            //int index = 0;
+            //if (RouteData.Values["devam"] != null)
+            //{
+            //    if (SharedRess.SharedStrings.menu_completedprojects.ToString().Equals(RouteData.Values["Devam"].ToString()))
+            //    {
+            //        references = ProjectReferenceManager.GetCompletedProjectsForFront(false);
+            //        ViewBag.DevamTamam = SharedRess.SharedStrings.completedprojects;
+            //    }
+            //    else
+            //    {
+            //        references = ProjectReferenceManager.GetCompletedProjectsForFront(true);
+            //        ViewBag.DevamTamam = SharedRess.SharedStrings.ongoingprojects;
+            //    }
+            //}
+            //else
+            //    if (RouteData.Values["gid"] != null)
+            //    {
+            //        references = ProjectReferenceManager.GetProjectReferenceListForFront(Convert.ToInt32(RouteData.Values["gid"].ToString()));
+            //        ViewBag.GroupName = ProjectReferenceGroupManager.GetProjectReferenceGroupById(Convert.ToInt32(RouteData.Values["gid"].ToString())).GroupName;
+            //        index = groups.Select((v, i) => new { Group = v, index = i }).First(d => d.Group.ProjectReferenceGroupId == Convert.ToInt32(RouteData.Values["gid"].ToString())).index;
+            //    }
+            //    else
+            //    {
+            //        references = ProjectReferenceManager.GetProjectReferenceListForFront(lang);
+            //    }
 
-            groups = ServiceGroupManager.Swap(groups, 0, index);
+            //groups = ServiceGroupManager.Swap(groups, 0, index);
 
-            ProjectReferencesWrapperModel model = new ProjectReferencesWrapperModel(groups, references);
+            //ProjectReferencesWrapperModel model = new ProjectReferencesWrapperModel(groups, references);
+            var model = ReferenceManager.GetReferenceListForFront(lang);
             return View(model);
         }
 

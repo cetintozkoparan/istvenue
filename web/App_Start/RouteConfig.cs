@@ -21,11 +21,17 @@ namespace web
             routes.MapRoute("aboutus_tr", "tr/hakkimizda", new { action = "Index", Controller = "FInstitutional" });
             routes.MapRoute("aboutus_en", "en/aboutus", new { action = "Index", Controller = "FInstitutional" });
 
+            routes.MapRoute("whyus_tr", "tr/nedenbiz", new { action = "WhyUs", Controller = "FInstitutional" });
+            routes.MapRoute("whyus_en", "en/whyus", new { action = "WhyUs", Controller = "FInstitutional" });
+
             routes.MapRoute("sayfalar_tr", "tr/hakkimizda/{slug}/{pid}", new { action = "Page", Controller = "FInstitutional" });
             routes.MapRoute("sayfalar_en", "en/aboutus/{slug}/{pid}", new { action = "Page", Controller = "FInstitutional" });
 
             routes.MapRoute("visionmision_tr", "tr/vizyon-misyon", new { action = "VisionMision", Controller = "FInstitutional" });
             routes.MapRoute("visionmision_en", "en/vision-mision", new { action = "VisionMision", Controller = "FInstitutional" });
+
+            routes.MapRoute("ourteam_tr", "tr/ekibimiz", new { action = "Index", Controller = "FOurTeam" });
+            routes.MapRoute("ourteam_en", "en/ourteam", new { action = "Index", Controller = "FOurTeam" });
 
             //routes.MapRoute("products_tr", "tr/urunler", new { action = "Index", Controller = "FProducts" });
             //routes.MapRoute("products_en", "en/products", new { action = "Index", Controller = "FProducts" });
@@ -107,13 +113,13 @@ namespace web
             routes.MapRoute("reference_tr", "tr/referanslar", new { action = "Index", Controller = "FReferences" });
             routes.MapRoute("reference_en", "en/references", new { action = "Index", Controller = "FReferences" });
 
-            routes.MapRoute("reference_tr2", "tr/referanslar/{group}/{gid}", new { action = "Index", Controller = "FReferences" });
-            routes.MapRoute("reference_en2", "en/references/{group}/{gid}", new { action = "Index", Controller = "FReferences" });
+            //routes.MapRoute("reference_tr2", "tr/referanslar/{group}/{gid}", new { action = "Index", Controller = "FReferences" });
+            //routes.MapRoute("reference_en2", "en/references/{group}/{gid}", new { action = "Index", Controller = "FReferences" });
 
-            routes.MapRoute("reference_tr3", "tr/referanslar/{devam}", new { action = "Index", Controller = "FReferences" });
+            //routes.MapRoute("reference_tr3", "tr/referanslar/{devam}", new { action = "Index", Controller = "FReferences" });
             
-            routes.MapRoute("reference_tr5", "tr/referanslar/{gid}/{ref}/{rid}", new { action = "Detail", Controller = "FReferences" });
-            routes.MapRoute("reference_en5", "en/references/{gid}/{ref}/{rid}", new { action = "Detail", Controller = "FReferences" });
+            //routes.MapRoute("reference_tr5", "tr/referanslar/{gid}/{ref}/{rid}", new { action = "Detail", Controller = "FReferences" });
+            //routes.MapRoute("reference_en5", "en/references/{gid}/{ref}/{rid}", new { action = "Detail", Controller = "FReferences" });
 
             routes.MapRoute("solutionpartner_tr", "tr/cozum-ortaklari", new { action = "Index", Controller = "FSolutionPartner" });
             routes.MapRoute("solutionpartner_en", "en/solution-partners", new { action = "Index", Controller = "FSolutionPartner" });
@@ -127,8 +133,11 @@ namespace web
             routes.MapRoute("service_trx", "tr/hizmetler/{group}/{gid}", new { action = "Index", Controller = "FService" });
             routes.MapRoute("service_enx", "en/services/{group}/{gid}", new { action = "Index", Controller = "FService" });
 
-            routes.MapRoute("ourservices_tr", "tr/hizmetler/", new { action = "Index", Controller = "FService" });
-            routes.MapRoute("ourservices_en", "en/services/", new { action = "Index", Controller = "FService" });
+            routes.MapRoute("services_tr", "tr/hizmetler/", new { action = "Index", Controller = "FService" });
+            routes.MapRoute("services_en", "en/services/", new { action = "Index", Controller = "FService" });
+
+            routes.MapRoute("ourservices_tr", "tr/hizmetlerimiz/", new { action = "Hizmetlerimiz", Controller = "FService" });
+            routes.MapRoute("ourservices_en", "en/ourservices/", new { action = "Hizmetlerimiz", Controller = "FService" });
 
             routes.MapRoute("sector_tr", "tr/sektorler/{group}/{sector}/{sid}", new { action = "Index", Controller = "FSector" });
             routes.MapRoute("sector_en", "en/sectors/{group}/{sector}/{sid}", new { action = "Index", Controller = "FSector" });

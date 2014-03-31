@@ -3,70 +3,71 @@
     ViewBag.Title = @SharedRess.SharedStrings.services;
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
-
-<div class="main2Left">
-    <div class="urunler leftMenu">
-        <h2 class="sectionTitle"><span>@SharedRess.SharedStrings.services.ToUpper()</span></h2>
-        <ul>
-            @foreach (var group in Model.servicegroups)
-            {
-                <li>
-                    <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services/@group.PageSlug/@group.ServiceGroupId">@group.GroupName</a>
-                    <ul>
-                        @{Html.RenderAction("subservices", "FService", new { id = group.ServiceGroupId });}
-                    </ul>
-                </li>
-            }
+<style>
+    .serviceContent { min-height:400px;}
+</style>
+<div class="servicesContent">
+    <div class="serviceImage">
+        <img src="../images/serviceImage.jpg" alt="servisler" /></div>
+    <h1 class="services">@SharedRess.SharedStrings.services</h1>
+    <div class="servicesLeftContent">
+        <ul class="serviceList">
+            <li>@SharedRess.SharedStrings.services
+            <ul class="subServiceList">
+                @foreach (var item in Model.services)
+                {
+                    <li><a href="#">@item.Name</a></li>
+                }
+            </ul>
+            </li>
         </ul>
+    </div>
+    <div class="servicesRightContent">
+            @foreach (var item in Model.services)
+                {
+                    <div class="serviceContent">
+                        <h3>Kiralamalar</h3>
+                        @Html.Raw(item.Content)
+                    </div>
+                }
     </div>
 </div>
 
-<div class="main2Right">
-    <div class="pagenav">
-        <ul>
-            <li><a href="/">@SharedRess.SharedStrings.homepage</a></li>
-            @if (this.ViewContext.RouteData.Values["sid"] != null)
-            {
-                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a></li>        
-                <li><a href="#" class="last selected">@ViewBag.grpname</a></li>        
-            }
-            else if (this.ViewContext.RouteData.Values["gid"] != null)
-            {
-                <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a></li>        
-                <li><a class="last selected" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services/@Model.servivegrp.PageSlug/@Model.servivegrp.ServiceGroupId" class="last selected">@Model.servivegrp.GroupName</a></li>        
-            }
-            else
-            {
-                <li><a class="last selected" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a></li>        
-            }
+<script type="text/javascript">
+    $(function () {
 
-        </ul>
-    </div>
-    <h3 class="pageTitle">
-        @if (this.ViewContext.RouteData.Values["sid"] != null)
-        {
-            @Html.Raw(Model.service.Name)
-        }else if (this.ViewContext.RouteData.Values["gid"] != null)
-        {
-            @Html.Raw(Model.servivegrp.GroupName)
-        }
-        else
-        { 
-            @SharedRess.SharedStrings.services
-        }
-    </h3>
-    <div class="pageContent">
-        @if (this.ViewContext.RouteData.Values["sid"] != null)
-        {
-            @Html.Raw(Model.service.Content)
-        }else if (this.ViewContext.RouteData.Values["gid"] != null)
-        {
-            @Html.Raw(Model.servivegrp.Content)
-        }
-        else
-        { 
-            @Html.Raw(Model.ourservices.Content)
-        }
-    </div>
-</div>
+        // İlk li'ye aktif classı ekle
+        $(".subServiceList li:first").addClass("aktif");
 
+        // Tüm tab içeriklerini gizle
+        $(".serviceContent").hide();
+
+        // İlk tab içeriğini göster
+        $(".serviceContent:first").show();
+
+        // Tab'daki lilerden herhangi birine tıklandığında
+        $(".subServiceList li").hover(function (e) {
+
+            // indis değerini al
+            var index = $(this).index();
+
+            // tabdaki aktif classlarını sil
+            $(".subServiceList li").removeClass("aktif");
+
+            // Tıklanan li'ye aktif classını ata
+            $(this).addClass("aktif");
+
+            // Tüm tab içeriklerini gizle
+            $(".serviceContent").hide();
+
+            // Indis değerine sahip tab içeriğini göster
+            $(".serviceContent:eq(" + index + ")").show();
+
+            return false
+
+        });
+
+
+
+    });
+</script>
