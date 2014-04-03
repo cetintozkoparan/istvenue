@@ -16,11 +16,12 @@ namespace DAL.Entities
         public string Name { get; set; }
 
         [Display(Name = "Logo")]
-        [Required(ErrorMessage = "Logoyu Giriniz.")]
+      
         public string Logo { get; set; }
 
         [Display(Name = "Link")]
         [Required(ErrorMessage = "Linki Giriniz.")]
+        [Url(ErrorMessage="Uygun Bir Adres Giriniz.")]
         public string LinkName { get; set; }
 
         public int SortOrder { get; set; }

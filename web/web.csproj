@@ -1612,6 +1612,7 @@
     <Content Include="Areas\Admin\Content\scripts\pagescripts\projects\projectlist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\reference\addreference.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\reference\referencelist.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\socialmedia\medialist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\solutionpartner\addsolutionpartner.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\solutionpartner\solutionpartnerlist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\teklif\teklif.js" />
@@ -3019,6 +3020,7 @@
     <Folder Include="Content\Images\projects\" />
     <Folder Include="Content\Images\references\" />
     <Folder Include="Content\Images\sectors\" />
+    <Folder Include="Content\Images\socialmedia\" />
     <Folder Include="Content\Images\userfiles\" />
   </ItemGroup>
   <ItemGroup>

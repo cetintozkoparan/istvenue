@@ -26,7 +26,7 @@
             @Html.Hidden("hdfieldtaglist")*@
             @Html.ValidationSummary(true)
             <fieldset>
-                <legend>Banner Ekle</legend>
+                <legend>Sosyal Medya Linki Ekle</legend>
                 <p>
                     @Html.LabelFor(m => m.Name)
                    @Html.TextBoxFor(m => m.Name, new { @class = "textwidth50" })
@@ -40,13 +40,12 @@
                     @Html.ValidationMessageFor(m => m.LinkName)
                 </p>
                 
-               @* <fieldset>
-                    <legend>Fotoğraf</legend>
-                    <div id="uploadPartial">
-                        @Html.Partial("_imageUploadAndCrop")
-                    </div>
-                </fieldset>*@
-
+              <p>
+                <label for="txtname">Logo</label>
+            
+                <input type="file" name="uploadfile" id="uploadfile" class="required" />
+            </p>
+       
                 <p>
                     <label></label>
                     <input type="submit" value="Kaydet" id="btnsave" />
