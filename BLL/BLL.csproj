@@ -94,6 +94,7 @@
     <Compile Include="ReferenceBL\ReferenceManager.cs" />
     <Compile Include="SearchBL\SearchManager.cs" />
     <Compile Include="SecurityBL\SecurityManager.cs" />
+    <Compile Include="SocialMediaBL\SocialMediaManager.cs" />
     <Compile Include="SolutionPartnerBL\SolutionPartnerManager.cs" />
     <Compile Include="TeklifBL\EnumTeklifTip.cs" />
   </ItemGroup>
