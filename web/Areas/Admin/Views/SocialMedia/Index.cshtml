@@ -26,8 +26,13 @@
         <thead>
             <tr>
               <th class="width5">Sırala</th>
+<<<<<<< HEAD
                 <th class="width40">Link Adı</th>
                 <th class="center witdh40">Link</th>
+=======
+                <th class="width50">Link Adı</th>
+                <th class="center witdh10">Link</th>
+>>>>>>> sosyal medya index sayfasi eklendi
                 <th class="center witdh10">İşlem</th>
             </tr>
         </thead>
@@ -45,10 +50,17 @@
                     </td>
                     <td class="center">@item.LinkName</td>
                     <td class="center">
+<<<<<<< HEAD
                        <a href="/yonetim/sosyalmedyalinkduzenle/@item.Id">
                         <img id="btn_update_@item.Id"  src="/Areas/Admin/Content/images/icons/16/edit.png"  title="Güncelle" class="cursorpointer" >
                        </a>
                        <img id="DeleteImage_@item.Id"  src="/Areas/Admin/Content/images/icons/16/delete.png" class="cursorpointer"  title="Sil" onclick="DeleteRecord('/SocialMedia/DeleteLink',@item.Id)">
+=======
+                       <a href="/yonetim/projeduzenle/@item.Id">
+                        <img id="btn_update_@item.Id"  src="/Areas/Admin/Content/images/icons/16/edit.png"  title="Güncelle" class="cursorpointer" >
+                       </a>
+                       <img id="DeleteImage_@item.Id"  src="/Areas/Admin/Content/images/icons/16/delete.png" class="cursorpointer"  title="Sil" onclick="DeleteRecord('/Project/Delete',@item.Id)">
+>>>>>>> sosyal medya index sayfasi eklendi
                     </td>
                 </tr>
             }
@@ -67,7 +79,11 @@
 <script src="~/Areas/Admin/Content/scripts/myscripts/DeleteRecordTable.js"></script>
 <script src="~/Areas/Admin/Content/scripts/myscripts/SortOrder.js"></script>
 <script src="~/Areas/Admin/Content/scripts/myscripts/generalprocess.js"></script>
+<<<<<<< HEAD
 <script src="~/Areas/Admin/Content/scripts/pagescripts/socialmedia/medialist.js"></script>
+=======
+<script src="~/Areas/Admin/Content/scripts/pagescripts/projects/projectlist.js"></script>
+>>>>>>> sosyal medya index sayfasi eklendi
 
 <script src="~/Areas/Admin/Content/scripts/plugins/tablesorter/tablesorter.js"></script>
 <script src="~/Areas/Admin/Content/scripts/plugins/tablesorter/jquery.tablesorter.pager.js"></script>

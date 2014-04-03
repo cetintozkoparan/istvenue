@@ -1,4 +1,5 @@
 ﻿using BLL.SocialMediaBL;
+<<<<<<< HEAD
 using DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using web.Areas.Admin.Helpers;
+=======
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+>>>>>>> sosyal medya index sayfasi eklendi
 
 namespace web.Areas.Admin.Controllers
 {
@@ -24,6 +32,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult Add()
         {
+<<<<<<< HEAD
            // ImageHelperNew.DestroyImageCashAndSession(1920, 1080);
             return View();
         }
@@ -129,6 +138,15 @@ namespace web.Areas.Admin.Controllers
         public class JsonList
         {
             public string[] list { get; set; }
+=======
+            return View();
+        }
+
+
+        public ActionResult Edit()
+        {
+            return View();
+>>>>>>> sosyal medya index sayfasi eklendi
         }
 
     }
