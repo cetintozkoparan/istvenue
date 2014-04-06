@@ -95,6 +95,7 @@
     <Compile Include="Entities\ProductGroup.cs" />
     <Compile Include="Entities\Projects.cs" />
     <Compile Include="Entities\References.cs" />
+    <Compile Include="Entities\SocialMedia.cs" />
     <Compile Include="Entities\SolutionPartner.cs" />
     <Compile Include="Entities\SubscribeModel.cs" />
     <Compile Include="Entities\Teklif.cs" />

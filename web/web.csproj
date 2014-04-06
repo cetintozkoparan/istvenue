@@ -208,6 +208,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductSubGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjectReferenceController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjectReferenceGroupController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SocialMediaController.cs" />
     <Compile Include="Areas\Admin\Controllers\SolutionPartnerController.cs" />
     <Compile Include="Areas\Admin\Controllers\DocumentGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\DocumentsController.cs" />
@@ -1623,6 +1624,7 @@
     <Content Include="Areas\Admin\Content\scripts\pagescripts\projects\projectlist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\reference\addreference.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\reference\referencelist.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\socialmedia\medialist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\solutionpartner\addsolutionpartner.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\solutionpartner\solutionpartnerlist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\teklif\teklif.js" />
@@ -2708,6 +2710,10 @@
     <Content Include="Areas\Admin\Views\Institutional\WhyUs.cshtml" />
     <Content Include="Areas\Admin\Views\Analytic\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Analytic\_leftanalytic.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\_leftMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />
@@ -2950,6 +2956,7 @@
     <Folder Include="Content\Images\projects\" />
     <Folder Include="Content\Images\references\" />
     <Folder Include="Content\Images\sectors\" />
+    <Folder Include="Content\Images\socialmedia\" />
     <Folder Include="Content\Images\userfiles\" />
   </ItemGroup>
   <ItemGroup>

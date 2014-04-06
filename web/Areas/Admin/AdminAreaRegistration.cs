@@ -226,6 +226,13 @@ namespace web.Areas.Admin
             context.MapRoute("useredit", "yonetim/kullaniduzenle/{id}", new { action = "Edit", Controller = "Account" });
 
 
+            //SOSYAL MEDYA LİNKLERİ
+            context.MapRoute("socialmedia", "yonetim/sosyalmedyalinkleri", new { action = "Index", Controller = "SocialMedia" });
+            context.MapRoute("socialmedia_add", "yonetim/yenilink", new { action = "Add", Controller = "SocialMedia" });
+            context.MapRoute("socialmedia_edit", "yonetim/sosyalmedyalinkduzenle/{id}", new { action = "Edit", Controller = "SocialMedia" });
+            //context.MapRoute("bannereditx", "yonetim/bannerduzenle/{id}", new { action = "Edit", Controller = "Banner" });
+
+
             context.MapRoute("songuncellemeler", "yonetim/songuncellemeler", new { action = "Index", Controller = "Updates" });
 
             context.MapRoute("add_prodcategory_default", "yonetim/urun-kategorisi-ekle", new { action = "Add", Controller = "ProdCategory" });
