@@ -21,8 +21,8 @@ namespace web
             routes.MapRoute("aboutus_tr", "tr/hakkimizda", new { action = "Index", Controller = "FInstitutional" });
             routes.MapRoute("aboutus_en", "en/aboutus", new { action = "Index", Controller = "FInstitutional" });
 
-            routes.MapRoute("whyus_tr", "tr/nedenbiz", new { action = "WhyUs", Controller = "FInstitutional" });
-            routes.MapRoute("whyus_en", "en/whyus", new { action = "WhyUs", Controller = "FInstitutional" });
+            routes.MapRoute("whyus_tr", "tr/neden-biz", new { action = "WhyUs", Controller = "FInstitutional" });
+            routes.MapRoute("whyus_en", "en/why-us", new { action = "WhyUs", Controller = "FInstitutional" });
 
             routes.MapRoute("sayfalar_tr", "tr/hakkimizda/{slug}/{pid}", new { action = "Page", Controller = "FInstitutional" });
             routes.MapRoute("sayfalar_en", "en/aboutus/{slug}/{pid}", new { action = "Page", Controller = "FInstitutional" });

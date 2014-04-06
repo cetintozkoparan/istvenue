@@ -29,7 +29,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult AddSectorGroup()
         {
-            ImageHelperNew.DestroyImageCashAndSession(48, 48);
+            ImageHelperNew.DestroyImageCashAndSession(175, 127);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -87,7 +87,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult EditSectorGroup()
         {
-            ImageHelperNew.DestroyImageCashAndSession(48, 48);
+            ImageHelperNew.DestroyImageCashAndSession(175, 127);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;

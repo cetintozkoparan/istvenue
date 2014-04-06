@@ -406,12 +406,15 @@
     <value>ourservices</value>
   </data>
   <data name="menu_whyus" xml:space="preserve">
-    <value>whyus</value>
+    <value>why-us</value>
   </data>
   <data name="ourcustomers" xml:space="preserve">
     <value>Our Customers</value>
   </data>
   <data name="referencestext" xml:space="preserve">
     <value>Some of the firms and brands that our founders/partners have provided services to during their long career life are as follows...</value>
+  </data>
+  <data name="centeroffice" xml:space="preserve">
+    <value>Center Office</value>
   </data>
 </root>

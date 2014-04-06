@@ -142,6 +142,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Merkez Ofis.
+        /// </summary>
+        public static string centeroffice {
+            get {
+                return ResourceManager.GetString("centeroffice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sertifikalarımız.
         /// </summary>
         public static string certificates {

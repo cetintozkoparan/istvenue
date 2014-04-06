@@ -22,8 +22,9 @@
             @Html.Hidden("hdfieldtaglist")
             @Html.ValidationSummary(true)
             <fieldset>
+                <legend>Google'dan almış olduğunuz kodu aşağıya yapıştırınız...</legend>
                 <p>
-                    @Html.TextAreaFor(m => m.Code, new { id = "txtcontent", @class = "required" })
+                    @Html.TextAreaFor(m => m.Code, new { id = "_txtcontent", @class = "required", @rows = 15 })
                     @Html.ValidationMessageFor(m => m.Code)
                 </p>
                 <br />

@@ -23,29 +23,29 @@ namespace web.Controllers
         public ActionResult Index()
         {
             var Sector_group_list = SectorGroupManager.GetSectorGroupListForFront(lang);
-            Sector Sector = new Sector();
-            OurSectors ourSectors = new OurSectors();
-            SectorGroup sectorgrp = new SectorGroup();
-            int index = 0;
-            if (RouteData.Values["sid"] != null)
-            {
-                Sector = SectorManager.GetSectorById(Convert.ToInt32(RouteData.Values["sid"].ToString()));
-                ViewBag.grpname = SectorGroupManager.GetSectorGroupById(Sector.SectorGroupId).GroupName;
-                index = Sector_group_list.Select((v, i) => new { Group = v, index = i }).First(d => d.Group.SectorGroupId == Sector.SectorGroupId).index;
-            }
-            else if (RouteData.Values["gid"] != null)
-            {
-                sectorgrp = SectorGroupManager.GetSectorGroupById(Convert.ToInt32(RouteData.Values["gid"].ToString()));
-                index = Sector_group_list.Select((v, i) => new { Group = v, index = i }).First(d => d.Group.SectorGroupId == sectorgrp.SectorGroupId).index;
-            }
-            else
-            {
-                ourSectors = SectorManager.GetOurSectors(lang);
-            }
+            //Sector Sector = new Sector();
+            //OurSectors ourSectors = new OurSectors();
+            //SectorGroup sectorgrp = new SectorGroup();
+            //int index = 0;
+            //if (RouteData.Values["sid"] != null)
+            //{
+            //    Sector = SectorManager.GetSectorById(Convert.ToInt32(RouteData.Values["sid"].ToString()));
+            //    ViewBag.grpname = SectorGroupManager.GetSectorGroupById(Sector.SectorGroupId).GroupName;
+            //    index = Sector_group_list.Select((v, i) => new { Group = v, index = i }).First(d => d.Group.SectorGroupId == Sector.SectorGroupId).index;
+            //}
+            //else if (RouteData.Values["gid"] != null)
+            //{
+            //    sectorgrp = SectorGroupManager.GetSectorGroupById(Convert.ToInt32(RouteData.Values["gid"].ToString()));
+            //    index = Sector_group_list.Select((v, i) => new { Group = v, index = i }).First(d => d.Group.SectorGroupId == sectorgrp.SectorGroupId).index;
+            //}
+            //else
+            //{
+            //    ourSectors = SectorManager.GetOurSectors(lang);
+            //}
 
-            Sector_group_list = ServiceGroupManager.Swap(Sector_group_list, 0, index);
+            //Sector_group_list = ServiceGroupManager.Swap(Sector_group_list, 0, index);
 
-            SectorWrapperModel swm = new SectorWrapperModel(new List<Sector>(), Sector_group_list, Sector, ourSectors, sectorgrp);
+            SectorWrapperModel swm = new SectorWrapperModel(null, Sector_group_list, null, null, null);
             return View(swm);
         }
 

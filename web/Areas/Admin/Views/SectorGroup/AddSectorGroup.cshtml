@@ -12,7 +12,7 @@
 
 <div id="page-content" class="container_12">
     <div id="page-header">
-        <h2>Sektör GRUBU BİLGİLERİ</h2>
+        <h2>Sektörler</h2>
     </div>
     @if (TempData["ImageSizeError"] != null)
     {
@@ -38,13 +38,13 @@
                     @Html.ValidationMessageFor(m => m.GroupName)
                 </p>
                 <fieldset>
-                    <legend>İkon (48x48)</legend>
+                    <legend>Resim</legend>
                     <div id="uploadPartial">
                         @Html.Partial("_imageUploadAndCrop")
                     </div>
                 </fieldset>
                 <p>
-                    @Html.LabelFor(m => m.GroupContent)
+                    <label>İçerik</label>
                     @Html.TextAreaFor(m => m.GroupContent, 5, 0, new { id = "txtcontent", @class = "textwidth50" })
                     @Html.ValidationMessageFor(m => m.GroupContent, "", new { @class = "verticalaligntop" })
 

@@ -414,4 +414,7 @@
   <data name="referencestext" xml:space="preserve">
     <value>Kurucularımızın uzun iş hayatı boyunca hizmet verdiği firma ve markalardan bazıları....</value>
   </data>
+  <data name="centeroffice" xml:space="preserve">
+    <value>Merkez Ofis</value>
+  </data>
 </root>
