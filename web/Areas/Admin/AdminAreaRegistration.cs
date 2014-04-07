@@ -229,11 +229,8 @@ namespace web.Areas.Admin
             //SOSYAL MEDYA LİNKLERİ
             context.MapRoute("socialmedia", "yonetim/sosyalmedyalinkleri", new { action = "Index", Controller = "SocialMedia" });
             context.MapRoute("socialmedia_add", "yonetim/yenilink", new { action = "Add", Controller = "SocialMedia" });
-<<<<<<< HEAD
             context.MapRoute("socialmedia_edit", "yonetim/sosyalmedyalinkduzenle/{id}", new { action = "Edit", Controller = "SocialMedia" });
-=======
             context.MapRoute("socialmedia_edit", "yonetim/linkduzenle/{id}", new { action = "Edit", Controller = "SocialMedia" });
->>>>>>> sosyal medya index sayfasi eklendi
             //context.MapRoute("bannereditx", "yonetim/bannerduzenle/{id}", new { action = "Edit", Controller = "Banner" });
 
 

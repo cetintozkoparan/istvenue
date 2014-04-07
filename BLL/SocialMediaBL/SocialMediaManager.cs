@@ -14,16 +14,13 @@ namespace BLL.SocialMediaBL
         {
             using (MainContext db = new MainContext())
             {
-<<<<<<< HEAD
+
                 var list = db.SocialMedia.OrderBy(x=>x.SortOrder).ToList();
-=======
-                var list = db.SocialMedia.ToList();
->>>>>>> sosyal medya index sayfasi eklendi
-                return list;
+               return list;
             }
         }
 
-<<<<<<< HEAD
+
         public static bool AddSocialMedia(SocialMedia record)
         {
             using (MainContext db = new MainContext())
@@ -143,7 +140,6 @@ namespace BLL.SocialMediaBL
         }
 
 
-=======
->>>>>>> sosyal medya index sayfasi eklendi
+
     }
 }

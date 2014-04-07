@@ -112,10 +112,7 @@ namespace DAL.Context
             modelBuilder.Entity<OurTeam>().ToTable("OurTeam");
             modelBuilder.Entity<Analytic>().ToTable("Analytic");
             modelBuilder.Entity<SocialMedia>().ToTable("SocialMedia");
-<<<<<<< HEAD
-=======
 
->>>>>>> sosyal medya index sayfasi eklendi
         }
     }
 }
