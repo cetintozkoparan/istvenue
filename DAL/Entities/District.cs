@@ -12,7 +12,9 @@ namespace DAL.Entities
         [Key]
         public int Id { get; set; }
         public int TownId { get; set; }
-        public int Name { get; set; }
+        [Display(Name="Semt Adı")]
+        [Required(ErrorMessage="Semt ismini giriniz")]
+        public string Name { get; set; }
      
     }
 }

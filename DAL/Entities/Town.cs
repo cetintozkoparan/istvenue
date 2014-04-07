@@ -12,6 +12,8 @@ namespace DAL.Entities
         [Key]
         public int Id { get; set; }
         public int CountryId { get; set; }
-        public int Name { get; set; }
+        [Display(Name="İlçe Adı")]
+        [Required(ErrorMessage="Şehir ismini giriniz")]
+        public string Name { get; set; }
     }
 }
