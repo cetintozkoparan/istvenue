@@ -46,7 +46,10 @@
          <p>
             @Html.LabelFor(m=>m.Password)
             @Html.TextBox("txtpassword",null, new { @class="textwidth50"})
-            
+        </p>
+        <p>
+            @Html.LabelFor(m=>m.Security)
+            @Html.CheckBoxFor(d=>d.Security)
         </p>
         
         <br />

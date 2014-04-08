@@ -11,6 +11,51 @@ using System.Web.Mvc;
 
 namespace web.Controllers
 {
+    public class Formvalues
+    {
+        public string pozisyon { get; set; }
+        public string ad { get; set; }
+        public string soyad { get; set; }
+
+        public string dogumyeri { get; set; }
+        public string dogumgun { get; set; }
+        public string dogumay { get; set; }
+        public string dogumyil { get; set; }
+        public string cinsiyet { get; set; }
+        public string tcno { get; set; }
+        public string askerlikdurumu { get; set; }
+        public string medenidurumu { get; set; }
+        public string ehliyet { get; set; }
+        public string ehliyetyili { get; set; }
+        public string ehliyettipi { get; set; }
+
+        public string adres { get; set; }
+        public string eposta { get; set; }
+        public string evtel { get; set; }
+        public string ceptel { get; set; }
+        public string digertel { get; set; }
+        public string egitimseviye { get; set; }
+        public string okul { get; set; }
+        public string bolum { get; set; }
+        public string yil { get; set; }
+
+        public string ingilizceseviye { get; set; }
+        public string ilgilizceyer { get; set; }
+        public string almancaseviye { get; set; }
+        public string almancayer { get; set; }
+        public string fransizcaseviye { get; set; }
+        public string fransizcayer { get; set; }
+        public string sirket { get; set; }
+        public string gorev { get; set; }
+        public string isbaslangictarihi { get; set; }
+        public string isbitistarihi { get; set; }
+        public string ayrilmanedeni { get; set; }
+        public string referansadi { get; set; }
+        public string referanskurum { get; set; }
+        public string referanstel { get; set; }
+        public string ilavebilgi { get; set; }
+    }
+
     public class FCareerController : Controller
     {
         string lang = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();
@@ -37,7 +82,7 @@ namespace web.Controllers
         }
 
         [HttpPost]
-        public ActionResult SendCV(HttpPostedFileBase attachedfile, string Pozisyon)
+        public ActionResult SendCV(HttpPostedFileBase attachedfile)
         {
             try
             {
@@ -54,7 +99,7 @@ namespace web.Controllers
                         mail.To.Add(item.MailAddress);
                     mail.Subject = "Yeni CV İletisi";
                     mail.IsBodyHtml = true;
-                    mail.Body = "<h5><b>Başvurulan Pozisyon: </b>" + Pozisyon ;
+                    mail.Body = "Yeni bir iş başvurusu bulunmaktadır. Gönderen kişinin cv'si ektedir.";
                     if (attachedfile != null && attachedfile.ContentLength > 0)
                     {
                         var attachment = new Attachment(attachedfile.InputStream, attachedfile.FileName);
@@ -63,59 +108,90 @@ namespace web.Controllers
                     if (mail.To.Count > 0) client.Send(mail);
                 }
                 TempData["sent"] = "true";
-                return RedirectToAction("Positions");
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 TempData["sent"] = "false";
             }
 
-            return RedirectToAction("Positions");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public ActionResult ApplicationForm(string namesurname, string departman, string notlar, HttpPostedFileBase attachedfile)
+        public ActionResult ApplicationForm(Formvalues form)
         {
             try
             {
+                string html = System.IO.File.ReadAllText(Server.MapPath("~/HTMLTemplate/CareerTemplate.html"));
+                html = html.Replace("[pozisyon]", form.pozisyon);
+                html = html.Replace("[ad]", form.ad);
+                html = html.Replace("[soyad]", form.soyad);
+                html = html.Replace("[dogumyeri]", form.dogumyeri);
+                html = html.Replace("[dogumgun]", form.dogumgun);
+                html = html.Replace("[dogumay]", form.dogumay);
+                html = html.Replace("[dogumyil]", form.dogumyil);
+                
+                html = html.Replace("[cinsiyet]", form.cinsiyet);
+                html = html.Replace("[tcno]", form.tcno);
+
+                html = html.Replace("[medenidurumu]", form.medenidurumu);
+                html = html.Replace("[askerlikdurumu]", form.askerlikdurumu);
+                html = html.Replace("[ehliyettipi]", form.ehliyettipi);
+                html = html.Replace("[ehliyetyili]", form.ehliyetyili);
+                html = html.Replace("[adres]", form.adres);
+                html = html.Replace("[eposta]", form.eposta);
+                html = html.Replace("[evtel]", form.evtel);
+                html = html.Replace("[ceptel]", form.ceptel);
+                html = html.Replace("[digertel]", form.digertel);
+                html = html.Replace("[egitimseviye]", form.egitimseviye);
+                html = html.Replace("[okul]", form.okul);
+                html = html.Replace("[bolum]", form.bolum);
+
+                html = html.Replace("[yil]", form.bolum);
+                html = html.Replace("[ingilizceseviye]", form.ingilizceseviye);
+                html = html.Replace("[ingilizceyer]", form.ilgilizceyer);
+                html = html.Replace("[almancaseviye]", form.almancaseviye);
+                html = html.Replace("[almancayer]", form.almancayer);
+                html = html.Replace("[fransizcaseviye]", form.fransizcaseviye);
+                html = html.Replace("[fransizcayer]", form.fransizcayer);
+                html = html.Replace("[sirket]", form.sirket);
+
+                html = html.Replace("[gorev]", form.gorev);
+                html = html.Replace("[isbaslangictarihi]", form.isbaslangictarihi);
+                html = html.Replace("[isbitistarihi]", form.isbitistarihi);
+                html = html.Replace("[ayrilmanedeni]", form.ayrilmanedeni);
+                html = html.Replace("[referansadi]", form.referansadi);
+                html = html.Replace("[referanskurum]", form.referanskurum);
+                html = html.Replace("[referanstel]", form.referanstel);
+                html = html.Replace("[ilavebilgi]", form.ilavebilgi);
+
                 var mset = MailManager.GetMailSettings();
                 var msend = MailManager.GetMailUsersList(0);
 
-                using (var client = new SmtpClient("mail.web.com.tr", 587))
+                using (var client = new SmtpClient(mset.ServerHost, mset.Port))
                 {
                     client.EnableSsl = mset.Security;
-                    client.Credentials = new NetworkCredential("info@web.com.tr", "Deneysan2013");
+                    client.Credentials = new NetworkCredential(mset.ServerMail, mset.Password);
                     var mail = new MailMessage();
-                    mail.From = new MailAddress("info@web.com.tr");
-                    mail.To.Add("info@web.com.tr");
+                    mail.From = new MailAddress(mset.ServerMail);
+                    foreach (var item in msend)
+                        mail.To.Add(item.MailAddress);
+                    mail.Subject = "Yeni İş Başvurusu";
                     mail.IsBodyHtml = true;
-                    mail.Subject = "İş Başvurusu";
+                    mail.Body = html;
 
-                    mail.Body = "<center><table><tr><td colspan='2'><h2><center>İŞ BAŞVURUSU</center></h2></td></tr>";
-                    mail.Body += "<tr><td style='border: 1px solid #ddd; padding:3px;' width='300'><center><b>Adı Soyadı</b></center></td>";
-                    mail.Body += " <td style='border: 1px solid #ddd; padding:3px;' width='300'><center>";
-                    mail.Body += namesurname + "</center></td></tr><tr><td style='border: 1px solid #ddd; padding:3px;' width='300'><center><b>Başvurduğu Pozisyon</b></center></td>";
-                    mail.Body += "<td style='border: 1px solid #ddd; padding:3px;' width='300'><center>" + departman + "</center></td></tr>";
-                    mail.Body += "<tr><td style='border: 1px solid #ddd; padding:3px;' width='300'><center><b>Not</b></center></td>";
-                    mail.Body += "<td style='border: 1px solid #ddd; padding:3px;' width='300'><center>";
-                    mail.Body += notlar + "</center></td></tr></table></center>";
-              
-                    if (attachedfile != null && attachedfile.ContentLength > 0)
-                    {
-                        var attachment = new Attachment(attachedfile.InputStream, attachedfile.FileName);
-                        mail.Attachments.Add(attachment);
-                    }
-                    client.Send(mail);
+                    if (mail.To.Count > 0) client.Send(mail);
                 }
                 TempData["sent"] = "true";
-                return RedirectToAction("ApplicationForm");
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 TempData["sent"] = "false";
             }
 
-            return View();
+            return RedirectToAction("Index");
         }
 
     }

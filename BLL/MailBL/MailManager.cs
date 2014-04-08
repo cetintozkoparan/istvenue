@@ -169,6 +169,7 @@ namespace BLL.MailBL
                         editrec.ServerMail = model.ServerMail;
                         editrec.ServerHost = model.ServerHost;
                         editrec.Port = model.Port;
+                        editrec.Security = model.Security;
                         if (!string.IsNullOrEmpty(model.Password))
                         {
                             editrec.Password = model.Password;

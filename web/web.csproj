@@ -2547,9 +2547,11 @@
     <Content Include="Areas\Admin\Views\HumanResource\EditHumanResourcePosition.cshtml" />
     <Content Include="Areas\Admin\Views\HumanResource\HumanResourcePositions.cshtml" />
     <Content Include="Areas\Admin\Views\Updates\Index.cshtml" />
+    <Content Include="HTMLTemplate\CareerTemplate.html" />
     <Content Include="Images\arsa.jpg" />
     <Content Include="Images\bulletList.png" />
     <Content Include="Images\degertunali.jpg" />
+    <Content Include="Images\error.png" />
     <Content Include="Images\giris_yazi.png" />
     <Content Include="Images\hakkimizda.jpg" />
     <Content Include="Images\headerBg.png" />
@@ -2613,6 +2615,7 @@
     <Content Include="Images\showcase\slide_01.jpg" />
     <Content Include="Images\showcase\slide_02.jpg" />
     <Content Include="Images\stratejivedanismanlik.jpg" />
+    <Content Include="Images\success.png" />
     <Content Include="Images\ticariHizmetler.png" />
     <Content Include="Images\ticariHizmetlerEng.png" />
     <Content Include="Images\UnderConst.jpg" />
