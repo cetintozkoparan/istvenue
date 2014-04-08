@@ -1,6 +1,14 @@
 ﻿using BLL.SocialMediaBL;
 using DAL.Entities;
 using System;
+using System.IO;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using web.Areas.Admin.Helpers;
+
+using DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,6 +16,13 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using web.Areas.Admin.Helpers;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
 
 namespace web.Areas.Admin.Controllers
 {
@@ -24,6 +39,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult Add()
         {
+
            // ImageHelperNew.DestroyImageCashAndSession(1920, 1080);
             return View();
         }
@@ -129,7 +145,12 @@ namespace web.Areas.Admin.Controllers
         public class JsonList
         {
             public string[] list { get; set; }
+
+          
         }
+
+
+      
 
     }
 }

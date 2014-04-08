@@ -14,10 +14,12 @@ namespace BLL.SocialMediaBL
         {
             using (MainContext db = new MainContext())
             {
+
                 var list = db.SocialMedia.OrderBy(x=>x.SortOrder).ToList();
-                return list;
+               return list;
             }
         }
+
 
         public static bool AddSocialMedia(SocialMedia record)
         {
@@ -136,6 +138,7 @@ namespace BLL.SocialMediaBL
                 }
             }
         }
+
 
 
     }
