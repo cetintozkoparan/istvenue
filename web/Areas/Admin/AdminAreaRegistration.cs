@@ -230,9 +230,13 @@ namespace web.Areas.Admin
             context.MapRoute("socialmedia", "yonetim/sosyalmedyalinkleri", new { action = "Index", Controller = "SocialMedia" });
             context.MapRoute("socialmedia_add", "yonetim/yenilink", new { action = "Add", Controller = "SocialMedia" });
             context.MapRoute("socialmedia_edit", "yonetim/sosyalmedyalinkduzenle/{id}", new { action = "Edit", Controller = "SocialMedia" });
-            //context.MapRoute("socialmedia_edit", "yonetim/linkduzenle/{id}", new { action = "Edit", Controller = "SocialMedia" });
-            //context.MapRoute("bannereditx", "yonetim/bannerduzenle/{id}", new { action = "Edit", Controller = "Banner" });
 
+
+            //SOSYAL MEDYA LİNKLERİ
+            context.MapRoute("state_default", "yonetim/sosyalmedyalinkleri", new { action = "Index", Controller = "State" });
+            context.MapRoute("state_add", "yonetim/yeniemlak", new { action = "Add", Controller = "State" });
+            context.MapRoute("state_edit", "yonetim/emlakduzenle/{id}", new { action = "Edit", Controller = "State" });
+            //context.MapRoute("socialmedia
 
             context.MapRoute("songuncellemeler", "yonetim/songuncellemeler", new { action = "Index", Controller = "Updates" });
 
