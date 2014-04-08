@@ -26,16 +26,11 @@
             @Html.Hidden("hdfieldtaglist")*@
             @Html.ValidationSummary(true)
             <fieldset>
-<<<<<<< HEAD
                 <legend>Sosyal Medya Linki Ekle</legend>
-=======
-                <legend>Banner Ekle</legend>
->>>>>>> sosyal medya index sayfasi eklendi
                 <p>
                     @Html.LabelFor(m => m.Name)
                    @Html.TextBoxFor(m => m.Name, new { @class = "textwidth50" })
                     @Html.ValidationMessageFor(m => m.Name)
-
                 </p>
 
                 <p>
@@ -43,27 +38,15 @@
                     @Html.TextBoxFor(m => m.LinkName, new { @class = "textwidth50" })
                     @Html.ValidationMessageFor(m => m.LinkName)
                 </p>
-                
-<<<<<<< HEAD
               <p>
                 <label for="txtname">Logo</label>
             
                 <input type="file" name="uploadfile" id="uploadfile" class="required" />
             </p>
-       
-=======
-               @* <fieldset>
-                    <legend>Fotoğraf</legend>
-                    <div id="uploadPartial">
-                        @Html.Partial("_imageUploadAndCrop")
-                    </div>
-                </fieldset>*@
-
->>>>>>> sosyal medya index sayfasi eklendi
-                <p>
-                    <label></label>
-                    <input type="submit" value="Kaydet" id="btnsave" />
-                </p>
+            <p>
+                <label></label>
+                <input type="submit" value="Kaydet" id="btnsave" />
+            </p>
 
             </fieldset>
         }
