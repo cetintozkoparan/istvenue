@@ -236,9 +236,9 @@ namespace web.Areas.Admin
 
 
             //SOSYAL MEDYA LİNKLERİ
-            context.MapRoute("state_default", "yonetim/sosyalmedyalinkleri", new { action = "Index", Controller = "State" });
-            context.MapRoute("state_add", "yonetim/yeniemlak", new { action = "Add", Controller = "State" });
-            context.MapRoute("state_edit", "yonetim/emlakduzenle/{id}", new { action = "Edit", Controller = "State" });
+            context.MapRoute("estate_default", "yonetim/emlaklistesi", new { action = "Index", Controller = "Estate" });
+            context.MapRoute("estate_add", "yonetim/yeniemlak", new { action = "Add", Controller = "Estate" });
+            context.MapRoute("estate_edit", "yonetim/emlakduzenle/{id}", new { action = "Edit", Controller = "Estate" });
             //context.MapRoute("socialmedia
 
             context.MapRoute("songuncellemeler", "yonetim/songuncellemeler", new { action = "Index", Controller = "Updates" });

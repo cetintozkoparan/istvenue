@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace web.Areas.Admin.Controllers
 {
-    public class StateController : Controller
+    public class EstateController : Controller
     {
         //
         // GET: /Admin/State/
