@@ -51,6 +51,13 @@ namespace DAL.Entities
         [Display(Name = "İlan Başlığı")]
         [Required(ErrorMessage = "İlan başlığını giriniz")]
         public string Header { get; set; }
+
+        [Display(Name = "Öne Çıkan Emlak")]
+        public bool Popular { get; set; }
+
+        //ziyaret edilme sayısı. öne çıkanar için belki bunu kullanırız.
+        public int VisitedCount { get; set; }
+
         
     }
 }

@@ -61,6 +61,7 @@ namespace DAL.Context
         public DbSet<ProdCategory> ProdCategory { get; set; }
         public DbSet<Page> Page { get; set; }
         public DbSet<OurTeam> OurTeam { get; set; }
+        public DbSet<Estate> Estate { get; set; }
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -112,6 +113,7 @@ namespace DAL.Context
             modelBuilder.Entity<OurTeam>().ToTable("OurTeam");
             modelBuilder.Entity<Analytic>().ToTable("Analytic");
             modelBuilder.Entity<SocialMedia>().ToTable("SocialMedia");
+            modelBuilder.Entity<Estate>().ToTable("Estate");
 
         }
     }
