@@ -62,6 +62,9 @@ namespace DAL.Context
         public DbSet<Page> Page { get; set; }
         public DbSet<OurTeam> OurTeam { get; set; }
         public DbSet<Estate> Estate { get; set; }
+        public DbSet<Country> Country { get; set; }
+        public DbSet<Town> Town { get; set; }
+        public DbSet<District> District { get; set; }
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -113,7 +116,11 @@ namespace DAL.Context
             modelBuilder.Entity<OurTeam>().ToTable("OurTeam");
             modelBuilder.Entity<Analytic>().ToTable("Analytic");
             modelBuilder.Entity<SocialMedia>().ToTable("SocialMedia");
+
             modelBuilder.Entity<Estate>().ToTable("Estate");
+            modelBuilder.Entity<Country>().ToTable("Country");
+            modelBuilder.Entity<Town>().ToTable("Town");
+            modelBuilder.Entity<District>().ToTable("District");
 
         }
     }
