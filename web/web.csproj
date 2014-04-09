@@ -2715,9 +2715,10 @@
     <Content Include="Areas\Admin\Views\SocialMedia\_leftMenu.cshtml" />
     <Content Include="Areas\Admin\Views\SocialMedia\Add.cshtml" />
     <Content Include="Areas\Admin\Views\SocialMedia\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\State\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\State\Add.cshtml" />
-    <Content Include="Areas\Admin\Views\State\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Estate\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Estate\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Estate\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Estate\_leftmenu.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />
