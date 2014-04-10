@@ -232,6 +232,7 @@
     <Compile Include="Areas\Admin\Helpers\PhotoType.cs" />
     <Compile Include="Areas\Admin\Helpers\Utility.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Controllers\FEstatesController.cs" />
     <Compile Include="Controllers\FOurTeamController.cs" />
     <Compile Include="Controllers\FSectorController.cs" />
     <Compile Include="Controllers\FEquipmentController.cs" />
@@ -2938,6 +2939,7 @@
     <Content Include="Views\FOurTeam\Index.cshtml" />
     <Content Include="Views\FService\Hizmetlerimiz.cshtml" />
     <Content Include="Views\FInstitutional\WhyUs.cshtml" />
+    <Content Include="Views\FEstates\PopularEstates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

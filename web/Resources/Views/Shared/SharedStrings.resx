@@ -417,4 +417,73 @@
   <data name="centeroffice" xml:space="preserve">
     <value>Merkez Ofis</value>
   </data>
+  <data name="menupopularestates" xml:space="preserve">
+    <value>one-cikan-gayrimenkuller</value>
+  </data>
+  <data name="popularestates" xml:space="preserve">
+    <value>Öne Çıkan Gayrimenkuller</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>Tümü</value>
+  </data>
+  <data name="buildingage" xml:space="preserve">
+    <value>Bina Yaşı</value>
+  </data>
+  <data name="city" xml:space="preserve">
+    <value>Şehir</value>
+  </data>
+  <data name="district" xml:space="preserve">
+    <value>İlçe</value>
+  </data>
+  <data name="estateconsultant" xml:space="preserve">
+    <value>Gayrimenkul Danışmanı</value>
+  </data>
+  <data name="estatetype" xml:space="preserve">
+    <value>Emlak Türü</value>
+  </data>
+  <data name="hired" xml:space="preserve">
+    <value>Kiralık</value>
+  </data>
+  <data name="housing" xml:space="preserve">
+    <value>Konut</value>
+  </data>
+  <data name="land" xml:space="preserve">
+    <value>Arsa</value>
+  </data>
+  <data name="locality" xml:space="preserve">
+    <value>Semt</value>
+  </data>
+  <data name="menu_searchestate" xml:space="preserve">
+    <value>detayli-arama</value>
+  </data>
+  <data name="pleaseselect" xml:space="preserve">
+    <value>Lütfen Seçiniz</value>
+  </data>
+  <data name="pricerange" xml:space="preserve">
+    <value>Fiyat Aralığı</value>
+  </data>
+  <data name="referenceno" xml:space="preserve">
+    <value>Referans No</value>
+  </data>
+  <data name="roomcount" xml:space="preserve">
+    <value>Oda Sayısı</value>
+  </data>
+  <data name="searchbykeyword" xml:space="preserve">
+    <value>Anahtar kelimeye göre ara</value>
+  </data>
+  <data name="sold" xml:space="preserve">
+    <value>Satılık</value>
+  </data>
+  <data name="squaremeters" xml:space="preserve">
+    <value>Metrekare</value>
+  </data>
+  <data name="transactiontype" xml:space="preserve">
+    <value>İşlem Tipi</value>
+  </data>
+  <data name="unit" xml:space="preserve">
+    <value>Birim</value>
+  </data>
+  <data name="workplace" xml:space="preserve">
+    <value>İş Yeri</value>
+  </data>
 </root>

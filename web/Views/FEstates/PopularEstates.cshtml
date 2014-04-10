@@ -1,0 +1,31 @@
+﻿@model List<DAL.Entities.Estate>
+@{
+    ViewBag.Title = "PopularEstates";
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+<div id="containerInner">
+    <div id="content">
+
+
+        <div id="highlightsGeneralContent">
+            <h1>@SharedRess.SharedStrings.popularestates.ToUpper()</h1>
+
+        </div>
+        <div class="highlights">
+
+            @foreach (var item in Model)
+            {
+                <div class="highlightsContent">
+                    <div class="highlightsImage">
+                        <a href="#">
+                            <img src="@item.Photo" width="301" height="200" alt="@item.Header" /></a>
+                    </div>
+                    <div class="highlightsRight">
+                        <div class="highlightsPricing"><a class="realtyName" href="#">@item.Header</a><span class="realtyPrice" style="clear: both;">@item.Price TL</span></div>
+                        <div class="highlightsArticle">@Html.Raw(item.Content)</div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -417,4 +417,13 @@
   <data name="centeroffice" xml:space="preserve">
     <value>Center Office</value>
   </data>
+  <data name="menupopularestates" xml:space="preserve">
+    <value>popular-estates</value>
+  </data>
+  <data name="popularestates" xml:space="preserve">
+    <value>Popular Estates</value>
+  </data>
+  <data name="menu_searchestate" xml:space="preserve">
+    <value>detailed-search</value>
+  </data>
 </root>

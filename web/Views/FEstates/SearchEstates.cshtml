@@ -1,0 +1,147 @@
+﻿@model List<DAL.Entities.Estate>
+@{
+    ViewBag.Title = "SearchEstates";
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+<div id="containerInner">
+    <div id="content">
+        <div id="realtyContent">
+            <h1>@SharedRess.SharedStrings.searchestate</h1>
+            <div id="advanced-search">
+                <div class="searchinput full">
+                    <span>@SharedRess.SharedStrings.referenceno:</span>
+                    <input type="text" maxlength="4" class="textinput longInput">
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="rangewrap">
+                    <span>@SharedRess.SharedStrings.searchbykeyword:</span>
+                    <input type="text" class="textinput longInput">
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="searchinput">
+                    <span>@SharedRess.SharedStrings.transactiontype:</span>
+                    <select class="combobox ">
+                        <option value="0">@SharedRess.SharedStrings.all</option>
+                        <option value="2">@SharedRess.SharedStrings.sold</option>
+                        <option value="1">@SharedRess.SharedStrings.hired</option>
+                    </select>
+                </div>
+                <div class="searchinput floatright">
+                    <span>@SharedRess.SharedStrings.estatetype:</span>
+                    <select class="combobox " style="">
+                        <option selected="selected" value="0">>@SharedRess.SharedStrings.all</option>
+                        <option value="1">@SharedRess.SharedStrings.workplace</option>
+                        <option value="2">@SharedRess.SharedStrings.land</option>
+                        <option value="3">@SharedRess.SharedStrings.housing</option>
+                    </select>
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="searchinput">
+                    <span>@SharedRess.SharedStrings.city:</span>
+                    <select class="combobox ">
+                        <option selected="selected" value="0">@SharedRess.SharedStrings.all</option>
+                        <option value="1">İstanbul-Anadolu</option>
+                        <option value="2">İstanbul-Avrupa</option>
+                        <option value="90">Bodrum</option>
+                        <option value="91">Bolu</option>
+                        <option value="107">Çeşme</option>
+                        <option value="114">Muğla</option>
+                    </select>
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="searchinput">
+                    <span>@SharedRess.SharedStrings.district:</span>
+                    <select class="combobox ">
+                    </select>
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="searchinput">
+                    <span>@SharedRess.SharedStrings.locality:</span>
+                    <select class="combobox ">
+                    </select>
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="rangewrap">
+                    <span>@SharedRess.SharedStrings.pricerange:</span>
+                    <input type="text" maxlength="9" class="textinput small price1">
+                    -
+            <input type="text" maxlength="9" class="textinput small price2">
+                </div>
+                <div class="searchinput currency">
+                    <span>@SharedRess.SharedStrings.unit:</span>
+                    <select class="combobox small " style="">
+                        <option value="0">@SharedRess.SharedStrings.all</option>
+                        <option value="1">TL</option>
+                        <option value="2">$</option>
+                        <option value="3">€</option>
+                    </select>
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="rangewrap">
+                    <span>@SharedRess.SharedStrings.squaremeters:</span>
+                    <input type="text" class="textinput small">
+                    -
+            <input type="text" class="textinput small">
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="rangewrap">
+                    <span>@SharedRess.SharedStrings.roomcount:</span>
+                    <input type="text" class="textinput small">
+                    -
+            <input type="text" class="textinput small">
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="rangewrap">
+                    <span>@SharedRess.SharedStrings.buildingage:</span>
+                    <input type="text" class="textinput small">
+                    -
+            <input type="text" class="textinput small">
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <div class="searchinput" style="width: 100%">
+                    <span>@SharedRess.SharedStrings.estateconsultant:</span>
+                    <select class="combobox " style="">
+                        <option value="">@SharedRess.SharedStrings.pleaseselect</option>
+                        <option value="1">Test Name</option>
+                        <option value="2">Test Name</option>
+                    </select>
+                </div>
+                <div class="clear"></div>
+                <div class="seperator"></div>
+                <input type="reset" value="Temizle" class="resetbtn">
+                <div class="searchbtn">
+                    <span class="btnlf"></span><span class="btncn">
+                        <input type="submit" value="Ara">
+                    </span><span class="btnrg"></span>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <ul class="searchResults">
+            @foreach (var item in Model)
+            {
+                <li class="realtyContent">
+                    <a href="#">
+                        <span class="realtyImage">
+                            <img src="@item.Photo" height="106" width="160" alt="kiralık" />
+                        </span>
+                        <span class="realtyPricing">Kiralık</span>
+                        <span class="realtyPrice">@item.Price TL</span>
+                        <span class="realtyState">(İstanbul-Avrupa/Beşiktaş/Bebek)</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
