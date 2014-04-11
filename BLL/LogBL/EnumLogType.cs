@@ -19,6 +19,7 @@ namespace BLL.LogBL
         CozumOrtaklari,
         InsanKaynaklari,
         Login,
-        Kullanici
+        Kullanici,
+        Emlak
     }
 }

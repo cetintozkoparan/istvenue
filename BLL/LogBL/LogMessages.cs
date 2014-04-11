@@ -93,6 +93,13 @@ namespace BLL.LogBL
         public static string UserDeleted = "Kullanıcı Silindi";
         public static string UserNotDeleted = "Kullanıcı Silinemedi";
 
+        public static string EstateAdded = "Yeni Emlak Bilgisi Eklendi";
+        public static string EstateNotAdded = "Yeni Emlak Bilgisi Eklenemedi";
+        public static string EstateEdited = " Emlak Bilgisi Düzenlendi";
+        public static string EstateNotEdited = " Emlak Bilgisi Düzenlenemedi";
+        public static string EstateDeleted = "Emlak Bilgisi Silindi";
+        public static string EstateNotDeleted = "Emlak Bilgisi Silinemedi";
+
         // public static string AdminNotLoginMessage = "Sisteme giriş hatası"
     }
 }
