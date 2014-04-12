@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Entities
 {
@@ -6,11 +7,13 @@ namespace DAL.Entities
     {
         [Key]
         public int Id { get; set; }
+         [Display(Name = "Emlak Tipi")]
         public int TypeId { get; set; }
         //İl
         [Display(Name = "İl Seçimi")]
         [Required(ErrorMessage = "İli giriniz")]
         public int CountryId { get; set; }
+
         //İlçe
         [Display(Name = "İlçe Seçimi")]
         [Required(ErrorMessage = "İlçeyi giriniz")]
@@ -35,11 +38,11 @@ namespace DAL.Entities
        
         //Danışman
         [Display(Name = "Danışman")]
-        public int Consultant { get; set; }
+        public string Consultant { get; set; }
         
         //Oda Sayısı
         [Display(Name = "Oda Sayısı")]
-        public int RoomNumber { get; set; }
+        public string RoomNumber { get; set; }
 
         [Display(Name = "Referans Numarası")]
         [Required(ErrorMessage = "Referans numarasını giriniz")]
@@ -70,6 +73,10 @@ namespace DAL.Entities
         [Display(Name = "Eklenme Tarihi")]
         [Required(ErrorMessage = "Eklenme tarihini giriniz")]
         public string TimeCreated { get; set; }
-        
+
+
+        public virtual Country Country { get; set; }
+        public virtual Town Town { get; set; }
+        public virtual District District { get; set; }
     }
 }

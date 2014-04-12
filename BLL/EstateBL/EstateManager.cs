@@ -96,7 +96,7 @@ namespace BLL.EstateBL
         {
             using (MainContext db = new MainContext())
             {
-                var list = db.Estate.Where(d => d.Language == language).ToList();
+                var list = db.Estate.Include("Country").Include("Town").Include("District").Where(d => d.Language == language).ToList();
                 return list;
             }
         }

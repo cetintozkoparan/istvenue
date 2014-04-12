@@ -44,12 +44,27 @@
             @Html.ValidationMessageFor(m=>m.Content)
         </p>
         <p>
+            @Html.LabelFor(m=>m.TypeId)
+            @Html.DropDownListFor(x => x.TypeId, new SelectList(
+                  new List<Object>{ 
+                       new { value = "0" , text = "Kiralık"  },
+                       new { value = "1" , text = "Satılık" },
+                    },
+                  "value",
+                  "text",
+                   0), new { @class="textwidth10"})
+        </p>
+        <p>
             @Html.LabelFor(m=>m.RoomNumber)
             @Html.TextBoxFor(m=>m.RoomNumber, new { @class="textwidth10"})
          </p>
         <p>
             @Html.LabelFor(m=>m.Age)
             @Html.TextBoxFor(m=>m.Age, new { @class="textwidth10"})
+        </p>
+         <p>
+            @Html.LabelFor(m=>m.Size)
+            @Html.TextBoxFor(m=>m.Size, new { @class="textwidth10"})
         </p>
         <p>
             @Html.LabelFor(m=>m.Consultant)
