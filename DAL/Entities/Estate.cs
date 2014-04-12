@@ -24,6 +24,8 @@ namespace DAL.Entities
         public int DistrictId { get; set; }
         [Display(Name = "Fiyat")]
         [Required(ErrorMessage = "Fiyatı giriniz")]
+        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
+
         public decimal Price { get; set; }
 
         public string PriceTypeId { get; set; }

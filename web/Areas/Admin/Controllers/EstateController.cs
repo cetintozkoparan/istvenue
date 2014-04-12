@@ -72,8 +72,84 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult Edit()
         {
-            return View();
+            var languages = LanguageManager.GetLanguages();
+            var list = new SelectList(languages, "Culture", "Language");
+            ViewBag.LanguageList = list;
+
+            var countries = EstateManager.GetCountryList();
+ 
+            if (RouteData.Values["id"] != null)
+            {
+                int nid = 0;
+                bool isnumber = int.TryParse(RouteData.Values["id"].ToString(), out nid);
+                if (isnumber)
+                {
+                    Estate record = EstateManager.GetEstateById(nid);
+
+                    var countrylist = new SelectList(countries, "Id", "Name",record.CountryId);
+                    ViewBag.Country = countrylist;
+
+                    var towns = EstateManager.GetTownList(record.CountryId);
+                    var townList = new SelectList(towns, "Id", "Name",record.TownId);
+                    ViewBag.Town = townList;
+
+                    var districts = EstateManager.GetDistrictList(record.TownId);
+                    var districtsList = new SelectList(districts, "Id", "Name",record.DistrictId);
+                    ViewBag.District = districtsList;
+
+                    return View(record);
+                }
+                else
+                    return View();
+            }
+            else
+                return View();
+ 
         }
+
+        [HttpPost]
+        public ActionResult Edit(Estate record, HttpPostedFileBase uploadfile)
+        {
+            var languages = LanguageManager.GetLanguages();
+            var list = new SelectList(languages, "Culture", "Language");
+            ViewBag.LanguageList = list;
+            if (ModelState.IsValid)
+            {
+                if (uploadfile != null && uploadfile.ContentLength > 0)
+                {
+                    Random random = new Random();
+                    int rand = random.Next(1000, 99999999);
+                    new ImageHelper(280, 240).SaveThumbnail(uploadfile, "/Content/images/Photos/", Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName));
+                    record.Photo = "/Content/images/Photos/" + Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName);
+                }
+
+                if (RouteData.Values["id"] != null)
+                {
+                    int nid = 0;
+                    bool isnumber = int.TryParse(RouteData.Values["id"].ToString(), out nid);
+                    if (isnumber)
+                    {
+                        record.Id = nid;
+                        ViewBag.ProcessMessage = EstateManager.EditEstate(record);
+                        //return View(record);
+                        return RedirectToAction("Index", "Estate");
+                    }
+                    else
+                    {
+                        ViewBag.ProcessMessage = false;
+                        return View(record);
+                    }
+                }
+                else
+                    return View();
+            }
+            else
+                return View();
+
+
+
+        }
+
 
         string FillLanguagesList()
         {

@@ -46,16 +46,7 @@ namespace BLL.EstateBL
             }
         }
 
-        //public static List<string> GetNames(int cid,int tid,int did)
-        //{
-        //    using (MainContext db = new MainContext())
-        //    {
-        //        var countrylist = db.Country.Where(x => x.TownId == id).FirstOrDefault();
-        //        if(countrylist!=null)
-
-        //        return list;
-        //    }
-        //}
+      
 
         #endregion Country
 
@@ -128,6 +119,83 @@ namespace BLL.EstateBL
                 }
             }
         }
+
+        public static Estate GetEstateById(int nid)
+        {
+            using (MainContext db = new MainContext())
+            {
+                try
+                {
+                    Estate record = db.Estate.Where(d => d.Id == nid).SingleOrDefault();
+                    if (record != null)
+                        return record;
+                    else
+                        return null;
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
+
+        public static bool EditEstate(Estate model)
+        {
+            using (MainContext db = new MainContext())
+            {
+                try
+                {
+                    Estate record = db.Estate.Where(d => d.Id == model.Id).SingleOrDefault();
+                    if (record != null)
+                    {
+                        record.Header = model.Header;
+                        record.Language = model.Language;
+                        record.Content = model.Content;
+
+                        record.Price = model.Price;
+                        record.PriceTypeId = model.PriceTypeId;
+                        record.ReferenceNo = model.ReferenceNo;
+                        record.RoomNumber = model.RoomNumber;
+                        record.Size = model.Size;
+                        record.TimeCreated = model.TimeCreated;
+                        record.Consultant = model.Consultant;
+                        record.Age = model.Age;
+                        record.CountryId = model.CountryId;
+                        record.TownId = model.TownId;
+                        record.DistrictId = model.DistrictId;
+                        record.Popular = model.Popular;
+                        record.TypeId = model.TypeId;
+
+
+                        if (!string.IsNullOrEmpty(model.Photo))
+                        {
+                            record.Photo = model.Photo;
+                        }
+
+                        db.SaveChanges();
+
+                        LogtrackManager logkeeper = new LogtrackManager();
+                        logkeeper.LogDate = DateTime.Now;
+                        logkeeper.LogProcess = EnumLogType.Emlak.ToString();
+                        logkeeper.Message = LogMessages.EstateEdited;
+                        logkeeper.User = HttpContext.Current.User.Identity.Name;
+                        logkeeper.Data = record.Header;
+                        logkeeper.AddInfoLog(logger);
+
+                        return true;
+                    }
+                    else
+                        return false;
+
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+        }
+
+
         #endregion Estate
     }
 }

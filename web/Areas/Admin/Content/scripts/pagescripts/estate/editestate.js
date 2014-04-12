@@ -1,13 +1,13 @@
 ﻿$(function () {
     $("#TimeCreated").datepicker({ dateFormat: 'dd.mm.yy' });
 
-    $("#TownId").attr('disabled', true);
-    $("#DistrictId").attr('disabled', true);
+  //  $("#TownId").attr('disabled', true);
+  //  $("#DistrictId").attr('disabled', true);
  
 
     $("#CountryId").change(function () {
         var id = $("#CountryId :selected").val();
-        alert(id);
+
         if (id == "") {
             $("#TownId").attr('disabled', true);
             $("#DistrictId").attr('disabled', true);
