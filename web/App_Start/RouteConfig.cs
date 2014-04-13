@@ -15,6 +15,10 @@ namespace web
             ControllerBuilder.Current.DefaultNamespaces.Add("web.Controllers");
 
          //   routes.MapRoute("home_default", "/", new { action = "Index", Controller = "Home" });
+
+            routes.MapRoute("detayliarama_tr", "tr/detayli-arama", new { action = "SearchEstates", Controller = "FEstates" });
+            routes.MapRoute("detayliarama_en", "en/advanced-search", new { action = "SearchEstates", Controller = "FEstates" });
+
             routes.MapRoute("onecikangayrimenkuller_tr", "tr/one-cikan-gayrimenkuller", new { action = "PopularEstates", Controller = "FEstates" });
             routes.MapRoute("onecikangayrimenkuller_en", "en/popular-estates", new { action = "PopularEstates", Controller = "FEstates" });
 

@@ -475,6 +475,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to detayli-arama.
+        /// </summary>
+        public static string menu_advancedsearch {
+            get {
+                return ResourceManager.GetString("menu_advancedsearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to tum-haberler.
         /// </summary>
         public static string menu_allnews {

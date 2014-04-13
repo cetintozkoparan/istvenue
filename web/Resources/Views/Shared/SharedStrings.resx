@@ -486,4 +486,7 @@
   <data name="workplace" xml:space="preserve">
     <value>İş Yeri</value>
   </data>
+  <data name="menu_advancedsearch" xml:space="preserve">
+    <value>detayli-arama</value>
+  </data>
 </root>

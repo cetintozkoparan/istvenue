@@ -426,4 +426,55 @@
   <data name="menu_searchestate" xml:space="preserve">
     <value>detailed-search</value>
   </data>
+  <data name="all" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="buildingage" xml:space="preserve">
+    <value>Building Age</value>
+  </data>
+  <data name="city" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="hired" xml:space="preserve">
+    <value>Hire</value>
+  </data>
+  <data name="housing" xml:space="preserve">
+    <value>House</value>
+  </data>
+  <data name="land" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="locality" xml:space="preserve">
+    <value>Locality</value>
+  </data>
+  <data name="menu_advancedsearch" xml:space="preserve">
+    <value>advanced-search</value>
+  </data>
+  <data name="pleaseselect" xml:space="preserve">
+    <value>Please Select</value>
+  </data>
+  <data name="pricerange" xml:space="preserve">
+    <value>Price Range</value>
+  </data>
+  <data name="roomcount" xml:space="preserve">
+    <value>Room Count</value>
+  </data>
+  <data name="searchbykeyword" xml:space="preserve">
+    <value>Search by Keyword</value>
+  </data>
+  <data name="searchestate1" xml:space="preserve">
+    <value>Search Estate</value>
+  </data>
+  <data name="squaremeters" xml:space="preserve">
+    <value>Centare</value>
+  </data>
+  <data name="transactiontype" xml:space="preserve">
+    <value>Process Type</value>
+  </data>
+  <data name="unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="workplace" xml:space="preserve">
+    <value>Workplace</value>
+  </data>
 </root>
