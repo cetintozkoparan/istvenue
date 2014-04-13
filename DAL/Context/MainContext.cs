@@ -70,6 +70,8 @@ namespace DAL.Context
         {
 
             Database.SetInitializer(new DatabaseCreatorClass());
+            //Database.SetInitializer(new DropCreateDatabaseAlways<MainContext>());
+                 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<MainContext, Configration>());
 
 
@@ -117,11 +119,13 @@ namespace DAL.Context
             modelBuilder.Entity<Analytic>().ToTable("Analytic");
             modelBuilder.Entity<SocialMedia>().ToTable("SocialMedia");
 
-            modelBuilder.Entity<Estate>().ToTable("Estate");
+            
             modelBuilder.Entity<Country>().ToTable("Country");
             modelBuilder.Entity<Town>().ToTable("Town");
             modelBuilder.Entity<District>().ToTable("District");
+            modelBuilder.Entity<Estate>().ToTable("Estate"); 
 
+         
         }
     }
 }

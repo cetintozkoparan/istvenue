@@ -224,7 +224,7 @@
     <Compile Include="Areas\Admin\Controllers\ProductGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjectController.cs" />
     <Compile Include="Areas\Admin\Controllers\ReferenceController.cs" />
-    <Compile Include="Areas\Admin\Controllers\StateController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EstateController.cs" />
     <Compile Include="Areas\Admin\Controllers\UpdatesController.cs" />
     <Compile Include="Areas\Admin\Filters\AuthenticateUser.cs" />
     <Compile Include="Areas\Admin\Helpers\ImageHelper.cs" />
@@ -1565,6 +1565,9 @@
     <Content Include="Areas\Admin\Content\scripts\pagescripts\certificate\Certificatelist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\banner\addbanner.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\banner\bannerlist.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\estate\addestate.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\estate\editestate.js" />
+    <Content Include="Areas\Admin\Content\scripts\pagescripts\estate\estatelist.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\instituional\whyus.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\ourteam\addOurTeam.js" />
     <Content Include="Areas\Admin\Content\scripts\pagescripts\ourteam\editOurTeam.js" />

@@ -14,5 +14,7 @@ namespace DAL.Entities
         [Display(Name = "İl Adı")]
         [Required(ErrorMessage = "İl ismini giriniz")]
         public string Name { get; set; }
+
+        //public virtual Estate Estate { get; set; }
     }
 }
