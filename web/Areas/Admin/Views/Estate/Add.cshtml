@@ -94,11 +94,20 @@
             @Html.CheckBoxFor(m=>m.Popular)
           
         </p>
-        <p>
+        @*<p>
             @Html.LabelFor(m=>m.Photo)
              <input type="file" name="uploadfile" id="uploadfile" class="required"/>
-        </p>
+        </p>*@
+
         <fieldset>
+            <legend>Ana Fotoğraf</legend>
+            <div id="uploadPartial">
+                @Html.Partial("_imageUploadAndCrop")
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend></legend>
             <p>
                 @Html.LabelFor(m=>m.CountryId)
                 @Html.DropDownListFor(m=>m.CountryId,(IEnumerable<SelectListItem>)ViewBag.Country,"İl Seçiniz...")

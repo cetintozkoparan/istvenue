@@ -489,4 +489,7 @@
   <data name="menu_advancedsearch" xml:space="preserve">
     <value>detayli-arama</value>
   </data>
+  <data name="menu_onpress" xml:space="preserve">
+    <value>basinda-biz</value>
+  </data>
 </root>

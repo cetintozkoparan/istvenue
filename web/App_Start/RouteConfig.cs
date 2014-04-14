@@ -80,11 +80,14 @@ namespace web
             routes.MapRoute("contactbank_tr", "tr/banka-hesaplari", new { action = "Bank", Controller = "FContact" });
             routes.MapRoute("contactbank_en", "en/bank-accounts", new { action = "Bank", Controller = "FContact" });
 
-            routes.MapRoute("news_tr", "tr/tum-haberler", new { action = "Index", Controller = "FNews" });
-            routes.MapRoute("news_en", "en/all-news", new { action = "Index", Controller = "FNews" });
+            routes.MapRoute("news_tr", "tr/haberler", new { action = "Index", Controller = "FNews" });
+            routes.MapRoute("news_en", "en/news", new { action = "Index", Controller = "FNews" });
 
-            routes.MapRoute("newscontent_tr", "tr/haberler/{header}/{hid}", new { action = "NewsContent", Controller = "FNews" });
-            routes.MapRoute("newscontent_en", "en/news/{header}/{hid}", new { action = "NewsContent", Controller = "FNews" });
+            routes.MapRoute("news_tr1", "tr/basinda-biz", new { action = "Basin", Controller = "FNews" });
+            routes.MapRoute("news_en1", "en/onpress", new { action = "Basin", Controller = "FNews" });
+
+            //routes.MapRoute("newscontent_tr", "tr/haberler/{header}/{hid}", new { action = "NewsContent", Controller = "FNews" });
+            //routes.MapRoute("newscontent_en", "en/news/{header}/{hid}", new { action = "NewsContent", Controller = "FNews" });
 
             routes.MapRoute("career_tr", "tr/kariyer", new { action = "Index", Controller = "FCareer" });
             routes.MapRoute("career_en", "en/career", new { action = "Index", Controller = "FCareer" });

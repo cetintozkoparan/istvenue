@@ -22,6 +22,15 @@ namespace BLL.NewsBL
             }
         }
 
+        public static List<News> GetNewsList(string language, int TypeId)
+        {
+            using (MainContext db = new MainContext())
+            {
+                var news_list = db.News.Where(d => d.Deleted == false && d.Language == language && d.TypeId == TypeId).OrderByDescending(d => d.TimeCreated).OrderBy(d => d.SortOrder).ToList();
+                return news_list;
+            }
+        }
+
         public static List<News> GetNewsListForFront(string language)
         {
             using (MainContext db = new MainContext())
@@ -155,6 +164,7 @@ namespace BLL.NewsBL
                         record.Header = newsmodel.Header;
                         record.Language = newsmodel.Language;
                         record.Content = newsmodel.Content;
+                        record.TypeId = newsmodel.TypeId;
                         if (!string.IsNullOrEmpty(newsmodel.NewsImage))
                         {
                             record.NewsImage = newsmodel.NewsImage;

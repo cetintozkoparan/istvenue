@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using web.Models;
 
 namespace web.Controllers
 {
-    
+
     public class FEstatesController : Controller
     {
         //
         // GET: /FEstates/
+        string lang = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();
 
         public ActionResult Index()
         {
@@ -22,7 +24,13 @@ namespace web.Controllers
         {
             using (MainContext db = new MainContext())
             {
-                var list = db.Estate.Where(d =>  d.Popular == true).ToList();
+
+                //var list = db.Estate.Where(d => d.Popular == true).ToList();
+                var list = db.Estate.Include("Country").Include("Town").Include("District")
+                                .Where(d => d.Language == lang && d.Popular == true)
+                                .OrderByDescending(d=>d.Id)
+                                .ToList();
+
                 return View(list);
             }
         }
@@ -32,43 +40,66 @@ namespace web.Controllers
             using (MainContext db = new MainContext())
             {
                 var list = db.Estate.ToList();
-                return View(list);
+                AdvancedSearchModel model = new AdvancedSearchModel(list, new SearchEstateModel());
+                IEnumerable<SelectListItem> basetypes = db.Country.ToList().Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Name });
+                List<SelectListItem> ilce = new List<SelectListItem>();
+                ilce.Add(new SelectListItem { Value = "", Text = "" });
+                ViewData["search.sehir"] =  basetypes;
+                ViewData["search.ilce"] = ilce;
+                return View(model);
+            }
+        }
+
+        public JsonResult GetTowns(int? listid)
+        {
+
+            //todo: preparing the data source filter
+            using (MainContext db = new MainContext())
+            {
+                if (listid == null)
+                {
+                    listid = 0;
+                }
+                var towns = db.Town.ToList().Where(d => d.CountryId == listid).Select(d=> new { d.Id, d.Name } );
+
+                return Json(towns, JsonRequestBehavior.AllowGet);
             }
         }
 
         [HttpPost]
-        public ActionResult SearchEstates(SearchEstateModel model)
+        public ActionResult SearchEstates(AdvancedSearchModel model)
         {
             using (MainContext db = new MainContext())
             {
                 var list = db.Estate.ToList();
-                if (!string.IsNullOrEmpty(model.referansno))
+                if (!string.IsNullOrEmpty(model.search.referansno))
                 {
-                    int refno = Convert.ToInt32(model.referansno);
-                    list = list.Where(d=>d.ReferenceNo == refno).ToList();
+                    int refno = Convert.ToInt32(model.search.referansno);
+                    list = list.Where(d => Convert.ToInt32(d.ReferenceNo) == refno).ToList();
                 }
-                if (!string.IsNullOrEmpty(model.keyword))
+                if (!string.IsNullOrEmpty(model.search.keyword))
                 {
-                    list = list.Where(d => d.Header.Contains(model.keyword)).ToList();                    
+                    list = list.Where(d => d.Header.Contains(model.search.keyword)).ToList();
                 }
-                if (model.emlaktipi != 0)
+                if (model.search.emlaktipi != 0)
                 {
-                    list = list.Where(d => d.TypeId == model.emlaktipi).ToList();                    
-                }
-
-                if (model.sehir != 0)
-                {
-                    list = list.Where(d => d.CountryId == model.sehir).ToList();
+                    list = list.Where(d => d.TypeId == model.search.emlaktipi).ToList();
                 }
 
-                if (model.ilce != 0)
+                if (!string.IsNullOrEmpty(model.search.sehir))
                 {
-                    list = list.Where(d => d.TownId == model.ilce).ToList();
+                    int sehir = Convert.ToInt32(model.search.sehir);
+                    list = list.Where(d => d.CountryId == sehir).ToList();
                 }
 
-                if (model.semt != 0)
+                if (model.search.ilce != 0)
                 {
-                    list = list.Where(d => d.DistrictId == model.semt).ToList();
+                    list = list.Where(d => d.TownId == model.search.ilce).ToList();
+                }
+
+                if (model.search.semt != 0)
+                {
+                    list = list.Where(d => d.DistrictId == model.search.semt).ToList();
                 }
 
                 //if (!string.IsNullOrEmpty(model.fiyataraligialt))
@@ -76,45 +107,67 @@ namespace web.Controllers
                 //    list = list.Where(d => d.Price >= model.fiyataraligialt).ToList();
                 //}
 
-                if (!string.IsNullOrEmpty(model.metrekarealt))
+                if (!string.IsNullOrEmpty(model.search.metrekarealt))
                 {
-                    int metrekare = Convert.ToInt32(model.metrekarealt);
-                    list = list.Where(d => d.RoomNumber > metrekare).ToList();
+                    int metrekare = Convert.ToInt32(model.search.metrekarealt);
+                    list = list.Where(d => Convert.ToInt32(d.RoomNumber) > metrekare).ToList();
                 }
 
-                if (!string.IsNullOrEmpty(model.metrekareust))
+                if (!string.IsNullOrEmpty(model.search.metrekareust))
                 {
-                    int metrekare = Convert.ToInt32(model.metrekareust);
-                    list = list.Where(d => d.RoomNumber < metrekare).ToList();
+                    int metrekare = Convert.ToInt32(model.search.metrekareust);
+                    list = list.Where(d => Convert.ToInt32(d.RoomNumber) < metrekare).ToList();
                 }
 
-                if (!string.IsNullOrEmpty(model.odasayisialt))
+                if (!string.IsNullOrEmpty(model.search.odasayisialt))
                 {
-                    int roomcount = Convert.ToInt32(model.odasayisialt);
-                    list = list.Where(d => d.RoomNumber > roomcount).ToList();
+                    int roomcount = Convert.ToInt32(model.search.odasayisialt);
+                    list = list.Where(d => Convert.ToInt32(d.RoomNumber) > roomcount).ToList();
                 }
 
-                if (!string.IsNullOrEmpty(model.odasayisiust))
+                if (!string.IsNullOrEmpty(model.search.odasayisiust))
                 {
-                    int roomcount = Convert.ToInt32(model.odasayisiust);
-                    list = list.Where(d => d.RoomNumber < roomcount).ToList();
+                    int roomcount = Convert.ToInt32(model.search.odasayisiust);
+                    list = list.Where(d => Convert.ToInt32(d.RoomNumber) < roomcount).ToList();
                 }
 
-                if (!string.IsNullOrEmpty(model.binayasialt))
+                if (!string.IsNullOrEmpty(model.search.binayasialt))
                 {
-                    int binayasialt = Convert.ToInt32(model.binayasialt);
+                    int binayasialt = Convert.ToInt32(model.search.binayasialt);
                     list = list.Where(d => d.Age > binayasialt).ToList();
                 }
 
-                if (!string.IsNullOrEmpty(model.binayasiust))
+                if (!string.IsNullOrEmpty(model.search.binayasiust))
                 {
-                    int binayasiust = Convert.ToInt32(model.binayasiust);
+                    int binayasiust = Convert.ToInt32(model.search.binayasiust);
                     list = list.Where(d => d.Age < binayasiust).ToList();
                 }
 
-                return View(list);
+                if (!string.IsNullOrEmpty(model.search.fiyataraligialt))
+                {
+                    int fiyat = Convert.ToInt32(model.search.fiyataraligialt);
+                    list = list.Where(d => d.Price > fiyat).ToList();
+                }
+
+                if (!string.IsNullOrEmpty(model.search.fiyataraligiust))
+                {
+                    int fiyat = Convert.ToInt32(model.search.fiyataraligiust);
+                    list = list.Where(d => d.Price < fiyat).ToList();
+                }
+
+                AdvancedSearchModel searchmodel = new AdvancedSearchModel(list, model.search);
+                
+                IEnumerable<SelectListItem> basetypes = db.Country.ToList().Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Name });
+                List<SelectListItem> ilce = new List<SelectListItem>();
+                ilce.Add(new SelectListItem { Value = "", Text = "" });
+                ViewData["search.sehir"] = basetypes;
+                ViewData["search.ilce"] = ilce;
+
+                return View(searchmodel);
             }
         }
+
+
     }
 
     public class SearchEstateModel
@@ -123,7 +176,7 @@ namespace web.Controllers
         public string keyword { get; set; }
         public int islemtipi { get; set; }
         public int emlaktipi { get; set; }
-        public int sehir { get; set; }
+        public string sehir { get; set; }
         public int ilce { get; set; }
         public int semt { get; set; }
         public string fiyataraligialt { get; set; }

@@ -261,6 +261,7 @@
     <Compile Include="Areas\Admin\ImageHelperNew.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ContactWrapperModel.cs" />
+    <Compile Include="Models\AdvancedSearchWrapperModel.cs" />
     <Compile Include="Models\OurTeamWrapperModel.cs" />
     <Compile Include="Models\MediaAssetUploadModel.cs" />
     <Compile Include="Models\NewsWrapperModel.cs" />
@@ -2943,6 +2944,8 @@
     <Content Include="Views\FService\Hizmetlerimiz.cshtml" />
     <Content Include="Views\FInstitutional\WhyUs.cshtml" />
     <Content Include="Views\FEstates\PopularEstates.cshtml" />
+    <Content Include="Views\FEstates\SearchEstates.cshtml" />
+    <Content Include="Views\FNews\Basin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

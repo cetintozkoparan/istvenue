@@ -16,7 +16,13 @@ namespace web.Controllers
 
         public ActionResult Index()
         {
-            var news = NewsManager.GetNewsList(lang);
+            var news = NewsManager.GetNewsList(lang, 0);
+            return View(news);
+        }
+
+        public ActionResult Basin()
+        {
+            var news = NewsManager.GetNewsList(lang, 1);
             return View(news);
         }
 

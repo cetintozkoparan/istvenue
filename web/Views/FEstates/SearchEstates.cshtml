@@ -1,10 +1,10 @@
-﻿@model List<DAL.Entities.Estate>
+﻿@model web.Models.AdvancedSearchModel
 @{
     ViewBag.Title = "SearchEstates";
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
 
-@using (Html.BeginForm("SearchEstates", "FEstates", FormMethod.Post))
+@using (Html.BeginForm("SearchEstates", "FEstates", FormMethod.Post, new { id="searchform" }))
 {
     <div id="containerInner">
         <div id="content">
@@ -13,19 +13,19 @@
                 <div id="advanced-search">
                     <div class="searchinput full">
                         <span>@SharedRess.SharedStrings.referenceno:</span>
-                        <input name="referansno" type="text" maxlength="4" class="textinput longInput">
+                        @Html.TextBoxFor(d => d.search.referansno, new { @maxlength = "4", @class = "textinput longInput" })
                     </div>
                     <div class="clear"></div>
                     <div class="seperator"></div>
                     <div class="rangewrap">
                         <span>@SharedRess.SharedStrings.searchbykeyword:</span>
-                        <input name="keyword" type="text" class="textinput longInput">
+                        @Html.TextBoxFor(d => d.search.keyword, new { @class = "textinput longInput" })
                     </div>
                     <div class="clear"></div>
                     <div class="seperator"></div>
                     <div class="searchinput">
                         <span>@SharedRess.SharedStrings.transactiontype:</span>
-                        <select name="islemtipi" class="combobox ">
+                        <select name="search.islemtipi" class="combobox ">
                             <option value="0">@SharedRess.SharedStrings.all</option>
                             <option value="2">@SharedRess.SharedStrings.sold</option>
                             <option value="1">@SharedRess.SharedStrings.hired</option>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="searchinput floatright">
                         <span>@SharedRess.SharedStrings.estatetype:</span>
-                        <select name="emlaktipi" class="combobox " style="">
+                        <select name="search.emlaktipi" class="combobox " style="">
                             <option selected="selected" value="0">@SharedRess.SharedStrings.all</option>
                             <option value="1">@SharedRess.SharedStrings.workplace</option>
                             <option value="2">@SharedRess.SharedStrings.land</option>
@@ -44,7 +44,8 @@
                     <div class="seperator"></div>
                     <div class="searchinput">
                         <span>@SharedRess.SharedStrings.city:</span>
-                        <select name="sehir" class="combobox ">
+                        @Html.DropDownList("search.sehir", null, @SharedRess.SharedStrings.all , new { @class="combobox" })
+                        @*<select name="search.sehir" class="combobox ">
                             <option selected="selected" value="0">@SharedRess.SharedStrings.all</option>
                             <option value="1">İstanbul-Anadolu</option>
                             <option value="2">İstanbul-Avrupa</option>
@@ -52,33 +53,34 @@
                             <option value="91">Bolu</option>
                             <option value="107">Çeşme</option>
                             <option value="114">Muğla</option>
-                        </select>
+                        </select>*@
                     </div>
                     <div class="clear"></div>
                     <div class="seperator"></div>
                     <div class="searchinput">
                         <span>@SharedRess.SharedStrings.district:</span>
-                        <select name="ilce" class="combobox ">
-                        </select>
+                        @*<select name="search.ilce" class="combobox ">
+                        </select>*@
+                        @Html.DropDownList("search.ilce", null, @SharedRess.SharedStrings.all , new { @class="combobox" })
                     </div>
                     <div class="clear"></div>
                     <div class="seperator"></div>
                     <div class="searchinput">
                         <span>@SharedRess.SharedStrings.locality:</span>
-                        <select name="semt" class="combobox ">
+                        <select name="search.semt" class="combobox ">
                         </select>
                     </div>
                     <div class="clear"></div>
                     <div class="seperator"></div>
                     <div class="rangewrap">
                         <span>@SharedRess.SharedStrings.pricerange:</span>
-                        <input name="fiyataraligialt" type="text" maxlength="9" class="textinput small price1">
+                        <input name="search.fiyataraligialt" type="text" maxlength="9" class="textinput small price1">
                         -
-            <input name="fiyataraligiust" type="text" maxlength="9" class="textinput small price2">
+            <input name="search.fiyataraligiust" type="text" maxlength="9" class="textinput small price2">
                     </div>
                     <div class="searchinput currency">
                         <span>@SharedRess.SharedStrings.unit:</span>
-                        <select name="parabirimi" class="combobox small " style="">
+                        <select name="search.parabirimi" class="combobox small " style="">
                             <option value="0">@SharedRess.SharedStrings.all</option>
                             <option value="1">TL</option>
                             <option value="2">$</option>
@@ -89,7 +91,7 @@
                     <div class="seperator"></div>
                     <div class="rangewrap">
                         <span>@SharedRess.SharedStrings.squaremeters:</span>
-                        <input name="metrekarealt" type="text" class="textinput small">
+                        <input name="search.metrekarealt" type="text" class="textinput small">
                         -
             <input name="metrekareust" type="text" class="textinput small">
                     </div>
@@ -97,7 +99,7 @@
                     <div class="seperator"></div>
                     <div class="rangewrap">
                         <span>@SharedRess.SharedStrings.roomcount:</span>
-                        <input name="odasayisialt" type="text" class="textinput small">
+                        <input name="search.odasayisialt" type="text" class="textinput small">
                         -
             <input name="odasayisiust" type="text" class="textinput small">
                     </div>
@@ -105,7 +107,7 @@
                     <div class="seperator"></div>
                     <div class="rangewrap">
                         <span>@SharedRess.SharedStrings.buildingage:</span>
-                        <input name="binayasialt" type="text" class="textinput small">
+                        <input name="search.binayasialt" type="text" class="textinput small">
                         -
             <input name="binayasiust" type="text" class="textinput small">
                     </div>
@@ -113,7 +115,7 @@
                     <div class="seperator"></div>
                     <div class="searchinput" style="width: 100%">
                         <span>@SharedRess.SharedStrings.estateconsultant:</span>
-                        <select name="emlakdanismani" class="combobox " style="">
+                        <select name="search.emlakdanismani" class="combobox " style="">
                             <option value="">@SharedRess.SharedStrings.pleaseselect</option>
                             <option value="1">Test Name</option>
                             <option value="2">Test Name</option>
@@ -130,8 +132,12 @@
                     <div class="clear"></div>
                 </div>
             </div>
+            @if (Model.estates.Count == 0)
+            {
+                <b style="margin:30px;display: inline-block;">Aramanızla özdeşleşen bi kayıt bulunamadı...</b>
+            }
             <ul class="searchResults">
-                @foreach (var item in Model)
+                @foreach (var item in Model.estates)
                 {
                     <li class="realtyContent">
                         <a href="#">
@@ -148,3 +154,27 @@
         </div>
     </div>
 }
+<script>
+    $(function () {
+        $(".resetbtn").click(function () {
+            location.reload();
+        });
+
+        $("#search_sehir").change(function () {
+            var listvalue =  $(this).val();
+            $.getJSON('@Url.Action("GetTowns", "FEstates")', { listid: listvalue }, function (result) {
+                
+                var listB = $('#search_ilce');
+                listB.empty();
+                $.each(result, function (index, item) {
+                    listB.append(
+                        $('<option/>', {
+                            value: item.Id,
+                            text: item.Name
+                        })
+                    );
+                });
+            });
+        });
+    });
+</script>

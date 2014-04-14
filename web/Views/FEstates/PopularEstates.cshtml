@@ -15,6 +15,41 @@
 
             @foreach (var item in Model)
             {
+                <a href="#">
+                    <div class="highlightsContent">
+                        <div class="highlightsImage">
+                            <a href="#">
+                                <img src="@item.Photo" width="301" height="200" alt="@item.Header" /></a>
+                        </div>
+                        <div class="highlightsRight">
+                            <div class="info">
+                                <h4>@item.Header</h4>
+                                <span class="location">@item.Country.Name/ @item.Town.Name/ @item.District.Name</span>
+                                <span class="type">
+                                    @if (item.TypeId == 0)
+                                    {
+                                        @SharedRess.SharedStrings.hired
+                                    }else{
+                                        @SharedRess.SharedStrings.sold
+                                    }
+                                <i>No:@item.ReferenceNo</i>
+                                </span>
+                                <ul class="detail">
+                                    <li class="room"><i>@SharedRess.SharedStrings.roomcount:</i> @item.RoomNumber
+                                    
+                                    </li>
+                                    <li class="area">@item.Size <i>m²</i></li>
+                                    <li class="date">@item.TimeCreated</li>
+                                    <li class="price">@item.Price <i>@item.PriceTypeId</i></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </a>
+            }
+            @*@foreach (var item in Model)
+            {
                 <div class="highlightsContent">
                     <div class="highlightsImage">
                         <a href="#">
@@ -25,7 +60,7 @@
                         <div class="highlightsArticle">@Html.Raw(item.Content)</div>
                     </div>
                 </div>
-            }
+            }*@
         </div>
     </div>
 </div>

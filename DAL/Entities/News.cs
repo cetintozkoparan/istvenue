@@ -18,7 +18,6 @@ namespace DAL.Entities
         public string Header { get; set; }
 
         [Display(Name = "Haber Spotu")]
-        [Required(ErrorMessage = "Haber Spotunu Giriniz")]
         public string Spot { get; set; }
 
         [Display(Name = "İçerik")]
@@ -26,6 +25,7 @@ namespace DAL.Entities
 
         public bool Online { get; set; }
         public bool Deleted { get; set; }
+        public int TypeId { get; set; }
 
         [Display(Name="Eklenme Tarihi")]
         [DataType(DataType.Date)]

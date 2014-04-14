@@ -33,21 +33,25 @@
                     @Html.ValidationMessageFor(m => m.Language)
 
                 </p>
-
+                <p>
+                    <label>Haber Türü</label>
+                    <select name="TypeId">
+                        <option value="0">Sektör Haberi</option>
+                        <option value="1">Basın Haberi</option>
+                    </select>
+                </p>
                 <p>
                     @Html.LabelFor(m => m.Header)
                     @Html.TextBoxFor(m => m.Header, new { @class = "textwidth50", Rows = "5" })
                     @Html.ValidationMessageFor(m => m.Header)
                 </p>
 
-
-
                 @*<p>
                     <label for="txtname">Haber Resim</label>
 
                     <input type="file" name="uploadfile" id="uploadfile" />
                 </p>*@
-                <p>
+                @* <p>
                     @Html.LabelFor(m => m.Spot)
                     @Html.TextAreaFor(m => m.Spot, 5, 0, new { @class = "textwidth50" })
                     @Html.ValidationMessageFor(m => m.Spot, "", new { @class = "verticalaligntop", @maxlength = 10 })
@@ -56,7 +60,7 @@
                     <br />
                     <label class="colorred" id="wordcounter">Kalan Karakter: 350</label>
 
-                </p>
+                </p>*@
                 <fieldset>
                     <legend>Haber Resmi</legend>
                     <div id="uploadPartial">

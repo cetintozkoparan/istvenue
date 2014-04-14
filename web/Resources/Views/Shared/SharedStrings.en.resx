@@ -477,4 +477,7 @@
   <data name="workplace" xml:space="preserve">
     <value>Workplace</value>
   </data>
+  <data name="menu_onpress" xml:space="preserve">
+    <value>onpress</value>
+  </data>
 </root>

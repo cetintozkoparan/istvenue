@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<DAL.Entities.News>
 @{
-    ViewBag.Title = @SharedRess.SharedStrings.menu_news.ToUpper();
+    ViewBag.Title = @SharedRess.SharedStrings.news.ToUpper();
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
 <div id="containerInner">
     <div id="content">
         <div class="fullSection">
-            <h1>@SharedRess.SharedStrings.marketnews.ToUpper()</h1>
+            <h1>@SharedRess.SharedStrings.onpress.ToUpper()</h1>
         </div>
         @foreach (var item in Model)
         {

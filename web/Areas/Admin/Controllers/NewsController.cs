@@ -88,7 +88,7 @@ namespace web.Areas.Admin.Controllers
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
-            ImageHelperNew.DestroyImageCashAndSession(300, 225);
+            ImageHelperNew.DestroyImageCashAndSession(286, 210);
             return View();
         }
 
@@ -120,7 +120,7 @@ namespace web.Areas.Admin.Controllers
                 //        {
                 //            Random random = new Random();
                 //            int rand = random.Next(1000, 99999999);
-                //            new ImageHelper(300, 225).SaveThumbnail(uploadfile, "/Content/images/news/", Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName));
+                //            new ImageHelper(286, 210).SaveThumbnail(uploadfile, "/Content/images/news/", Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName));
                 //            newsmodel.NewsImage = "/Content/images/news/" + Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName);
                 //        }
                 //        else
@@ -165,7 +165,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult EditNews()
         {
-            ImageHelperNew.DestroyImageCashAndSession(300, 225);
+            ImageHelperNew.DestroyImageCashAndSession(286, 210);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -216,7 +216,7 @@ namespace web.Areas.Admin.Controllers
                 //        {
                 //            Random random = new Random();
                 //            int rand = random.Next(1000, 99999999);
-                //            new ImageHelper(300, 225).SaveThumbnail(uploadfile, "/Content/images/news/", Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName));
+                //            new ImageHelper(286, 210).SaveThumbnail(uploadfile, "/Content/images/news/", Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName));
                 //            newsmodel.NewsImage = "/Content/images/news/" + Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName);
                 //        }
                 //        else

@@ -34,6 +34,7 @@ namespace web.Areas.Admin.Controllers
 
             var countrylist = new SelectList(countries, "Id", "Name");
             ViewBag.Country = countrylist;
+            ImageHelperNew.DestroyImageCashAndSession(301, 200);
             return View();
         }
 
@@ -48,12 +49,10 @@ namespace web.Areas.Admin.Controllers
             ViewBag.Country = countrylist;
             if (ModelState.IsValid)
             {
-                if (uploadfile != null && uploadfile.ContentLength > 0)
+                if (Session["ModifiedImageId"] != null)
                 {
-                    Random random = new Random();
-                    int rand = random.Next(1000, 99999999);
-                    new ImageHelper(280, 80).SaveThumbnail(uploadfile, "/Content/images/Photos/", Utility.SetPagePlug(record.ReferenceNo.ToString()) + "_" + rand + Path.GetExtension(uploadfile.FileName));
-                    record.Photo = "/Content/images/Photos/" + Utility.SetPagePlug(record.ReferenceNo.ToString()) + "_" + rand + Path.GetExtension(uploadfile.FileName);
+                    record.Photo = "/Content/images/userfiles/" + Session["ModifiedImageId"].ToString() + Session["WorkingImageExtension"].ToString();
+                    ImageHelperNew.DestroyImageCashAndSession(0, 0);
                 }
                 else
                 {
@@ -72,6 +71,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult Edit()
         {
+            ImageHelperNew.DestroyImageCashAndSession(301, 200);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -115,12 +115,18 @@ namespace web.Areas.Admin.Controllers
             ViewBag.LanguageList = list;
             if (ModelState.IsValid)
             {
-                if (uploadfile != null && uploadfile.ContentLength > 0)
+                //if (uploadfile != null && uploadfile.ContentLength > 0)
+                //{
+                //    Random random = new Random();
+                //    int rand = random.Next(1000, 99999999);
+                //    new ImageHelper(280, 240).SaveThumbnail(uploadfile, "/Content/images/Photos/", Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName));
+                //    record.Photo = "/Content/images/Photos/" + Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName);
+                //}
+
+                if (Session["ModifiedImageId"] != null)
                 {
-                    Random random = new Random();
-                    int rand = random.Next(1000, 99999999);
-                    new ImageHelper(280, 240).SaveThumbnail(uploadfile, "/Content/images/Photos/", Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName));
-                    record.Photo = "/Content/images/Photos/" + Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName);
+                    record.Photo = "/Content/images/userfiles/" + Session["ModifiedImageId"].ToString() + Session["WorkingImageExtension"].ToString();
+                    ImageHelperNew.DestroyImageCashAndSession(0, 0);
                 }
 
                 if (RouteData.Values["id"] != null)

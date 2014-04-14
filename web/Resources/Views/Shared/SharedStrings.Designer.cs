@@ -646,6 +646,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to basinda-biz.
+        /// </summary>
+        public static string menu_onpress {
+            get {
+                return ResourceManager.GetString("menu_onpress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to acik-pozisyonlar.
         /// </summary>
         public static string menu_openpositions {
