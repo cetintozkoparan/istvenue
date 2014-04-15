@@ -2946,6 +2946,7 @@
     <Content Include="Views\FEstates\PopularEstates.cshtml" />
     <Content Include="Views\FEstates\SearchEstates.cshtml" />
     <Content Include="Views\FNews\Basin.cshtml" />
+    <Content Include="Views\FEstates\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

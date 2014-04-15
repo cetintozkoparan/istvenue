@@ -20,6 +20,11 @@ namespace web.Controllers
             return View();
         }
 
+        public ActionResult Detail()
+        {
+            return View();
+        }
+
         public ActionResult PopularEstates()
         {
             using (MainContext db = new MainContext())

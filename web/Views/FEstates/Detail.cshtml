@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+<script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+    <script type="text/javascript">$(document).ready(function(){
+	$('.bxsliderGallery').bxSlider({
+  pagerCustom: '#bx-pager'
+});
+
+$(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_content"});
+	
+	})</script>
+<div id="containerInner">
+        <div id="content">
+      <div class="highlightsDetail">
+            <h1>PORTFÖY DETAY</h1>
+          </div>
+      <div class="highlightsDetailContent">
+            <div class="highlightsDetailLeft">
+          <div class="imageGallery">
+                <ul class="bxsliderGallery">
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
+            </ul>
+                <div id="bx-pager"> <a data-slide-index="0" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="1" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="2" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="3" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="4" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="5" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="6" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="7" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="8" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="9" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> </div>
+              </div>
+        </div>
+            <div class="highlightsDetailRight"> <span class="itemTitle">İlan no </span><span class="itemVal">: BF-1054</span><br class="clear">
+          <span class="itemTitle">Başlık</span><span class="itemVal">: Villa</span><br class="clear">
+          <span class="itemTitle">Fiyat</span><span class="itemVal">: 175000 USD</span><br class="clear">
+          <span class="itemTitle">Tarih</span><span class="itemVal">: 08/04/2014</span><br class="clear">
+          <span class="itemTitle">Portföy Tipi</span><span class="itemVal">: Satılık</span><br class="clear">
+          <span class="itemTitle">Yapının Tipi</span><span class="itemVal">: Villa</span><br class="clear">
+          <span class="itemTitle">Yapı Durumu </span><span class="itemVal">: Betonerme Karkas</span><br class="clear">
+          <span class="itemTitle">Brüt Alan </span><span class="itemVal">:  450 m2</span><br class="clear">
+          <span class="itemTitle">Net Alan</span><span class="itemVal">: 400 m2</span><br class="clear">
+          <span class="itemTitle">Bulunduğu Arsa </span><span class="itemVal">: 880 m2</span><br class="clear">
+          <span class="itemTitle">Oda/Bölüm </span><span class="itemVal">: 6 + 1</span><br class="clear">
+          <span class="itemTitle">Banyo </span><span class="itemVal">: 3</span><br class="clear">
+          <span class="itemTitle">Kat Sayısı </span><span class="itemVal">: 4</span><br class="clear">
+          <span class="itemTitle">Bulunduğu Kat </span><span class="itemVal">: Komple</span><br class="clear">
+          <span class="itemTitle">Bina Taban Alanı </span><span class="itemVal">: 120m2</span><br class="clear">
+          <span class="itemTitle">Otopark</span><span class="itemVal">: 5 araç</span><br class="clear">
+          <span class="itemTitle">Kredi Durumu </span><span class="itemVal">: 3 yıl</span><br class="clear">
+          <span class="itemTitle">Tapu Türü </span><span class="itemVal">: Hisseli tapu</span><br class="clear">
+          <span class="itemTitle">Açıklama</span><span class="itemVal"><span class="colon">:</span>
+              <textarea maxlength="300" class="explain"></textarea>
+              </span><br class="clear">
+          <a href="#" class="contactBtn">İletişim için tıklayın</a>
+          <p><a class="inline cboxElement" href="#inline_content">Başka birine yollamak isterseniz tıklayın</a></p>
+          <div style="display:none">
+                <div id='inline_content' style='padding:10px; background:#fff;'>
+              <div class="dialogBox">
+                    <div class=""><span class="dialogTitle" >Arkadaşına Tavsiye Et</span></div>
+                    <div id="dialog" >
+                  <form action="#" method="post" id="frmMailFriend">
+                        <h3>Sizin</h3>
+                        <div class="dialogContent">
+                      <p>
+                            <label>Adınız</label>
+                            <input type="text"  name="dialogName" class="textinput"/>
+                          </p>
+                      <br/>
+                      <p>
+                            <label>Soyadınız</label>
+                            <input type="text" name="contactSurnameDialog" class="textinput">
+                          </p>
+                              <br/>
+                      <p>
+                            <label> E-Posta Adresiniz*</label>
+                            <input type="text" name="contactEmailDialog" class="textinput" />
+                          </p>
+                      
+                    </div>
+                        <h3>Arkadaşınızın</h3>
+                        <div class="dialogContent">
+                      <p>
+                            <label> Adı</label>
+                            <input type="text" name="contactNameFriend" class="textinput"></p>
+                            <br/>
+                            <p>
+                            <label>E-Posta Adresi*</label>
+                            <input type="text" name="contactEmailFriend" class="textinput">
+                          </p>
+                          <br/>
+                      <p>
+                            <label> Soyadı</label>
+                            <input type="text" name="contactSurFriend" class="textinput">
+                        </div>
+                        <br class="clear">
+                        <div class="rightDialogContent"> <label>Mesajınız:</label>
+                      <textarea class="contactMessage" name="contactMessagefriend"></textarea>
+                      <br>
+                      <br>
+                    </div>
+                        <br class="clear">
+                        <div align="right">
+                      <input type="button" name="gonderBtn" value="Gönder" class="sendBtn" />
+                    </div>
+                      </form>
+                </div>
+                  </div>
+            </div>
+              </div>
+              <a href="#" class="contactBtn">Yazdırmak için tıklayın...</a>
+        </div>
+          </div>
+    </div>
+      </div>
