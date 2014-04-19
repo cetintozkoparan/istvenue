@@ -298,6 +298,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Views\Estate\EstatesStrings.en.Designer.cs">
+      <DependentUpon>EstatesStrings.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Estate\EstateStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstateStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\References\ReferencesStrings.Designer.cs">
       <DependentUpon>ReferencesStrings.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -3010,6 +3020,16 @@
       <LastGenOutput>ContactStrings1.Designer.cs</LastGenOutput>
       <CustomToolNamespace>ContactRess</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Estate\EstatesStrings.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EstatesStrings.en.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Estates</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Estate\EstateStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EstateStrings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Estates</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\References\ReferencesStrings.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>

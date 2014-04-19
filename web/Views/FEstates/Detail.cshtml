@@ -1,4 +1,6 @@
-﻿@{
+﻿@model DAL.Entities.Estate
+
+@{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
@@ -15,7 +17,7 @@ $(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_c
 <div id="containerInner">
         <div id="content">
       <div class="highlightsDetail">
-            <h1>PORTFÖY DETAY</h1>
+            <h1>@Model.Header</h1>
           </div>
       <div class="highlightsDetailContent">
             <div class="highlightsDetailLeft">
@@ -35,29 +37,29 @@ $(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_c
                 <div id="bx-pager"> <a data-slide-index="0" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="1" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="2" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="3" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="4" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="5" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="6" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="7" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="8" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="9" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> </div>
               </div>
         </div>
-            <div class="highlightsDetailRight"> <span class="itemTitle">İlan no </span><span class="itemVal">: BF-1054</span><br class="clear">
-          <span class="itemTitle">Başlık</span><span class="itemVal">: Villa</span><br class="clear">
-          <span class="itemTitle">Fiyat</span><span class="itemVal">: 175000 USD</span><br class="clear">
-          <span class="itemTitle">Tarih</span><span class="itemVal">: 08/04/2014</span><br class="clear">
-          <span class="itemTitle">Portföy Tipi</span><span class="itemVal">: Satılık</span><br class="clear">
-          <span class="itemTitle">Yapının Tipi</span><span class="itemVal">: Villa</span><br class="clear">
-          <span class="itemTitle">Yapı Durumu </span><span class="itemVal">: Betonerme Karkas</span><br class="clear">
-          <span class="itemTitle">Brüt Alan </span><span class="itemVal">:  450 m2</span><br class="clear">
-          <span class="itemTitle">Net Alan</span><span class="itemVal">: 400 m2</span><br class="clear">
-          <span class="itemTitle">Bulunduğu Arsa </span><span class="itemVal">: 880 m2</span><br class="clear">
-          <span class="itemTitle">Oda/Bölüm </span><span class="itemVal">: 6 + 1</span><br class="clear">
-          <span class="itemTitle">Banyo </span><span class="itemVal">: 3</span><br class="clear">
-          <span class="itemTitle">Kat Sayısı </span><span class="itemVal">: 4</span><br class="clear">
-          <span class="itemTitle">Bulunduğu Kat </span><span class="itemVal">: Komple</span><br class="clear">
-          <span class="itemTitle">Bina Taban Alanı </span><span class="itemVal">: 120m2</span><br class="clear">
-          <span class="itemTitle">Otopark</span><span class="itemVal">: 5 araç</span><br class="clear">
-          <span class="itemTitle">Kredi Durumu </span><span class="itemVal">: 3 yıl</span><br class="clear">
-          <span class="itemTitle">Tapu Türü </span><span class="itemVal">: Hisseli tapu</span><br class="clear">
-          <span class="itemTitle">Açıklama</span><span class="itemVal"><span class="colon">:</span>
+          <div class="highlightsDetailRight"> <span class="itemTitle">@Estates.EstateStrings.ilanno</span><span class="itemVal">:@Model.ReferenceNo</span><br class="clear">
+          <span class="itemTitle">@Estates.EstateStrings.baslik</span><span class="itemVal">: @Model.Header</span><br class="clear">
+          <span class="itemTitle">@Estates.EstateStrings.fiyat</span><span class="itemVal">: @Model.Price @Model.PriceTypeId</span><br class="clear">
+          <span class="itemTitle">@Estates.EstateStrings.tarih</span><span class="itemVal">: @Model.TimeCreated</span><br class="clear">
+          <span class="itemTitle">@Estates.EstateStrings.tip</span><span class="itemVal">: @Model.TypeId</span><br class="clear">
+          <span class="itemTitle">@Estates.EstateStrings.alan</span><span class="itemVal">: @Model.Size</span><br class="clear">
+          <span class="itemTitle">@Estates.EstateStrings.oda </span><span class="itemVal">: @Model.RoomNumber</span><br class="clear">
+          @*<span class="itemTitle">Bulunduğu Arsa </span><span class="itemVal">: 880 m2</span><br class="clear">*@
+          @*<span class="itemTitle">Yapının Tipi</span><span class="itemVal">: Villa</span><br class="clear">*@
+          @*<span class="itemTitle">Yapı Durumu </span><span class="itemVal">: Betonerme Karkas</span><br class="clear">*@
+          @*<span class="itemTitle">Brüt Alan </span><span class="itemVal">:  450 m2</span><br class="clear">*@
+          @*<span class="itemTitle">Banyo </span><span class="itemVal">: 3</span><br class="clear">*@
+          @*<span class="itemTitle">Kat Sayısı </span><span class="itemVal">: 4</span><br class="clear">*@
+          @*<span class="itemTitle">Bulunduğu Kat </span><span class="itemVal">: Komple</span><br class="clear">*@
+          @*<span class="itemTitle">Bina Taban Alanı </span><span class="itemVal">: 120m2</span><br class="clear">*@
+          @*<span class="itemTitle">Otopark</span><span class="itemVal">: 5 araç</span><br class="clear">*@
+          @*<span class="itemTitle">Kredi Durumu </span><span class="itemVal">: 3 yıl</span><br class="clear">*@
+          @*<span class="itemTitle">Tapu Türü </span><span class="itemVal">: Hisseli tapu</span><br class="clear">*@
+          <span class="itemTitle">@Estates.EstateStrings.aciklama</span><span class="itemVal"><span class="colon">:</span>
               <textarea maxlength="300" class="explain"></textarea>
               </span><br class="clear">
-          <a href="#" class="contactBtn">İletişim için tıklayın</a>
-          <p><a class="inline cboxElement" href="#inline_content">Başka birine yollamak isterseniz tıklayın</a></p>
+          <a href="#" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
+          <p><a class="inline cboxElement" href="#inline_content">@Estates.EstateStrings.sendingother</a></p>
           <div style="display:none">
                 <div id='inline_content' style='padding:10px; background:#fff;'>
               <div class="dialogBox">
@@ -112,7 +114,7 @@ $(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_c
                   </div>
             </div>
               </div>
-              <a href="#" class="contactBtn">Yazdırmak için tıklayın...</a>
+              <a href="#" class="contactBtn">@Estates.EstateStrings.print</a>
         </div>
           </div>
     </div>

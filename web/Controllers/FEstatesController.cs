@@ -1,4 +1,6 @@
-﻿using DAL.Context;
+﻿using BLL.EstateBL;
+using DAL.Context;
+using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +24,16 @@ namespace web.Controllers
 
         public ActionResult Detail()
         {
-            return View();
+            if (RouteData.Values["id"] != null)
+            {
+                int estateId = Convert.ToInt32(RouteData.Values["id"]);
+                Estate model = EstateManager.GetEstateById(estateId);
+                return View(model);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult PopularEstates()
