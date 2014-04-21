@@ -129,11 +129,32 @@
   <data name="contactBtn" xml:space="preserve">
     <value>İletişim için tıklayın</value>
   </data>
+  <data name="email" xml:space="preserve">
+    <value>E-mail Adresiniz*</value>
+  </data>
+  <data name="femail" xml:space="preserve">
+    <value>E-mail Adresi*</value>
+  </data>
   <data name="fiyat" xml:space="preserve">
     <value>Fiyat</value>
   </data>
+  <data name="fname" xml:space="preserve">
+    <value>Adı</value>
+  </data>
+  <data name="friend" xml:space="preserve">
+    <value>Arkadaşınızın</value>
+  </data>
+  <data name="fsurname" xml:space="preserve">
+    <value>Soyadı</value>
+  </data>
   <data name="ilanno" xml:space="preserve">
     <value>İlan No</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Mesaj</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Adınız</value>
   </data>
   <data name="oda" xml:space="preserve">
     <value>Oda Sayısı</value>
@@ -141,8 +162,14 @@
   <data name="print" xml:space="preserve">
     <value>Yazdırmak için tıklayın...</value>
   </data>
+  <data name="send" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
   <data name="sendingother" xml:space="preserve">
     <value>Başka birine yollamak isterseniz tıklayın</value>
+  </data>
+  <data name="surname" xml:space="preserve">
+    <value>Soyadınız</value>
   </data>
   <data name="tarih" xml:space="preserve">
     <value>Eklenme Tarihi</value>
@@ -152,5 +179,8 @@
   </data>
   <data name="tip" xml:space="preserve">
     <value>Portföy Tipi</value>
+  </data>
+  <data name="your" xml:space="preserve">
+    <value>Sizin</value>
   </data>
 </root>

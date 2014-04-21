@@ -129,11 +129,32 @@
   <data name="contactBtn" xml:space="preserve">
     <value>Click for contact</value>
   </data>
+  <data name="email" xml:space="preserve">
+    <value>E-mail Address*</value>
+  </data>
+  <data name="femail" xml:space="preserve">
+    <value>E-mail Address*</value>
+  </data>
   <data name="fiyat" xml:space="preserve">
     <value>Price</value>
   </data>
+  <data name="fname" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="friend" xml:space="preserve">
+    <value>Your Friend's</value>
+  </data>
+  <data name="fsurname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
   <data name="ilanno" xml:space="preserve">
     <value>Ref.No</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="oda" xml:space="preserve">
     <value>Number of Room </value>
@@ -141,8 +162,14 @@
   <data name="print" xml:space="preserve">
     <value>Click for print</value>
   </data>
+  <data name="send" xml:space="preserve">
+    <value>Send</value>
+  </data>
   <data name="sendingother" xml:space="preserve">
     <value>Click for sending someone</value>
+  </data>
+  <data name="surname" xml:space="preserve">
+    <value>Surname</value>
   </data>
   <data name="tarih" xml:space="preserve">
     <value>Date</value>
@@ -152,5 +179,8 @@
   </data>
   <data name="tip" xml:space="preserve">
     <value>Type</value>
+  </data>
+  <data name="your" xml:space="preserve">
+    <value>Your</value>
   </data>
 </root>

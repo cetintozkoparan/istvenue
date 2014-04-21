@@ -97,6 +97,24 @@ namespace Estates {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to E-mail Adresiniz*.
+        /// </summary>
+        public static string email {
+            get {
+                return ResourceManager.GetString("email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-mail Adresi*.
+        /// </summary>
+        public static string femail {
+            get {
+                return ResourceManager.GetString("femail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fiyat.
         /// </summary>
         public static string fiyat {
@@ -106,11 +124,56 @@ namespace Estates {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adı.
+        /// </summary>
+        public static string fname {
+            get {
+                return ResourceManager.GetString("fname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arkadaşınızın.
+        /// </summary>
+        public static string friend {
+            get {
+                return ResourceManager.GetString("friend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soyadı.
+        /// </summary>
+        public static string fsurname {
+            get {
+                return ResourceManager.GetString("fsurname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İlan No.
         /// </summary>
         public static string ilanno {
             get {
                 return ResourceManager.GetString("ilanno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mesaj.
+        /// </summary>
+        public static string message {
+            get {
+                return ResourceManager.GetString("message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adınız.
+        /// </summary>
+        public static string name {
+            get {
+                return ResourceManager.GetString("name", resourceCulture);
             }
         }
         
@@ -133,11 +196,29 @@ namespace Estates {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gönder.
+        /// </summary>
+        public static string send {
+            get {
+                return ResourceManager.GetString("send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başka birine yollamak isterseniz tıklayın.
         /// </summary>
         public static string sendingother {
             get {
                 return ResourceManager.GetString("sendingother", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soyadınız.
+        /// </summary>
+        public static string surname {
+            get {
+                return ResourceManager.GetString("surname", resourceCulture);
             }
         }
         
@@ -165,6 +246,15 @@ namespace Estates {
         public static string tip {
             get {
                 return ResourceManager.GetString("tip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sizin.
+        /// </summary>
+        public static string your {
+            get {
+                return ResourceManager.GetString("your", resourceCulture);
             }
         }
     }
