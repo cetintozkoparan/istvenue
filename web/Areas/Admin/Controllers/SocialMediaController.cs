@@ -46,8 +46,8 @@ namespace web.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Add(SocialMedia model, HttpPostedFileBase uploadfile)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 if (uploadfile != null && uploadfile.ContentLength > 0)
                 {
                     Random random = new Random();
@@ -61,7 +61,7 @@ namespace web.Areas.Admin.Controllers
                 }
                 ModelState.Clear();
                 ViewBag.ProcessMessage = SocialMediaManager.AddSocialMedia(model);
-            }
+            //}
             return View();
         }
 
@@ -87,8 +87,8 @@ namespace web.Areas.Admin.Controllers
         public ActionResult Edit(SocialMedia media, HttpPostedFileBase uploadfile)
         {
 
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 if (uploadfile != null && uploadfile.ContentLength > 0)
                 {
                     Random random = new Random();
@@ -115,9 +115,9 @@ namespace web.Areas.Admin.Controllers
                 }
                 else
                     return View();
-            }
-            else
-                return View();
+            //}
+            //else
+            //    return View();
 
 
 
