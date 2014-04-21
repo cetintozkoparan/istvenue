@@ -2479,6 +2479,7 @@
     <Content Include="Content\Styles\style.css" />
     <Content Include="Content\Styles\validationEngine.jquery.css" />
     <Content Include="css\bxslider.css" />
+    <Content Include="css\colorbox.css" />
     <Content Include="css\jquery.bxslider.css" />
     <Content Include="css\main.css" />
     <Content Include="css\reset.css" />

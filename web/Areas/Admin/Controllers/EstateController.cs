@@ -1,5 +1,6 @@
 ﻿using BLL.EstateBL;
 using BLL.LanguageBL;
+using BLL.PhotoBL;
 using DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -34,14 +35,18 @@ namespace web.Areas.Admin.Controllers
 
             var countrylist = new SelectList(countries, "Id", "Name");
             ViewBag.Country = countrylist;
-            ImageHelperNew.DestroyImageCashAndSession(301, 200);
+            ImageHelperNew.DestroyImageCashAndSession(577, 296);
             return View();
         }
 
         [HttpPost]
-        public ActionResult Add(Estate record, HttpPostedFileBase uploadfile)
+        public ActionResult Add(Estate record, HttpPostedFileBase uploadfile, IEnumerable<HttpPostedFileBase> attachments)
         {
             var languages = LanguageManager.GetLanguages();
+            string lang = "";
+            if (RouteData.Values["lang"] == null)
+                lang = "tr";
+            else lang = RouteData.Values["lang"].ToString();
             var countries = EstateManager.GetCountryList();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -61,8 +66,29 @@ namespace web.Areas.Admin.Controllers
 
 
                 ViewBag.ProcessMessage = EstateManager.AddEstate(record);
+                Session.Remove("UploadType");
+                foreach (var item in attachments)
+                {
+                    if (item != null && item.ContentLength > 0)
+                    {
+                        Random random = new Random();
+                        int rand = random.Next(1000, 99999999);
+                        new ImageHelper(1024, 768).SaveThumbnail(item, "/Content/images/userfiles/", Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(item.FileName));
+                        Photo p = new Photo();
+                        p.CategoryId = (int)PhotoType.Estate;
+                        p.ItemId = record.Id;
+                        p.Path = "/Content/images/userfiles/" + Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(item.FileName);
+                        p.Thumbnail = "/Content/images/userfiles/" + Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(item.FileName);
+                        p.Online = true;
+                        p.SortOrder = 9999;
+                        p.Language = lang;
+                        p.TimeCreated = DateTime.Now;
+                        p.Title = "Referans";
+                        PhotoManager.Save(p);
+                    }
+                }
+
                 ModelState.Clear();
-                // Response.Redirect("/yonetim/haberduzenle/" + newsmodel.NewsId);
                 return View();
             }
             else
@@ -71,7 +97,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult Edit()
         {
-            ImageHelperNew.DestroyImageCashAndSession(301, 200);
+            ImageHelperNew.DestroyImageCashAndSession(577, 296);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -108,9 +134,13 @@ namespace web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Estate record, HttpPostedFileBase uploadfile)
+        public ActionResult Edit(IEnumerable<HttpPostedFileBase> attachments, Estate record, HttpPostedFileBase uploadfile)
         {
             var languages = LanguageManager.GetLanguages();
+            string lang = "";
+            if (RouteData.Values["lang"] == null)
+                lang = "tr";
+            else lang = RouteData.Values["lang"].ToString();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
             if (ModelState.IsValid)
@@ -138,6 +168,27 @@ namespace web.Areas.Admin.Controllers
                         record.Id = nid;
                         ViewBag.ProcessMessage = EstateManager.EditEstate(record);
                         //return View(record);
+                        foreach (var item in attachments)
+                        {
+                            if (item != null && item.ContentLength > 0)
+                            {
+                                Random random = new Random();
+                                int rand = random.Next(1000, 99999999);
+                                new ImageHelper(1024, 768).SaveThumbnail(item, "/Content/images/userfiles/", Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(item.FileName));
+                                Photo p = new Photo();
+                                p.CategoryId = (int)PhotoType.Estate;
+                                p.ItemId = record.Id;
+                                p.Path = "/Content/images/userfiles/" + Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(item.FileName);
+                                p.Thumbnail = "/Content/images/userfiles/" + Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(item.FileName);
+                                p.Online = true;
+                                p.SortOrder = 9999;
+                                p.Language = lang;
+                                p.TimeCreated = DateTime.Now;
+                                p.Title = "Referans";
+                                PhotoManager.Save(p);
+                            }
+                        }
+
                         return RedirectToAction("Index", "Estate");
                     }
                     else

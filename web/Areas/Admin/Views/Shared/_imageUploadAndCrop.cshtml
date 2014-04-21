@@ -234,17 +234,17 @@
                     //alert(data);
                     $("#imgUploadedImage").attr("src", imageHandler + data);
                     
-                    $("#btnResimGuncelle").bind("click", rg_click_handler);
+                    $("#btnResimGuncelle").unbind().bind("click", rg_click_handler);
                         
                         $('#imgUploadedImage').Jcrop({
                             onChange: setCoords,
                             onSelect: setCoords,
-
+                            
                             //trueSize: [300, 225],
                             //aspectRatio: 1,
-                            maxSize: [@Session["_minwidth2"] + "00", @Session["_minheight2"] + "00"],
+                            //maxSize: [@Session["_minwidth2"], @Session["_minheight2"]],
                             @*boxWidth: @TempData["minwidth"],*@
-                            boxHeight: 550,
+                            boxHeight: 209,
                             keySupport: false,
                             aspectRatio: parseInt(@Session["_minwidth2"]) / parseInt(@Session["_minheight2"]), //keep aspect ratio
                             setSelect: [0, 0, @(Convert.ToInt32(Session["_minwidth2"])/1.5), @(Convert.ToInt32(Session["_minheight2"])/1.5)]
@@ -253,6 +253,7 @@
                             var bounds = this.getBounds();
                             boundx = bounds[0];
                             boundy = bounds[1];
+                            
                             // Store the API in the jcrop_api variable
                             jcrop_api = this;
                             // Move the preview into the jcrop container for css positioning

@@ -11,6 +11,7 @@
 <link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.msgbox.css" rel="stylesheet" />
 <link href="~/Areas/Admin/Content/styles/forms.css" rel="stylesheet" />
 <link href="~/Areas/Admin/Content/styles/table.css" rel="stylesheet" />
+<script src="~/Areas/Admin/Content/scripts/plugins/jquery.MultiFile.js"></script>
 
 @Html.Partial("_leftmenu")
 
@@ -105,6 +106,17 @@
                 @Html.Partial("_imageUploadAndCrop")
             </div>
         </fieldset>
+            <p style="float: left; margin-right: 4px !important;">
+                    <label>Referans Fotoğrafları</label>
+                </p>
+                <div style="width: 249px; width: 25%; float: left">
+                    <input type="file" style="width: 99%" name="attachments" class="multi" />
+                </div>
+                <div style="height: 40px; clear: both;"></div>
+                <fieldset>
+                    <legend>Diğer Fotoğraflar</legend>
+                    @{Html.RenderAction("Photos", "ProjectReference", new { categoryId = (int)web.Areas.Admin.Helpers.PhotoType.Estate, itemId = Model.Id });}
+                </fieldset>
         <fieldset>
             <legend></legend>
             <p>
@@ -142,5 +154,39 @@
 <script src="~/Areas/Admin/Content/scripts/pagescripts/reference/addreference.js"></script>
     <script src="~/Areas/Admin/Content/scripts/pagescripts/estate/editestate.js"></script>
 }
+
+<script>
+    function rg_click_handler() {
+        var newpath = $("#imgNewImage").attr('src');
+        var photoId = $("#currenPhotoId").val();
+
+        newpath = "/Content/images/userfiles/" + newpath.split('=')[1] + "." + photoId.split('.')[1];
+        if (newpath == "") {
+            alert("Lütfen resim kırpma işlemini yapınız...");
+            return false;
+        }
+        $("#btnResimGuncelle").css("display", "none");
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("UpdatePhotoPath", "Project")',
+            data: "{'photoId':'" + photoId.split('.')[0] + "', 'newpath':'" + newpath + "'}",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            success: function (result) {
+                $('#uploadPartial').load('@Url.Action("imageUploadAndCrop", "Media")');
+
+                $.gritter.add({
+                    title: 'Resim güncelleme!',
+                    text: 'Resim kırpma işlemi başarı ile gerçekleştirilmiştir...'
+                });
+            },
+            error: function () {
+
+            }
+        });
+        }
+        $("#btnResimGuncelle").bind("click", rg_click_handler);
+</script>
 
        
