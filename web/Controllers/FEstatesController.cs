@@ -28,6 +28,7 @@ namespace web.Controllers
             {
                 int estateId = Convert.ToInt32(RouteData.Values["id"]);
                 Estate model = EstateManager.GetEstateById(estateId);
+                ViewBag.Lang = lang;
                 return View(model);
             }
             else

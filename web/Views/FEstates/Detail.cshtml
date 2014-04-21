@@ -59,63 +59,74 @@ $(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_c
           <span class="itemTitle">@Estates.EstateStrings.aciklama</span><span class="itemVal"><span class="colon">:</span>
               <textarea maxlength="300" class="explain"></textarea>
               </span><br class="clear">
-          <a href="#" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
-          <p><a class="inline cboxElement" href="#inline_content">@Estates.EstateStrings.sendingother</a></p>
+              @if(ViewBag.Lang=="tr"){
+                <a href="/tr/iletisim-bilgileri" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
+              }
+              else
+              {
+                  <a href="/en/contact-details" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
+              }
+            <p><a class="inline cboxElement" href="#inline_content">@Estates.EstateStrings.sendingother</a></p>
           <div style="display:none">
                 <div id='inline_content' style='padding:10px; background:#fff;'>
               <div class="dialogBox">
-                    <div class=""><span class="dialogTitle" >Arkadaşına Tavsiye Et</span></div>
+                    <div class=""><span class="dialogTitle" >@Estates.EstateStrings.tavsiyeet</span></div>
                     <div id="dialog" >
                   <form action="#" method="post" id="frmMailFriend">
-                        <h3>Sizin</h3>
+                        <h3>@Estates.EstateStrings.your</h3>
                         <div class="dialogContent">
                       <p>
-                            <label>Adınız</label>
+                            <label>@Estates.EstateStrings.name</label>
                             <input type="text"  name="dialogName" class="textinput"/>
                           </p>
                       <br/>
                       <p>
-                            <label>Soyadınız</label>
+                            <label>@Estates.EstateStrings.surname</label>
                             <input type="text" name="contactSurnameDialog" class="textinput">
                           </p>
                               <br/>
                       <p>
-                            <label> E-Posta Adresiniz*</label>
+                            <label>@Estates.EstateStrings.email</label>
                             <input type="text" name="contactEmailDialog" class="textinput" />
                           </p>
                       
                     </div>
-                        <h3>Arkadaşınızın</h3>
+                        <h3>@Estates.EstateStrings.friend</h3>
                         <div class="dialogContent">
-                      <p>
-                            <label> Adı</label>
-                            <input type="text" name="contactNameFriend" class="textinput"></p>
+                        <p>
+                            <label> @Estates.EstateStrings.fname</label>
+                            <input type="text" name="contactNameFriend" class="textinput">
+
+                        </p>
                             <br/>
-                            <p>
-                            <label>E-Posta Adresi*</label>
-                            <input type="text" name="contactEmailFriend" class="textinput">
-                          </p>
-                          <br/>
-                      <p>
-                            <label> Soyadı</label>
+                         <p>
+                            <label> @Estates.EstateStrings.fsurname</label>
                             <input type="text" name="contactSurFriend" class="textinput">
+                        </p>
+                              <br/>
+                        <p>
+                            <label> @Estates.EstateStrings.femail</label>
+                            <input type="text" name="contactEmailFriend" class="textinput">
+                        </p>
+                        
+                      
                         </div>
                         <br class="clear">
-                        <div class="rightDialogContent"> <label>Mesajınız:</label>
+                        <div class="rightDialogContent"> <label>@Estates.EstateStrings.message</label>
                       <textarea class="contactMessage" name="contactMessagefriend"></textarea>
                       <br>
                       <br>
                     </div>
                         <br class="clear">
-                        <div align="right">
-                      <input type="button" name="gonderBtn" value="Gönder" class="sendBtn" />
+                        <div align="left">
+                      <input type="button" name="gonderBtn" value="Gönder" class="@Estates.EstateStrings.send" />
                     </div>
                       </form>
                 </div>
                   </div>
             </div>
               </div>
-              <a href="#" class="contactBtn">@Estates.EstateStrings.print</a>
+              <a href="#" class="contactBtn" onclick="window.print()">@Estates.EstateStrings.print</a>
         </div>
           </div>
     </div>
