@@ -4,8 +4,18 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
+<style type="text/css">
+    .input-validation-error {
+    border:solid 1px red !important;
+    }
+</style>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 <script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+
 <link href="~/css/colorbox.css" rel="stylesheet" />
     <script type="text/javascript">$(document).ready(function(){
 	$('.bxsliderGallery').bxSlider({
@@ -72,7 +82,18 @@ $(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_c
               <div class="dialogBox">
                     <div class=""><span class="dialogTitle" >@Estates.EstateStrings.tavsiyeet</span></div>
                     <div id="dialog" >
-                  <form action="#" method="post" id="frmMailFriend">
+                 @* <form action="#" method="post" id="frmMailFriend">*@
+                    @using (Ajax.BeginForm("SendMail",
+                   new AjaxOptions {
+                       HttpMethod = "POST" ,
+                       UpdateTargetId = "mailresult",
+                       //OnSuccess = "JavaScriptKodu" ,
+                       InsertionMode = InsertionMode.Replace}))
+                                   {
+                        <div id="mailresult">
+
+                        </div>
+
                         <h3>@Estates.EstateStrings.your</h3>
                         <div class="dialogContent">
                       <p>
@@ -87,7 +108,7 @@ $(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_c
                               <br/>
                       <p>
                             <label>@Estates.EstateStrings.email</label>
-                            <input type="text" name="contactEmailDialog" class="textinput" />
+                            <input type="text" name="contactEmailDialog" class="textinput required" />
                           </p>
                       
                     </div>
@@ -106,7 +127,7 @@ $(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_c
                               <br/>
                         <p>
                             <label> @Estates.EstateStrings.femail</label>
-                            <input type="text" name="contactEmailFriend" class="textinput">
+                            <input type="text" name="contactEmailFriend" class="textinput required">
                         </p>
                         
                       
@@ -119,9 +140,9 @@ $(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_c
                     </div>
                         <br class="clear">
                         <div align="left">
-                      <input type="button" name="gonderBtn" value="Gönder" class="@Estates.EstateStrings.send" />
+                      <input type="submit" name="gonderBtn" value="Gönder" class="@Estates.EstateStrings.send" />
                     </div>
-                      </form>
+                    }
                 </div>
                   </div>
             </div>

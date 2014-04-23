@@ -1,9 +1,12 @@
 ﻿using BLL.EstateBL;
+using BLL.MailBL;
 using DAL.Context;
 using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using web.Models;
@@ -184,7 +187,37 @@ namespace web.Controllers
             }
         }
 
+        public string SendMail(string dialogName, string contactSurnameDialog, string contactNameFriend, string contactSurFriend, string contactEmailDialog, string contactEmailFriend, string contactMessagefriend)
+        {
+            try
+            {
+                var mset = MailManager.GetMailSettings();
+                var msend = MailManager.GetMailUsersList(0);
 
+                using (var client = new SmtpClient(mset.ServerHost, mset.Port))
+                {
+                    client.EnableSsl = mset.Security;//burası düzeltilecek
+                    client.Credentials = new NetworkCredential(mset.ServerMail, mset.Password);
+                    var mail = new MailMessage();
+                    mail.From = new MailAddress(contactEmailDialog);
+                    mail.To.Add(contactEmailFriend);
+                    if(lang=="tr")   mail.Subject = "Venueİstanbul İlan Tavsiyesi";
+                    else mail.Subject = "Venueİstanbul Advice Annoucement ";
+                    mail.IsBodyHtml = true;
+                    mail.Body = contactMessagefriend;
+                  
+                    if (mail.To.Count > 0) client.Send(mail);
+                }
+                TempData["sent"] = "true";
+                if (lang == "tr") return "Mail başarıyla Gönderildi";
+                else return "Mail has sendt succesfully";
+            }
+            catch (Exception ex)
+            {
+                if (lang == "tr") return "Hata Oluştu";
+                else return "An error has been occured";
+            }
+        }
     }
 
     public class SearchEstateModel
