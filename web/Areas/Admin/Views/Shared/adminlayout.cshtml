@@ -1,122 +1,140 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Yönetim Paneli Ana Sayfa</title>
-<meta name="description" content="">
-<meta name="author" content="">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-@System.Web.Optimization.Styles.Render("~/admin/layoutcss")
-<link href="~/Areas/Admin/Content/styles/style.css"  rel="stylesheet"/>
-    <link href="~/Areas/Admin/Content/styles/grid.css"  rel="stylesheet"/>
-    <link href="~/Areas/Admin/Content/styles/base.css"  rel="stylesheet"/>
-    <link href="~/Areas/Admin/Content/styles/lists.css"  rel="stylesheet"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Yönetim Paneli Ana Sayfa</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    @System.Web.Optimization.Styles.Render("~/admin/layoutcss")
+    <link href="~/Areas/Admin/Content/styles/style.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles/grid.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles/base.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles/lists.css" rel="stylesheet" />
     @*<link href="~/Areas/Admin/Content/styles/calendar.css"  rel="stylesheet"/>*@
-    <link href="~/Areas/Admin/Content/styles/extensions.css"  rel="stylesheet"/>
-    <link href="~/Areas/Admin/Content/styles/visualize.css"  rel="stylesheet"/>
-    <link href="~/Areas/Admin/Content/styles/navigation.css"  rel="stylesheet"/>
-    <link href="~/Areas/Admin/Content/styles/notification.css"  rel="stylesheet"/>
-    <link href="~/Areas/Admin/Content/styles/leftsidebar.css"  rel="stylesheet"/>
-    <link href="~/Areas/Admin/Content/styles/visualize.css"  rel="stylesheet"/>
+    <link href="~/Areas/Admin/Content/styles/extensions.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles/visualize.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles/navigation.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles/notification.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles/leftsidebar.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/styles/visualize.css" rel="stylesheet" />
     <link href="/Content/Styles/jquery.gritter.css" rel="stylesheet">
 
-<script src="~/Areas/Admin/Content/scripts/plugins/jquery-1.7.2.min.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/plugins/jquery-1.7.2.min.js"></script>
     @*<script src="~/Areas/Admin/Content/scripts/plugins/jquery-1.9.1.js"></script>*@
-<script src="~/Areas/Admin/Content/scripts/plugins/jquery-ui-1.8.20.min.js"></script>
-<script src="~/Areas/Admin/Content/scripts/myscripts/StopReload.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/plugins/jquery-ui-1.8.20.min.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/myscripts/StopReload.js"></script>
     <script src="~/Areas/Admin/Content/scripts/plugins/jquery.corners.min.js"></script>
     <script src="/Content/Scripts/jquery.gritter.min.js"></script>
-    
+
 </head>
 <body class="sidebar-left chart">
-  <header>
-    <div class="header-top tr">
-    <p>Hoşgeldin, <strong></strong>  @HttpContext.Current.User.Identity.Name
-    &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
+    <header>
+        <div class="header-top tr">
+            <p>
+                Hoşgeldin, <strong></strong>@HttpContext.Current.User.Identity.Name
+                &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/cikis">Sistemden Çıkış</a>
-    </p>
-  </div>
-    <nav class="header-middle">
+            </p>
+        </div>
+        <nav class="header-middle">
 
-      @if (!User.Identity.Name.ToString().ToLower().Equals("muhasebe"))
-    {
-       <ul id="nav" class="fr ">
-      <li class="settings"><a class="settings" href="#">Ayarlar</a>
-        <ul>
-          <li><a href="/yonetim/kullanicilar">Kullanıcılar</a></li>
-          <li><a href="/yonetim/mailkullanicilari">Mail Kişileri</a></li>
-          <li><a href="/yonetim/mailayarlari">Mail Ayarları</a></li>
-          <li><a href="/yonetim/analitic">Google Analitic</a></li>
-          <li><a href="/yonetim/sosyalmedyalinkleri">Sosyal Medya Linkleri</a></li>
-        </ul>
-      </li>
-      <li class="content"><a class="dashboard" href="#">İçerik Yönetimi</a>
-        <ul>
-          <li><a href="/yonetim/haberler">Haber İşlemleri</a></li>
-          @*<li><a href="/yonetim/galerigruplari">Resim Galerileri</a></li>*@
-         @* <li><a href="/yonetim/dokumanlar">Dökümanlar</a></li>*@
-          <li><a href="/yonetim/hizmetler">Hizmetler</a></li>
-          <li><a href="/yonetim/referanslar">Referanslar</a></li>
-          @*<li><a href="/yonetim/cozumortaklari">Çözüm Ortakları</a></li>*@
-          @*<li><a href="/yonetim/sertifikalar">Sertifikalar</a></li>*@
-          @*<li><a href="/yonetim/linkler">Önemli Linkler</a></li>*@
-          @*<li><a href="/yonetim/projeler">Projeler</a></li>*@
-          @*<li><a href="/yonetim/ekipmanlar">Ekipmanlar</a></li>*@
-          <li><a href="/yonetim/banner">Banner Fotoğrafları</a></li>
-          <li><a href="/yonetim/sektorgruplari">Sektörler</a></li>
-          <li><a href="/yonetim/sektorler">Sektörler</a></li>
-          <li><a href="/yonetim/kullanicilar">Kullanıcılar</a></li>
-          <li><a href="/yonetim/analitic">Google Analitic</a></li>
-           <li><a href="/yonetim/emlaklistesi">Emlak İşlemleri</a></li>
+            @if (!User.Identity.Name.ToString().ToLower().Equals("muhasebe"))
+            {
+                <ul id="nav" class="fr ">
+                    <li class="settings"><a class="settings" href="#">Ayarlar</a>
+                        <ul>
+                            <li><a href="/yonetim/kullanicilar">Kullanıcılar</a></li>
+                            <li><a href="/yonetim/mailkullanicilari">Mail Kişileri</a></li>
+                            <li><a href="/yonetim/mailayarlari">Mail Ayarları</a></li>
+                            <li><a href="/yonetim/analitic">Google Analitic</a></li>
+                            <li><a href="/yonetim/sosyalmedyalinkleri">Sosyal Medya Linkleri</a></li>
+                        </ul>
+                    </li>
+                    <li class="content"><a class="dashboard" href="#">Gayrimenkul</a>
+                        <ul>
+                            <li><a href="/yonetim/emlaklistesi">Tüm Garyrimenkuller</a></li>
+                        </ul>
+                    </li>
+                    <li class="content"><a class="dashboard" href="#">Bize Ulaşın</a>
+                        <ul>
+                            <li><a href="/yonetim/iletisim">Adres Bilgileri</a></li>
+                            <li><a href="/yonetim/insankaynaklari">Kariyer Olanakları</a></li>
+                        </ul>
+                    </li>
+                    <li class="content"><a class="dashboard" href="#">Haberler</a>
+                        <ul>
+                            <li><a href="/yonetim/haberler">Tüm Haberler</a></li>
+                        </ul>
+                    </li>
+                    <li class="content"><a class="dashboard" href="#">Referanslar</a>
+                        <ul>
+                            <li><a href="/yonetim/referanslar">Firmalar ve Markalar</a></li>
+                            <li><a href="/yonetim/kurumsal/nedenbiz">Neden Biz?</a></li>
+                        </ul>
+                    </li>
+                    <li class="content"><a class="dashboard" href="#">Hizmetlerimiz</a>
+                        <ul>
+                            <li><a href="/yonetim/hizmetlerimiz">Hizmetlerimiz</a></li>
+                            <li><a href="/yonetim/hizmetler">Hizmetler</a></li>
+                            <li><a href="/yonetim/sektorgruplari">Sektörler</a></li>
+                        </ul>
+                    </li>
+                    <li class="content"><a class="dashboard" href="#">Hakkımızda</a>
+                        <ul>
+                            <li><a href="/yonetim/kurumsal/hakkimizda">Hakkımızda</a></li>
+                            <li><a href="/yonetim/kurumsal/vizyon">Vizyonumuz</a></li>
+                            <li><a href="/yonetim/kurumsal/misyon">Misyonumuz</a></li>
+                            <li><a href="#">Diğer Faaliyetlerimiz</a></li>
 
-        </ul>
-      </li>
-     <li class="content"><a class="dashboard" href="#">Firma Bilgileri</a>
-        <ul>
-          <li><a href="/yonetim/kurumsal/hakkimizda">Kurumsal</a></li>
-          <li><a href="/yonetim/kurumsal/nedenbiz">Neden Biz?</a></li>
+                            @*            <li><a href="/yonetim/kurumsal/nedenbiz">Neden Biz?</a></li>
           <li><a href="/yonetim/iletisim">İletişim Bilgileri</a></li>
           <li><a href="/yonetim/ekibimiz">Ekibimiz</a></li>
-          <li><a href="/yonetim/insankaynaklari">İnsan Kaynakları</a></li>
-        </ul>
-      </li>
-      <!-- Nav - End Users --> 
-      <!-- Nav - Start Content -->
-     @* <li class="content"><a class="content" href="#">Ürün İşlemleri</a>
+         *@
+
+                        </ul>
+                        <li class="content"><a class="dashboard" href="#">Anasayfa</a>
+                            <ul>
+                                <li><a href="/yonetim/banner">Slayt Fotoğrafları</a></li>
+                            </ul>
+                        </li>
+                    <!-- Nav - End Users -->
+                    <!-- Nav - Start Content -->
+                    @* <li class="content"><a class="content" href="#">Ürün İşlemleri</a>
          <ul>
           <li><a href="/yonetim/urungruplari">Ürün Kategorileri</a></li>
           <li><a href="/yonetim/urunlistesi">Ürünler</a></li>
         </ul>
       </li>*@
-      <!-- Nav - End Dashboard -->
-    </ul> 
-    }
-        
-        <div style="float:left">
-            <a href="http://www.venueistanbul.com.tr" target="_blank">
-            <img src="~/Areas/Admin/Content/images/logo-web.png" height="55"/></a>
-        </div><span style="line-height:56px; float:left; color:white; font-size:15px; margin-left:15px;">İÇERİK YÖNETİM SİSTEMİ v1.1</span>
-        
-    </nav>
-      
-     
- <div class="header-bottom"> 
-    <ul id="breadcrumbs">
-       <li><a href="/yonetim/anasayfa">Ana Sayfa&nbsp;&nbsp;</a>&raquo;</li>
-    </ul>
-  </div>
-  </header>
-  <section id="page" style="min-height:400px">
-     
-    @RenderBody()
- 
-  </section>
-    
-<script src="~/Areas/Admin/Content/scripts/myscripts/setup.js"></script>
-         
- @RenderSection("scripts", required: false)  
+                    <!-- Nav - End Dashboard -->
+                </ul> 
+            }
+
+            <div style="float: left">
+                <a href="http://www.venueistanbul.com.tr" target="_blank">
+                    <img src="~/Areas/Admin/Content/images/logo-web.png" height="55" /></a>
+            </div>
+            <span style="line-height: 56px; float: left; color: white; font-size: 15px; margin-left: 15px;">İÇERİK YÖNETİM SİSTEMİ v2.5</span>
+
+        </nav>
+
+
+        <div class="header-bottom">
+            <ul id="breadcrumbs">
+                <li><a href="/yonetim/anasayfa">Ana Sayfa&nbsp;&nbsp;</a>&raquo;</li>
+            </ul>
+        </div>
+    </header>
+    <section id="page" style="min-height: 400px">
+
+        @RenderBody()
+
+    </section>
+
+    <script src="~/Areas/Admin/Content/scripts/myscripts/setup.js"></script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 
-      
-    
+

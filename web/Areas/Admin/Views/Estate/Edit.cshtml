@@ -118,7 +118,7 @@
                     @{Html.RenderAction("Photos", "ProjectReference", new { categoryId = (int)web.Areas.Admin.Helpers.PhotoType.Estate, itemId = Model.Id });}
                 </fieldset>
         <fieldset>
-            <legend></legend>
+            <legend>İl/İlçe/Semt</legend>
             <p>
                 @Html.LabelFor(m=>m.CountryId)
                 @Html.DropDownListFor(m=>m.CountryId,(IEnumerable<SelectListItem>)ViewBag.Country,"İl Seçiniz...")

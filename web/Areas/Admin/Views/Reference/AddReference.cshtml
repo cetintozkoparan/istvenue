@@ -12,7 +12,7 @@
 
 <div id="page-content" class="container_12">
     <div id="page-header">
-       <h2>REFERANS BİLGİLERİ</h2>
+       <h2>FİRMA VE MARKALAR</h2>
     </div> 
     
 <section class="grid_12 form">
@@ -23,7 +23,7 @@
          @Html.Hidden("hdfieldtaglist")
         @Html.ValidationSummary(true)
         <fieldset>
-        <legend>Referans Ekle</legend>
+        <legend>Firma/Marka Ekle</legend>
         <p>
             @Html.LabelFor(m=>m.Language)
             @Html.DropDownListFor(m=>m.Language,(IEnumerable<SelectListItem>)ViewBag.LanguageList,"Dil Seçiniz...")
@@ -32,7 +32,7 @@
         </p>
 
         <p>
-            @Html.LabelFor(m=>m.ReferenceName)
+            <label>Firma/Marka Adı</label>
             @Html.TextBoxFor(m=>m.ReferenceName, new { @class="textwidth50"})
             @Html.ValidationMessageFor(m => m.ReferenceName)
         </p>

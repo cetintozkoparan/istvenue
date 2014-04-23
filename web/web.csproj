@@ -1537,6 +1537,7 @@
     <Content Include="Areas\Admin\Content\images\crop.png" />
     <Content Include="Areas\Admin\Content\images\delete.png" />
     <Content Include="Areas\Admin\Content\images\google.png" />
+    <Content Include="Areas\Admin\Content\images\home.png" />
     <Content Include="Areas\Admin\Content\images\icons\experimental.png" />
     <Content Include="Areas\Admin\Content\images\icons\lookup.png" />
     <Content Include="Areas\Admin\Content\images\icons\photo.png" />
@@ -2757,6 +2758,7 @@
     <Content Include="Images\marketanalysis\Thumbs.db" />
     <Content Include="Images\portfoydetay\Thumbs.db" />
     <Content Include="Images\ticariHizmetler.psd" />
+    <Content Include="Areas\Admin\Views\Shared\reference_leftbar.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />
