@@ -1,5 +1,6 @@
 ﻿using BLL.EstateBL;
 using BLL.MailBL;
+using BLL.PhotoBL;
 using DAL.Context;
 using DAL.Entities;
 using System;
@@ -31,8 +32,11 @@ namespace web.Controllers
             {
                 int estateId = Convert.ToInt32(RouteData.Values["id"]);
                 Estate model = EstateManager.GetEstateById(estateId);
+                var photos = PhotoManager.GetList((int)web.Areas.Admin.Helpers.PhotoType.Estate, estateId);
+                EstateWrapperModel m = new EstateWrapperModel(photos, model);
+                
                 ViewBag.Lang = lang;
-                return View(model);
+                return View(m);
             }
             else
             {

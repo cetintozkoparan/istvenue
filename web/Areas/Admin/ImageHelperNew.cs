@@ -35,8 +35,8 @@ namespace web.Areas.Admin
             {
                 HttpContext.Current.Session["_minwidth"] = w.ToString();
                 HttpContext.Current.Session["_minheight"] = h.ToString();
-                HttpContext.Current.Session["_minwidth2"] = "428";
-                HttpContext.Current.Session["_minheight2"] = "322";
+                HttpContext.Current.Session["_minwidth2"] = "577";
+                HttpContext.Current.Session["_minheight2"] = "296";
                 HttpContext.Current.Session.Remove("UploadType");
             }
 

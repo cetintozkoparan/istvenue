@@ -262,6 +262,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ContactWrapperModel.cs" />
     <Compile Include="Models\AdvancedSearchWrapperModel.cs" />
+    <Compile Include="Models\EstateWrapperModel.cs" />
     <Compile Include="Models\OurTeamWrapperModel.cs" />
     <Compile Include="Models\MediaAssetUploadModel.cs" />
     <Compile Include="Models\NewsWrapperModel.cs" />

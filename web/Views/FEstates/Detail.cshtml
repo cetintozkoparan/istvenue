@@ -1,4 +1,4 @@
-﻿@model DAL.Entities.Estate
+﻿@model web.Models.EstateWrapperModel
 
 @{
     ViewBag.Title = "Detail";
@@ -6,7 +6,7 @@
 }
 <style type="text/css">
     .input-validation-error {
-    border:solid 1px red !important;
+        border: solid 1px red !important;
     }
 </style>
 <script src="~/Scripts/jquery-1.7.1.min.js"></script>
@@ -17,138 +17,144 @@
 <script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
 
 <link href="~/css/colorbox.css" rel="stylesheet" />
-    <script type="text/javascript">$(document).ready(function(){
-	$('.bxsliderGallery').bxSlider({
-  pagerCustom: '#bx-pager'
-});
+<script type="text/javascript">$(document).ready(function () {
+    $('.bxsliderGallery').bxSlider({
+        pagerCustom: '#bx-pager'
+    });
 
-$(".inline").colorbox({width:"60%", height:"300px", inline:true, href:"#inline_content"});
-	
-	})</script>
+    $(".inline").colorbox({ width: "60%", height: "300px", inline: true, href: "#inline_content" });
+
+})</script>
 <div id="containerInner">
-        <div id="content">
-      <div class="highlightsDetail">
-            <h1>@Model.Header</h1>
-          </div>
-      <div class="highlightsDetailContent">
-            <div class="highlightsDetailLeft">
-          <div class="imageGallery">
-                <ul class="bxsliderGallery">
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-              <li><img src="/images/portfoydetay/image01.jpg" alt="bina" /></li>
-            </ul>
-                <div id="bx-pager"> <a data-slide-index="0" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="1" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="2" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="3" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="4" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="5" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="6" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="7" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="8" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> <a data-slide-index="9" href=""><img src="/images/portfoydetay/thumb/image01.jpg" /></a> </div>
-              </div>
+    <div id="content">
+        <div class="highlightsDetail">
+            <h1>@Model.estate.Header</h1>
         </div>
-          <div class="highlightsDetailRight"> <span class="itemTitle">@Estates.EstateStrings.ilanno</span><span class="itemVal">:@Model.ReferenceNo</span><br class="clear">
-          <span class="itemTitle">@Estates.EstateStrings.baslik</span><span class="itemVal">: @Model.Header</span><br class="clear">
-          <span class="itemTitle">@Estates.EstateStrings.fiyat</span><span class="itemVal">: @Model.Price @Model.PriceTypeId</span><br class="clear">
-          <span class="itemTitle">@Estates.EstateStrings.tarih</span><span class="itemVal">: @Model.TimeCreated</span><br class="clear">
-          <span class="itemTitle">@Estates.EstateStrings.tip</span><span class="itemVal">: @Model.TypeId</span><br class="clear">
-          <span class="itemTitle">@Estates.EstateStrings.alan</span><span class="itemVal">: @Model.Size</span><br class="clear">
-          <span class="itemTitle">@Estates.EstateStrings.oda </span><span class="itemVal">: @Model.RoomNumber</span><br class="clear">
-          @*<span class="itemTitle">Bulunduğu Arsa </span><span class="itemVal">: 880 m2</span><br class="clear">*@
-          @*<span class="itemTitle">Yapının Tipi</span><span class="itemVal">: Villa</span><br class="clear">*@
-          @*<span class="itemTitle">Yapı Durumu </span><span class="itemVal">: Betonerme Karkas</span><br class="clear">*@
-          @*<span class="itemTitle">Brüt Alan </span><span class="itemVal">:  450 m2</span><br class="clear">*@
-          @*<span class="itemTitle">Banyo </span><span class="itemVal">: 3</span><br class="clear">*@
-          @*<span class="itemTitle">Kat Sayısı </span><span class="itemVal">: 4</span><br class="clear">*@
-          @*<span class="itemTitle">Bulunduğu Kat </span><span class="itemVal">: Komple</span><br class="clear">*@
-          @*<span class="itemTitle">Bina Taban Alanı </span><span class="itemVal">: 120m2</span><br class="clear">*@
-          @*<span class="itemTitle">Otopark</span><span class="itemVal">: 5 araç</span><br class="clear">*@
-          @*<span class="itemTitle">Kredi Durumu </span><span class="itemVal">: 3 yıl</span><br class="clear">*@
-          @*<span class="itemTitle">Tapu Türü </span><span class="itemVal">: Hisseli tapu</span><br class="clear">*@
-          <span class="itemTitle">@Estates.EstateStrings.aciklama</span><span class="itemVal"><span class="colon">:</span>
-              <textarea maxlength="300" class="explain"></textarea>
-              </span><br class="clear">
-              @if(ViewBag.Lang=="tr"){
-                <a href="/tr/iletisim-bilgileri" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
-              }
-              else
-              {
-                  <a href="/en/contact-details" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
-              }
-            <p><a class="inline cboxElement" href="#inline_content">@Estates.EstateStrings.sendingother</a></p>
-          <div style="display:none">
-                <div id='inline_content' style='padding:10px; background:#fff;'>
-              <div class="dialogBox">
-                    <div class=""><span class="dialogTitle" >@Estates.EstateStrings.tavsiyeet</span></div>
-                    <div id="dialog" >
-                 @* <form action="#" method="post" id="frmMailFriend">*@
-                    @using (Ajax.BeginForm("SendMail",
-                   new AjaxOptions {
-                       HttpMethod = "POST" ,
+        <div class="highlightsDetailContent">
+            <div class="highlightsDetailLeft">
+                <div class="imageGallery">
+                    <ul class="bxsliderGallery">
+                        @for (int i = 0; i < Model.photos.Count(); i++)
+                        {
+                            <li>
+                            <img src="@Model.photos[i].Thumbnail" width="577" height="296" alt="@Model.estate.Header" /></li>
+                        }
+
+                    </ul>
+                    <div id="bx-pager">
+
+                        @for (int i = 0; i < Model.photos.Count(); i++)
+                        {
+                            <a data-slide-index="@i" href=""> <img width="108" height="59" src="@Model.photos[i].Thumbnail" /> </a> 
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="highlightsDetailRight">
+                <span class="itemTitle">@Estates.EstateStrings.ilanno</span><span class="itemVal">: @Model.estate.ReferenceNo</span><br class="clear">
+                <span class="itemTitle">@Estates.EstateStrings.baslik</span><span class="itemVal">: @Model.estate.Header</span><br class="clear">
+                <span class="itemTitle">@Estates.EstateStrings.fiyat</span><span class="itemVal">: @Model.estate.Price @Model.estate.PriceTypeId</span><br class="clear">
+                <span class="itemTitle">@Estates.EstateStrings.tarih</span><span class="itemVal">: @Model.estate.TimeCreated</span><br class="clear">
+                <span class="itemTitle">@Estates.EstateStrings.tip</span><span class="itemVal">: @Model.estate.TypeId</span><br class="clear">
+                <span class="itemTitle">@Estates.EstateStrings.alan</span><span class="itemVal">: @Model.estate.Size</span><br class="clear">
+                <span class="itemTitle">@Estates.EstateStrings.oda </span><span class="itemVal">: @Model.estate.RoomNumber</span><br class="clear">
+                @*<span class="itemTitle">Bulunduğu Arsa </span><span class="itemVal">: 880 m2</span><br class="clear">*@
+                @*<span class="itemTitle">Yapının Tipi</span><span class="itemVal">: Villa</span><br class="clear">*@
+                @*<span class="itemTitle">Yapı Durumu </span><span class="itemVal">: Betonerme Karkas</span><br class="clear">*@
+                @*<span class="itemTitle">Brüt Alan </span><span class="itemVal">:  450 m2</span><br class="clear">*@
+                @*<span class="itemTitle">Banyo </span><span class="itemVal">: 3</span><br class="clear">*@
+                @*<span class="itemTitle">Kat Sayısı </span><span class="itemVal">: 4</span><br class="clear">*@
+                @*<span class="itemTitle">Bulunduğu Kat </span><span class="itemVal">: Komple</span><br class="clear">*@
+                @*<span class="itemTitle">Bina Taban Alanı </span><span class="itemVal">: 120m2</span><br class="clear">*@
+                @*<span class="itemTitle">Otopark</span><span class="itemVal">: 5 araç</span><br class="clear">*@
+                @*<span class="itemTitle">Kredi Durumu </span><span class="itemVal">: 3 yıl</span><br class="clear">*@
+                @*<span class="itemTitle">Tapu Türü </span><span class="itemVal">: Hisseli tapu</span><br class="clear">*@
+                <span class="itemTitle">@Estates.EstateStrings.aciklama</span><span class="itemVal"><span class="colon">:</span>
+                    <textarea maxlength="300" class="explain"></textarea>
+                </span>
+                <br class="clear">
+                @if (ViewBag.Lang == "tr")
+                {
+                    <a href="/tr/iletisim-bilgileri" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
+                }
+                else
+                {
+                    <a href="/en/contact-details" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
+                }
+                <p><a class="inline cboxElement" href="#inline_content">@Estates.EstateStrings.sendingother</a></p>
+                <div style="display: none">
+                    <div id='inline_content' style='padding: 10px; background: #fff;'>
+                        <div class="dialogBox">
+                            <div class=""><span class="dialogTitle">@Estates.EstateStrings.tavsiyeet</span></div>
+                            <div id="dialog">
+                                @* <form action="#" method="post" id="frmMailFriend">*@
+                                @using (Ajax.BeginForm("SendMail",
+                   new AjaxOptions
+                   {
+                       HttpMethod = "POST",
                        UpdateTargetId = "mailresult",
                        //OnSuccess = "JavaScriptKodu" ,
-                       InsertionMode = InsertionMode.Replace}))
-                                   {
-                        <div id="mailresult">
+                       InsertionMode = InsertionMode.Replace
+                   }))
+                                {
+                                    <div id="mailresult">
+                                    </div>
 
+                                    <h3>@Estates.EstateStrings.your</h3>
+                                    <div class="dialogContent">
+                                        <p>
+                                            <label>@Estates.EstateStrings.name</label>
+                                            <input type="text" name="dialogName" class="textinput" />
+                                        </p>
+                                        <br />
+                                        <p>
+                                            <label>@Estates.EstateStrings.surname</label>
+                                            <input type="text" name="contactSurnameDialog" class="textinput">
+                                        </p>
+                                        <br />
+                                        <p>
+                                            <label>@Estates.EstateStrings.email</label>
+                                            <input type="text" name="contactEmailDialog" class="textinput required" />
+                                        </p>
+
+                                    </div>
+                                    <h3>@Estates.EstateStrings.friend</h3>
+                                    <div class="dialogContent">
+                                        <p>
+                                            <label>@Estates.EstateStrings.fname</label>
+                                            <input type="text" name="contactNameFriend" class="textinput">
+                                        </p>
+                                        <br />
+                                        <p>
+                                            <label>@Estates.EstateStrings.fsurname</label>
+                                            <input type="text" name="contactSurFriend" class="textinput">
+                                        </p>
+                                        <br />
+                                        <p>
+                                            <label>@Estates.EstateStrings.femail</label>
+                                            <input type="text" name="contactEmailFriend" class="textinput required">
+                                        </p>
+
+
+                                    </div>
+                                    <br class="clear">
+                                    <div class="rightDialogContent">
+                                        <label>@Estates.EstateStrings.message</label>
+                                        <textarea class="contactMessage" name="contactMessagefriend"></textarea>
+                                        <br>
+                                        <br>
+                                    </div>
+                                    <br class="clear">
+                                    <div align="left">
+                                        <input type="submit" name="gonderBtn" value="Gönder" class="@Estates.EstateStrings.send" />
+                                    </div>
+                                }
+                            </div>
                         </div>
-
-                        <h3>@Estates.EstateStrings.your</h3>
-                        <div class="dialogContent">
-                      <p>
-                            <label>@Estates.EstateStrings.name</label>
-                            <input type="text"  name="dialogName" class="textinput"/>
-                          </p>
-                      <br/>
-                      <p>
-                            <label>@Estates.EstateStrings.surname</label>
-                            <input type="text" name="contactSurnameDialog" class="textinput">
-                          </p>
-                              <br/>
-                      <p>
-                            <label>@Estates.EstateStrings.email</label>
-                            <input type="text" name="contactEmailDialog" class="textinput required" />
-                          </p>
-                      
                     </div>
-                        <h3>@Estates.EstateStrings.friend</h3>
-                        <div class="dialogContent">
-                        <p>
-                            <label> @Estates.EstateStrings.fname</label>
-                            <input type="text" name="contactNameFriend" class="textinput">
-
-                        </p>
-                            <br/>
-                         <p>
-                            <label> @Estates.EstateStrings.fsurname</label>
-                            <input type="text" name="contactSurFriend" class="textinput">
-                        </p>
-                              <br/>
-                        <p>
-                            <label> @Estates.EstateStrings.femail</label>
-                            <input type="text" name="contactEmailFriend" class="textinput required">
-                        </p>
-                        
-                      
-                        </div>
-                        <br class="clear">
-                        <div class="rightDialogContent"> <label>@Estates.EstateStrings.message</label>
-                      <textarea class="contactMessage" name="contactMessagefriend"></textarea>
-                      <br>
-                      <br>
-                    </div>
-                        <br class="clear">
-                        <div align="left">
-                      <input type="submit" name="gonderBtn" value="Gönder" class="@Estates.EstateStrings.send" />
-                    </div>
-                    }
                 </div>
-                  </div>
+                <a href="#" class="contactBtn" onclick="window.print()">@Estates.EstateStrings.print</a>
             </div>
-              </div>
-              <a href="#" class="contactBtn" onclick="window.print()">@Estates.EstateStrings.print</a>
         </div>
-          </div>
     </div>
-      </div>
+</div>

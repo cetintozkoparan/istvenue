@@ -235,7 +235,6 @@
                     $("#imgUploadedImage").attr("src", imageHandler + data);
                     
                     $("#btnResimGuncelle").unbind().bind("click", rg_click_handler);
-                        
                         $('#imgUploadedImage').Jcrop({
                             onChange: setCoords,
                             onSelect: setCoords,
@@ -247,7 +246,7 @@
                             boxHeight: 209,
                             keySupport: false,
                             aspectRatio: parseInt(@Session["_minwidth2"]) / parseInt(@Session["_minheight2"]), //keep aspect ratio
-                            setSelect: [0, 0, @(Convert.ToInt32(Session["_minwidth2"])/1.5), @(Convert.ToInt32(Session["_minheight2"])/1.5)]
+                            setSelect: [0, 0, @(Convert.ToInt32(Session["_minwidth2"])/2.5), @(Convert.ToInt32(Session["_minheight2"])/2.5)]
                         },function(){
                             // Use the API to get the real image size
                             var bounds = this.getBounds();
