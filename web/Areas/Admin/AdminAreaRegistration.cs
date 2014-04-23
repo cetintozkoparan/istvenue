@@ -75,6 +75,19 @@ namespace web.Areas.Admin
             context.MapRoute("servicegroupeditx", "yonetim/hizmetgrubuduzenle/{id}", new { action = "EditServiceGroup", Controller = "ServiceGroup" });
 
             //SECTORS
+
+            context.MapRoute("semtekle", "yonetim/semtekle", new { action = "AddDistrict", Controller = "Location" });
+            context.MapRoute("semtduzenle", "yonetim/semtduzenle/{id}", new { action = "EditDistrict", Controller = "Location" });
+            context.MapRoute("semtliste", "yonetim/semtliste", new { action = "DistrictList", Controller = "Location" });
+
+            context.MapRoute("ilceekle", "yonetim/ilceekle", new { action = "AddCity", Controller = "Location" });
+            context.MapRoute("ilceduzenle", "yonetim/ilceduzenle/{id}", new { action = "EditCity", Controller = "Location" });
+            context.MapRoute("ilceliste", "yonetim/ilceliste", new { action = "CityList", Controller = "Location" });
+
+            context.MapRoute("ilekle", "yonetim/ilekle", new { action = "AddCountry", Controller = "Location" });
+            context.MapRoute("ilduzenle", "yonetim/ilduzenle/{id}", new { action = "EditCountry", Controller = "Location" });
+            context.MapRoute("illiste", "yonetim/illiste", new { action = "CountryList", Controller = "Location" });
+
             context.MapRoute("sector_defaultx", "yonetim/sektorler", new { action = "Index", Controller = "Sector" });
             context.MapRoute("sectorx", "yonetim/sektorler/{lang}", new { action = "Index", Controller = "Sector" });
             context.MapRoute("sectorx2", "yonetim/sektorler/{lang}/{id}", new { action = "Index", Controller = "Sector" });
