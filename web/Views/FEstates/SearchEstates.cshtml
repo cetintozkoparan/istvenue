@@ -25,19 +25,20 @@
                     <div class="seperator"></div>
                     <div class="searchinput">
                         <span>@SharedRess.SharedStrings.transactiontype:</span>
-                        <select name="search.islemtipi" class="combobox ">
-                            <option value="0">@SharedRess.SharedStrings.all</option>
-                            <option value="2">@SharedRess.SharedStrings.sold</option>
-                            <option value="1">@SharedRess.SharedStrings.hired</option>
+                        <select id="islemtipi" name="search.islemtipi" class="combobox ">
+                            <option value="2">@SharedRess.SharedStrings.all</option>
+                            <option value="1">@SharedRess.SharedStrings.sold</option>
+                            <option value="0">@SharedRess.SharedStrings.hired</option>
                         </select>
                     </div>
                     <div class="searchinput floatright">
                         <span>@SharedRess.SharedStrings.estatetype:</span>
-                        <select name="search.emlaktipi" class="combobox " style="">
+                        <select id="emlaktipi" name="search.emlaktipi" class="combobox " style="">
                             <option selected="selected" value="0">@SharedRess.SharedStrings.all</option>
-                            <option value="1">@SharedRess.SharedStrings.workplace</option>
-                            <option value="2">@SharedRess.SharedStrings.land</option>
-                            <option value="3">@SharedRess.SharedStrings.housing</option>
+                            <option value="3">@SharedRess.SharedStrings.all</option>
+                            <option value="0">@SharedRess.SharedStrings.workplace</option>
+                            <option value="1">@SharedRess.SharedStrings.land</option>
+                            <option value="2">@SharedRess.SharedStrings.housing</option>
                         </select>
                     </div>
                     <div class="clear"></div>
@@ -159,7 +160,13 @@
         $(".resetbtn").click(function () {
             location.reload();
         });
+        if ("@ViewBag.islemtipi" != "") {
+            $("#islemtipi").val("@ViewBag.islemtipi");
+        }
 
+        if ("@ViewBag.emlaktipi" != "") {
+            $("#emlaktipi").val("@ViewBag.emlaktipi");
+        }
         $("#search_sehir").change(function () {
             var listvalue =  $(this).val();
             $.getJSON('@Url.Action("GetTowns", "FEstates")', { listid: listvalue }, function (result) {

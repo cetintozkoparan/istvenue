@@ -165,6 +165,7 @@ namespace BLL.EstateBL
                         record.DistrictId = model.DistrictId;
                         record.Popular = model.Popular;
                         record.TypeId = model.TypeId;
+                        record.TransactionId = model.TransactionId;
 
 
                         if (!string.IsNullOrEmpty(model.Photo))

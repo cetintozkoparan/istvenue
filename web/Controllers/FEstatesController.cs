@@ -98,16 +98,28 @@ namespace web.Controllers
                 var list = db.Estate.ToList();
                 if (!string.IsNullOrEmpty(model.search.referansno))
                 {
-                    int refno = Convert.ToInt32(model.search.referansno);
-                    list = list.Where(d => Convert.ToInt32(d.ReferenceNo) == refno).ToList();
+                    try
+                    {
+                        int refno = Convert.ToInt32(model.search.referansno);
+                        list = list.Where(d => Convert.ToInt32(d.ReferenceNo) == refno).ToList();
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
                 if (!string.IsNullOrEmpty(model.search.keyword))
                 {
                     list = list.Where(d => d.Header.Contains(model.search.keyword)).ToList();
                 }
-                if (model.search.emlaktipi != 0)
+                if (model.search.emlaktipi != 3)
                 {
                     list = list.Where(d => d.TypeId == model.search.emlaktipi).ToList();
+                    ViewBag.emlaktipi = model.search.emlaktipi;
+                }
+                if (model.search.islemtipi != 2)
+                {
+                    list = list.Where(d => d.TransactionId == model.search.islemtipi).ToList();
+                    ViewBag.islemtipi = model.search.islemtipi;
                 }
 
                 if (!string.IsNullOrEmpty(model.search.sehir))

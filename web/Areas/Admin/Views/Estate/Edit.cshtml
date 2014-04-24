@@ -49,11 +49,23 @@
             @Html.ValidationMessageFor(m=>m.Content)
         </p>
         <p>
+            @Html.LabelFor(m=>m.TransactionId)
+            @Html.DropDownListFor(x => x.TransactionId, new SelectList(
+                  new List<Object>{ 
+                       new { value = "1" , text = "Satılık" },
+                       new { value = "0" , text = "Kiralık" },
+                    },
+                  "value",
+                  "text",
+                   0), new { @class="textwidth10"})
+        </p>
+        <p>
             @Html.LabelFor(m=>m.TypeId)
             @Html.DropDownListFor(x => x.TypeId, new SelectList(
                   new List<Object>{ 
-                       new { value = "0" , text = "Kiralık"  },
-                       new { value = "1" , text = "Satılık" },
+                       new { value = "0" , text = "İşyeri"  },
+                       new { value = "1" , text = "Arsa" },
+                       new { value = "2" , text = "Konut" },
                     },
                   "value",
                   "text",

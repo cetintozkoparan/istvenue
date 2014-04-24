@@ -7,8 +7,11 @@ namespace DAL.Entities
     {
         [Key]
         public int Id { get; set; }
-         [Display(Name = "Emlak Tipi")]
+        [Display(Name = "Emlak Tipi")]
         public int TypeId { get; set; }
+        [Display(Name = "İşlem Tipi")]
+        public int TransactionId { get; set; }
+
         //İl
         [Display(Name = "İl Seçimi")]
         [Required(ErrorMessage = "İli giriniz")]
