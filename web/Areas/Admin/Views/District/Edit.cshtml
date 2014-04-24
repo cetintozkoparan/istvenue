@@ -27,13 +27,13 @@
         <legend>Semt Düzenle</legend>
         <p class="editor-field">
             @Html.Label("İl")
-            @Html.DropDownList("Countries", (IEnumerable<SelectListItem>)ViewBag.Countries, "İl Seçiniz...", new { @class="required"})
+            @Html.DropDownList("Countries")
          
         </p>
          <p class="editor-field">
             @Html.Label("İlçe")
-            @Html.DropDownListFor(model => model.TownId,(IEnumerable<SelectListItem>)ViewBag.Towns,"İlçe Seçiniz...")
-            @Html.ValidationMessageFor(model => model.TownId)
+            @Html.DropDownListFor(model => model.TownId,(IEnumerable<SelectListItem>)ViewBag.Towns)
+           
         </p>
         <p class="editor-field">
             @Html.LabelFor(model => model.Name)
@@ -63,7 +63,7 @@
     $(function () {
     
 
-        $("#TownId").attr('disabled', true);
+      //  $("#TownId").attr('disabled', true);
       
 
 

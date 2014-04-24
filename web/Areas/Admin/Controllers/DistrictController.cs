@@ -109,11 +109,13 @@ namespace web.Areas.Admin.Controllers
 
             int cid = db.Town.FirstOrDefault(x => x.Id == dist.TownId).CountryId;
 
-            List<Country> countries = db.Country.ToList();
-            ViewBag.Countries = new SelectList(countries, "Id", "Name",cid);
+           
 
             List<Town> towns = db.Town.Where(x=>x.CountryId==cid).ToList();
             ViewBag.Towns = new SelectList(towns, "Id", "Name",dist.TownId);
+
+            List<Country> countries = db.Country.ToList();
+            ViewBag.Countries = new SelectList(countries, "Id", "Name", cid);
 
             return View(dist);
         }
@@ -123,7 +125,7 @@ namespace web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Town country)
+        public ActionResult Edit(District country)
         {
             if (ModelState.IsValid)
             {
@@ -140,10 +142,10 @@ namespace web.Areas.Admin.Controllers
         [HttpPost, ActionName("Delete")]
         public JsonResult DeleteConfirmed(int id)
         {
-            Town country = db.Town.Find(id);
+            District country = db.District.Find(id);
             try
             {
-                db.Town.Remove(country);
+                db.District.Remove(country);
                 db.SaveChanges();
                 return Json(true);
             }
