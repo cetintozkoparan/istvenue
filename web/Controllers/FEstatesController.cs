@@ -66,10 +66,7 @@ namespace web.Controllers
                 var list = db.Estate.ToList();
                 AdvancedSearchModel model = new AdvancedSearchModel(list, new SearchEstateModel());
                 IEnumerable<SelectListItem> basetypes = db.Country.ToList().Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Name });
-                List<SelectListItem> ilce = new List<SelectListItem>();
-                ilce.Add(new SelectListItem { Value = "", Text = "" });
                 ViewData["search.sehir"] =  basetypes;
-                ViewData["search.ilce"] = ilce;
                 return View(model);
             }
         }

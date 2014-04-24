@@ -34,7 +34,6 @@
                     <div class="searchinput floatright">
                         <span>@SharedRess.SharedStrings.estatetype:</span>
                         <select id="emlaktipi" name="search.emlaktipi" class="combobox " style="">
-                            <option selected="selected" value="0">@SharedRess.SharedStrings.all</option>
                             <option value="3">@SharedRess.SharedStrings.all</option>
                             <option value="0">@SharedRess.SharedStrings.workplace</option>
                             <option value="1">@SharedRess.SharedStrings.land</option>
@@ -60,15 +59,17 @@
                     <div class="seperator"></div>
                     <div class="searchinput">
                         <span>@SharedRess.SharedStrings.district:</span>
-                        @*<select name="search.ilce" class="combobox ">
-                        </select>*@
-                        @Html.DropDownList("search.ilce", null, @SharedRess.SharedStrings.all , new { @class="combobox" })
+                        <select id="search_ilce" name="search.ilce" class="combobox">
+                            <option selected="selected" value="0">@SharedRess.SharedStrings.all</option>
+                        </select>
+                        @*@Html.DropDownList("search.ilce", null, @SharedRess.SharedStrings.all , new { @class="combobox" })*@
                     </div>
                     <div class="clear"></div>
                     <div class="seperator"></div>
                     <div class="searchinput">
                         <span>@SharedRess.SharedStrings.locality:</span>
-                        <select name="search.semt" class="combobox ">
+                        <select name="search.semt" class="combobox">
+                            <option selected="selected" value="0">@SharedRess.SharedStrings.all</option>
                         </select>
                     </div>
                     <div class="clear"></div>
@@ -168,20 +169,27 @@
             $("#emlaktipi").val("@ViewBag.emlaktipi");
         }
         $("#search_sehir").change(function () {
-            var listvalue =  $(this).val();
-            $.getJSON('@Url.Action("GetTowns", "FEstates")', { listid: listvalue }, function (result) {
-                
-                var listB = $('#search_ilce');
-                listB.empty();
-                $.each(result, function (index, item) {
-                    listB.append(
-                        $('<option/>', {
-                            value: item.Id,
-                            text: item.Name
-                        })
-                    );
+            var listvalue = $(this).val();
+            if (listvalue != "") {
+                alert(listvalue);
+
+                $.getJSON('@Url.Action("GetTowns", "FEstates")', { listid: listvalue }, function (result) {
+
+                    var listB = $('#search_ilce');
+                    listB.empty();
+                    $.each(result, function (index, item) {
+                        listB.append(
+                            $('<option/>', {
+                                value: item.Id,
+                                text: item.Name
+                            })
+                        );
+                    });
                 });
-            });
+            } else {
+                $('#search_ilce').empty();
+                $('#search_ilce').append($('<option/>', { value: "", text: "Tümü" }));
+            }
         });
     });
 </script>
