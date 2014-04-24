@@ -248,6 +248,13 @@ namespace web.Areas.Admin
 
 
 
+            context.MapRoute("town_defaultx", "yonetim/ilceler", new { action = "Index", Controller = "Town" });
+            context.MapRoute("townx", "yonetim/ilceler/{id}", new { action = "Index", Controller = "Town" });
+            context.MapRoute("townaddx", "yonetim/yeniilce", new { action = "Create", Controller = "Town" });
+            context.MapRoute("towneditx", "yonetim/ilceyiduzenle/{id}", new { action = "Edit", Controller = "Town" });
+
+
+
             //SOSYAL MEDYA LİNKLERİ
             context.MapRoute("estate_default", "yonetim/emlaklistesi", new { action = "Index", Controller = "Estate" });
             context.MapRoute("estate_lang", "yonetim/emlaklistesi/{lang}", new { action = "Index", Controller = "Estate" });
