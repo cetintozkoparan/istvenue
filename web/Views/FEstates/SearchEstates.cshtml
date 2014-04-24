@@ -68,7 +68,7 @@
                     <div class="seperator"></div>
                     <div class="searchinput">
                         <span>@SharedRess.SharedStrings.locality:</span>
-                        <select name="search.semt" class="combobox">
+                        <select id="search_semt" name="search.semt" class="combobox">
                             <option selected="selected" value="0">@SharedRess.SharedStrings.all</option>
                         </select>
                     </div>
@@ -171,12 +171,17 @@
         $("#search_sehir").change(function () {
             var listvalue = $(this).val();
             if (listvalue != "") {
-                alert(listvalue);
 
                 $.getJSON('@Url.Action("GetTowns", "FEstates")', { listid: listvalue }, function (result) {
 
                     var listB = $('#search_ilce');
                     listB.empty();
+                    listB.append(
+                            $('<option/>', {
+                                value: "",
+                                text: "Tümü"
+                            })
+                        );
                     $.each(result, function (index, item) {
                         listB.append(
                             $('<option/>', {
@@ -189,6 +194,37 @@
             } else {
                 $('#search_ilce').empty();
                 $('#search_ilce').append($('<option/>', { value: "", text: "Tümü" }));
+                $('#search_semt').empty();
+                $('#search_semt').append($('<option/>', { value: "", text: "Tümü" }));
+            }
+        });
+
+        $("#search_ilce").change(function () {
+            var listvalue = $(this).val();
+            if (listvalue != "") {
+
+                $.getJSON('@Url.Action("GetDistricts", "FEstates")', { listid: listvalue }, function (result) {
+
+                    var listB = $('#search_semt');
+                    listB.empty();
+                    listB.append(
+                            $('<option/>', {
+                                value: "",
+                                text: "Tümü"
+                            })
+                        );
+                    $.each(result, function (index, item) {
+                        listB.append(
+                            $('<option/>', {
+                                value: item.Id,
+                                text: item.Name
+                            })
+                        );
+                    });
+                });
+            } else {
+                $('#search_semt').empty();
+                $('#search_semt').append($('<option/>', { value: "", text: "Tümü" }));
             }
         });
     });

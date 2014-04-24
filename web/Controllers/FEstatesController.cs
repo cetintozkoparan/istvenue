@@ -87,6 +87,22 @@ namespace web.Controllers
             }
         }
 
+        public JsonResult GetDistricts(int? listid)
+        {
+
+            //todo: preparing the data source filter
+            using (MainContext db = new MainContext())
+            {
+                if (listid == null)
+                {
+                    listid = 0;
+                }
+                var list = db.District.ToList().Where(d => d.TownId == listid).Select(d => new { d.Id, d.Name });
+
+                return Json(list, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         [HttpPost]
         public ActionResult SearchEstates(AdvancedSearchModel model)
         {
