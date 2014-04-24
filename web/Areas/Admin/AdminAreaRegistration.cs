@@ -253,6 +253,11 @@ namespace web.Areas.Admin
             context.MapRoute("townaddx", "yonetim/yeniilce", new { action = "Create", Controller = "Town" });
             context.MapRoute("towneditx", "yonetim/ilceyiduzenle/{id}", new { action = "Edit", Controller = "Town" });
 
+            context.MapRoute("district_defaultx", "yonetim/semtler", new { action = "Index", Controller = "District" });
+            context.MapRoute("districtx", "yonetim/semtler/{cid}/{tid}", new { action = "Index", Controller = "District" });
+            context.MapRoute("districtx2", "yonetim/semtler/{cid}", new { action = "Index", Controller = "District" });
+            context.MapRoute("districtaddx", "yonetim/yenisemt", new { action = "Create", Controller = "District" });
+            context.MapRoute("districteditx", "yonetim/semtiduzenle/{id}", new { action = "Edit", Controller = "District" });
 
 
             //SOSYAL MEDYA LİNKLERİ
