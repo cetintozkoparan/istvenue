@@ -216,10 +216,10 @@ namespace web.Controllers
             }
         }
 
-        public string SendMail(string dialogName, string contactSurnameDialog, string contactNameFriend, string contactSurFriend, string contactEmailDialog, string contactEmailFriend, string contactMessagefriend)
+        public string SendMail(string dialogName, string contactSurnameDialog, string contactNameFriend, string contactSurFriend, string contactEmailDialog, string contactEmailFriend, string contactMessagefriend, string ilanadi,string ilanUrl)
         {
-            try
-            {
+            //try
+            //{
                 var mset = MailManager.GetMailSettings();
                 var msend = MailManager.GetMailUsersList(0);
 
@@ -230,22 +230,38 @@ namespace web.Controllers
                     var mail = new MailMessage();
                     mail.From = new MailAddress(contactEmailDialog);
                     mail.To.Add(contactEmailFriend);
-                    if(lang=="tr")   mail.Subject = "Venueİstanbul İlan Tavsiyesi";
-                    else mail.Subject = "Venueİstanbul Advice Annoucement ";
+                    if(lang=="tr")
+                    {
+                        mail.Subject = "Venueİstanbul İlan Tavsiyesi";
+                        string maiilContent = "İLAN ADI: " + ilanadi;
+                        maiilContent += "<br/> İLAN LİNKİ :" + ilanUrl;
+                        maiilContent += "<br/><br/>" + contactMessagefriend;
+                        mail.Body = maiilContent;
+                    }
+                    else
+                    {
+                        mail.Subject = "Venueİstanbul Advice Annoucement ";
+                        string maiilContent = "Annoucement Name: " + ilanadi;
+                        maiilContent += "<br/> Annoucement Url :" + ilanUrl;
+                        maiilContent += "<br/><br/>" + contactMessagefriend;
+                        mail.Body = maiilContent;
+                    }
                     mail.IsBodyHtml = true;
-                    mail.Body = contactMessagefriend;
+
+                   
+                   
                   
                     if (mail.To.Count > 0) client.Send(mail);
                 }
                 TempData["sent"] = "true";
                 if (lang == "tr") return "Mail başarıyla Gönderildi";
                 else return "Mail has sendt succesfully";
-            }
-            catch (Exception ex)
-            {
-                if (lang == "tr") return "Hata Oluştu";
-                else return "An error has been occured";
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    if (lang == "tr") return "Hata Oluştu";
+            //    else return "An error has been occured";
+            //}
         }
     }
 
