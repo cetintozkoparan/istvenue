@@ -126,6 +126,9 @@
   <data name="alan" xml:space="preserve">
     <value>Size</value>
   </data>
+  <data name="arsa" xml:space="preserve">
+    <value>Land</value>
+  </data>
   <data name="banyowc" xml:space="preserve">
     <value>Bath/WC</value>
   </data>
@@ -186,8 +189,17 @@
   <data name="isinmatipi" xml:space="preserve">
     <value>Heating Type</value>
   </data>
+  <data name="isyeri" xml:space="preserve">
+    <value>Office</value>
+  </data>
   <data name="kiragetirisi" xml:space="preserve">
     <value>Imputed Rent</value>
+  </data>
+  <data name="kiralik" xml:space="preserve">
+    <value>Rental</value>
+  </data>
+  <data name="konut" xml:space="preserve">
+    <value>Home</value>
   </data>
   <data name="krediyeuygunluk" xml:space="preserve">
     <value>State of Credit</value>
@@ -212,6 +224,9 @@
   </data>
   <data name="print" xml:space="preserve">
     <value>Click for print</value>
+  </data>
+  <data name="satilik" xml:space="preserve">
+    <value>On sale</value>
   </data>
   <data name="send" xml:space="preserve">
     <value>Send</value>

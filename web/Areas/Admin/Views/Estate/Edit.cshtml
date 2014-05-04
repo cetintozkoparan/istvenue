@@ -79,10 +79,100 @@
             @Html.LabelFor(m=>m.Age)
             @Html.TextBoxFor(m=>m.Age, new { @class="textwidth10"})
         </p>
-         <p>
-            @Html.LabelFor(m=>m.Size)
-            @Html.TextBoxFor(m=>m.Size, new { @class="textwidth10"})
-        </p>
+        <p>
+                    <label>Brüt Alan</label>
+                    @Html.TextBoxFor(m => m.Size, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Net Alan</label>
+                    @Html.TextBoxFor(m => m.NetAlan, new { @class = "textwidth10" })
+                </p>
+
+                <p>
+                    <label>Bulunduğu Arsa m2</label>
+                    @Html.TextBoxFor(m => m.BulunduguArsa, new { @class = "textwidth10" })
+                </p>
+
+                <p>
+                    <label>Bina Taban Alanı m2</label>
+                    @Html.TextBoxFor(m => m.BinaTabanAlani, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Banyo/WC</label>
+                    @Html.TextBoxFor(m => m.BanyoWc, new { @class = "textwidth10" })
+                </p>
+
+                <p>
+                    <label>Binadaki Kat Sayısı</label>
+                    @Html.TextBoxFor(m => m.BinaKatSayisi, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Bulunduğu Kat Sayısı</label>
+                    @Html.TextBoxFor(m => m.BulunduguKat, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Cephe/Yön</label>
+                    @Html.TextBoxFor(m => m.CepheYon, new { @class = "textwidth10" })
+                </p>
+
+                <p>
+                    <label>Isınma Tipi</label>
+                    @Html.TextBoxFor(m => m.IsınmaTipi, new { @class = "textwidth10" })
+                </p>
+
+                <p>
+                    <label>Yakıt Tipi</label>
+                    @Html.TextBoxFor(m => m.YakitTipi, new { @class = "textwidth10" })
+                </p>
+
+                <p>
+                    <label>Otopark</label>
+                    @Html.DropDownListFor(x => x.Otopark, new SelectList(
+                  new List<Object>{ 
+                       new { value = "Var" , text = "Yok"  },
+                       new { value = "Yok" , text = "Var" },
+                    },
+                  "value",
+                  "text",
+                   0), new { @class = "textwidth10" })
+                </p>
+
+                <p>
+                    <label>Yapının Durumu</label>
+                    @Html.TextBoxFor(m => m.YapininDurumu, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Kullanım Durumu</label>
+                    @Html.TextBoxFor(m => m.KullanimDurumu, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Tapu Durumu</label>
+                    @Html.TextBoxFor(m => m.TapuDurumu, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Depozito</label>
+                    @Html.TextBoxFor(m => m.Depozito, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Aidat/Yönetim</label>
+                    @Html.TextBoxFor(m => m.AidatYonetim, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Devren</label>
+                    @Html.TextBoxFor(m => m.Devren, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Takas</label>
+                    @Html.TextBoxFor(m => m.Takas, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Kredi Durumu</label>
+                    @Html.TextBoxFor(m => m.KrediDurumu, new { @class = "textwidth10" })
+                </p>
+                <p>
+                    <label>Kira Getirisi</label>
+                    @Html.TextBoxFor(m => m.KiraGetirisi, new { @class = "textwidth10" })
+                </p>
         <p>
             @Html.LabelFor(m=>m.Consultant)
             @Html.TextBoxFor(m=>m.Consultant, new { @class="textwidth50"})

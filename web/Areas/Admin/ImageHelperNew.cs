@@ -29,14 +29,14 @@ namespace web.Areas.Admin
             return codecs[1];
         }
 
-        public static void DestroyImageCashAndSession(int w, int h)
+        public static void DestroyImageCashAndSession(int w, int h, int w2 = 0, int h2 = 0)
         {
             if (w!=0 && h!=0)
             {
                 HttpContext.Current.Session["_minwidth"] = w.ToString();
                 HttpContext.Current.Session["_minheight"] = h.ToString();
-                HttpContext.Current.Session["_minwidth2"] = "577";
-                HttpContext.Current.Session["_minheight2"] = "296";
+                HttpContext.Current.Session["_minwidth2"] = w2;
+                HttpContext.Current.Session["_minheight2"] = h2;
                 HttpContext.Current.Session.Remove("UploadType");
             }
 

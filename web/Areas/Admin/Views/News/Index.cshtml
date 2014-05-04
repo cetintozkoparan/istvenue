@@ -24,10 +24,11 @@
         <thead>
             <tr>
                 <th class="width5">Sırala</th>
-                <th class="width50">Haber Başlığı</th>
-                <th class="center witdh10">Durum</th>
-                <th class="center witdh10">Eklenme Tarihi</th>
-                <th class="center witdh10">İşlem</th>
+                <th class="width55">Haber Başlığı</th>
+                <th class="center witdh20">Durum</th>
+                <th class="center witdh10">Türü</th>
+                <th class="center witdh5">Eklenme Tarihi</th>
+                <th class="center witdh5">İşlem</th>
             </tr>
         </thead>
          <tbody id="item-list">
@@ -46,6 +47,7 @@
                         {<img   id="img_online_@item.NewsId" src="/Areas/Admin/Content/images/icons/online.png" class="cursorpointer" title="Offline yap" onclick="SetOnlineStatus('/News/NewsEditStatus',@item.NewsId)" />}
                         else{<img id="img_online_@item.NewsId" src="/Areas/Admin/Content/images/icons/offline.png" class="cursorpointer" title="Online yap" onclick="SetOnlineStatus('/News/NewsEditStatus',@item.NewsId)" />}
                     </td>
+                    <td class="center">@if (item.TypeId == 0) { <text>Sektör Haberleri</text> }else{ <text>Basında Venueİstanbul</text> }</td>
                     <td class="center">@item.TimeCreated</td>
                     <td class="center">
                        <a href="/yonetim/haberduzenle/@item.NewsId">

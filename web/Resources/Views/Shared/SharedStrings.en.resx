@@ -480,4 +480,7 @@
   <data name="menu_onpress" xml:space="preserve">
     <value>onpress</value>
   </data>
+  <data name="brifing" xml:space="preserve">
+    <value>briefs</value>
+  </data>
 </root>

@@ -167,6 +167,25 @@ namespace BLL.EstateBL
                         record.TypeId = model.TypeId;
                         record.TransactionId = model.TransactionId;
 
+                        record.NetAlan = model.NetAlan;
+                        record.BulunduguArsa = model.BulunduguArsa;
+                        record.BinaTabanAlani = model.BinaTabanAlani;
+                        record.BanyoWc = model.BanyoWc;
+                        record.BinaKatSayisi = model.BinaKatSayisi;
+                        record.BulunduguKat = model.BulunduguKat;
+                        record.CepheYon = model.CepheYon;
+                        record.IsınmaTipi = model.IsınmaTipi;
+                        record.YakitTipi = model.YakitTipi;
+                        record.Otopark = model.Otopark;
+                        record.YapininDurumu = model.YapininDurumu;
+                        record.KullanimDurumu = model.KullanimDurumu;
+                        record.TapuDurumu = model.TapuDurumu;
+                        record.Depozito = model.Depozito;
+                        record.AidatYonetim = model.AidatYonetim;
+                        record.Devren = model.Devren;
+                        record.Takas = model.Takas;
+                        record.KrediDurumu = model.KrediDurumu;
+                        record.KiraGetirisi = model.KiraGetirisi;
 
                         if (!string.IsNullOrEmpty(model.Photo))
                         {

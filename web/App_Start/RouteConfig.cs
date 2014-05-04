@@ -161,6 +161,13 @@ namespace web
             routes.MapRoute("oursectors_tr", "tr/sektorler/", new { action = "Index", Controller = "FSector" });
             routes.MapRoute("oursectors_en", "en/sectors/", new { action = "Index", Controller = "FSector" });
 
+            routes.MapRoute("brifing_tr", "tr/brifingler/", new { action = "New", Controller = "FBrifing" });
+            routes.MapRoute("brifing_en", "en/briefs/", new { action = "New", Controller = "FBrifing" });
+            routes.MapRoute("brifingdet_tr", "tr/detaylibrifing/", new { action = "Detail", Controller = "FBrifing" });
+            routes.MapRoute("brifingdet_en", "en/detailedbriefs/", new { action = "Detail", Controller = "FBrifing" });
+
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

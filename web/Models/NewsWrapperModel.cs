@@ -8,13 +8,13 @@ namespace web.Models
 {
     public class NewsWrapperModel
     {
-        public News news { get; set; }
-        public IEnumerable<News> allnews { get; set; }
+        public IList<News> news { get; set; }
+        public IList<Photo> photos { get; set; }
 
-        public NewsWrapperModel(IEnumerable<News> allnews, News news)
+        public NewsWrapperModel(IList<News> news, IList<Photo> photos)
         {
+            this.photos = photos;
             this.news = news;
-            this.allnews = allnews;
         }
     }
 }

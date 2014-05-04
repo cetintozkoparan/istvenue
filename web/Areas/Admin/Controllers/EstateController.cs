@@ -83,7 +83,7 @@ namespace web.Areas.Admin.Controllers
                         p.SortOrder = 9999;
                         p.Language = lang;
                         p.TimeCreated = DateTime.Now;
-                        p.Title = "Referans";
+                        p.Title = "Emlak";
                         PhotoManager.Save(p);
                     }
                 }
@@ -97,7 +97,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult Edit()
         {
-            ImageHelperNew.DestroyImageCashAndSession(577, 296);
+            ImageHelperNew.DestroyImageCashAndSession(577, 296, 577, 296);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -184,7 +184,7 @@ namespace web.Areas.Admin.Controllers
                                 p.SortOrder = 9999;
                                 p.Language = lang;
                                 p.TimeCreated = DateTime.Now;
-                                p.Title = "Referans";
+                                p.Title = "Emlak";
                                 PhotoManager.Save(p);
                             }
                         }

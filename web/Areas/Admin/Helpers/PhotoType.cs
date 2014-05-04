@@ -9,6 +9,7 @@ namespace web.Areas.Admin.Helpers
     {
         Product=10,
         ProjectReference=1,
-        Estate=2
+        Estate=2,
+        News=3
     }
 }

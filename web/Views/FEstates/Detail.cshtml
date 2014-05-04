@@ -13,10 +13,10 @@
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-<script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+@*<script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>*@
 
-<link href="~/css/colorbox.css" rel="stylesheet" />
+@*<link href="~/css/colorbox.css" rel="stylesheet" />*@
 <script type="text/javascript">$(document).ready(function () {
     $('.bxsliderGallery').bxSlider({
         pagerCustom: '#bx-pager'
@@ -53,8 +53,28 @@
             <div class="highlightsDetailRight">
                 <span class="itemTitle">@Estates.EstateStrings.ilanno</span><span class="itemVal">: @Model.estate.ReferenceNo</span><br class="clear">
                 <span class="itemTitle">@Estates.EstateStrings.tarih</span><span class="itemVal">: @Model.estate.TimeCreated</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.tip</span><span class="itemVal">: @Model.estate.TypeId</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.tipemlak</span><span class="itemVal">: @Model.estate.TransactionId</span><br class="clear">
+                <span class="itemTitle">@Estates.EstateStrings.tip</span><span class="itemVal">: 
+                    @if (Model.estate.TypeId == 0)
+                    {
+                        @Estates.EstateStrings.isyeri
+                    }else if (Model.estate.TypeId == 1)
+                    {
+                        @Estates.EstateStrings.arsa
+                    }else if (Model.estate.TypeId == 2)
+                    {
+                        @Estates.EstateStrings.konut
+                    }
+                </span><br class="clear">
+                <span class="itemTitle">@Estates.EstateStrings.tipemlak</span><span class="itemVal">:
+                    @if (Model.estate.TransactionId == 0)
+                    {
+                        @Estates.EstateStrings.kiralik
+                    }
+                    else if (Model.estate.TransactionId == 1)
+                    {
+                        @Estates.EstateStrings.satilik
+                    }
+                </span><br class="clear">
                 <span class="itemTitle">@Estates.EstateStrings.fiyat</span><span class="itemVal">: @Model.estate.Price @Model.estate.PriceTypeId</span><br class="clear">
                 <span class="itemTitle">@Estates.EstateStrings.brutalan</span><span class="itemVal">: @Model.estate.Size</span><br class="clear">
                 <span class="itemTitle">@Estates.EstateStrings.netalan</span><span class="itemVal">: @Model.estate.NetAlan</span><br class="clear">
@@ -113,16 +133,16 @@
                    {
                        HttpMethod = "POST",
                        UpdateTargetId = "mailresult",
-                       OnBegin="StartSending",
-                       OnFailure="FailureSend",
-                       OnSuccess = "SuccessSend" ,
+                       OnBegin = "StartSending",
+                       OnFailure = "FailureSend",
+                       OnSuccess = "SuccessSend",
                        InsertionMode = InsertionMode.Replace
                    }))
                                 {
                                     <div id="mailresult">
                                     </div>
-                                     @Html.Hidden("ilanadi",(object)@Model.estate.Header)
-                                     @Html.Hidden("ilanUrl",(object)@Request.Url)
+                                     @Html.Hidden("ilanadi", (object)@Model.estate.Header)
+                                     @Html.Hidden("ilanUrl", (object)@Request.Url)
                                    
                                     <h3>@Estates.EstateStrings.your</h3>
                                     <div class="dialogContent">

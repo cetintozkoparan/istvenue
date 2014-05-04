@@ -7,6 +7,7 @@
 <link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.msgbox.css" rel="stylesheet" />
 <link href="~/Areas/Admin/Content/styles/forms.css" rel="stylesheet" />
 <link href="~/Areas/Admin/Content/styles/table.css" rel="stylesheet" />
+<script src="~/Areas/Admin/Content/scripts/plugins/jquery.MultiFile.js"></script>
 
 @Html.Partial("news_leftbar")
 
@@ -67,6 +68,21 @@
                         @Html.Partial("_imageUploadAndCrop")
                     </div>
                 </fieldset>
+                
+                <p>
+                    <label>Slayt Başlığı</label>
+                    @Html.TextBoxFor(m => m.Spot, new { @class = "textwidth50" })
+                </p>
+
+                <p style="float: left; margin-right: 4px !important;">
+                    <label>Fotoğraflar</label>
+                </p>
+
+                <div style="width: 249px; width: 25%; float: left">
+                    <input type="file" style="width: 99%" name="attachments" class="multi" />
+                </div>
+                <div style="height: 40px; clear: both;"></div>
+
                 <p>
                     @Html.TextAreaFor(m => m.Content, new { id = "txtcontent", @class = "required" })
                     @Html.ValidationMessageFor(m => m.Content)

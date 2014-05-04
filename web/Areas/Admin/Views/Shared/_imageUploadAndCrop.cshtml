@@ -263,10 +263,10 @@
                         });
                     
 
-                    $("#preview-pane").css("width","357");
-                    $("#preview-pane").css("height","268");
-                    $(".preview-container").css("width","357");
-                    $(".preview-container").css("height","268");
+                    $("#preview-pane").css("width","@(Convert.ToInt32(Session["_minwidth2"])/2)");
+                    $("#preview-pane").css("height","@(Convert.ToInt32(Session["_minheight2"])/2)");
+                    $(".preview-container").css("width","@(Convert.ToInt32(Session["_minwidth2"])/2)");
+                    $(".preview-container").css("height","@(Convert.ToInt32(Session["_minheight2"])/2)");
                     $("#main-pane").css("height","500");    
                 },
                 error: function (xhr, status, error) {

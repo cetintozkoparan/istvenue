@@ -32,6 +32,7 @@ namespace web.Controllers
             {
                 int estateId = Convert.ToInt32(RouteData.Values["id"]);
                 Estate model = EstateManager.GetEstateById(estateId);
+                
                 var photos = PhotoManager.GetList((int)web.Areas.Admin.Helpers.PhotoType.Estate, estateId);
                 EstateWrapperModel m = new EstateWrapperModel(photos, model);
                 

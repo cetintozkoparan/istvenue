@@ -12,6 +12,7 @@ using System.Drawing;
 using web.Areas.Admin.Filters;
 using System.Web.Script.Serialization;
 using System.Drawing.Imaging;
+using BLL.PhotoBL;
 namespace web.Areas.Admin.Controllers
 {
     [AuthenticateUser]
@@ -94,9 +95,13 @@ namespace web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult AddNews(News newsmodel,HttpPostedFileBase uploadfile,string txtdate)
+        public ActionResult AddNews(IEnumerable<HttpPostedFileBase> attachments, News newsmodel, HttpPostedFileBase uploadfile, string txtdate)
         {
             var languages = LanguageManager.GetLanguages();
+            string lang = "";
+            if (RouteData.Values["lang"] == null)
+                lang = "tr";
+            else lang = RouteData.Values["lang"].ToString();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
             if (ModelState.IsValid)
@@ -111,32 +116,31 @@ namespace web.Areas.Admin.Controllers
                     newsmodel.NewsImage = "/Content/images/front/noimage.jpeg";
                 }
 
-                //if (uploadfile != null && uploadfile.ContentLength > 0)
-                //{
-                //    using (System.Drawing.Image image = System.Drawing.Image.FromStream(uploadfile.InputStream, true, true))
-                //    {
-                        
-                //        if (image.Width == 300 && image.Height == 225)
-                //        {
-                //            Random random = new Random();
-                //            int rand = random.Next(1000, 99999999);
-                //            new ImageHelper(286, 210).SaveThumbnail(uploadfile, "/Content/images/news/", Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName));
-                //            newsmodel.NewsImage = "/Content/images/news/" + Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName);
-                //        }
-                //        else
-                //        {
-                //            TempData["ImageSizeError"] = "Eklemiş olduğunuz resmin boyutları 300x225 olmalıdır...";
-                //            return View();
-                //        }
-                //    }
-                //}
-                //else
-                //{
-                //    newsmodel.NewsImage = "/Content/images/front/noimage.jpeg";
-                //}
+        
                 newsmodel.PageSlug = Utility.SetPagePlug(newsmodel.Header);
                 newsmodel.TimeCreated = Utility.ControlDateTime(txtdate);
                 ViewBag.ProcessMessage = NewsManager.AddNews(newsmodel);
+                Session.Remove("UploadType");
+                foreach (var item in attachments)
+                {
+                    if (item != null && item.ContentLength > 0)
+                    {
+                        Random random = new Random();
+                        int rand = random.Next(1000, 99999999);
+                        new ImageHelper(1024, 768).SaveThumbnail(item, "/Content/images/userfiles/", Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(item.FileName));
+                        Photo p = new Photo();
+                        p.CategoryId = (int)PhotoType.News;
+                        p.ItemId = newsmodel.NewsId;
+                        p.Path = "/Content/images/userfiles/" + Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(item.FileName);
+                        p.Thumbnail = "/Content/images/userfiles/" + Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(item.FileName);
+                        p.Online = true;
+                        p.SortOrder = 9999;
+                        p.Language = lang;
+                        p.TimeCreated = DateTime.Now;
+                        p.Title = "Haberler";
+                        PhotoManager.Save(p);
+                    }
+                }
                 ModelState.Clear();
                // Response.Redirect("/yonetim/haberduzenle/" + newsmodel.NewsId);
                 return View();
@@ -161,11 +165,9 @@ namespace web.Areas.Admin.Controllers
             //  else return false;
         }
 
-
-
         public ActionResult EditNews()
         {
-            ImageHelperNew.DestroyImageCashAndSession(286, 210);
+            ImageHelperNew.DestroyImageCashAndSession(286, 210, 286, 210);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -201,31 +203,17 @@ namespace web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult EditNews(News newsmodel, HttpPostedFileBase uploadfile)
+        public ActionResult EditNews(IEnumerable<HttpPostedFileBase> attachments, News newsmodel, HttpPostedFileBase uploadfile)
         {
             var languages = LanguageManager.GetLanguages();
+            string lang = "";
+            if (RouteData.Values["lang"] == null)
+                lang = "tr";
+            else lang = RouteData.Values["lang"].ToString();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
             if (ModelState.IsValid)
             {
-                //if (uploadfile != null && uploadfile.ContentLength > 0)
-                //{
-                //    using (System.Drawing.Image image = System.Drawing.Image.FromStream(uploadfile.InputStream, true, true))
-                //    {
-                //        if (image.Width == 300 && image.Height == 225)
-                //        {
-                //            Random random = new Random();
-                //            int rand = random.Next(1000, 99999999);
-                //            new ImageHelper(286, 210).SaveThumbnail(uploadfile, "/Content/images/news/", Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName));
-                //            newsmodel.NewsImage = "/Content/images/news/" + Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(uploadfile.FileName);
-                //        }
-                //        else
-                //        {
-                //            TempData["ImageSizeError"] = "Eklemiş olduğunuz resmin boyutları 300x225 olmalıdır...";
-                //            return View();
-                //        }
-                //    }
-                //}
                 
                 if (Session["ModifiedImageId"] != null)
                 {
@@ -243,6 +231,27 @@ namespace web.Areas.Admin.Controllers
                     {
                         newsmodel.NewsId = nid;
                         ViewBag.ProcessMessage = NewsManager.EditNews(newsmodel);
+                        Session.Remove("UploadType");
+                        foreach (var item in attachments)
+                        {
+                            if (item != null && item.ContentLength > 0)
+                            {
+                                Random random = new Random();
+                                int rand = random.Next(1000, 99999999);
+                                new ImageHelper(1024, 768).SaveThumbnail(item, "/Content/images/userfiles/", Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(item.FileName));
+                                Photo p = new Photo();
+                                p.CategoryId = (int)PhotoType.News;
+                                p.ItemId = newsmodel.NewsId;
+                                p.Path = "/Content/images/userfiles/" + Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(item.FileName);
+                                p.Thumbnail = "/Content/images/userfiles/" + Utility.SetPagePlug(newsmodel.Header) + "_" + rand + Path.GetExtension(item.FileName);
+                                p.Online = true;
+                                p.SortOrder = 9999;
+                                p.Language = lang;
+                                p.TimeCreated = DateTime.Now;
+                                p.Title = "Haberler";
+                                PhotoManager.Save(p);
+                            }
+                        }
                         return View(newsmodel);
                     }
                     else
