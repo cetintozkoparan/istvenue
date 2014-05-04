@@ -26,5 +26,21 @@ namespace web.Areas.Admin.Controllers
             return View(model);
         }
 
+        public ActionResult DetailInfo()
+        {
+            if (RouteData.Values["id"] != null)
+            {
+                int id = Convert.ToInt32(RouteData.Values["id"]);
+                MainContext db = new MainContext();
+                var model = db.Brifing.Where(x => x.Id == id).FirstOrDefault();
+                return View(model);
+            }
+            else
+            {
+                return View();
+            }
+           
+        }
+
     }
 }

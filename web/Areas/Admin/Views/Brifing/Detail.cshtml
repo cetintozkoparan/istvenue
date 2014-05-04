@@ -23,10 +23,9 @@
             <tr>
                 <th class="width40">Ad Soyad</th>
                 <th class="center witdh15">E-Mail</th>
-                <th class="center witdh15">Cep Tel</th>
-                <th class="center witdh10">İş Tel</th>
-                <th class="center witdh10">Ev Tel</th>
-                <th class="center witdh10">Mesaj</th>
+               <th class="center witdh10">Telefon</th>
+                <th class="center witdh10">Tarih</th>
+                 <th class="center witdh10">Detay</th>
             </tr>
         </thead>
          <tbody id="item-list">
@@ -40,17 +39,17 @@
                         <span id="spanitem_@item.Id">@item.Email</span>
                     </td>
                     <td class="center">
-                        <span id="spanitem_@item.Id">@item.CepTel</span>
+                        <span id="spanitem_@item.Id">@item.Tel</span>
                     </td>
                      <td class="center">
-                        <span id="spanitem_@item.Id">@item.IsTel</span>
+                        <span id="spanitem_@item.Id">@item.Tarih</span>
                     </td>
                      <td class="center">
-                        <span id="spanitem_@item.Id">@item.EvTel</span>
+                         <a href="/yonetim/detaylibrifingler/detay/@item.Id">
+                        <img id="btn_detail_@item.Id"  src="/Areas/Admin/Content/images/icons/16/edit.png"  title="Detay Bilgisi" class="cursorpointer" >
+                        </a>
                     </td>
-                      <td class="center">
-                        <span id="spanitem_@item.Id">@item.Mesaj</span>
-                    </td>
+                    
                     
                  
                 </tr>

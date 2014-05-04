@@ -278,6 +278,9 @@ namespace web.Areas.Admin
 
             context.MapRoute("brifingss", "yonetim/brifingler", new { action = "Index", Controller = "Brifing" });
             context.MapRoute("brifingsdetails", "yonetim/detaylibrifingler", new { action = "Detail", Controller = "Brifing" });
+            context.MapRoute("brifingsdetailsinfo", "yonetim/detaylibrifingler/detay/{id}", new { action = "DetailInfo", Controller = "Brifing" });
+
+
             context.MapRoute(
                 "Admin_defaultx",
                 "Admin/{controller}/{action}/{id}",
