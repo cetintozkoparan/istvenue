@@ -1,0 +1,127 @@
+﻿@model DAL.Entities.Brifing
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+
+
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+<!-- InstanceEndEditable -->  
+
+<script type="text/javascript">
+    $(function () {
+
+        var proc = $("#hdnprocess").val();
+        var lang = $("#hdnlang").val();
+     
+        if (proc == "true" || proc == "True") {
+            if (lang == 'tr') alert("İşlem Başarıyla Tamamlandı");
+            else alert("Process Has been Succeed");
+        }
+        if (proc == "false" || proc == "False") {
+            if (lang == 'tr') alert("İşle sırasında Hata Oluştu.");
+            else alert("There Has Been An Error During Process");
+            
+        }
+    });
+
+</script>
+
+<!-- InstanceBeginEditable name="content" -->
+<div id="container">
+  <div id="containerInner">
+    <div id="content">
+      <div class="fullSection">
+        <h1>@Briefs.Brief.header</h1>
+      </div>
+      
+      <div class="article briefContent">
+          @Html.Hidden("hdnprocess",(object)@ViewBag.Result)
+          @Html.Hidden("hdnlang",(object)@ViewBag.Lang)
+    @using (Html.BeginForm("New", "FBrifing"))
+          {
+            <p><label>@Briefs.Brief.adsoyad</label>
+                @Html.TextBoxFor(m => m.Ad, new { @class="inputText"})
+           
+            </p>
+             <div class="clear"></div>
+            <p><label class="ourPhones">@Briefs.Brief.tels</label>
+            <span class="briefPhones">
+            <label>@Briefs.Brief.istel</label><br/>
+              @Html.TextBoxFor(m => m.IsTel, new { @class="inputText"})
+             </span>
+             <span class="briefPhones">
+            <label>@Briefs.Brief.evtel</label><br/>
+           @Html.TextBoxFor(m => m.EvTel, new { @class="inputText"})
+            </span>
+             <span class="briefPhones">
+            <label>@Briefs.Brief.gsm</label><br/>
+              @Html.TextBoxFor(m => m.CepTel, new { @class="inputText"})
+            </span>
+            </p>
+             <div class="clear"></div>
+            <p><label>@Briefs.Brief.eposta</label>
+              @Html.TextBoxFor(m => m.Email, new { @class="inputText"})
+            </p>
+            <div class="clear"></div>
+            <p><label>@Briefs.Brief.mesaj</label>
+           @Html.TextAreaFor(m => m.Mesaj, new { @class="inputText"})
+            </p>
+        <div class="clear"></div>
+        <input type="submit" class="inputButton" value="GÖNDER">
+          }
+    <div class="clear"></div>
+          @if(ViewBag.Lang == "tr")
+          {
+            <div class="detailBrief"><a href="/tr/detaylibrifing">@Briefs.Brief.detay</a></div>
+          }
+          else{
+                <div class="detailBrief"><a href="/en/detailedbriefs">@Briefs.Brief.detay</a></div>
+          }
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+<!-- InstanceEndEditable -->
+<div id="footer"><div class="footerInner">
+<div class="copyRight"><p>© Copyright Venue İstanbul 2014</p><p class="design"><span class="wortec"><a href="http://brandista.biz/" target="_blank">Agency Design</a></span> | <span class="wortec"><a href="http://www.wortec.net" target="_blank">Web Design</a></span></p></div> 
+</div> </div>
+<style type="text/css">
+    .detailBrief {
+float: right;
+margin: 20px 40px 0 0;
+}
+    .detailBrief a {
+font: 400 13px/20px 'Open Sans', sans-serif;
+margin: 0 0 15px 0;
+color: #555;
+float: left;
+}
+
+    .inputButton {
+cursor: pointer;
+display: inline-block;
+margin: 10px 10px 0 0;
+padding: 8px !important;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background-color: #322c29 !important;
+color: #fff;
+font-size: 13px !important;
+float: right !important;
+border: none;
+}
+
+    .briefContent .inputButton {
+margin-right: 26px;
+}
+</style>
+
+

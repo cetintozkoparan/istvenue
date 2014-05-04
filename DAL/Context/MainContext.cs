@@ -65,7 +65,7 @@ namespace DAL.Context
         public DbSet<Country> Country { get; set; }
         public DbSet<Town> Town { get; set; }
         public DbSet<District> District { get; set; }
-        
+        public DbSet<Brifing> Brifing { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 

@@ -133,6 +133,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to brifingler.
+        /// </summary>
+        public static string brifing {
+            get {
+                return ResourceManager.GetString("brifing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bina Yaşı.
         /// </summary>
         public static string buildingage {

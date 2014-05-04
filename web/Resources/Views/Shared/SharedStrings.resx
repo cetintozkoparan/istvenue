@@ -492,4 +492,7 @@
   <data name="menu_onpress" xml:space="preserve">
     <value>basinda-biz</value>
   </data>
+  <data name="brifing" xml:space="preserve">
+    <value>brifingler</value>
+  </data>
 </root>

@@ -57,6 +57,7 @@
     <Compile Include="Entities\AdminUser.cs" />
     <Compile Include="Entities\Analytic.cs" />
     <Compile Include="Entities\BankInfo.cs" />
+    <Compile Include="Entities\Brifing.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="Entities\CertificatePartner.cs" />
     <Compile Include="Entities\Country.cs" />
