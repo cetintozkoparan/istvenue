@@ -120,14 +120,47 @@
   <data name="aciklama" xml:space="preserve">
     <value>Açıklama</value>
   </data>
+  <data name="aidatyonetim" xml:space="preserve">
+    <value>Aidat/Yönetim</value>
+  </data>
   <data name="alan" xml:space="preserve">
     <value>Alan</value>
+  </data>
+  <data name="banyowc" xml:space="preserve">
+    <value>Banyo/WC</value>
   </data>
   <data name="baslik" xml:space="preserve">
     <value>Başlık</value>
   </data>
+  <data name="binadakikatsayisi" xml:space="preserve">
+    <value>Binadaki Kat Sayısı</value>
+  </data>
+  <data name="binaninyasi" xml:space="preserve">
+    <value>Binanın Yaşı</value>
+  </data>
+  <data name="binatamanalani" xml:space="preserve">
+    <value>Bina Taban Alanı m2</value>
+  </data>
+  <data name="brutalan" xml:space="preserve">
+    <value>Brüt Alan</value>
+  </data>
+  <data name="bulunduguarsa" xml:space="preserve">
+    <value>Bulunduğu Arsa m2</value>
+  </data>
+  <data name="bulundugukat" xml:space="preserve">
+    <value>Bulunduğu Kat</value>
+  </data>
+  <data name="cepheyon" xml:space="preserve">
+    <value>Cephe/Yön</value>
+  </data>
   <data name="contactBtn" xml:space="preserve">
     <value>İletişim için tıklayın</value>
+  </data>
+  <data name="depozito" xml:space="preserve">
+    <value>Depozito</value>
+  </data>
+  <data name="devren" xml:space="preserve">
+    <value>Devren</value>
   </data>
   <data name="email" xml:space="preserve">
     <value>E-mail Adresiniz*</value>
@@ -148,7 +181,19 @@
     <value>Soyadı</value>
   </data>
   <data name="ilanno" xml:space="preserve">
-    <value>İlan No</value>
+    <value>İlan no</value>
+  </data>
+  <data name="isinmatipi" xml:space="preserve">
+    <value>Isınma Tipi</value>
+  </data>
+  <data name="kiragetirisi" xml:space="preserve">
+    <value>Kira Getirisi</value>
+  </data>
+  <data name="krediyeuygunluk" xml:space="preserve">
+    <value>Krediye Uygunluk</value>
+  </data>
+  <data name="kullanimdurumu" xml:space="preserve">
+    <value>Kullanım Durumu</value>
   </data>
   <data name="message" xml:space="preserve">
     <value>Mesaj</value>
@@ -156,8 +201,14 @@
   <data name="name" xml:space="preserve">
     <value>Adınız</value>
   </data>
+  <data name="netalan" xml:space="preserve">
+    <value>Net Alan</value>
+  </data>
   <data name="oda" xml:space="preserve">
-    <value>Oda Sayısı</value>
+    <value>Bölüm/Oda Sayısı</value>
+  </data>
+  <data name="otopark" xml:space="preserve">
+    <value>Otopark</value>
   </data>
   <data name="print" xml:space="preserve">
     <value>Yazdırmak için tıklayın...</value>
@@ -171,14 +222,29 @@
   <data name="surname" xml:space="preserve">
     <value>Soyadınız</value>
   </data>
+  <data name="takas" xml:space="preserve">
+    <value>Takas</value>
+  </data>
+  <data name="tapudurumu" xml:space="preserve">
+    <value>Tapu Durumu</value>
+  </data>
   <data name="tarih" xml:space="preserve">
-    <value>Eklenme Tarihi</value>
+    <value>Tarih</value>
   </data>
   <data name="tavsiyeet" xml:space="preserve">
     <value>Arkadaşına Tavsiye Et</value>
   </data>
   <data name="tip" xml:space="preserve">
     <value>Portföy Tipi</value>
+  </data>
+  <data name="tipemlak" xml:space="preserve">
+    <value>Emlak Tipi</value>
+  </data>
+  <data name="yakittipi" xml:space="preserve">
+    <value>Yakıt Tipi</value>
+  </data>
+  <data name="yapinindurumu" xml:space="preserve">
+    <value>Yapının Durumu</value>
   </data>
   <data name="your" xml:space="preserve">
     <value>Sizin</value>

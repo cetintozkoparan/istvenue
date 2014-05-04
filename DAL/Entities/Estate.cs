@@ -79,6 +79,68 @@ namespace DAL.Entities
         [Required(ErrorMessage = "Eklenme tarihini giriniz")]
         public string TimeCreated { get; set; }
 
+        [Display(Name = "Brüt Alan")]
+        public string BrutAlan { get; set; }
+
+        [Display(Name = "Net Alan")]
+        public string NetAlan { get; set; }
+
+        [Display(Name = "Bulunduğu Arsa m2")]
+        public string BulunduguArsa { get; set; }
+
+        [Display(Name = "BinaTabanAlani")]
+        public string BinaTabanAlani { get; set; }
+
+        [Display(Name = "Bölüm/Oda Sayısı")]
+        public string BolumOdaSayisi { get; set; }
+
+        [Display(Name = "Banyo/WC")]
+        public string BanyoWc { get; set; }
+
+        [Display(Name = "Binadaki Kat Sayısı")]
+        public string BinaKatSayisi { get; set; }
+
+        [Display(Name = "Bulunduğu Kat")]
+        public string BulunduguKat { get; set; }
+
+        [Display(Name = "CepheYon")]
+        public string CepheYon { get; set; }
+
+        [Display(Name = "Isınma Tipi")]
+        public string IsınmaTipi { get; set; }
+
+        [Display(Name = "YakitTipi")]
+        public string YakitTipi { get; set; }
+
+        [Display(Name = "Otopark")]
+        public string Otopark { get; set; }
+
+        [Display(Name = "YapininDurumu")]
+        public string YapininDurumu { get; set; }
+
+        [Display(Name = "KullanimDurumu")]
+        public string KullanimDurumu { get; set; }
+
+        [Display(Name = "TapuDurumu")]
+        public string TapuDurumu { get; set; }
+
+        [Display(Name = "Depozito")]
+        public string Depozito { get; set; }
+
+        [Display(Name = "Aidat/Yönetim")]
+        public string AidatYonetim { get; set; }
+
+        [Display(Name = "Devren")]
+        public string Devren { get; set; }
+
+        [Display(Name = "Takas")]
+        public string Takas { get; set; }
+
+        [Display(Name = "Krediye Uygunluk")]
+        public string KrediDurumu { get; set; }
+
+        [Display(Name = "Kira Getirisi")]
+        public string KiraGetirisi { get; set; }
 
         public virtual Country Country { get; set; }
         public virtual Town Town { get; set; }

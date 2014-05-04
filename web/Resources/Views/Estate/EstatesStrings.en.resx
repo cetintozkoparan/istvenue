@@ -120,14 +120,47 @@
   <data name="aciklama" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="aidatyonetim" xml:space="preserve">
+    <value>Revenues/Management</value>
+  </data>
   <data name="alan" xml:space="preserve">
     <value>Size</value>
+  </data>
+  <data name="banyowc" xml:space="preserve">
+    <value>Bath/WC</value>
   </data>
   <data name="baslik" xml:space="preserve">
     <value>Header</value>
   </data>
+  <data name="binadakikatsayisi" xml:space="preserve">
+    <value>Floor Count of Building</value>
+  </data>
+  <data name="binaninyasi" xml:space="preserve">
+    <value>Building Age</value>
+  </data>
+  <data name="binatamanalani" xml:space="preserve">
+    <value>Building Floor Space m2</value>
+  </data>
+  <data name="brutalan" xml:space="preserve">
+    <value>Brüt Alan</value>
+  </data>
+  <data name="bulunduguarsa" xml:space="preserve">
+    <value>Area of Land m2</value>
+  </data>
+  <data name="bulundugukat" xml:space="preserve">
+    <value>Floor</value>
+  </data>
+  <data name="cepheyon" xml:space="preserve">
+    <value>Front/Side</value>
+  </data>
   <data name="contactBtn" xml:space="preserve">
     <value>Click for contact</value>
+  </data>
+  <data name="depozito" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="devren" xml:space="preserve">
+    <value>by Session</value>
   </data>
   <data name="email" xml:space="preserve">
     <value>E-mail Address*</value>
@@ -150,14 +183,32 @@
   <data name="ilanno" xml:space="preserve">
     <value>Ref.No</value>
   </data>
+  <data name="isinmatipi" xml:space="preserve">
+    <value>Heating Type</value>
+  </data>
+  <data name="kiragetirisi" xml:space="preserve">
+    <value>Imputed Rent</value>
+  </data>
+  <data name="krediyeuygunluk" xml:space="preserve">
+    <value>State of Credit</value>
+  </data>
+  <data name="kullanimdurumu" xml:space="preserve">
+    <value>State of Usage</value>
+  </data>
   <data name="message" xml:space="preserve">
     <value>Message</value>
   </data>
   <data name="name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="netalan" xml:space="preserve">
+    <value>Net Alan</value>
+  </data>
   <data name="oda" xml:space="preserve">
     <value>Number of Room </value>
+  </data>
+  <data name="otopark" xml:space="preserve">
+    <value>Car Park</value>
   </data>
   <data name="print" xml:space="preserve">
     <value>Click for print</value>
@@ -171,6 +222,12 @@
   <data name="surname" xml:space="preserve">
     <value>Surname</value>
   </data>
+  <data name="takas" xml:space="preserve">
+    <value>Swap</value>
+  </data>
+  <data name="tapudurumu" xml:space="preserve">
+    <value>State of Deed</value>
+  </data>
   <data name="tarih" xml:space="preserve">
     <value>Date</value>
   </data>
@@ -179,6 +236,15 @@
   </data>
   <data name="tip" xml:space="preserve">
     <value>Type</value>
+  </data>
+  <data name="tipemlak" xml:space="preserve">
+    <value>Estate Type</value>
+  </data>
+  <data name="yakittipi" xml:space="preserve">
+    <value>Fuel Oil Type</value>
+  </data>
+  <data name="yapinindurumu" xml:space="preserve">
+    <value>State of Building</value>
   </data>
   <data name="your" xml:space="preserve">
     <value>Your</value>
