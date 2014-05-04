@@ -15,7 +15,7 @@ namespace DAL.Entities
         public string Ticari { get; set; }
         public string Konut { get; set; }
         public string FiyatAraligi { get; set; }
-
+        public string FiyatAraligi2 { get; set; }
         public string MulkTipi { get; set; }
         public string OdaSayisi { get; set; }
         public string Boyut { get; set; }
@@ -32,9 +32,13 @@ namespace DAL.Entities
         public string TapDurumu { get; set; }
         public string KullanimDurumu { get; set; }
         public string GetiriBeklentisi { get; set; }
-        
+        public string Baska { get; set; }
+
+
+        public string Islem { get; set; }
+
         public string Ad { get; set; }
-        public string Soyad { get; set; }
+      
         public string Tel { get; set; }
         public string Tarih { get; set; }
 

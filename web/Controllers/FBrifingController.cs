@@ -45,5 +45,33 @@ namespace web.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Detail(Brifing model, FormCollection collection)
+        {
+            try
+            {
+               
+               
+              
+
+                MainContext db = new MainContext();
+                var strArray = collection["gayrimenkul"];
+                model.Islem = strArray;
+                model.BrifingTip = 1;
+                //model.
+                db.Brifing.Add(model);
+                db.SaveChanges();
+
+                ViewBag.Result = true;
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Result = false;
+            }
+
+            ViewBag.Lang = lang;
+            return View();
+        }
+
     }
 }

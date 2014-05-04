@@ -1,76 +1,48 @@
 ﻿@model DAL.Entities.Brifing
 @{
-    ViewBag.Title = "New";
-    Layout = "~/Views/Shared/frontlayout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/adminlayout.cshtml";
 }
+<link href="~/Areas/Admin/Content/styles/pluginstyles/jquery.msgbox.css" rel="stylesheet" />
+<link href="~/Areas/Admin/Content/styles/forms.css" rel="stylesheet" />
+<link href="~/Areas/Admin/Content/styles/table.css" rel="stylesheet" />
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="../css/reset.css">
-<link rel="stylesheet" type="text/css" href="../css/main.css">
+@Html.Partial("_leftbrifing")
 
-<script type="text/javascript">
-    $(function () {
+<div id="page-content" class="container_12">
+  <div id="page-header">
+        <h1>BRİFİNGLER</h1>
+   </div>
+   <section class="grid_12 form">
 
-        var proc = $("#hdnprocess").val();
-        var lang = $("#hdnlang").val();
-
-        if (proc == "true" || proc == "True") {
-            if (lang == 'tr') alert("İşlem Başarıyla Tamamlandı");
-            else alert("Process Has been Succeed");
-        }
-        if (proc == "false" || proc == "False") {
-            if (lang == 'tr') alert("İşle sırasında Hata Oluştu.");
-            else alert("There Has Been An Error During Process");
-
-        }
-    });
-
-</script>
-
-<div id="container">
+      <div id="container">
     <div id="containerInner">
         <div id="content">
-            <div class="fullSection">
-                <h1>@BriefDetails.Detail.header</h1>
-            </div>
+            
             <div class="article briefContentDetailed">
 
               
                 <div class="briefDetailedContent">
                    
-                       @using (Html.BeginForm("Detail", "FBrifing"))
-          { 
-                        @Html.Hidden("hdnprocess",(object)@ViewBag.Result)
-                        @Html.Hidden("hdnlang",(object)@ViewBag.Lang)
+                     
+                     
                      <span class=" question">@BriefDetails.Detail.header2</span>
                     <div class="clear"></div>
-                    <ul class="transactionList">
-                        <li>
-                            <input type="checkbox" name="gayrimenkul" value="Satmak" checked="checked" i>
-                            <span class="fakelabel">@BriefDetails.Detail.satmak</span> </li>
-                        <li>
-                            <input type="checkbox" name="gayrimenkul" value="kiraci">
-                            <span class="fakelabel">@BriefDetails.Detail.kiracibulmak</span> </li>
-                        <li>
-                            <input type="checkbox" name="gayrimenkul" value="satinalma">
-                            <span class="fakelabel">@BriefDetails.Detail.satinalmak</span> </li>
-                        <li>
-                            <input type="checkbox" name="gayrimenkul" value="kiralama">
-                            <span class="fakelabel">@BriefDetails.Detail.kiralamak
-                            </span></li>
-                    </ul>
+                    @Html.TextBoxFor(x => x.Islem)
                   
                     <div class="clear"></div>
                     <span class="question">@BriefDetails.Detail.header3</span>
                     <div class="clear"></div>
                     <ul class="propertyList">
-                        <li>@BriefDetails.Detail.lokasyon:  @BriefDetails.Detail.sehir
+                        <li> @BriefDetails.Detail.sehir
                         @Html.TextBoxFor(x => x.Il)
-
+                            <br />
                         @BriefDetails.Detail.ilce
                         @Html.TextBoxFor(x => x.Ilce)
+                            <br />
                         @BriefDetails.Detail.mahalle
                         @Html.TextBoxFor(x => x.Mahalle)
+
                         <li>@BriefDetails.Detail.ticari
                         @Html.TextBoxFor(x => x.Ticari)
                         @BriefDetails.Detail.konut
@@ -124,9 +96,8 @@
                         @Html.TextBoxFor(x => x.Tarih)
                     </ul>
 
-                    <div class="clear"></div>
-                    <input type="submit" class="inputButton" value="GÖNDER">
-          }
+                 
+          
                 </div>
 
                
@@ -136,7 +107,15 @@
     </div>
 </div>
 
-<!-- InstanceEndEditable -->
+   <//section>
+</div>
+
+
+
+
+
+
+
 
 
 <style type="text/css">

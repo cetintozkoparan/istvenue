@@ -295,6 +295,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\Views\Brief\Detail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detail.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Views\Career\CareerStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2791,6 +2796,7 @@
     <Content Include="Areas\Admin\Views\Brifing\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Brifing\_leftbrifing.cshtml" />
     <Content Include="Areas\Admin\Views\Brifing\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Brifing\DetailInfo.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />
@@ -3066,6 +3072,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Brief.en.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Briefs</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Brief\Detail.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Detail.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>BriefDetails</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Career\CareerStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
