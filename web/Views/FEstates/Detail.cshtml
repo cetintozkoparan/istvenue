@@ -8,6 +8,7 @@
     .input-validation-error {
         border: solid 1px red !important;
     }
+    .highlightsDetailLeft {width: 577px;}
 </style>
 <script src="~/Scripts/jquery-1.7.1.min.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
@@ -19,7 +20,8 @@
 @*<link href="~/css/colorbox.css" rel="stylesheet" />*@
 <script type="text/javascript">$(document).ready(function () {
     $('.bxsliderGallery').bxSlider({
-        pagerCustom: '#bx-pager'
+        pagerCustom: '#bx-pager',
+        auto: true
     });
     $(".itemVal").each(function () {
         if ($(this).html() == ": ") {
