@@ -4,32 +4,39 @@
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
 <style>
-    .serviceContent { min-height:400px;}
+    .serviceContent {
+        min-height: 400px;
+    }
 </style>
 <div class="servicesContent">
     <div class="serviceImage">
-        <img src="../images/serviceImage.jpg" alt="servisler" /></div>
-    <h1 class="services">@SharedRess.SharedStrings.ourservices</h1>
+        <img src="../images/serviceImage.jpg" alt="servisler" />
+    </div>
+    <h1 class="services">@SharedRess.SharedStrings.ourservices.ToUpper()</h1>
+    <div class="article" style="margin: 0 12px 20px 12px;">
+        @Html.Raw(Model.ourservices.Content)
+
+    </div>
     <div class="servicesLeftContent">
         <ul class="serviceList">
             <li>@SharedRess.SharedStrings.services
-            <ul class="subServiceList">
-                @foreach (var item in Model.services)
-                {
-                    <li><a href="#">@item.Name</a></li>
-                }
-            </ul>
+                <ul class="subServiceList">
+                    @foreach (var item in Model.services)
+                    {
+                        <li><a href="#">@item.Name</a></li>
+                    }
+                </ul>
             </li>
         </ul>
     </div>
     <div class="servicesRightContent">
-            @foreach (var item in Model.services)
-                {
-                    <div class="serviceContent">
-                        <h3>@item.Name</h3>
-                        @Html.Raw(item.Content)
-                    </div>
-                }
+        @foreach (var item in Model.services)
+        {
+            <div class="serviceContent">
+                <h3>@item.Name</h3>
+                @Html.Raw(item.Content)
+            </div>
+        }
     </div>
 </div>
 

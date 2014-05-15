@@ -26,7 +26,7 @@ namespace DAL.Entities
         [Required(ErrorMessage = "Semti giriniz")]
         public int DistrictId { get; set; }
         [Display(Name = "Fiyat")]
-        [Required(ErrorMessage = "Fiyatı giriniz")]
+        //[Required(ErrorMessage = "Fiyatı giriniz")]
         [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
 
         public decimal Price { get; set; }
@@ -35,11 +35,11 @@ namespace DAL.Entities
         
         //Metre kare
         [Display(Name = "Metre Kare")]
-         public int Size { get; set; }
+         public string Size { get; set; }
         
         //Bina yaşı
         [Display(Name = "Bina Yaşı")]
-        public int Age { get; set; }
+        public string Age { get; set; }
        
         //Danışman
         [Display(Name = "Danışman")]
@@ -50,14 +50,14 @@ namespace DAL.Entities
         public string RoomNumber { get; set; }
 
         [Display(Name = "Referans Numarası")]
-        [Required(ErrorMessage = "Referans numarasını giriniz")]
+        //[Required(ErrorMessage = "Referans numarasını giriniz")]
         public string ReferenceNo { get; set; }
 
         [Display(Name = "Emlak Resmi")]
         public  string Photo { get; set; }
         //ilan açıklaması
         [Display(Name = "İlan İçeriği")]
-        [Required(ErrorMessage = "İçeriği giriniz")]
+        //[Required(ErrorMessage = "İçeriği giriniz")]
         public string Content { get; set; }
        
         //İan Adı
@@ -76,7 +76,7 @@ namespace DAL.Entities
         public string Language { get; set; }
 
         [Display(Name = "Eklenme Tarihi")]
-        [Required(ErrorMessage = "Eklenme tarihini giriniz")]
+        //[Required(ErrorMessage = "Eklenme tarihini giriniz")]
         public string TimeCreated { get; set; }
 
         [Display(Name = "Brüt Alan")]

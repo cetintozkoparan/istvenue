@@ -13,15 +13,21 @@
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-@*<script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
-<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>*@
+<script type="text/javascript" src="/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
 
 @*<link href="~/css/colorbox.css" rel="stylesheet" />*@
 <script type="text/javascript">$(document).ready(function () {
     $('.bxsliderGallery').bxSlider({
         pagerCustom: '#bx-pager'
     });
-
+    $(".itemVal").each(function () {
+        if ($(this).html() == ": ") {
+            $(this).next().remove();
+            $(this).prev().remove();
+            $(this).remove();
+        }
+    });
     $(".inline").colorbox({ width: "60%", height: "300px", inline: true, href: "#inline_content" });
 
 })</script>
@@ -49,55 +55,74 @@
                         }
                     </div>
                 </div>
+                <div class="itemTitle" style="padding:15px;display: inline-block;"> 
+                    @Html.Raw(Model.estate.Content)
+                </div>
             </div>
             <div class="highlightsDetailRight">
-                <span class="itemTitle">@Estates.EstateStrings.ilanno</span><span class="itemVal">: @Model.estate.ReferenceNo</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.tarih</span><span class="itemVal">: @Model.estate.TimeCreated</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.tip</span><span class="itemVal">: 
+                <span class="itemTitle">@SharedRess.SharedStrings.ilanno</span><span class="itemVal">: @Model.estate.ReferenceNo</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.tarih</span><span class="itemVal">: @Model.estate.TimeCreated</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.tip</span><span class="itemVal">: 
+
                     @if (Model.estate.TypeId == 0)
                     {
-                        @Estates.EstateStrings.isyeri
+                        @SharedRess.SharedStrings.isyeri
                     }else if (Model.estate.TypeId == 1)
                     {
-                        @Estates.EstateStrings.arsa
+                        @SharedRess.SharedStrings.arsa
                     }else if (Model.estate.TypeId == 2)
                     {
-                        @Estates.EstateStrings.konut
+                        @SharedRess.SharedStrings.konut
+                    }else if (Model.estate.TypeId == 4)
+                    {
+                        @SharedRess.SharedStrings.parakende
+                    }
+                    else if (Model.estate.TypeId == 5)
+                    {
+                        @SharedRess.SharedStrings.sanayivelojistik
+                    }
+                    else if (Model.estate.TypeId == 6)
+                    {
+                        @SharedRess.SharedStrings.otelveagirlama
+                    }
+                    else if (Model.estate.TypeId == 7)
+                    {
+                        @SharedRess.SharedStrings.digerlukskonut
                     }
                 </span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.tipemlak</span><span class="itemVal">:
+                <span class="itemTitle">@SharedRess.SharedStrings.tipemlak</span><span class="itemVal">:
                     @if (Model.estate.TransactionId == 0)
                     {
-                        @Estates.EstateStrings.kiralik
+                        @SharedRess.SharedStrings.kiralik
                     }
                     else if (Model.estate.TransactionId == 1)
                     {
-                        @Estates.EstateStrings.satilik
+                        @SharedRess.SharedStrings.satilik
                     }
                 </span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.fiyat</span><span class="itemVal">: @Model.estate.Price @Model.estate.PriceTypeId</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.brutalan</span><span class="itemVal">: @Model.estate.Size</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.netalan</span><span class="itemVal">: @Model.estate.NetAlan</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.bulunduguarsa </span><span class="itemVal">: @Model.estate.BulunduguArsa</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.binatamanalani </span><span class="itemVal">: @Model.estate.BinaTabanAlani</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.oda </span><span class="itemVal">: @Model.estate.RoomNumber</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.banyowc </span><span class="itemVal">: @Model.estate.BanyoWc</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.binaninyasi </span><span class="itemVal">: @Model.estate.Age</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.binadakikatsayisi </span><span class="itemVal">: @Model.estate.BinaKatSayisi</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.bulundugukat </span><span class="itemVal">: @Model.estate.BulunduguKat</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.cepheyon </span><span class="itemVal">: @Model.estate.CepheYon</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.isinmatipi </span><span class="itemVal">: @Model.estate.IsınmaTipi</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.yakittipi </span><span class="itemVal">: @Model.estate.YakitTipi</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.otopark </span><span class="itemVal">: @Model.estate.Otopark</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.yapinindurumu </span><span class="itemVal">: @Model.estate.YapininDurumu</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.kullanimdurumu </span><span class="itemVal">: @Model.estate.KullanimDurumu</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.tapudurumu </span><span class="itemVal">: @Model.estate.TapuDurumu</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.depozito </span><span class="itemVal">: @Model.estate.Depozito</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.aidatyonetim </span><span class="itemVal">: @Model.estate.AidatYonetim</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.devren </span><span class="itemVal">: @Model.estate.Devren</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.takas </span><span class="itemVal">: @Model.estate.Takas</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.krediyeuygunluk </span><span class="itemVal">: @Model.estate.KrediDurumu</span><br class="clear">
-                <span class="itemTitle">@Estates.EstateStrings.kiragetirisi </span><span class="itemVal">: @Model.estate.KiraGetirisi</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.fiyat</span><span class="itemVal">: @string.Format("{0:0}", Model.estate.Price) @Model.estate.PriceTypeId</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.brutalan</span><span class="itemVal">: @Model.estate.Size</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.netalan</span><span class="itemVal">: @Model.estate.NetAlan</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.bulunduguarsa </span><span class="itemVal">: @Model.estate.BulunduguArsa</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.binatamanalani </span><span class="itemVal">: @Model.estate.BinaTabanAlani</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.oda </span><span class="itemVal">: @Model.estate.RoomNumber</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.banyowc </span><span class="itemVal">: @Model.estate.BanyoWc</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.binaninyasi </span><span class="itemVal">: @Model.estate.Age</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.binadakikatsayisi </span><span class="itemVal">: @Model.estate.BinaKatSayisi</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.bulundugukat </span><span class="itemVal">: @Model.estate.BulunduguKat</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.cepheyon </span><span class="itemVal">: @Model.estate.CepheYon</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.isinmatipi </span><span class="itemVal">: @Model.estate.IsınmaTipi</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.yakittipi </span><span class="itemVal">: @Model.estate.YakitTipi</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.otopark </span><span class="itemVal">: @Model.estate.Otopark</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.yapinindurumu </span><span class="itemVal">: @Model.estate.YapininDurumu</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.kullanimdurumu </span><span class="itemVal">: @Model.estate.KullanimDurumu</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.tapudurumu </span><span class="itemVal">: @Model.estate.TapuDurumu</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.depozito </span><span class="itemVal">: @Model.estate.Depozito</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.aidatyonetim </span><span class="itemVal">: @Model.estate.AidatYonetim</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.devren </span><span class="itemVal">: @Model.estate.Devren</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.takas </span><span class="itemVal">: @Model.estate.Takas</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.krediyeuygunluk </span><span class="itemVal">: @Model.estate.KrediDurumu</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.kiragetirisi </span><span class="itemVal">: @Model.estate.KiraGetirisi</span><br class="clear">
                 @*<span class="itemTitle">Bulunduğu Arsa </span><span class="itemVal">: 880 m2</span><br class="clear">*@
                 @*<span class="itemTitle">Yapının Tipi</span><span class="itemVal">: Villa</span><br class="clear">*@
                 @*<span class="itemTitle">Yapı Durumu </span><span class="itemVal">: Betonerme Karkas</span><br class="clear">*@
@@ -109,23 +134,23 @@
                 @*<span class="itemTitle">Otopark</span><span class="itemVal">: 5 araç</span><br class="clear">*@
                 @*<span class="itemTitle">Kredi Durumu </span><span class="itemVal">: 3 yıl</span><br class="clear">*@
                 @*<span class="itemTitle">Tapu Türü </span><span class="itemVal">: Hisseli tapu</span><br class="clear">*@
-                <span class="itemTitle">@Estates.EstateStrings.aciklama</span><span class="itemVal"><span class="colon">:</span>
+                <span class="itemTitle">@SharedRess.SharedStrings.aciklama</span><div class="clear"></div><span class="itemVal">
                     <textarea maxlength="300" class="explain"></textarea>
                 </span>
                 <br class="clear">
                 @if (ViewBag.Lang == "tr")
                 {
-                    <a href="/tr/iletisim-bilgileri" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
+                    <a href="/tr/iletisim-bilgileri" class="contactBtn">@SharedRess.SharedStrings.contactBtn</a>
                 }
                 else
                 {
-                    <a href="/en/contact-details" class="contactBtn">@Estates.EstateStrings.contactBtn</a>
+                    <a href="/en/contact-details" class="contactBtn">@SharedRess.SharedStrings.contactBtn</a>
                 }
-                <p><a class="inline cboxElement" href="#inline_content">@Estates.EstateStrings.sendingother</a></p>
+                <p><a class="inline cboxElement" href="#inline_content">@SharedRess.SharedStrings.sendingother</a></p>
                 <div style="display: none">
                     <div id='inline_content' style='padding: 10px; background: #fff;'>
                         <div class="dialogBox">
-                            <div class=""><span class="dialogTitle">@Estates.EstateStrings.tavsiyeet</span></div>
+                            <div class=""><span class="dialogTitle">@SharedRess.SharedStrings.tavsiyeet</span></div>
                             <div id="dialog">
                                 @* <form action="#" method="post" id="frmMailFriend">*@
                                 @using (Ajax.BeginForm("SendMail",
@@ -144,38 +169,38 @@
                                      @Html.Hidden("ilanadi", (object)@Model.estate.Header)
                                      @Html.Hidden("ilanUrl", (object)@Request.Url)
                                    
-                                    <h3>@Estates.EstateStrings.your</h3>
+                                    <h3>@SharedRess.SharedStrings.your</h3>
                                     <div class="dialogContent">
                                         <p>
-                                            <label>@Estates.EstateStrings.name</label>
+                                            <label>@SharedRess.SharedStrings.name</label>
                                             <input type="text" name="dialogName" class="textinput" />
                                         </p>
                                         <br />
                                         <p>
-                                            <label>@Estates.EstateStrings.surname</label>
+                                            <label>@SharedRess.SharedStrings.surname</label>
                                             <input type="text" name="contactSurnameDialog" class="textinput">
                                         </p>
                                         <br />
                                         <p>
-                                            <label>@Estates.EstateStrings.email</label>
+                                            <label>@SharedRess.SharedStrings.email</label>
                                             <input type="text" name="contactEmailDialog" class="textinput required" />
                                         </p>
 
                                     </div>
-                                    <h3>@Estates.EstateStrings.friend</h3>
+                                    <h3>@SharedRess.SharedStrings.friend</h3>
                                     <div class="dialogContent">
                                         <p>
-                                            <label>@Estates.EstateStrings.fname</label>
+                                            <label>@SharedRess.SharedStrings.fname</label>
                                             <input type="text" name="contactNameFriend" class="textinput">
                                         </p>
                                         <br />
                                         <p>
-                                            <label>@Estates.EstateStrings.fsurname</label>
+                                            <label>@SharedRess.SharedStrings.fsurname</label>
                                             <input type="text" name="contactSurFriend" class="textinput">
                                         </p>
                                         <br />
                                         <p>
-                                            <label>@Estates.EstateStrings.femail</label>
+                                            <label>@SharedRess.SharedStrings.femail</label>
                                             <input type="text" name="contactEmailFriend" class="textinput required">
                                         </p>
 
@@ -183,21 +208,21 @@
                                     </div>
                                     <br class="clear">
                                     <div class="rightDialogContent">
-                                        <label>@Estates.EstateStrings.message</label>
+                                        <label>@SharedRess.SharedStrings.message</label>
                                         <textarea class="contactMessage" name="contactMessagefriend"></textarea>
                                         <br>
                                         <br>
                                     </div>
                                     <br class="clear">
                                     <div align="left">
-                                        <input type="submit" name="gonderBtn" value="Gönder" class="@Estates.EstateStrings.send" />
+                                        <input type="submit" name="gonderBtn" value="Gönder" class="@SharedRess.SharedStrings.send" />
                                     </div>
                                 }
                             </div>
                         </div>
                     </div>
                 </div>
-                <a href="#" class="contactBtn" onclick="window.print()">@Estates.EstateStrings.print</a>
+                <a href="#" class="contactBtn" onclick="window.print()">@SharedRess.SharedStrings.print</a>
             </div>
         </div>
     </div>

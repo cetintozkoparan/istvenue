@@ -5,6 +5,7 @@ using DAL.Context;
 using DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Objects.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -60,11 +61,21 @@ namespace web.Controllers
             }
         }
 
-        public ActionResult SearchEstates()
+        public ActionResult SearchEstates(int TypeId = 3)
         {
             using (MainContext db = new MainContext())
             {
-                var list = db.Estate.ToList();
+                var list = db.Estate.Include("Country").Include("Town").Include("District").Where(d => d.Language == lang).ToList();
+                if (TypeId == 3)
+                {
+                    ViewBag.result = null;
+                }
+                else
+                {
+                    ViewBag.result = TypeId;
+                    list = list.Where(d=>d.TypeId == TypeId).ToList();
+                }
+                ViewBag.BriefResultante = false;
                 AdvancedSearchModel model = new AdvancedSearchModel(list, new SearchEstateModel());
                 IEnumerable<SelectListItem> basetypes = db.Country.ToList().Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Name });
                 ViewData["search.sehir"] =  basetypes;
@@ -109,13 +120,13 @@ namespace web.Controllers
         {
             using (MainContext db = new MainContext())
             {
-                var list = db.Estate.ToList();
+                var list = db.Estate.Include("Country").Include("Town").Include("District").Where(d=>d.Language == lang).ToList();
                 if (!string.IsNullOrEmpty(model.search.referansno))
                 {
                     try
                     {
-                        int refno = Convert.ToInt32(model.search.referansno);
-                        list = list.Where(d => Convert.ToInt32(d.ReferenceNo) == refno).ToList();
+                        //int refno = Convert.ToInt32(model.search.referansno);
+                        list = list.Where(d => d.ReferenceNo == model.search.referansno).ToList();
                     }
                     catch (Exception)
                     {
@@ -184,13 +195,13 @@ namespace web.Controllers
                 if (!string.IsNullOrEmpty(model.search.binayasialt))
                 {
                     int binayasialt = Convert.ToInt32(model.search.binayasialt);
-                    list = list.Where(d => d.Age > binayasialt).ToList();
+                    list = list.Where(d => int.Parse(d.Age) >= binayasialt).ToList();
                 }
 
                 if (!string.IsNullOrEmpty(model.search.binayasiust))
                 {
                     int binayasiust = Convert.ToInt32(model.search.binayasiust);
-                    list = list.Where(d => d.Age < binayasiust).ToList();
+                    list = list.Where(d => int.Parse(d.Age) < binayasiust).ToList();
                 }
 
                 if (!string.IsNullOrEmpty(model.search.fiyataraligialt))
@@ -204,8 +215,12 @@ namespace web.Controllers
                     int fiyat = Convert.ToInt32(model.search.fiyataraligiust);
                     list = list.Where(d => d.Price < fiyat).ToList();
                 }
+                ViewBag.result = model.search.emlaktipi;
+                ViewBag.BriefResultante = false;
+                ViewBag.Lang = lang;
 
                 AdvancedSearchModel searchmodel = new AdvancedSearchModel(list, model.search);
+                ViewBag.BriefResultante = true;
                 
                 IEnumerable<SelectListItem> basetypes = db.Country.ToList().Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Name });
                 List<SelectListItem> ilce = new List<SelectListItem>();

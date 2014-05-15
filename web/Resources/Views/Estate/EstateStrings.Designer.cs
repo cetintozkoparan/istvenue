@@ -376,6 +376,15 @@ namespace Estates {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Parakende.
+        /// </summary>
+        public static string parakende {
+            get {
+                return ResourceManager.GetString("parakende", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yazdırmak için tıklayın....
         /// </summary>
         public static string print {

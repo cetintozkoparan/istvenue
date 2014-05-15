@@ -121,7 +121,7 @@
     <value>Name Surname</value>
   </data>
   <data name="detay" xml:space="preserve">
-    <value>Click for detailed brief</value>
+    <value>For more detailed search recording  you can use the following document. Please click.</value>
   </data>
   <data name="eposta" xml:space="preserve">
     <value>E-mail</value>
@@ -130,16 +130,16 @@
     <value>Home</value>
   </data>
   <data name="gsm" xml:space="preserve">
-    <value>GSM</value>
+    <value>Mobile</value>
   </data>
   <data name="header" xml:space="preserve">
-    <value>CALL US ABRIEF, WE WILL CALL YOU</value>
+    <value>CALL US A BRIEF, WE WILL CALL YOU</value>
   </data>
   <data name="istel" xml:space="preserve">
-    <value>Job</value>
+    <value>Work</value>
   </data>
   <data name="mesaj" xml:space="preserve">
-    <value>Message</value>
+    <value>Your message for us</value>
   </data>
   <data name="tels" xml:space="preserve">
     <value>Phone Numbers</value>

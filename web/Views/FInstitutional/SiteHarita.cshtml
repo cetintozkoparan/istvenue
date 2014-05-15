@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/Shared/frontlayout.cshtml";
+}
+<div id="containerInner">
+    <div class="fullSection">
+        <h1>@SharedRess.SharedStrings.sitemap.ToUpper()</h1>
+    </div>
+    <div class="article">
+        <ul class="sitemapList">
+            <li class="firstList"><a href="/">@SharedRess.SharedStrings.homepage.ToUpper()</a></li>
+            <li class="firstList"><a href="#">@SharedRess.SharedStrings.aboutus.ToUpper()</a>
+                <ul class="siteSubMenu">
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_aboutus">@SharedRess.SharedStrings.aboutusvenue</a></li>
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_visionmision">@SharedRess.SharedStrings.visionmision</a></li>
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_ourteam">@SharedRess.SharedStrings.ourteam</a></li>
+                    <li><a href="~/">@SharedRess.SharedStrings.otheroperations</a></li>
+                </ul>
+            </li>
+            <li class="firstList"><a href="#">@SharedRess.SharedStrings.services.ToUpper()</a>
+                <ul class="siteSubMenu">
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_services">@SharedRess.SharedStrings.services</a></li>
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_sectors">@SharedRess.SharedStrings.sectors</a></li>
+                </ul>
+            </li>
+            <li class="firstList"><a href="#">@SharedRess.SharedStrings.references.ToUpper()</a>
+                <ul class="siteSubMenu">
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_references">@SharedRess.SharedStrings.firmsandbrands</a></li>
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_whyus">@SharedRess.SharedStrings.whyus</a></li>
+                </ul>
+            </li>
+            <li class="firstList"><a href="#">@SharedRess.SharedStrings.news.ToUpper()</a>
+                <ul class="siteSubMenu">
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_news">@SharedRess.SharedStrings.marketnews</a></li>
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_onpress">@SharedRess.SharedStrings.onpress</a></li>
+                </ul>
+            </li>
+            <li class="firstList"><a href="#">@SharedRess.SharedStrings.contactus.ToUpper()</a>
+                <ul class="siteSubMenu">
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_contactdetails">@SharedRess.SharedStrings.addressandgooglemap</a></li>
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_career">@SharedRess.SharedStrings.careeropportunities</a></li>
+                </ul>
+            </li>
+            <li class="lastList firstList"><a href="#">@SharedRess.SharedStrings.searchestate.ToUpper()</a>
+                <ul class="siteSubMenu">
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menupopularestates">@SharedRess.SharedStrings.featuredproperties</a></li>
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch">@SharedRess.SharedStrings.advancedsearch</a></li>
+                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.brifing">@SharedRess.SharedStrings.leaveyourbrief</a></li>
+                </ul>
+
+            </li>
+        </ul>
+    </div>
+</div>

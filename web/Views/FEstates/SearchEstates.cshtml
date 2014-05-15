@@ -4,16 +4,18 @@
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
 
-@using (Html.BeginForm("SearchEstates", "FEstates", FormMethod.Post, new { id="searchform" }))
+
+
+@using (Html.BeginForm("SearchEstates", "FEstates", FormMethod.Post, new { id = "searchform" }))
 {
     <div id="containerInner">
         <div id="content">
             <div id="realtyContent">
-                <h1>@SharedRess.SharedStrings.searchestate</h1>
+                <h1>@SharedRess.SharedStrings.searchestate.ToUpper()</h1>
                 <div id="advanced-search">
                     <div class="searchinput full">
                         <span>@SharedRess.SharedStrings.referenceno:</span>
-                        @Html.TextBoxFor(d => d.search.referansno, new { @maxlength = "4", @class = "textinput longInput" })
+                        @Html.TextBoxFor(d => d.search.referansno, new { @class = "textinput longInput" })
                     </div>
                     <div class="clear"></div>
                     <div class="seperator"></div>
@@ -38,13 +40,18 @@
                             <option value="0">@SharedRess.SharedStrings.workplace</option>
                             <option value="1">@SharedRess.SharedStrings.land</option>
                             <option value="2">@SharedRess.SharedStrings.housing</option>
+                            <option value="4">@SharedRess.SharedStrings.perakende</option>
+                            <option value="5">@SharedRess.SharedStrings.sanayivelojistik</option>
+                            <option value="6">@SharedRess.SharedStrings.otelveagirlama</option>
+                            <option value="7">@SharedRess.SharedStrings.digerlukskonut</option>
+                            <option value="8">@SharedRess.SharedStrings.plazaofiskati</option>
                         </select>
                     </div>
                     <div class="clear"></div>
                     <div class="seperator"></div>
                     <div class="searchinput">
                         <span>@SharedRess.SharedStrings.city:</span>
-                        @Html.DropDownList("search.sehir", null, @SharedRess.SharedStrings.all , new { @class="combobox" })
+                        @Html.DropDownList("search.sehir", null, @SharedRess.SharedStrings.all, new { @class = "combobox" })
                         @*<select name="search.sehir" class="combobox ">
                             <option selected="selected" value="0">@SharedRess.SharedStrings.all</option>
                             <option value="1">İstanbul-Anadolu</option>
@@ -119,8 +126,8 @@
                         <span>@SharedRess.SharedStrings.estateconsultant:</span>
                         <select name="search.emlakdanismani" class="combobox " style="">
                             <option value="">@SharedRess.SharedStrings.pleaseselect</option>
-                            <option value="1">Test Name</option>
-                            <option value="2">Test Name</option>
+                            @*<option value="1">Test Name</option>
+                            <option value="2">Test Name</option>*@
                         </select>
                     </div>
                     <div class="clear"></div>
@@ -134,7 +141,90 @@
                     <div class="clear"></div>
                 </div>
             </div>
-            @if (Model.estates.Count == 0)
+
+
+            @if (ViewBag.result == null)
+            {
+                <ul class="searchResults">
+                    <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch?TypeId=8">
+                        <div class="serviceContent2">
+                            <h3>@SharedRess.SharedStrings.isyeri </h3>
+                            <img src="../images/office.jpg" alt="ofis" />
+                            <p>@SharedRess.SharedStrings.officetext</p>
+                        </div>
+                    </a><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch?TypeId=4">
+                        <div class="serviceContent2">
+                            <h3>@SharedRess.SharedStrings.parakende</h3>
+                            <img src="../images/perakende.jpg" alt="perakende" />
+                            <p>@SharedRess.SharedStrings.retailtext</p>
+                        </div>
+                    </a><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch?TypeId=5">
+                        <div class="serviceContent2">
+                            <h3>Sanayi ve Lojistik</h3>
+                            <img src="../images/sanayivelojistik.jpg" alt="sanayi ve lojistik" />
+                            <p>@SharedRess.SharedStrings.industrylogistictext</p>
+                        </div>
+                    </a><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch?TypeId=6">
+                        <div class="serviceContent2">
+                            <h3>@SharedRess.SharedStrings.otelveagirlama</h3>
+                            <img src="../images/otel.jpg" alt="otel ve ağırlama" />
+                            <p>@SharedRess.SharedStrings.hotelentertainmenttext</p>
+                        </div>
+                    </a><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch?TypeId=1">
+                        <div class="serviceContent2">
+                            <h3>@SharedRess.SharedStrings.arsa</h3>
+                            <img src="../images/arsa.jpg" alt="arsa" />
+                            <p>@SharedRess.SharedStrings.landtext</p>
+                        </div>
+                    </a><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch?TypeId=7">
+                        <div class="serviceContent2">
+                            <h3>@SharedRess.SharedStrings.digerlukskonut</h3>
+                            <img src="../images/lukskonut.jpg" alt="lüks konut" />
+                            <p>@SharedRess.SharedStrings.hotelluxrytext</p>
+                        </div>
+                    </a>
+                </ul>
+            }
+            else
+            {
+                if (Model.estates.Count > 0)
+                {
+                <ul class="searchResults">
+                    @foreach (var item in Model.estates)
+                    {
+                        <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.detail/@item.Id">
+                            <div class="serviceContent2 extraDetail">
+                                <div class="fixedImage">
+                                    <img src="@item.Photo" width="130" height="110" alt="@item.Header" />
+                                </div>
+                                <div class="rightExtraContent">
+                                    <div class="headingGroup">
+                                        <h3 style="width: 330px">@item.Header</h3>
+                                        <div class="clear"></div>
+                                        <p class="county">@item.Town.Name, @item.Country.Name</p>
+                                    </div>
+                                    @Html.Raw(item.Content)
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </ul>
+                }
+                else
+                {
+                <ul class="searchResults">
+                    <div class="detailSearchResultContent">
+                        <p class="detailSearchResults">@SharedRess.SharedStrings.searchresult</p>
+                        <p class="resultsArticle">
+                            @Html.Raw(SharedRess.SharedStrings.searchresultstring)
+                        </p>
+                    </div>
+                </ul>
+                    { Html.RenderAction("NewPartial", "FBrifing"); }
+                }
+            }
+
+            @* @if (Model.estates.Count == 0)
             {
                 <b style="margin:30px;display: inline-block;">Aramanızla özdeşleşen bi kayıt bulunamadı...</b>
             }
@@ -152,7 +242,7 @@
                         </a>
                     </li>
                 }
-            </ul>
+            </ul>*@
         </div>
     </div>
 }

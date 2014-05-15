@@ -23,7 +23,9 @@ namespace web.Controllers
         {
             List<Service> services = new List<Service>();
             services = ServiceManager.GetServiceListForFront(lang);
-            ServiceWrapperModel swm = new ServiceWrapperModel(null, services, null, null, null);
+            var ourservices = ServiceManager.GetOurServices(lang);
+
+            ServiceWrapperModel swm = new ServiceWrapperModel(null, services, null, null, ourservices);
             return View(swm);
         }
 

@@ -1,7 +1,7 @@
 ﻿@model DAL.Entities.Brifing
 @{
     ViewBag.Title = "New";
-    Layout = "~/Views/Shared/frontlayout.cshtml";
+    Layout = null;
 }
 
 
@@ -17,65 +17,64 @@
 
         var proc = $("#hdnprocess").val();
         var lang = $("#hdnlang").val();
-     
-        if (proc == "true" || proc == "True") {
-            $("#briefform").find("input[type=text], textarea").val("");
-            
-            if (lang == 'tr') {   alert("İşlem Başarıyla Tamamlandı"); }
+        var newproc = $("#hdnnewprocess").val();
+
+        if (newproc) {
+            if (lang == 'tr') alert("İşlem Başarıyla Tamamlandı");
             else alert("Process Has been Succeed");
         }
-        if (proc == "false" || proc == "False") {
-            if (lang == 'tr') alert("İşle sırasında Hata Oluştu.");
-            else alert("There Has Been An Error During Process");
-            
-        }
+        //if (proc != "" && (proc == "false" || proc == "False")) {
+        //    if (lang == 'tr') alert("İşle sırasında Hata Oluştu.");
+        //    else alert("There Has Been An Error During Process");
+
+        //}
     });
 
 </script>
 
+
 <!-- InstanceBeginEditable name="content" -->
-<div id="container">
-  <div id="containerInner">
+
+
+@*<div id="container">
+  <div id="containerInner">*@
     <div id="content">
-      <div class="fullSection">
-        <h1>@Briefs.Brief.header</h1>
-      </div>
-      
-      <div class="article briefContent">
-          @Html.Hidden("hdnprocess",(object)@ViewBag.Result)
+      <div class="article briefContent" style="margin-left:20px">
+          @Html.Hidden("hdnprocess",(object)@ViewBag.BriefResult)
+          @Html.Hidden("hdnnewprocess",(object)@ViewBag.BriefResultante)
           @Html.Hidden("hdnlang",(object)@ViewBag.Lang)
-    @using (Html.BeginForm("New", "FBrifing", FormMethod.Post, new { @id="briefform" }))
-    {
+    @using (Html.BeginForm("New", "FBrifing"))
+          {
             <p><label>@Briefs.Brief.adsoyad</label>
-                @Html.TextBoxFor(m => m.Ad, new { @class = "inputText" })
+                @Html.TextBoxFor(m => m.Ad, new { @class="inputText"})
            
             </p>
              <div class="clear"></div>
             <p><label class="ourPhones">@Briefs.Brief.tels</label>
             <span class="briefPhones">
             <label>@Briefs.Brief.istel</label><br/>
-              @Html.TextBoxFor(m => m.IsTel, new { @class = "inputText" })
+              @Html.TextBoxFor(m => m.IsTel, new { @class="inputText"})
              </span>
              <span class="briefPhones">
             <label>@Briefs.Brief.evtel</label><br/>
-           @Html.TextBoxFor(m => m.EvTel, new { @class = "inputText" })
+           @Html.TextBoxFor(m => m.EvTel, new { @class="inputText"})
             </span>
              <span class="briefPhones">
             <label>@Briefs.Brief.gsm</label><br/>
-              @Html.TextBoxFor(m => m.CepTel, new { @class = "inputText" })
+              @Html.TextBoxFor(m => m.CepTel, new { @class="inputText"})
             </span>
             </p>
              <div class="clear"></div>
             <p><label>@Briefs.Brief.eposta</label>
-              @Html.TextBoxFor(m => m.Email, new { @class = "inputText" })
+              @Html.TextBoxFor(m => m.Email, new { @class="inputText"})
             </p>
             <div class="clear"></div>
             <p><label>@Briefs.Brief.mesaj</label>
-           @Html.TextAreaFor(m => m.Mesaj, new { @class = "inputText" })
+           @Html.TextAreaFor(m => m.Mesaj, new { @class="inputText"})
             </p>
         <div class="clear"></div>
         <input type="submit" class="inputButton" value="@SharedRess.SharedStrings.send">
-    }
+          }
     <div class="clear"></div>
           @if(ViewBag.Lang == "tr")
           {
@@ -88,8 +87,8 @@
       
       
     </div>
-  </div>
-</div>
+@*  </div>
+</div>*@
 <!-- InstanceEndEditable -->
 
 <style type="text/css">

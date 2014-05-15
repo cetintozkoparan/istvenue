@@ -38,7 +38,7 @@ namespace web
          {
              if (HttpContext.Current.Session["culture"] == null)
              {
-                 CultureInfo ci = new CultureInfo("tr");
+                 CultureInfo ci = new CultureInfo("en");
                  System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
                  System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
              }

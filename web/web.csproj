@@ -295,6 +295,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\Views\Brief\Detail.en.Designer.cs">
+      <DependentUpon>Detail.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Views\Brief\Detail.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2594,6 +2599,7 @@
     <Content Include="Images\controls.png" />
     <Content Include="Images\controlsColorbox.png" />
     <Content Include="Images\degertunali.jpg" />
+    <Content Include="Images\enticariHizmetler.png" />
     <Content Include="Images\error.png" />
     <Content Include="Images\giris_yazi.png" />
     <Content Include="Images\hakkimizda.jpg" />
@@ -3020,6 +3026,8 @@
     <Content Include="Views\FEstates\Detail.cshtml" />
     <Content Include="Views\FBrifing\New.cshtml" />
     <Content Include="Views\FBrifing\Detail.cshtml" />
+    <Content Include="Views\FInstitutional\SiteHarita.cshtml" />
+    <Content Include="Views\FBrifing\NewPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3072,6 +3080,11 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Brief.en.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Briefs</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Brief\Detail.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Detail.en.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>BriefDetails</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Brief\Detail.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

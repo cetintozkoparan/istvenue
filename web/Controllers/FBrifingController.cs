@@ -37,7 +37,35 @@ namespace web.Controllers
             }
 
             ViewBag.Lang = lang;
-            return View();
+            return View(new Brifing());
+        }
+
+        public ActionResult NewPartial()
+        {
+            ViewBag.Lang = lang;
+            ViewBag.BriefResult = "";
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult NewPartial(Brifing model)
+        {
+            try
+            {
+                MainContext db = new MainContext();
+                model.BrifingTip = 0;
+                db.Brifing.Add(model);
+                db.SaveChanges();
+
+                ViewBag.BriefResult = true;
+            }
+            catch (Exception ex)
+            {
+                ViewBag.BriefResult = false;
+            }
+
+            ViewBag.Lang = lang;
+            return PartialView();
         }
 
         public ActionResult Detail()

@@ -36,6 +36,11 @@ namespace web.Controllers
             return View();
         }
 
+        public ActionResult SiteHarita()
+        {
+            return View();
+        }
+
         public ActionResult Page(int pid)
         {
             var page = PageManager.Get(pid);

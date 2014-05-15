@@ -222,6 +222,9 @@
   <data name="otopark" xml:space="preserve">
     <value>Otopark</value>
   </data>
+  <data name="parakende" xml:space="preserve">
+    <value>Parakende</value>
+  </data>
   <data name="print" xml:space="preserve">
     <value>Yazdırmak için tıklayın...</value>
   </data>

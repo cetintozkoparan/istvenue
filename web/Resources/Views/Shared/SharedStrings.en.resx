@@ -361,7 +361,7 @@
     <value>Leave Your Brief</value>
   </data>
   <data name="marketnews" xml:space="preserve">
-    <value>Market Analysis / Sector News</value>
+    <value>Sector News</value>
   </data>
   <data name="news" xml:space="preserve">
     <value>News</value>
@@ -482,5 +482,209 @@
   </data>
   <data name="brifing" xml:space="preserve">
     <value>briefs</value>
+  </data>
+  <data name="aboutusvenue" xml:space="preserve">
+    <value>About Venue İstanbul</value>
+  </data>
+  <data name="menu_sitemap" xml:space="preserve">
+    <value>sitemap</value>
+  </data>
+  <data name="sitemap" xml:space="preserve">
+    <value>Site Map</value>
+  </data>
+  <data name="detail" xml:space="preserve">
+    <value>detail</value>
+  </data>
+  <data name="digerlukskonut" xml:space="preserve">
+    <value>Other (Lux house)</value>
+  </data>
+  <data name="otelveagirlama" xml:space="preserve">
+    <value>Hotel and Accommodation</value>
+  </data>
+  <data name="perakende" xml:space="preserve">
+    <value>Retail</value>
+  </data>
+  <data name="sanayivelojistik" xml:space="preserve">
+    <value>Industry and Logistic</value>
+  </data>
+  <data name="clickonimages" xml:space="preserve">
+    <value>Click on the images for Portfolio details</value>
+  </data>
+  <data name="searchresultstring" xml:space="preserve">
+    <value>Unfortunately there is no record matching your search. If you wish you can fill in the below document and send to us. We will return to you as soon as possible.</value>
+  </data>
+  <data name="plazaofiskati" xml:space="preserve">
+    <value>Plaza Office Floor</value>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="aciklama" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="aidatyonetim" xml:space="preserve">
+    <value>Revenues/Management</value>
+  </data>
+  <data name="alan" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="arsa" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="banyowc" xml:space="preserve">
+    <value>Bath/WC</value>
+  </data>
+  <data name="baslik" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="binadakikatsayisi" xml:space="preserve">
+    <value>Floor Count of Building</value>
+  </data>
+  <data name="binaninyasi" xml:space="preserve">
+    <value>Building Age</value>
+  </data>
+  <data name="binatamanalani" xml:space="preserve">
+    <value>Building Floor Space m2</value>
+  </data>
+  <data name="brutalan" xml:space="preserve">
+    <value>Gross Area</value>
+  </data>
+  <data name="bulunduguarsa" xml:space="preserve">
+    <value>Area of Land m2</value>
+  </data>
+  <data name="bulundugukat" xml:space="preserve">
+    <value>Floor</value>
+  </data>
+  <data name="cepheyon" xml:space="preserve">
+    <value>Front/Side</value>
+  </data>
+  <data name="contactBtn" xml:space="preserve">
+    <value>Click for contact</value>
+  </data>
+  <data name="depozito" xml:space="preserve">
+    <value>Deposit</value>
+  </data>
+  <data name="devren" xml:space="preserve">
+    <value>by Session</value>
+  </data>
+  <data name="femail" xml:space="preserve">
+    <value>E-mail Address*</value>
+  </data>
+  <data name="fiyat" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="fname" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="friend" xml:space="preserve">
+    <value>Your Friend's</value>
+  </data>
+  <data name="fsurname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="ilanno" xml:space="preserve">
+    <value>Ref.No</value>
+  </data>
+  <data name="isinmatipi" xml:space="preserve">
+    <value>Heating Type</value>
+  </data>
+  <data name="isyeri" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="kiragetirisi" xml:space="preserve">
+    <value>Imputed Rent</value>
+  </data>
+  <data name="kiralik" xml:space="preserve">
+    <value>Rental</value>
+  </data>
+  <data name="konut" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="krediyeuygunluk" xml:space="preserve">
+    <value>State of Credit</value>
+  </data>
+  <data name="kullanimdurumu" xml:space="preserve">
+    <value>State of Usage</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="netalan" xml:space="preserve">
+    <value>Net Alan</value>
+  </data>
+  <data name="oda" xml:space="preserve">
+    <value>Number of Room </value>
+  </data>
+  <data name="otopark" xml:space="preserve">
+    <value>Car Park</value>
+  </data>
+  <data name="parakende" xml:space="preserve">
+    <value>Retail</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>Click for print</value>
+  </data>
+  <data name="satilik" xml:space="preserve">
+    <value>On sale</value>
+  </data>
+  <data name="send1" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="sendingother" xml:space="preserve">
+    <value>Click for sending someone</value>
+  </data>
+  <data name="surname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="takas" xml:space="preserve">
+    <value>Swap</value>
+  </data>
+  <data name="tapudurumu" xml:space="preserve">
+    <value>State of Deed</value>
+  </data>
+  <data name="tarih" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="tavsiyeet" xml:space="preserve">
+    <value>Recommend to friend</value>
+  </data>
+  <data name="tip" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="tipemlak" xml:space="preserve">
+    <value>Estate Type</value>
+  </data>
+  <data name="yakittipi" xml:space="preserve">
+    <value>Fuel Oil Type</value>
+  </data>
+  <data name="yapinindurumu" xml:space="preserve">
+    <value>State of Building</value>
+  </data>
+  <data name="your" xml:space="preserve">
+    <value>Your</value>
+  </data>
+  <data name="clickforlinkedin" xml:space="preserve">
+    <value>Click for Linkedin profile</value>
+  </data>
+  <data name="hotelentertainmenttext" xml:space="preserve">
+    <value>Our experienced teammates in our network, specialized in the sector of hotels and entertainment offer intermediary services relating to the purchase and sale of these touristic establishments.</value>
+  </data>
+  <data name="hotelluxrytext" xml:space="preserve">
+    <value>Our company professionally meets the needs of both our domestic and foreign customers in a customer-oriented and customized manner, rapidly and reliably, for property renting, sale and purchase in the special districts of Istanbul whose importance is growing everyday in the world property sector.</value>
+  </data>
+  <data name="industrylogistictext" xml:space="preserve">
+    <value>Our experienced industrial and logistics network team who knows the reality of the commercial world very well, is able to understand the necessities of our customers very well and to provide high quality services to them.</value>
+  </data>
+  <data name="landtext" xml:space="preserve">
+    <value>The experienced consultants in our network are able to offer a high quality professional service to our customers in finding the land that they require and valuing their current land.</value>
+  </data>
+  <data name="officetext" xml:space="preserve">
+    <value>We offer consultancy services with our experienced team and network in purchasing, renting, sales or valuation of offices throughout Istanbul.</value>
+  </data>
+  <data name="retailtext" xml:space="preserve">
+    <value>Our experienced network team who is acquainted with the rapid and unstable retail sector and who monitor the developments continuously, has the authority to provide high quality and rapid services to the property owners, retailers and developers at Istanbul’s main streets and shopping malls.</value>
   </data>
 </root>

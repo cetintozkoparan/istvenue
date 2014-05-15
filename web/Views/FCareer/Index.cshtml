@@ -33,7 +33,7 @@
                 color: #152433;
             }
 
-    input[type="radio"] {
+    .tab_icerik:first-child input[type="radio"] {
         width: 16px;
         height: 16px;
         float: left;
@@ -85,7 +85,7 @@
             @using (Html.BeginForm("SendCV", "FCareer", FormMethod.Post, new { @class = "sendForm", enctype = "multipart/form-data" }))
             {
                 <input type="file" name="attachedfile" class="uploadInput" />
-                <input type="submit" name="cvgonder" id="cvgonder" class="uploadBtn" value="CV GÖNDER" /><br />
+                <input type="submit" name="cvgonder" id="cvgonder" class="uploadBtn" value="@SharedRess.SharedStrings.send" /><br />
             }
 
             <div class="clear"></div>
@@ -263,6 +263,7 @@
                     </div>
                     <label for="personalinfo-sex">Cinsiyet:</label>
                     <span></span>
+
                     <div class="formItemNoBG">
                         <input type="radio" id="asexm" name="cinsiyet" value="Erkek">
                         Erkek

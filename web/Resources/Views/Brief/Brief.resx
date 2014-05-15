@@ -121,7 +121,7 @@
     <value>Adınız Soyadınız</value>
   </data>
   <data name="detay" xml:space="preserve">
-    <value>Daha detaylı brifing/ arama kaydı oluşturmak için tıklayınız</value>
+    <value>Daha detaylı brifing / mesaj kaydı oluşturmak için tıklayınız</value>
   </data>
   <data name="eposta" xml:space="preserve">
     <value>E-Posta Adresiniz</value>
@@ -130,10 +130,10 @@
     <value>Ev</value>
   </data>
   <data name="gsm" xml:space="preserve">
-    <value>GSM</value>
+    <value>Gsm</value>
   </data>
   <data name="header" xml:space="preserve">
-    <value>BRIEFING BIRAKIN SİZİ ARAYALIM</value>
+    <value>MESAJ BIRAKIN SİZİ ARAYALIM</value>
   </data>
   <data name="istel" xml:space="preserve">
     <value>İş</value>

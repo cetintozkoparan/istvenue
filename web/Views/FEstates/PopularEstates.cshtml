@@ -12,22 +12,22 @@
 
         </div>
         <div class="highlights">
-
+            <p class="detailsPortfolio">@SharedRess.SharedStrings.clickonimages</p>
             @foreach (var item in Model)
             {
-                <a href="/@SharedRess.SharedStrings.menu_culture/detay/@item.Id">
+                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.detail/@item.Id" style="text-decoration:none">
                     <div class="highlightsContent">
                         <div class="highlightsImage">
-                            <a href="/@SharedRess.SharedStrings.menu_culture/detay/@item.Id">
-                                <img src="@item.Photo" width="301" height="200" alt="@item.Header" /></a>
+                            <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.detail/@item.Id" style="text-decoration:none">
+                                <img src="@item.Photo" width="250" height="161" alt="@item.Header" /></a>
                         </div>
                         <div class="highlightsRight">
                             <div class="info">
-                                 <a href="/@SharedRess.SharedStrings.menu_culture/detay/@item.Id"><h4>@item.Header</h4></a>
+                                 <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.detail/@item.Id" style="text-decoration:none"><h4>@item.Header</h4></a>
 
                                 <span class="location">@item.Country.Name/ @item.Town.Name/ @item.District.Name</span>
                                 <span class="type">
-                                    @if (item.TypeId == 0)
+                                    @if (item.TransactionId == 0)
                                     {
                                         @SharedRess.SharedStrings.hired
                                     }else{
@@ -41,7 +41,7 @@
                                     </li>
                                     <li class="area">@item.Size <i>m²</i></li>
                                     <li class="date">@item.TimeCreated</li>
-                                    <li class="price">@item.Price <i>@item.PriceTypeId</i></li>
+                                    <li class="price">@string.Format("{0:0}", item.Price) <i>@item.PriceTypeId</i></li>
                                 </ul>
                             </div>
 

@@ -35,11 +35,13 @@ namespace web.Areas.Admin.Controllers
 
             var countrylist = new SelectList(countries, "Id", "Name");
             ViewBag.Country = countrylist;
-            ImageHelperNew.DestroyImageCashAndSession(577, 296);
+            //ImageHelperNew.DestroyImageCashAndSession(577, 296);
+            ImageHelperNew.DestroyImageCashAndSession(750, 483);
             return View();
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Add(Estate record, HttpPostedFileBase uploadfile, IEnumerable<HttpPostedFileBase> attachments)
         {
             var languages = LanguageManager.GetLanguages();
@@ -97,7 +99,7 @@ namespace web.Areas.Admin.Controllers
 
         public ActionResult Edit()
         {
-            ImageHelperNew.DestroyImageCashAndSession(577, 296, 577, 296);
+            ImageHelperNew.DestroyImageCashAndSession(750, 483, 250, 161);
             var languages = LanguageManager.GetLanguages();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -134,6 +136,7 @@ namespace web.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(IEnumerable<HttpPostedFileBase> attachments, Estate record, HttpPostedFileBase uploadfile)
         {
             var languages = LanguageManager.GetLanguages();

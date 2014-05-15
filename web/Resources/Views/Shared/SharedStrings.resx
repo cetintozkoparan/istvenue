@@ -361,7 +361,7 @@
     <value>Brifing Bırakın, Geri Dönelim</value>
   </data>
   <data name="marketnews" xml:space="preserve">
-    <value>Piyasa Analizleri / Sektörden Haberler</value>
+    <value>Sektörden Haberler</value>
   </data>
   <data name="news" xml:space="preserve">
     <value>Haberler</value>
@@ -494,5 +494,209 @@
   </data>
   <data name="brifing" xml:space="preserve">
     <value>brifingler</value>
+  </data>
+  <data name="aboutusvenue" xml:space="preserve">
+    <value>Venue İstanbul Hakkında</value>
+  </data>
+  <data name="menu_sitemap" xml:space="preserve">
+    <value>siteharitasi</value>
+  </data>
+  <data name="sitemap" xml:space="preserve">
+    <value>Site Haritası</value>
+  </data>
+  <data name="detail" xml:space="preserve">
+    <value>detay</value>
+  </data>
+  <data name="digerlukskonut" xml:space="preserve">
+    <value>Diğer (Lüks konut)</value>
+  </data>
+  <data name="otelveagirlama" xml:space="preserve">
+    <value>Otel ve Ağırlama</value>
+  </data>
+  <data name="perakende" xml:space="preserve">
+    <value>Perakende</value>
+  </data>
+  <data name="sanayivelojistik" xml:space="preserve">
+    <value>Sanayi ve Lojistik</value>
+  </data>
+  <data name="clickonimages" xml:space="preserve">
+    <value>Portföy detayı için resimlerin üstüne tıklayınız</value>
+  </data>
+  <data name="searchresultstring" xml:space="preserve">
+    <value>Üzülerek aradığınız kriterde bir kaydımız olmadığını belirtmek zorundayız.&lt;br&gt;Dilerseniz aşağıdaki formu doldurun, size en kısa sürede geri dönelim.</value>
+  </data>
+  <data name="plazaofiskati" xml:space="preserve">
+    <value>Plaza Ofis Katı</value>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="aciklama" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="aidatyonetim" xml:space="preserve">
+    <value>Aidat/Yönetim</value>
+  </data>
+  <data name="alan" xml:space="preserve">
+    <value>Alan</value>
+  </data>
+  <data name="arsa" xml:space="preserve">
+    <value>Arsa</value>
+  </data>
+  <data name="banyowc" xml:space="preserve">
+    <value>Banyo/WC</value>
+  </data>
+  <data name="baslik" xml:space="preserve">
+    <value>Başlık</value>
+  </data>
+  <data name="binadakikatsayisi" xml:space="preserve">
+    <value>Binadaki Kat Sayısı</value>
+  </data>
+  <data name="binaninyasi" xml:space="preserve">
+    <value>Binanın Yaşı</value>
+  </data>
+  <data name="binatamanalani" xml:space="preserve">
+    <value>Bina Taban Alanı m2</value>
+  </data>
+  <data name="brutalan" xml:space="preserve">
+    <value>Brüt Alan</value>
+  </data>
+  <data name="bulunduguarsa" xml:space="preserve">
+    <value>Bulunduğu Arsa m2</value>
+  </data>
+  <data name="bulundugukat" xml:space="preserve">
+    <value>Bulunduğu Kat</value>
+  </data>
+  <data name="cepheyon" xml:space="preserve">
+    <value>Cephe/Yön</value>
+  </data>
+  <data name="contactBtn" xml:space="preserve">
+    <value>İletişim için tıklayın</value>
+  </data>
+  <data name="depozito" xml:space="preserve">
+    <value>Depozito</value>
+  </data>
+  <data name="devren" xml:space="preserve">
+    <value>Devren</value>
+  </data>
+  <data name="femail" xml:space="preserve">
+    <value>E-mail Adresi*</value>
+  </data>
+  <data name="fiyat" xml:space="preserve">
+    <value>Fiyat</value>
+  </data>
+  <data name="fname" xml:space="preserve">
+    <value>Adı</value>
+  </data>
+  <data name="friend" xml:space="preserve">
+    <value>Arkadaşınızın</value>
+  </data>
+  <data name="fsurname" xml:space="preserve">
+    <value>Soyadı</value>
+  </data>
+  <data name="ilanno" xml:space="preserve">
+    <value>İlan no</value>
+  </data>
+  <data name="isinmatipi" xml:space="preserve">
+    <value>Isınma Tipi</value>
+  </data>
+  <data name="isyeri" xml:space="preserve">
+    <value>İşyeri</value>
+  </data>
+  <data name="kiragetirisi" xml:space="preserve">
+    <value>Kira Getirisi</value>
+  </data>
+  <data name="kiralik" xml:space="preserve">
+    <value>Kiralık</value>
+  </data>
+  <data name="konut" xml:space="preserve">
+    <value>Konut</value>
+  </data>
+  <data name="krediyeuygunluk" xml:space="preserve">
+    <value>Krediye Uygunluk</value>
+  </data>
+  <data name="kullanimdurumu" xml:space="preserve">
+    <value>Kullanım Durumu</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Mesaj</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Adınız</value>
+  </data>
+  <data name="netalan" xml:space="preserve">
+    <value>Net Alan</value>
+  </data>
+  <data name="oda" xml:space="preserve">
+    <value>Bölüm/Oda Sayısı</value>
+  </data>
+  <data name="otopark" xml:space="preserve">
+    <value>Otopark</value>
+  </data>
+  <data name="parakende" xml:space="preserve">
+    <value>Parakende</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>Yazdırmak için tıklayın...</value>
+  </data>
+  <data name="satilik" xml:space="preserve">
+    <value>Satılık</value>
+  </data>
+  <data name="send1" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="sendingother" xml:space="preserve">
+    <value>Başka birine yollamak isterseniz tıklayın</value>
+  </data>
+  <data name="surname" xml:space="preserve">
+    <value>Soyadınız</value>
+  </data>
+  <data name="takas" xml:space="preserve">
+    <value>Takas</value>
+  </data>
+  <data name="tapudurumu" xml:space="preserve">
+    <value>Tapu Durumu</value>
+  </data>
+  <data name="tarih" xml:space="preserve">
+    <value>Tarih</value>
+  </data>
+  <data name="tavsiyeet" xml:space="preserve">
+    <value>Arkadaşına Tavsiye Et</value>
+  </data>
+  <data name="tip" xml:space="preserve">
+    <value>Portföy Tipi</value>
+  </data>
+  <data name="tipemlak" xml:space="preserve">
+    <value>Emlak Tipi</value>
+  </data>
+  <data name="yakittipi" xml:space="preserve">
+    <value>Yakıt Tipi</value>
+  </data>
+  <data name="yapinindurumu" xml:space="preserve">
+    <value>Yapının Durumu</value>
+  </data>
+  <data name="your" xml:space="preserve">
+    <value>Sizin</value>
+  </data>
+  <data name="clickforlinkedin" xml:space="preserve">
+    <value>Linkedin profili için tıklayınız</value>
+  </data>
+  <data name="hotelentertainmenttext" xml:space="preserve">
+    <value>Otel ve ağırlama sektöründe uzmanlaşmış networkümüzdeki deneyimli ekip arkadaşlarımız bu turistik işletmelerinin alım-satımına yönelik aracılık hizmetleri sunmaktadır.</value>
+  </data>
+  <data name="hotelluxrytext" xml:space="preserve">
+    <value>Firmamız gerek yerli gerekse yabancı müşterilerinin dünya konut sektöründeki önemi her geçen gün daha artan İstanbul’un özellikli bölgelerindeki konut kiralama, satış veya satınalma ihtiyaçlarını müşteri odaklı ve kişiye özel bir yaklaşımla profesyonel, hızlı ve güvenilir bir şekilde karşılamaktadır.</value>
+  </data>
+  <data name="industrylogistictext" xml:space="preserve">
+    <value>Ticari dünyanın realitesini çok iyi bilen tecrübeli endüstriyel ve lojistik network ekibimiz müşterilerimizin gereksinimlerini çok iyi anlayabilmekte ve kendilerine yüksek kalitede profesyonel hizmet sunabilmektedir.</value>
+  </data>
+  <data name="landtext" xml:space="preserve">
+    <value>Network’ümüzdeki deneyimli danışmanlar müşterilerimizin ihtiyacı olan arsaları bulmada ve mevcut arsalarını değerlendirmede yüksek kalitede profesyonel hizmet sunabilmektedir.</value>
+  </data>
+  <data name="officetext" xml:space="preserve">
+    <value>Deneyimli ekip ve networkumüzle İstanbul’un her noktasında, ofis satın alma, kiralama, satış veya değerleme konularında danışmanlık hizmeti sunmaktayız.</value>
+  </data>
+  <data name="retailtext" xml:space="preserve">
+    <value>Hızlı ve değişken parakende sektörünü çok iyi bilen ve bu sektörün gelişmelerini devamlı izleyen deneyimli network kadromuz İstanbul’un ana cadde ve alışveriş merkezlerindeki mal sahipleri, perakendeci ve geliştiricilerine kaliteli ve hızlı hizmet verme yetisine sahiptir.</value>
   </data>
 </root>

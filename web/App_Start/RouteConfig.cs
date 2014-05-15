@@ -16,6 +16,9 @@ namespace web
 
          //   routes.MapRoute("home_default", "/", new { action = "Index", Controller = "Home" });
 
+            routes.MapRoute("siteharita_tr", "tr/siteharitasi", new { action = "SiteHarita", Controller = "FInstitutional" });
+            routes.MapRoute("siteharita_en", "en/sitemap", new { action = "SiteHarita", Controller = "FInstitutional" });
+
             routes.MapRoute("detay_tr", "tr/detay/{id}", new { action = "Detail", Controller = "FEstates" });
             routes.MapRoute("detay_en", "en/detail/{id}", new { action = "Detail", Controller = "FEstates" });
 

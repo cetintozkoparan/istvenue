@@ -19,7 +19,7 @@
                         <span class="manager">@item.Name</span></p>
                         @Html.Raw(item.Content)
                         <img class="linkedin" src="../images/linkedin.png" alt="linkedin" />
-                        <a class="managerLink" href="@item.Linkedin">Linkedin profili için tıklayınız</a>
+                        <a class="managerLink" href="@item.Linkedin">@SharedRess.SharedStrings.clickforlinkedin</a>
                 </div>
             </div>
         }
@@ -41,7 +41,7 @@
         <div class="article ourTeamContent">
             <div class="visionContent">
                 <h2>@SharedRess.SharedStrings.expertise</h2>
-                @Html.Raw(Model.danismanlarimiz.Content)                
+                @Html.Raw(Model.uzmanlikalanlarimiz.Content)                
             </div>
         </div>
     </div>

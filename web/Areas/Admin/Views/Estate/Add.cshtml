@@ -44,7 +44,7 @@
                 </p>
                 <p>
                     @Html.LabelFor(m => m.Content)
-                    @Html.TextAreaFor(m => m.Content, new { @class = "textwidth50" })
+                    @Html.TextAreaFor(m => m.Content, new { @class = "textwidth50", @id = "txtcontent" })
                     @Html.ValidationMessageFor(m => m.Content)
                 </p>
                 <p>
@@ -59,16 +59,22 @@
                    0), new { @class = "textwidth10" })
                 </p>
                 <p>
-                    @Html.LabelFor(m => m.TypeId)
+                    <label>Portföy Tipi</label>
                     @Html.DropDownListFor(x => x.TypeId, new SelectList(
                   new List<Object>{ 
                        new { value = "0" , text = "İşyeri"  },
                        new { value = "1" , text = "Arsa" },
                        new { value = "2" , text = "Konut" },
+                       new { value = "4" , text = "Parakende" },
+                       new { value = "5" , text = "Sanayi ve Lojistik" },
+                       new { value = "6" , text = "Otel ve Ağırlama" },
+                       new { value = "7" , text = "Diğer (Lüks Konut)" },
+                       new { value = "8" , text = "Plaza Ofis Katı" },
+                       
                     },
                   "value",
                   "text",
-                   0), new { @class = "textwidth10" })
+                   0), new { @class="textwidth10"})
                 </p>
                 <p>
                     @Html.LabelFor(m => m.RoomNumber)
@@ -129,7 +135,8 @@
                     @Html.DropDownListFor(x => x.Otopark, new SelectList(
                   new List<Object>{ 
                        new { value = "Var" , text = "Yok"  },
-                       new { value = "Yok" , text = "Var" },
+                       new { value = "Açık Otopark" , text = "Açık Otopark" },
+                       new { value = "Kapalı Otopark" , text = "Kapalı Otopark" },
                     },
                   "value",
                   "text",
@@ -254,5 +261,8 @@
     <script src="~/Areas/Admin/Content/scripts/plugins/jquery.ui.datepicker-tr.js"></script>
     <script src="~/Areas/Admin/Content/scripts/pagescripts/reference/addreference.js"></script>
     <script src="~/Areas/Admin/Content/scripts/pagescripts/estate/addestate.js"></script>
+    <script src="~/Areas/Admin/Content/CKEditor/ckeditor/ckeditor.js"></script>
+    <script src="~/Areas/Admin/Content/CKEditor/ckfinder/ckfinder.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/myscripts/CKEditorCreate.js"></script>
 }
 
