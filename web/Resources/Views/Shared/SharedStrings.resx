@@ -430,7 +430,7 @@
     <value>Bina Yaşı</value>
   </data>
   <data name="city" xml:space="preserve">
-    <value>Şehir</value>
+    <value>İl</value>
   </data>
   <data name="district" xml:space="preserve">
     <value>İlçe</value>
@@ -439,7 +439,7 @@
     <value>Gayrimenkul Danışmanı</value>
   </data>
   <data name="estatetype" xml:space="preserve">
-    <value>Emlak Türü</value>
+    <value>Emlak Tipi</value>
   </data>
   <data name="hired" xml:space="preserve">
     <value>Kiralık</value>
@@ -463,10 +463,10 @@
     <value>Fiyat Aralığı</value>
   </data>
   <data name="referenceno" xml:space="preserve">
-    <value>Referans No</value>
+    <value>Portfolio Number</value>
   </data>
   <data name="roomcount" xml:space="preserve">
-    <value>Oda Sayısı</value>
+    <value>Oda/Bölüm Sayısı</value>
   </data>
   <data name="searchbykeyword" xml:space="preserve">
     <value>Anahtar kelimeye göre ara</value>
@@ -478,13 +478,13 @@
     <value>Metrekare</value>
   </data>
   <data name="transactiontype" xml:space="preserve">
-    <value>İşlem Tipi</value>
+    <value>Portföy Tipi</value>
   </data>
   <data name="unit" xml:space="preserve">
     <value>Birim</value>
   </data>
   <data name="workplace" xml:space="preserve">
-    <value>İş Yeri</value>
+    <value>Ofis</value>
   </data>
   <data name="menu_advancedsearch" xml:space="preserve">
     <value>detayli-arama</value>
@@ -601,7 +601,7 @@
     <value>Isınma Tipi</value>
   </data>
   <data name="isyeri" xml:space="preserve">
-    <value>İşyeri</value>
+    <value>Ofis</value>
   </data>
   <data name="kiragetirisi" xml:space="preserve">
     <value>Kira Getirisi</value>
@@ -698,5 +698,11 @@
   </data>
   <data name="retailtext" xml:space="preserve">
     <value>Hızlı ve değişken parakende sektörünü çok iyi bilen ve bu sektörün gelişmelerini devamlı izleyen deneyimli network kadromuz İstanbul’un ana cadde ve alışveriş merkezlerindeki mal sahipleri, perakendeci ve geliştiricilerine kaliteli ve hızlı hizmet verme yetisine sahiptir.</value>
+  </data>
+  <data name="resetbtn" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="searchbtn" xml:space="preserve">
+    <value>Ara</value>
   </data>
 </root>

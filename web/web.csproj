@@ -3121,6 +3121,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EstateStrings.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Estates</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\References\ReferencesStrings.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -38,13 +38,13 @@
                         <select id="emlaktipi" name="search.emlaktipi" class="combobox " style="">
                             <option value="3">@SharedRess.SharedStrings.all</option>
                             <option value="0">@SharedRess.SharedStrings.workplace</option>
-                            <option value="1">@SharedRess.SharedStrings.land</option>
-                            <option value="2">@SharedRess.SharedStrings.housing</option>
+                            @*<option value="2">@SharedRess.SharedStrings.housing</option>*@
                             <option value="4">@SharedRess.SharedStrings.perakende</option>
                             <option value="5">@SharedRess.SharedStrings.sanayivelojistik</option>
                             <option value="6">@SharedRess.SharedStrings.otelveagirlama</option>
+                            <option value="1">@SharedRess.SharedStrings.land</option>
                             <option value="7">@SharedRess.SharedStrings.digerlukskonut</option>
-                            <option value="8">@SharedRess.SharedStrings.plazaofiskati</option>
+                            @*<option value="8">@SharedRess.SharedStrings.plazaofiskati</option>*@
                         </select>
                     </div>
                     <div class="clear"></div>
@@ -132,10 +132,10 @@
                     </div>
                     <div class="clear"></div>
                     <div class="seperator"></div>
-                    <input type="reset" value="Temizle" class="resetbtn">
+                    <input type="reset" value="@SharedRess.SharedStrings.resetbtn" class="resetbtn">
                     <div class="searchbtn">
                         <span class="btnlf"></span><span class="btncn">
-                            <input type="submit" value="Ara">
+                            <input type="submit" value="@SharedRess.SharedStrings.searchbtn">
                         </span><span class="btnrg"></span>
                     </div>
                     <div class="clear"></div>
@@ -160,7 +160,7 @@
                         </div>
                     </a><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch?TypeId=5">
                         <div class="serviceContent2">
-                            <h3>Sanayi ve Lojistik</h3>
+                            <h3>@SharedRess.SharedStrings.sanayivelojistik</h3>
                             <img src="../images/sanayivelojistik.jpg" alt="sanayi ve lojistik" />
                             <p>@SharedRess.SharedStrings.industrylogistictext</p>
                         </div>
@@ -183,7 +183,8 @@
                             <p>@SharedRess.SharedStrings.hotelluxrytext</p>
                         </div>
                     </a>
-                </ul>
+                </ul>
+
             }
             else
             {
@@ -211,7 +212,8 @@
                 </ul>
                 }
                 else
-                {
+                {
+
                 <ul class="searchResults">
                     <div class="detailSearchResultContent">
                         <p class="detailSearchResults">@SharedRess.SharedStrings.searchresult</p>

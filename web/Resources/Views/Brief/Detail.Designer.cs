@@ -151,7 +151,7 @@ namespace BriefDetails {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DETAYLI BRIEF FORMU.
+        ///   Looks up a localized string similar to DETAYLI MESAJ FORMU.
         /// </summary>
         public static string header {
             get {
@@ -309,6 +309,15 @@ namespace BriefDetails {
         public static string sehir {
             get {
                 return ResourceManager.GetString("sehir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GÖNDER.
+        /// </summary>
+        public static string sendbutton {
+            get {
+                return ResourceManager.GetString("sendbutton", resourceCulture);
             }
         }
         

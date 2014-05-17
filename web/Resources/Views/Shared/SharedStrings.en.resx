@@ -436,7 +436,7 @@
     <value>City</value>
   </data>
   <data name="hired" xml:space="preserve">
-    <value>Hire</value>
+    <value>For Rent</value>
   </data>
   <data name="housing" xml:space="preserve">
     <value>House</value>
@@ -445,7 +445,7 @@
     <value>Land</value>
   </data>
   <data name="locality" xml:space="preserve">
-    <value>Locality</value>
+    <value>District</value>
   </data>
   <data name="menu_advancedsearch" xml:space="preserve">
     <value>advanced-search</value>
@@ -454,28 +454,28 @@
     <value>Please Select</value>
   </data>
   <data name="pricerange" xml:space="preserve">
-    <value>Price Range</value>
+    <value>Price Interval</value>
   </data>
   <data name="roomcount" xml:space="preserve">
-    <value>Room Count</value>
+    <value>Room/Section Number</value>
   </data>
   <data name="searchbykeyword" xml:space="preserve">
-    <value>Search by Keyword</value>
+    <value>Searh for Key Word</value>
   </data>
   <data name="searchestate1" xml:space="preserve">
     <value>Search Estate</value>
   </data>
   <data name="squaremeters" xml:space="preserve">
-    <value>Centare</value>
+    <value>Square Meter</value>
   </data>
   <data name="transactiontype" xml:space="preserve">
-    <value>Process Type</value>
+    <value>Portfolio Type</value>
   </data>
   <data name="unit" xml:space="preserve">
-    <value>Unit</value>
+    <value>Currency</value>
   </data>
   <data name="workplace" xml:space="preserve">
-    <value>Workplace</value>
+    <value>Office</value>
   </data>
   <data name="menu_onpress" xml:space="preserve">
     <value>onpress</value>
@@ -496,16 +496,16 @@
     <value>detail</value>
   </data>
   <data name="digerlukskonut" xml:space="preserve">
-    <value>Other (Lux house)</value>
+    <value>Other (Luxury property)</value>
   </data>
   <data name="otelveagirlama" xml:space="preserve">
-    <value>Hotel and Accommodation</value>
+    <value>Hotel and Entertainment</value>
   </data>
   <data name="perakende" xml:space="preserve">
     <value>Retail</value>
   </data>
   <data name="sanayivelojistik" xml:space="preserve">
-    <value>Industry and Logistic</value>
+    <value>Industrial and Logistics</value>
   </data>
   <data name="clickonimages" xml:space="preserve">
     <value>Click on the images for Portfolio details</value>
@@ -541,7 +541,7 @@
     <value>Floor Count of Building</value>
   </data>
   <data name="binaninyasi" xml:space="preserve">
-    <value>Building Age</value>
+    <value>Age of the Building</value>
   </data>
   <data name="binatamanalani" xml:space="preserve">
     <value>Building Floor Space m2</value>
@@ -688,6 +688,21 @@
     <value>Our experienced network team who is acquainted with the rapid and unstable retail sector and who monitor the developments continuously, has the authority to provide high quality and rapid services to the property owners, retailers and developers at Istanbul’s main streets and shopping malls.</value>
   </data>
   <data name="sold" xml:space="preserve">
-    <value>Sold</value>
+    <value>For Sale</value>
+  </data>
+  <data name="district" xml:space="preserve">
+    <value>Town</value>
+  </data>
+  <data name="estateconsultant" xml:space="preserve">
+    <value>Real Estate Consultant</value>
+  </data>
+  <data name="estatetype" xml:space="preserve">
+    <value>Property Type</value>
+  </data>
+  <data name="resetbtn" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="searchbtn" xml:space="preserve">
+    <value>Search</value>
   </data>
 </root>

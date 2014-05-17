@@ -148,7 +148,7 @@
     <value>Your expectancy of return  (tl, usd, monthly, yearly )</value>
   </data>
   <data name="header" xml:space="preserve">
-    <value>DETAILED BRIEFING FORM</value>
+    <value>DETAILED BRIEF FORM</value>
   </data>
   <data name="header2" xml:space="preserve">
     <value>What action do you want to take regarding the property?</value>
@@ -201,6 +201,9 @@
   <data name="sehir" xml:space="preserve">
     <value>City</value>
   </data>
+  <data name="sendbutton" xml:space="preserve">
+    <value>SEND</value>
+  </data>
   <data name="tapudurumu" xml:space="preserve">
     <value>Land title status ( construction servitude, property ownership)</value>
   </data>
@@ -214,7 +217,7 @@
     <value>Commercial</value>
   </data>
   <data name="yakittipi" xml:space="preserve">
-    <value>The floor level</value>
+    <value>Type of fuel</value>
   </data>
   <data name="ypıdurumu" xml:space="preserve">
     <value>Status of the property ( no owner before, pre-owned, etc.)</value>
