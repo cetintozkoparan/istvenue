@@ -120,6 +120,12 @@
   <data name="adsoyad" xml:space="preserve">
     <value>Name, Surname</value>
   </data>
+  <data name="content" xml:space="preserve">
+    <value>Explanation</value>
+  </data>
+  <data name="detailsearch" xml:space="preserve">
+    <value>For more detailed search recording  you can use the following document. Please click</value>
+  </data>
   <data name="detay" xml:space="preserve">
     <value>For more detailed search recording  you can use the following document. Please click.</value>
   </data>
