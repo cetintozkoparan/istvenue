@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="adsoyad" xml:space="preserve">
-    <value>Name Surname</value>
+    <value>Name, Surname</value>
   </data>
   <data name="detay" xml:space="preserve">
     <value>For more detailed search recording  you can use the following document. Please click.</value>
@@ -133,7 +133,7 @@
     <value>Mobile</value>
   </data>
   <data name="header" xml:space="preserve">
-    <value>CALL US A BRIEF, WE WILL CALL YOU</value>
+    <value>LEAVE YOUR BRIEF, WE WILL CALL YOU</value>
   </data>
   <data name="istel" xml:space="preserve">
     <value>Work</value>
