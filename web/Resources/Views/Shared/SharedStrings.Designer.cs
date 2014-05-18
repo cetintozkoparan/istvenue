@@ -1132,7 +1132,7 @@ namespace SharedRess {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to one-cikan-gayrimenkuller.
+        ///   Looks up a localized string similar to #.
         /// </summary>
         public static string menupopularestates {
             get {

@@ -2805,6 +2805,7 @@
     <Content Include="Areas\Admin\Views\Brifing\DetailInfo.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
+    <None Include="Properties\PublishProfiles\ist.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="HTMLTemplate\imza.png" />
