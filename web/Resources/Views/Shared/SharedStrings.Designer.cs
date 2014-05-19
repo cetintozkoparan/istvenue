@@ -1377,6 +1377,15 @@ namespace SharedRess {
         /// <summary>
         ///   Looks up a localized string similar to Plaza Ofis Katı.
         /// </summary>
+        public static string plazakati {
+            get {
+                return ResourceManager.GetString("plazakati", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plaza Ofis Katı.
+        /// </summary>
         public static string plazaofiskati {
             get {
                 return ResourceManager.GetString("plazaofiskati", resourceCulture);
@@ -1456,7 +1465,7 @@ namespace SharedRess {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portfolio Number.
+        ///   Looks up a localized string similar to Referans No.
         /// </summary>
         public static string referenceno {
             get {

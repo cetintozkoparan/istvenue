@@ -84,7 +84,7 @@
                     </ul>
                 </li>
                 <li class="lastList"><a href="#">@SharedRess.SharedStrings.searchestate.ToUpper()</a><ul class="subMenu">
-                    <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menupopularestates">@SharedRess.SharedStrings.featuredproperties</a></li>
+                    <li><a id="linkfeaturedproperties" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menupopularestates">@SharedRess.SharedStrings.featuredproperties</a></li>
                     <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch">@SharedRess.SharedStrings.advancedsearch</a></li>
                     <li><a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.brifing">@SharedRess.SharedStrings.leaveyourbrief</a></li>
                 </ul>
@@ -113,6 +113,14 @@
     <script type="text/javascript">
 
         jQuery(function ($) {
+
+
+            var lcation = window.location.href;
+            if(lcation.indexOf("/tr") != -1)
+            {
+                //alert($("#linkfeaturedproperties").attr("href"));
+                $("#linkfeaturedproperties").attr("href","#") ;
+            }
 
             $.ajax({
                 url: '/FHome/GetImages',

@@ -463,7 +463,7 @@
     <value>Fiyat Aralığı</value>
   </data>
   <data name="referenceno" xml:space="preserve">
-    <value>Portfolio Number</value>
+    <value>Referans No</value>
   </data>
   <data name="roomcount" xml:space="preserve">
     <value>Oda/Bölüm Sayısı</value>
@@ -704,5 +704,8 @@
   </data>
   <data name="searchbtn" xml:space="preserve">
     <value>Ara</value>
+  </data>
+  <data name="plazakati" xml:space="preserve">
+    <value>Plaza Ofis Katı</value>
   </data>
 </root>

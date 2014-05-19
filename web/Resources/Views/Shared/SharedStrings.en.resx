@@ -613,7 +613,7 @@
     <value>Name</value>
   </data>
   <data name="netalan" xml:space="preserve">
-    <value>Net Alan</value>
+    <value>Net Area</value>
   </data>
   <data name="oda" xml:space="preserve">
     <value>Number of Room </value>
@@ -704,5 +704,11 @@
   </data>
   <data name="searchbtn" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="plazakati" xml:space="preserve">
+    <value>Plaza Office</value>
+  </data>
+  <data name="referenceno" xml:space="preserve">
+    <value>Portfolio Number</value>
   </data>
 </root>
