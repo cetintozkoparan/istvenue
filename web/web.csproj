@@ -3047,6 +3047,7 @@
     <Folder Include="Content\Images\Banka\" />
     <Folder Include="Content\Images\bankinfo\" />
     <Folder Include="Content\Images\documents\" />
+    <Folder Include="Content\Images\estates\" />
     <Folder Include="Content\Images\gallery\" />
     <Folder Include="Content\Images\news\" />
     <Folder Include="Content\Images\Photos\" />

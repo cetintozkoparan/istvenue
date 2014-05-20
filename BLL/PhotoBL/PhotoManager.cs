@@ -59,6 +59,14 @@ namespace BLL.PhotoBL
             }
         }
 
+        public static List<Photo> GetListForFront(int categoryID)
+        {
+            using (MainContext db = new MainContext())
+            {
+                return db.Photo.Where(d => d.CategoryId == categoryID).OrderBy(d => d.SortOrder).OrderBy(d => d.SortOrder).ToList();
+            }
+        }
+
         public static bool Delete(int id)
         {
             using (MainContext db = new MainContext())

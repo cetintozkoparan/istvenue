@@ -547,6 +547,15 @@ namespace SharedRess {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mülkün broşürü / sunumu için tıklayınız.
+        /// </summary>
+        public static string fileDown {
+            get {
+                return ResourceManager.GetString("fileDown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Firmalar ve Markalar.
         /// </summary>
         public static string firmsandbrands {

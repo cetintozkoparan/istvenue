@@ -708,4 +708,7 @@
   <data name="plazakati" xml:space="preserve">
     <value>Plaza Ofis Katı</value>
   </data>
+  <data name="fileDown" xml:space="preserve">
+    <value>Mülkün broşürü / sunumu için tıklayınız</value>
+  </data>
 </root>

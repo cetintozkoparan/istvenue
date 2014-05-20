@@ -149,6 +149,11 @@
                     
                 </span>
                 <br class="clear">
+                @if (Model.estate.EmlakDosyasi != null)
+                {
+                    <a href="@Model.estate.EmlakDosyasi" class="contactBtn">@SharedRess.SharedStrings.fileDown</a>
+                }
+                <br class="clear">
                 @if (ViewBag.Lang == "tr")
                 {
                     <a href="/tr/iletisim-bilgileri" class="contactBtn">@SharedRess.SharedStrings.contactBtn</a>

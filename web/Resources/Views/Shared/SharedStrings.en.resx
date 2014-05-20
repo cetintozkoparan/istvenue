@@ -711,4 +711,7 @@
   <data name="referenceno" xml:space="preserve">
     <value>Portfolio Number</value>
   </data>
+  <data name="fileDown" xml:space="preserve">
+    <value>Click For estate brochure</value>
+  </data>
 </root>
