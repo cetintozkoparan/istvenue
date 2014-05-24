@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL.PhotoBL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,21 @@ namespace web.Areas.Admin.Filters
                 HttpContext.Current.Response.Redirect("/yonetim/login");
                 HttpContext.Current.Response.End();
             }
+            base.OnActionExecuting(filterContext);
+        }
+    }
+
+    public class SaveImageAltTags : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            var tags = filterContext.Controller.ValueProvider.GetValue("alttag").AttemptedValue.Split(',');
+            var photoid = filterContext.Controller.ValueProvider.GetValue("photoid").AttemptedValue.Split(',');
+            for (int i = 0; i < tags.Count(); i++)
+			{
+                PhotoManager.Edit(Convert.ToInt32(photoid[i]), tags[i], null, "");
+			}
+            
             base.OnActionExecuting(filterContext);
         }
     }

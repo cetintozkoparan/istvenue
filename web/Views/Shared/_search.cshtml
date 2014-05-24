@@ -1,11 +1,9 @@
 ﻿<style type="text/css">
-    #srcbtn{ float:left; cursor:pointer; border:none; padding:0px; width:29px; height:29px; position:relative; z-index:9999; }
-    .search input[type="text"] { float:left; background-image:none; margin-right:0px; width:146px; }
-    .search input[type="submit"] { float:left; margin-left:0px; margin-right:18px; background: #fff url(/img/search.png) 3px center no-repeat;}
+    #srcbtn{ float:left; cursor:pointer; border:none; padding:0px; width:29px; height:29px; position: absolute;right: 0;top: 6px; }
+    .searchForm input[type="submit"] { float:left; margin-left:0px; background: url(/img/search.png) 3px center no-repeat;}
 </style>
-@using (Html.BeginForm("Index", "FSearch"))
+@using (Html.BeginForm("Index", "FSearch", FormMethod.Post, new { @class = "searchForm" }))
 {
-    
-    <input name="SearchText" type="text" onblur="this.value=(this.value=='') ? '@SharedRess.SharedStrings.searchinsite' : this.value;" onfocus="this.value=(this.value=='@SharedRess.SharedStrings.searchinsite') ? '' : this.value;" value="@SharedRess.SharedStrings.searchinsite" alt="@SharedRess.SharedStrings.searchinsite" class="text_input">
-    <input id="srcbtn" name="submit" type="submit" value="">
+        <input type="text" name="SearchText" id="searchform" value="@SharedRess.SharedStrings.searchinsite" onfocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;">
+        <input id="srcbtn" name="submit" type="submit" value="">
 }

@@ -22,7 +22,8 @@ namespace BLL.SearchBL
                 var sectors = db.Sector.Where(d => d.Online == true && d.Deleted == false && d.Language == lang).FullTextSearch(text);
                 var news = db.News.Where(d => d.Online == true && d.Deleted == false && d.Language == lang).FullTextSearch(text);
                 var projects = db.Projects.Where(d => d.Online == true && d.Deleted == false && d.Language == lang).FullTextSearch(text);
-                var prods = db.Product.Where(d => d.Online == true && d.Deleted == false && d.Language == lang).FullTextSearch(text);
+                var emlak = db.Estate.Where(d => d.Language == lang).FullTextSearch(text);
+                var team = db.OurTeam.Where(d => d.Language == lang).FullTextSearch(text);
                 
                 var result = new List<Tuple<string, string>>();
                 string route, link = string.Empty;
@@ -76,23 +77,29 @@ namespace BLL.SearchBL
                     result.Add(Tuple.Create(item.Name, link));   
                 }
 
-                foreach (var item in prods)
+                foreach (var item in emlak)
                 {
                     if (lang.Equals("tr"))
-                        route = "urunler";
+                        route = "detay";
                     else
-                        route = "products";
+                        route = "detail";
 
-                    DAL.Entities.Product prod = ProductBL.ProductManager.GetProductById(item.ProductId);
+                    var prod = EstateBL.EstateManager.GetEstateById(item.Id);
 
                     if (prod != null)
                     {
-                        link = "/" + lang + "/" + route + "/" + prod.ProductGroup.PageSlug + "/" + item.PageSlug + "/" + item.ProductId;
+                        link = "/" + lang + "/" + route + "/" + item.Id;
 
-                        result.Add(Tuple.Create(item.Name, link));
+                        result.Add(Tuple.Create(item.Header, link));
                     }
+                }
 
-                    
+                foreach (var item in team)
+                {
+                    if (lang.Equals("tr")) route = "ekibimiz"; else route = "ourteam";
+                    link = "/" + lang + "/" + route;
+                    result.Add(Tuple.Create(route, link));
+                    break;
                 }
                 return result;
             }

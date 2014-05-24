@@ -92,9 +92,9 @@
                     <li><a id="linkadvancedsearch" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.menu_advancedsearch">@SharedRess.SharedStrings.advancedsearch</a></li>
                     <li><a id="linkleaveyourbrief" href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.brifing">@SharedRess.SharedStrings.leaveyourbrief</a></li>
                 </ul>
-                    <form action="#" method="get" class="searchForm">
-                        <input type="text" name="q" id="searchform" value="@SharedRess.SharedStrings.searchinsite" onfocus="if (this.value==this.defaultValue) this.value='';" onblur="if (this.value=='') this.value=this.defaultValue;">
-                    </form>
+                    @{ Html.RenderAction("_search", "FSearch"); }
+
+                    
                 </li>
             </ul>
         </div>
@@ -118,7 +118,9 @@
 
         jQuery(function ($) {
 
-         
+            $('img').bind('contextmenu', function (e) {
+                return false;
+            });
             var lcation = window.location.href;
             //if(lcation.indexOf("/tr") != -1)
             //{

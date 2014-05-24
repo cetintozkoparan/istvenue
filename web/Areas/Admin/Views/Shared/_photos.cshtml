@@ -10,7 +10,8 @@
 <script src="~/Content/Scripts/jquery.koalazoom.packed.js"></script>
 <script>
     $(document).ready(function () {
-        $("#koalalist2").koalazoom({ width: 150, height: 150, expandedwidth: 300, expandedheight: 300, duration: 300, effect: "slideup" });
+        $(":input, a").attr("tabindex", "-1");
+        $("#koalalist2").koalazoom({ width: 150, height: 178, expandedwidth: 300, expandedheight: 300, duration: 300, effect: "slideup" });
         $(".resimsil").click(function () {
             if (!confirm('Silmek istediğinizden emin misiniz?')) {
                 return false;
@@ -44,6 +45,8 @@
                 <a href="javascript:void(0)" id="@item.PhotoId" class="resimsil"><img src="~/Areas/Admin/Content/images/delete.png" alt="Sil" /></a>
 		    </div>
 		    <img src="@item.Path" width="150" height="150"  />
+            <input type="text" style="position: absolute;bottom: 0px;z-index: 99999;width: 92%;" name="alttag" value="@item.Title" />
+            <input type="hidden" value="@item.PhotoId" name="photoid" />
 	    </li>
     
     @*<div id="div_@item.PhotoId" style="float:left; padding:3px; border:1px solid #aaa; margin-right:5px; text-align:center">

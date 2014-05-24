@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using web.Areas.Admin.Filters;
 using web.Areas.Admin.Helpers;
 
 namespace web.Areas.Admin.Controllers
@@ -143,6 +144,7 @@ namespace web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
+        [SaveImageAltTags]
         public ActionResult Edit(IEnumerable<HttpPostedFileBase> attachments, Estate record, HttpPostedFileBase uploadfile,HttpPostedFileBase fileDosya)
         {
             var languages = LanguageManager.GetLanguages();

@@ -203,6 +203,7 @@ namespace web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
+        [SaveImageAltTags]
         public ActionResult EditNews(IEnumerable<HttpPostedFileBase> attachments, News newsmodel, HttpPostedFileBase uploadfile)
         {
             var languages = LanguageManager.GetLanguages();

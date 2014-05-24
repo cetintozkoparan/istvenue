@@ -688,9 +688,6 @@
     <value>Our experienced network team who is acquainted with the rapid and unstable retail sector and who monitor the developments continuously, has the authority to provide high quality and rapid services to the property owners, retailers and developers at Istanbul’s main streets and shopping malls.</value>
   </data>
   <data name="sold" xml:space="preserve">
-<!--<<<<<<< HEAD
-    <value>For sale</value>
-=======-->
     <value>For Sale</value>
   </data>
   <data name="district" xml:space="preserve">
@@ -716,6 +713,5 @@
   </data>
   <data name="fileDown" xml:space="preserve">
     <value>Click For estate brochure</value>
-<!-->>>>>>> admin-->
   </data>
 </root>

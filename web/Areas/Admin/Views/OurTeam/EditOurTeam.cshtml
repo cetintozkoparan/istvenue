@@ -53,6 +53,10 @@
                         @Html.Partial("_imageUploadAndCrop")
                     </div>
                 </fieldset>
+               @* <p>
+                    <label style="line-height:25px">Resim Alt Tag'ı</label>
+                    <input type="text" style="width: 50%;margin-bottom:10px" name="anaresimalttag" value="@Model.ImageTag" />
+                </p>*@
                 <p>
                     @Html.TextAreaFor(m => m.Content, new { id = "txtcontent", @class = "required" })
                     @Html.ValidationMessageFor(m => m.Content)
