@@ -196,6 +196,7 @@
     <Compile Include="Areas\Admin\Controllers\CertificateController.cs" />
     <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
     <Compile Include="Areas\Admin\Controllers\DistrictController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TagsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TownController.cs" />
     <Compile Include="Areas\Admin\Controllers\CountryController.cs" />
     <Compile Include="Areas\Admin\Controllers\OurTeamController.cs" />
@@ -2803,6 +2804,7 @@
     <Content Include="Areas\Admin\Views\Brifing\_leftbrifing.cshtml" />
     <Content Include="Areas\Admin\Views\Brifing\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\Brifing\DetailInfo.cshtml" />
+    <Content Include="Areas\Admin\Views\Tags\Index.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
     <None Include="Properties\PublishProfiles\ist.pubxml" />

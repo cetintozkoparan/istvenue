@@ -66,6 +66,7 @@ namespace DAL.Context
         public DbSet<Town> Town { get; set; }
         public DbSet<District> District { get; set; }
         public DbSet<Brifing> Brifing { get; set; }
+        public DbSet<Tags> Tags { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
@@ -123,7 +124,8 @@ namespace DAL.Context
             modelBuilder.Entity<Country>().ToTable("Country");
             modelBuilder.Entity<Town>().ToTable("Town");
             modelBuilder.Entity<District>().ToTable("District");
-            modelBuilder.Entity<Estate>().ToTable("Estate"); 
+            modelBuilder.Entity<Estate>().ToTable("Estate");
+            modelBuilder.Entity<Tags>().ToTable("Tags"); 
 
          
         }

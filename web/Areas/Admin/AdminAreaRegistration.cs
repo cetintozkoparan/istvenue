@@ -19,6 +19,9 @@ namespace web.Areas.Admin
             context.MapRoute("logoutx", "cikis", new { action = "Logout", Controller = "Account" });
             context.MapRoute("homepage_defaultx", "yonetim", new { action = "Index", Controller = "Home" });
             context.MapRoute("homepagex", "yonetim/anasayfa", new { action = "Index", Controller = "Home" });
+
+            //context.MapRoute("tags", "yonetim/sayfataglari", new { action = "Index", Controller = "Tags" });
+            context.MapRoute("tags2", "yonetim/sayfataglari/{id}", new { action = "Index", Controller = "Tags" });
             //context.MapRoute("homepage_prm", "yonetim/{type}", new { action = "Index", Controller = "Home" });
             //context.MapRoute("homepage_all", "yonetim/teklif/tumteklifler", new { action = "AllList", Controller = "Home" });
             //context.MapRoute("homepage_detail", "yonetim/teklifdetay/{id}", new { action = "Details", Controller = "Home" });

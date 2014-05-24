@@ -102,6 +102,7 @@
     <Compile Include="Entities\SocialMedia.cs" />
     <Compile Include="Entities\SolutionPartner.cs" />
     <Compile Include="Entities\SubscribeModel.cs" />
+    <Compile Include="Entities\Tags.cs" />
     <Compile Include="Entities\Teklif.cs" />
     <Compile Include="Entities\TeklifUrun.cs" />
     <Compile Include="Entities\Town.cs" />
