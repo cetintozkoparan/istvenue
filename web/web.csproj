@@ -2805,6 +2805,7 @@
     <Content Include="Areas\Admin\Views\Brifing\DetailInfo.cshtml" />
     <None Include="Properties\PublishProfiles\deneme.pubxml" />
     <None Include="Properties\PublishProfiles\deneysan.pubxml" />
+    <None Include="Properties\PublishProfiles\ist.pubxml" />
     <None Include="Properties\PublishProfiles\kontrolmatik.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="HTMLTemplate\imza.png" />
@@ -3046,6 +3047,7 @@
     <Folder Include="Content\Images\Banka\" />
     <Folder Include="Content\Images\bankinfo\" />
     <Folder Include="Content\Images\documents\" />
+    <Folder Include="Content\Images\estates\" />
     <Folder Include="Content\Images\gallery\" />
     <Folder Include="Content\Images\news\" />
     <Folder Include="Content\Images\Photos\" />
@@ -3121,6 +3123,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EstateStrings.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Estates</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\References\ReferencesStrings.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -3229,6 +3232,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SharedStrings.en.Designer.cs</LastGenOutput>
       <CustomToolNamespace>SharedRess</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Shared\SharedStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -120,6 +120,12 @@
   <data name="adsoyad" xml:space="preserve">
     <value>Adınız Soyadınız</value>
   </data>
+  <data name="content" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="detailsearch" xml:space="preserve">
+    <value>Daha detaylı arama kaydı oluşturmak için tıklayınız</value>
+  </data>
   <data name="detay" xml:space="preserve">
     <value>Daha detaylı brifing / mesaj kaydı oluşturmak için tıklayınız</value>
   </data>

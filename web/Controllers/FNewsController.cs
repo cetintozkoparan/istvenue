@@ -18,7 +18,8 @@ namespace web.Controllers
         public ActionResult Index()
         {
             var news = NewsManager.GetNewsList(lang, 0);
-            var photos = PhotoManager.GetListForFront((int)web.Areas.Admin.Helpers.PhotoType.News, lang);
+            //var photos = PhotoManager.GetListForFront((int)web.Areas.Admin.Helpers.PhotoType.News, lang);
+            var photos = PhotoManager.GetListForFront((int)web.Areas.Admin.Helpers.PhotoType.News);
             NewsWrapperModel m = new NewsWrapperModel(news, photos);
             return View(m);
         }

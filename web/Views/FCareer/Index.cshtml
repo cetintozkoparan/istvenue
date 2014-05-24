@@ -78,9 +78,9 @@
             }
         }
         <div class="article careerContent">
-            <p>Bizimle çalışmak isterseniz CV’nizi bırakabilirsiniz.</p>
+            <p>@CareerRess.CareerStrings.workwithus</p>
             <div class="clear"></div>
-            <p class="bold">Cv göndermek için;</p>
+            <p class="bold">@CareerRess.CareerStrings.forsendcv</p>
 
             @using (Html.BeginForm("SendCV", "FCareer", FormMethod.Post, new { @class = "sendForm", enctype = "multipart/form-data" }))
             {
@@ -90,19 +90,19 @@
 
             <div class="clear"></div>
             <br />
-            <p>Veya aşağıdaki ilgili alanlara CV bilgilerinizi yazabilirsiniz.</p>
+            <p>@CareerRess.CareerStrings.orclick </p>
         </div>
         <div class="clear"></div>
         <div class="careerTab">
             <ul id="tab">
-                <li><a href="#">Pozisyonlar( seçiniz)</a></li>
-                <li><a href="#">Kişisel Bilgiler</a></li>
-                <li><a href="#">İletişim Bilgileri</a></li>
-                <li><a href="#">Öğrenim Durumu</a></li>
-                <li><a href="#">Yabancı Dil Bilgisi</a></li>
-                <li><a href="#">İş Deneyimi</a></li>
-                <li><a href="#">Referanslar</a></li>
-                <li><a href="#">Açıklamalar</a></li>
+                <li><a href="#">@CareerRess.CareerStrings.positions </a></li>
+                <li><a href="#">@CareerRess.CareerStrings.kisisel </a></li>
+                <li><a href="#">@CareerRess.CareerStrings.iletisim</a></li>
+                <li><a href="#">@CareerRess.CareerStrings.ogrenimdurumu</a></li>
+                <li><a href="#">@CareerRess.CareerStrings.yabancidil @*Yabancı Dil Bilgisi*@</a></li>
+                <li><a href="#">@CareerRess.CareerStrings.deneyim </a></li>
+                <li><a href="#">@CareerRess.CareerStrings.referans</a></li>
+                <li><a href="#">@CareerRess.CareerStrings.acikalamalar</a></li>
             </ul>
         </div>
         @using (Html.BeginForm("ApplicationForm", "FCareer", FormMethod.Post))
@@ -110,45 +110,45 @@
             <div class="tab_icerik">
                 <p>
                     <input type="radio" name="pozisyon" value="Gayrimenkul Danışmanı" id="danisman" checked="checked">
-                    <span class="fakelabel">Gayrimenkul Danışmanı</span>
+                    <span class="fakelabel">@CareerRess.CareerStrings.danisman</span>
                 </p>
                 <br>
                 <p>
                     <input type="radio" name="pozisyon" value="İletişim Uzmanı" id="iletisim">
-                    <span class="fakelabel">İletişim Uzmanı</span>
+                    <span class="fakelabel">@CareerRess.CareerStrings.iletisimuzmani</span>
                 </p>
                 <br>
                 <p>
                     <input type="radio" name="pozisyon" value="Ofis Asistanı" id="ofisasistani">
-                    <span class="fakelabel">Ofis Asistanı</span>
+                    <span class="fakelabel">@CareerRess.CareerStrings.ofisasistani</span>
                 </p>
                 <br>
                 <p>
                     <input type="radio" name="pozisyon" value="Şöför" id="sofor">
-                    <span class="fakelabel">Şöför</span>
+                    <span class="fakelabel">@CareerRess.CareerStrings.sofor</span>
                 </p>
                 <br>
                 <p>
                     <input type="radio" name="pozisyon" value="Diğer" id="diger">
-                    <span class="fakelabel">Diğer</span>
+                    <span class="fakelabel">@CareerRess.CareerStrings.diger</span>
                 </p>
                 <br>
-                <a class="nextstep" rel="2">BİR SONRAKİ ADIM</a>
+                <a class="nextstep" rel="2">@CareerRess.CareerStrings.nextstep</a>
             </div>
             <div class="tab_icerik">
                 <div class="tabInnerContent">
-                    <h2>Kişisel Bilgiler</h2>
-                    <label for="personalinfo-firstnames">Ad:</label>
+                    <h2>@CareerRess.CareerStrings.kisisel</h2>
+                    <label for="personalinfo-firstnames">@CareerRess.CareerStrings.ad</label>
                     <span></span>
                     <div class="formItem">
                         <input type="text" id="afirstname" name="ad" maxlength="50">
                     </div>
-                    <label for="personalinfo-lastname">Soyad:</label>
+                    <label for="personalinfo-lastname">@CareerRess.CareerStrings.soyad</label>
                     <span></span>
                     <div class="formItem">
                         <input type="text" id="alastname" name="soyad" maxlength="50">
                     </div>
-                    <label for="personalinfo-birthday">Doğum Tarihi:</label>
+                    <label for="personalinfo-birthday">@CareerRess.CareerStrings.dogumtarihi</label>
                     <span></span>
                     <div class="formDate">
                         <select id="abirthday" name="dogumgun">
@@ -185,18 +185,18 @@
                             <option value="31">31</option>
                         </select>
                         <select id="abirthmonth" name="dogumay">
-                            <option value="Ocak">Ocak</option>
-                            <option value="Şubat">Şubat</option>
-                            <option value="Mart">Mart</option>
-                            <option value="Nisan">Nisan</option>
-                            <option value="Mayıs">Mayıs</option>
-                            <option value="Haziran">Haziran</option>
-                            <option value="Temmuz">Temmuz</option>
-                            <option value="Ağustos">Ağustos</option>
-                            <option value="Eylül">Eylül</option>
-                            <option value="Ekim">Ekim</option>
-                            <option value="Kasım">Kasım</option>
-                            <option value="Aralık">Aralık</option>
+                            <option value="Ocak">@CareerRess.CareerStrings.ocak</option>
+                            <option value="Şubat">@CareerRess.CareerStrings.subat</option>
+                            <option value="Mart">@CareerRess.CareerStrings.mart</option>
+                            <option value="Nisan">@CareerRess.CareerStrings.nisan</option>
+                            <option value="Mayıs">@CareerRess.CareerStrings.mayis</option>
+                            <option value="Haziran">@CareerRess.CareerStrings.haziran</option>
+                            <option value="Temmuz">@CareerRess.CareerStrings.temmuz</option>
+                            <option value="Ağustos">@CareerRess.CareerStrings.agustos</option>
+                            <option value="Eylül">@CareerRess.CareerStrings.eylul</option>
+                            <option value="Ekim">@CareerRess.CareerStrings.ekim</option>
+                            <option value="Kasım">@CareerRess.CareerStrings.kasim</option>
+                            <option value="Aralık">@CareerRess.CareerStrings.aralik</option>
                         </select>
                         <select id="abirthyear" name="dogumyil">
                             <option value="1942">1942</option>
@@ -261,51 +261,51 @@
                             <option value="2001">2001</option>
                         </select>
                     </div>
-                    <label for="personalinfo-sex">Cinsiyet:</label>
+                        <label for="personalinfo-sex">@CareerRess.CareerStrings.cinsiyet</label>
                     <span></span>
 
                     <div class="formItemNoBG">
                         <input type="radio" id="asexm" name="cinsiyet" value="Erkek">
-                        Erkek
+                        @CareerRess.CareerStrings.erkek
               <input type="radio" id="asexf" name="personalinfo-sex" value="Kadın">
-                        Kadın
+                        @CareerRess.CareerStrings.kain
                     </div>
-                    <label for="personalinfo-idnumber">TC Kimlik No:</label>
+                    <label for="personalinfo-idnumber">@CareerRess.CareerStrings.kimlikno</label>
                     <span></span>
                     <div class="formItem">
                         <input type="text" id="aidnumber" name="tcno" maxlength="11">
                     </div>
-                    <label for="personalinfo-military">Askerlik Durumu:</label>
+                    <label for="personalinfo-military">@CareerRess.CareerStrings.askerlik</label>
                     <span></span>
                     <div class="formItemCombobox">
                         <select id="amilitary" name="askerlikdurumu">
-                            <option value="Yapılmamış">Yapılmadı</option>
-                            <option value="Yapılmış">Yapıldı</option>
-                            <option value="Muaf">Muaf</option>
+                            <option value="Yapılmamış">@CareerRess.CareerStrings.yapilmadi</option>
+                            <option value="Yapılmış">@CareerRess.CareerStrings.yapildi</option>
+                            <option value="Muaf">@CareerRess.CareerStrings.muaf</option>
                         </select>
                     </div>
-                    <label for="personalinfo-marital">Medeni Durum:</label>
+                    <label for="personalinfo-marital">@CareerRess.CareerStrings.medenidurum</label>
                     <span></span>
                     <div class="formItemNoBG">
                         <input type="radio" id="amaritals" name="medenidurumu" value="Bekar">
-                        Bekar
+                        @CareerRess.CareerStrings.bekar
               <input type="radio" id="amaritalm" name="personalinfo-marital" value="Evli">
-                        Evli
+                        @CareerRess.CareerStrings.evli
                     </div>
-                    <label for="personalinfo-driverslicense">Ehliyet:</label>
+                    <label for="personalinfo-driverslicense">@CareerRess.CareerStrings.ehliyet</label>
                     <span></span>
                     <div class="formItemCombobox">
                         <select id="adriverslicense" name="ehliyet">
-                            <option value="Yok">Yok</option>
-                            <option value="Var">Var</option>
+                            <option value="Yok">@CareerRess.CareerStrings.yok</option>
+                            <option value="Var">@CareerRess.CareerStrings.var</option>
                         </select>
                     </div>
-                    <label for="personalinfo-driverslicenseyear">Ehliyeti Aldığınız Sene:</label>
+                    <label for="personalinfo-driverslicenseyear">@CareerRess.CareerStrings.ehliyetsene</label>
                     <span></span>
                     <div class="formItem">
                         <input type="text" id="adriverslicenseyear" name="ehliyetyili" maxlength="4">
                     </div>
-                    <label for="personalinfo-driverslicenseclass">Ehliyet Sınıfı:</label>
+                    <label for="personalinfo-driverslicenseclass">@CareerRess.CareerStrings.ehliyetsinifi</label>
                     <span></span>
                     <div class="formDate">
                         <select id="adriverslicenseclass" name="ehliyettipi">
@@ -320,69 +320,69 @@
                         </select>
                     </div>
                     <br>
-                    <a class="nextstep" rel="2">BİR SONRAKİ ADIM</a>
+                    <a class="nextstep" rel="2">@CareerRess.CareerStrings.nextstep</a>
                 </div>
             </div>
             <div class="tab_icerik">
                 <div class="tabInnerContent">
-                    <h2>İletişim Bilgileri</h2>
-                    <label for="contactinfo-address">Adres:</label>
+                    <h2>@CareerRess.CareerStrings.iletisim</h2>
+                    <label for="contactinfo-address">@CareerRess.CareerStrings.adres</label>
                     <span></span>
                     <div class="msgArea">
                         <textarea id="paddress" name="adres" rows="5" cols="5"></textarea>
                     </div>
-                    <label for="contactinfo-mail">E-posta:</label>
+                    <label for="contactinfo-mail">@CareerRess.CareerStrings.eposta</label>
                     <span></span>
                     <div class="formItem">
                         <input type="text" id="amail" name="eposta" maxlength="100">
                     </div>
-                    <label for="contactinfo-homephone">Ev telefonu:</label>
+                    <label for="contactinfo-homephone">@CareerRess.CareerStrings.evtel</label>
                     <span></span>
                     <div class="formItem">
                         <input type="text" id="ahomephone" name="evtel" maxlength="100">
                     </div>
-                    <label for="contactinfo-cellphone">Mobil Telefon:</label>
+                    <label for="contactinfo-cellphone">@CareerRess.CareerStrings.mobil</label>
                     <span></span>
                     <div class="formItem">
                         <input type="text" id="acellphone" name="ceptel" maxlength="100">
                     </div>
-                    <label for="contactinfo-other">Diğer:</label>
+                    <label for="contactinfo-other">@CareerRess.CareerStrings.diger</label>
                     <span></span>
                     <div class="formItem">
                         <input type="text" id="aother" name="digertel" maxlength="20">
                     </div>
                     <br>
-                    <a class="nextstep" rel="3">BİR SONRAKİ ADIM</a>
+                    <a class="nextstep" rel="3">@CareerRess.CareerStrings.nextstep</a>
                 </div>
             </div>
             <div class="tab_icerik">
                 <div class="tabInnerContent">
-                    <h2>Öğrenim Durumu</h2>
-                    <label for="educationalinfo-education">Eğitim Durumu:</label>
+                    <h2>@CareerRess.CareerStrings.ogrenimdurumu</h2>
+                    <label for="educationalinfo-education">@CareerRess.CareerStrings.egitimdurumu</label>
                     <span></span>
                     <div class="formItemCombobox">
                         <select id="aeducation" name="egitimseviye">
-                            <option value="Öğrenci">Öğrenci</option>
-                            <option value="İlkokul">İlköğretim Mezunu</option>
-                            <option value="Lise">Ortaöğretim Mezunu</option>
-                            <option value="Yüksekokul">Yüksekokul Mezunu</option>
-                            <option value="Lisans">Üniversite Mezunu</option>
-                            <option value="Yüksek Lisans">Yüksek Lisans Mezunu</option>
-                            <option value="Doktora">Doktora Mezunu</option>
+                            <option value="Öğrenci">@CareerRess.CareerStrings.ogrenci</option>
+                            <option value="İlkokul">@CareerRess.CareerStrings.ilkogretim</option>
+                            <option value="Lise">@CareerRess.CareerStrings.ortaogretim</option>
+                            <option value="Yüksekokul">@CareerRess.CareerStrings.yuksekokul</option>
+                            <option value="Lisans">@CareerRess.CareerStrings.universite</option>
+                            <option value="Yüksek Lisans">@CareerRess.CareerStrings.yukseklisans</option>
+                            <option value="Doktora">@CareerRess.CareerStrings.doktora</option>
                         </select>
                     </div>
                     <fieldset>
-                        <label>Okul:</label>
+                        <label>@CareerRess.CareerStrings.okul</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" id="aschool" name="okul" maxlength="100">
                         </div>
-                        <label>Bölüm:</label>
+                        <label>@CareerRess.CareerStrings.bolum</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" id="adepartment" name="bolum" maxlength="100">
                         </div>
-                        <label>Mezuniyet Yılı:</label>
+                        <label>@CareerRess.CareerStrings.mezuniyetyili</label>
                         <span></span>
                         <div class="gradyear">
                             <input type="hidden" id="currentyear" name="currentyear" value="2017">
@@ -392,64 +392,64 @@
                     <br>
                     @*<a class="additem experience">EKLE</a>
                     <div class="clear"></div>*@
-                    <a class="nextstep" rel="4">BİR SONRAKİ ADIM</a>
+                    <a class="nextstep" rel="4">@CareerRess.CareerStrings.nextstep</a>
                 </div>
             </div>
             <div class="tab_icerik">
                 <div class="tabInnerContent">
-                    <h2>Yabancı Dil Bilgisi</h2>
+                    <h2>@CareerRess.CareerStrings.yabancidilbilgisi</h2>
                     <fieldset>
-                        <label>İngilizce:</label>
+                        <label>@CareerRess.CareerStrings.ingilizce</label>
                         <input type="hidden" name="languageEng" value="İngilizce">
                         <span></span>
                         <div class="formItemCombobox">
                             <select id="aenglish" name="ingilizceseviye">
-                                <option value="Bilmiyorum">Bilmiyorum</option>
-                                <option value="Çok iyi">Çok İyi</option>
-                                <option value="İyi">İyi</option>
-                                <option value="Orta">Orta</option>
-                                <option value="Az">Az</option>
+                                <option value="Bilmiyorum">@CareerRess.CareerStrings.bilmiyorum</option>
+                                <option value="Çok iyi">@CareerRess.CareerStrings.cokiyi</option>
+                                <option value="İyi">@CareerRess.CareerStrings.iyi</option>
+                                <option value="Orta">@CareerRess.CareerStrings.orta</option>
+                                <option value="Az">@CareerRess.CareerStrings.az</option>
                             </select>
                         </div>
-                        <label>Öğrenildiği Yer:</label>
+                        <label>@CareerRess.CareerStrings.ogreildigiyer</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" id="ahowenglish" name="ilgilizceyer" maxlength="30">
                         </div>
                     </fieldset>
                     <fieldset>
-                        <label for="languages-german">Almanca:</label>
+                        <label for="languages-german">@CareerRess.CareerStrings.almanca</label>
                         <input type="hidden" name="languageGerman" value="Almanca">
                         <span></span>
                         <div class="formItemCombobox">
                             <select id="agerman" name="almancaseviye">
-                                <option value="Bilmiyorum">Bilmiyorum</option>
-                                <option value="Çok iyi">Çok İyi</option>
-                                <option value="İyi">İyi</option>
-                                <option value="Orta">Orta</option>
-                                <option value="Az">Az</option>
+                                  <option value="Bilmiyorum">@CareerRess.CareerStrings.bilmiyorum</option>
+                                <option value="Çok iyi">@CareerRess.CareerStrings.cokiyi</option>
+                                <option value="İyi">@CareerRess.CareerStrings.iyi</option>
+                                <option value="Orta">@CareerRess.CareerStrings.orta</option>
+                                <option value="Az">@CareerRess.CareerStrings.az</option>
                             </select>
                         </div>
-                        <label>Öğrenildiği Yer:</label>
+                        <label>@CareerRess.CareerStrings.ogreildigiyer</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" id="ahowgerman" name="almancayer" maxlength="30">
                         </div>
                     </fieldset>
                     <fieldset>
-                        <label for="languages-french">Fransızca:</label>
+                        <label for="languages-french">@CareerRess.CareerStrings.fransizce</label>
                         <input type="hidden" name="languageFrench" value="Fransızca">
                         <span></span>
                         <div class="formItemCombobox">
                             <select id="afrench" name="fransizcaseviye">
-                                <option value="Bilmiyorum">Bilmiyorum</option>
-                                <option value="Çok iyi">Çok İyi</option>
-                                <option value="İyi">İyi</option>
-                                <option value="Orta">Orta</option>
-                                <option value="Az">Az</option>
+                                 <option value="Bilmiyorum">@CareerRess.CareerStrings.bilmiyorum</option>
+                                <option value="Çok iyi">@CareerRess.CareerStrings.cokiyi</option>
+                                <option value="İyi">@CareerRess.CareerStrings.iyi</option>
+                                <option value="Orta">@CareerRess.CareerStrings.orta</option>
+                                <option value="Az">@CareerRess.CareerStrings.az</option>
                             </select>
                         </div>
-                        <label>Öğrenildiği Yer:</label>
+                        <label>@CareerRess.CareerStrings.ogreildigiyer</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" id="ahowfrench" name="fransizcayer" maxlength="30">
@@ -457,34 +457,34 @@
                     </fieldset>
 
                     <br />
-                    <a class="nextstep" rel="5">BİR SONRAKİ ADIM</a>
+                    <a class="nextstep" rel="5">@CareerRess.CareerStrings.nextstep</a>
                 </div>
             </div>
             <div class="tab_icerik">
                 <div class="tabInnerContent">
-                    <h2>İş Deneyimi</h2>
+                    <h2>@CareerRess.CareerStrings.deneyim</h2>
                     <fieldset>
-                        <label>Kurum:</label>
+                        <label>@CareerRess.CareerStrings.kurum</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" name="sirket" maxlength="50">
                         </div>
-                        <label>Görev:</label>
+                        <label>@CareerRess.CareerStrings.gorev</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" name="gorev" maxlength="50">
                         </div>
-                        <label>Başlangıç Tarihi (Ay/Yıl):</label>
+                        <label>@CareerRess.CareerStrings.baslangictarihi</label>
                         <span></span>
                         <div class="gradyear">
                             <input class="jobdate" type="text" name="isbaslangictarihi" maxlength="8">
                         </div>
-                        <label>Bitiş Tarihi (Ay/Yıl):</label>
+                        <label>@CareerRess.CareerStrings.bitistarihi</label>
                         <span></span>
                         <div class="gradyear">
                             <input class="jobdate" type="text" name="isbitistarihi" maxlength="8">
                         </div>
-                        <label>Ayrılma Nedeni:</label>
+                        <label>@CareerRess.CareerStrings.ayrilmanedeni</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" name="ayrilmanedeni" maxlength="50">
@@ -492,24 +492,24 @@
                     </fieldset>
                    @* <a class="additem experience">EKLE</a>
                     <div class="clear"></div>*@
-                    <a class="nextstep" rel="6">BİR SONRAKİ ADIM</a>
+                    <a class="nextstep" rel="6">@CareerRess.CareerStrings.nextstep</a>
                 </div>
             </div>
             <div class="tab_icerik">
                 <div class="tabInnerContent">
-                    <h2>Referanslar</h2>
+                    <h2>@CareerRess.CareerStrings.referans</h2>
                     <fieldset>
-                        <label>İsim:</label>
+                        <label>@CareerRess.CareerStrings.isim</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" name="referansadi" maxlength="50">
                         </div>
-                        <label>Kurum:</label>
+                        <label>@CareerRess.CareerStrings.kurum</label>
                         <span></span>
                         <div class="formItem">
                             <input type="text" name="referanskurum" maxlength="50">
                         </div>
-                        <label>Sabit Telefon:</label>
+                        <label>@CareerRess.CareerStrings.sabittel</label>
                         <span></span>
                         <div class="formItem">
                             <input class="referencephone" type="text" name="referanstel" maxlength="20">
@@ -517,19 +517,19 @@
                     </fieldset>
                    @* <a class="additem reference">EKLE</a>
                     <div class="clear"></div>*@
-                    <a class="nextstep" rel="7">BİR SONRAKİ ADIM</a>
+                    <a class="nextstep" rel="7">@CareerRess.CareerStrings.nextstep</a>
                 </div>
             </div>
             <div class="tab_icerik">
                 <div class="tabInnerContent">
-                    <h2>Açıklamalar</h2>
-                    <label for="additionalinfo-question1">Eklemek İstedikleriniz</label>
+                    <h2>@CareerRess.CareerStrings.acikalamalar</h2>
+                    <label for="additionalinfo-question1">@CareerRess.CareerStrings.eklemekistediginiz</label>
                     <span></span>
                     <div class="msgArea">
                         <textarea id="pquestion1" name="ilavebilgi" rows="5" cols="5"></textarea>
                     </div>
                     <input type="hidden" name="post-cv" id="post-cv" value="1">
-                    <input id="applicationSubmit" type="submit" value="BAŞVUR">
+                    <input id="applicationSubmit" type="submit" value="@CareerRess.CareerStrings.basvur">
                 </div>
             </div>
         }

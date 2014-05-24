@@ -148,7 +148,7 @@
     <value>Getiri beklentiniz (tl, usd, aylık, yıllık )</value>
   </data>
   <data name="header" xml:space="preserve">
-    <value>DETAYLI BRIEF FORMU</value>
+    <value>DETAYLI MESAJ FORMU</value>
   </data>
   <data name="header2" xml:space="preserve">
     <value>Gayrimenkul ile ilgili nasıl bir işlem yapmak istiyorsunuz?</value>
@@ -200,6 +200,9 @@
   </data>
   <data name="sehir" xml:space="preserve">
     <value>Şehir</value>
+  </data>
+  <data name="sendbutton" xml:space="preserve">
+    <value>GÖNDER</value>
   </data>
   <data name="tapudurumu" xml:space="preserve">
     <value>Tapu Durumu ( kat irtifakı, kat mülkiyeti)</value>

@@ -69,7 +69,7 @@
               @Html.TextBoxFor(m => m.Email, new { @class="inputText"})
             </p>
             <div class="clear"></div>
-            <p><label>@Briefs.Brief.mesaj</label>
+            <p><label>@Briefs.Brief.content</label>
            @Html.TextAreaFor(m => m.Mesaj, new { @class="inputText"})
             </p>
         <div class="clear"></div>
@@ -78,10 +78,10 @@
     <div class="clear"></div>
           @if(ViewBag.Lang == "tr")
           {
-            <div class="detailBrief"><a href="/tr/detaylibrifing">@Briefs.Brief.detay</a></div>
+            <div class="detailBrief"><a href="/tr/detaylibrifing">@Briefs.Brief.detailsearch</a></div>
           }
           else{
-                <div class="detailBrief"><a href="/en/detailedbriefs">@Briefs.Brief.detay</a></div>
+                <div class="detailBrief"><a href="/en/detailedbriefs">@Briefs.Brief.detailsearch</a></div>
           }
       </div>
       

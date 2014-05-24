@@ -249,7 +249,7 @@ input[type="checkbox"] { width: 16px; height: 16px; float: left; }
 .highlightsImage { float: left; margin: 0 15px 0 0; }
 .highlightsRight { float: left }
 .highlightsArticle { padding: 0 0 12px 0; font: 400 13px/19px 'Open Sans', sans-serif; float: left; color: #555; width: 610px; }
-.highlightsImage:hover a { -webkit-animation: imgPulse .5s 1 ease-in-out; -moz-animation: imgPulse .5s 1 ease-in-out; -ms-animation: imgPulse .5s 1 ease-in-out; -o-animation: imgPulse .5s 1 ease-in-out; animation: imgPulse .5s 1 ease-in-out; }
+/*.highlightsImage:hover a { -webkit-animation: imgPulse .5s 1 ease-in-out; -moz-animation: imgPulse .5s 1 ease-in-out; -ms-animation: imgPulse .5s 1 ease-in-out; -o-animation: imgPulse .5s 1 ease-in-out; animation: imgPulse .5s 1 ease-in-out; }*/
 .highlightsPricing { padding: 0; display: block; color: #87764b; font-size: 14px; width: 220px; min-height: 30px; float: left; }
 .highlightsPricing .realtyName { width: auto; display: block; float: left; color: #87764B; text-decoration: none; font-weight: 600; font-size: 18px; line-height: 24px; }
 .highlightsPricing .realtyPrice { width: auto; display: block; float: left; font-weight: 600; color: #7CB340; font-size: 18px; line-height: 27px; margin: 0 0 10px 0; }
@@ -299,7 +299,7 @@ border: 1px dashed #DBD1B6;
 .highlightsDetailContent { float: left; width: 100%; padding: 0 0 20px 0; }
 .highlightsDetailLeft { float: left; }
 .imageGallery { float: left; position: relative; width: 577px; margin: 15px 0 0 8px; }
-.highlightsDetailRight { float: right; }
+.highlightsDetailRight { float: right;margin-top:20px; }
 .imageGallery #bx-pager { text-align: left; margin: 0 0 0 2px; }
 .imageGallery #bx-pager a { margin: 5px 7px 5px 0; float: left; }
 .imageGallery #bx-pager a img { padding: 3px; border: solid #ccc 1px; }

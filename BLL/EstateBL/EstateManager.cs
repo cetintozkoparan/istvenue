@@ -192,6 +192,12 @@ namespace BLL.EstateBL
                             record.Photo = model.Photo;
                         }
 
+                        if (!string.IsNullOrEmpty(model.EmlakDosyasi))
+                        {
+                            record.EmlakDosyasi = model.EmlakDosyasi;
+                        }
+
+
                         db.SaveChanges();
 
                         LogtrackManager logkeeper = new LogtrackManager();

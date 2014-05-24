@@ -27,6 +27,7 @@
                 <th class="center witdh10">İş Tel</th>
                 <th class="center witdh10">Ev Tel</th>
                 <th class="center witdh40">Mesaj</th>
+                <th class="center width10">İşlem</th>
             </tr>
         </thead>
          <tbody id="item-list">
@@ -50,6 +51,12 @@
                     </td>
                       <td class="center">
                         <span id="spanitem_@item.Id">@item.Mesaj</span>
+                    </td>
+                    <td class="center">
+                      @* <a href="/yonetim/brifingduzenle/@item.Id">
+                        <img id="btn_update_@item.Id"  src="/Areas/Admin/Content/images/icons/16/edit.png"  title="Güncelle" class="cursorpointer" >
+                        </a>*@
+                        <img id="DeleteImage_@item.Id"  src="/Areas/Admin/Content/images/icons/16/delete.png" class="cursorpointer"  title="Sil" onclick="DeleteRecord('/Brifing/Delete',@item.Id)">
                     </td>
                     
                  

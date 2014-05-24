@@ -57,7 +57,13 @@
                         }
                     </div>
                 </div>
+@*<<<<<<< HEAD
                
+=======*@
+               @* <div class="itemTitle" style="padding:15px;display: inline-block;"> 
+                    @Html.Raw(Model.estate.Content)
+                </div>*@
+@*>>>>>>> admin*@
             </div>
             <div class="highlightsDetailRight">
                 <span class="itemTitle">@SharedRess.SharedStrings.ilanno</span><span class="itemVal">: @Model.estate.ReferenceNo</span><br class="clear">
@@ -88,6 +94,10 @@
                     else if (Model.estate.TypeId == 7)
                     {
                         @SharedRess.SharedStrings.digerlukskonut
+                    }
+                     else if (Model.estate.TypeId == 8)
+                    {
+                        @SharedRess.SharedStrings.plazakati
                     }
                 </span><br class="clear">
                 <span class="itemTitle">@SharedRess.SharedStrings.tipemlak</span><span class="itemVal">:
@@ -134,9 +144,24 @@
                 @*<span class="itemTitle">Otopark</span><span class="itemVal">: 5 araç</span><br class="clear">*@
                 @*<span class="itemTitle">Kredi Durumu </span><span class="itemVal">: 3 yıl</span><br class="clear">*@
                 @*<span class="itemTitle">Tapu Türü </span><span class="itemVal">: Hisseli tapu</span><br class="clear">*@
+@*<<<<<<< HEAD
                 <span class="itemTitle">@SharedRess.SharedStrings.aciklama</span><div class="clear"></div><span class="itemVal">
                     <textarea maxlength="300" class="explain" disabled>@Model.estate.Content</textarea>
+=======*@
+            
+                <span class="itemTitle">@SharedRess.SharedStrings.aciklama</span><div class="clear"></div><span class="itemVal explain" style="height:90px;overflow:overlay">
+                @* @Html.TextAreaFor(x=>Model.estate.Content,new {@class="explain"})*@
+                   
+                        @Html.Raw(HttpUtility.HtmlDecode(Model.estate.Content))
+                   
+                    
+@*>>>>>>> admin*@
                 </span>
+                <br class="clear">
+                @if (Model.estate.EmlakDosyasi != null)
+                {
+                    <a href="@Model.estate.EmlakDosyasi" class="contactBtn">@SharedRess.SharedStrings.fileDown</a>
+                }
                 <br class="clear">
                 @if (ViewBag.Lang == "tr")
                 {
@@ -215,7 +240,7 @@
                                     </div>
                                     <br class="clear">
                                     <div align="left">
-                                        <input type="submit" name="gonderBtn" value="Gönder" class="@SharedRess.SharedStrings.send" />
+                                        <input type="submit" name="gonderBtn" value="@SharedRess.SharedStrings.send" class="@SharedRess.SharedStrings.send" />
                                     </div>
                                 }
                             </div>

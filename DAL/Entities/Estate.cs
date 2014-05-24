@@ -145,5 +145,8 @@ namespace DAL.Entities
         public virtual Country Country { get; set; }
         public virtual Town Town { get; set; }
         public virtual District District { get; set; }
+
+        [Display(Name = "Dosya")]
+        public string EmlakDosyasi { get; set; }
     }
 }

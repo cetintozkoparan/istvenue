@@ -42,7 +42,7 @@ namespace web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Add(Estate record, HttpPostedFileBase uploadfile, IEnumerable<HttpPostedFileBase> attachments)
+        public ActionResult Add(Estate record, HttpPostedFileBase uploadfile, IEnumerable<HttpPostedFileBase> attachments,HttpPostedFileBase fileDosya)
         {
             var languages = LanguageManager.GetLanguages();
             string lang = "";
@@ -66,6 +66,11 @@ namespace web.Areas.Admin.Controllers
                     record.Photo = "/Content/images/front/noimage.jpeg";
                 }
 
+                if (fileDosya != null)
+                {
+                    fileDosya.SaveAs(Server.MapPath("/Content/images/estates/")+fileDosya.FileName);
+                    record.EmlakDosyasi = "/Content/images/estates/" + fileDosya.FileName;
+                }
 
                 ViewBag.ProcessMessage = EstateManager.AddEstate(record);
                 Session.Remove("UploadType");
@@ -83,6 +88,7 @@ namespace web.Areas.Admin.Controllers
                         p.Thumbnail = "/Content/images/userfiles/" + Utility.SetPagePlug(record.Header) + "_" + rand + Path.GetExtension(item.FileName);
                         p.Online = true;
                         p.SortOrder = 9999;
+                       
                         p.Language = lang;
                         p.TimeCreated = DateTime.Now;
                         p.Title = "Emlak";
@@ -137,7 +143,7 @@ namespace web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(IEnumerable<HttpPostedFileBase> attachments, Estate record, HttpPostedFileBase uploadfile)
+        public ActionResult Edit(IEnumerable<HttpPostedFileBase> attachments, Estate record, HttpPostedFileBase uploadfile,HttpPostedFileBase fileDosya)
         {
             var languages = LanguageManager.GetLanguages();
             string lang = "";
@@ -168,6 +174,14 @@ namespace web.Areas.Admin.Controllers
                     bool isnumber = int.TryParse(RouteData.Values["id"].ToString(), out nid);
                     if (isnumber)
                     {
+
+                        if (fileDosya != null)
+                        {
+                            fileDosya.SaveAs(Server.MapPath("/Content/images/estates/") + fileDosya.FileName);
+                            record.EmlakDosyasi = "/Content/images/estates/" + fileDosya.FileName;
+                        }
+
+
                         record.Id = nid;
                         ViewBag.ProcessMessage = EstateManager.EditEstate(record);
                         //return View(record);

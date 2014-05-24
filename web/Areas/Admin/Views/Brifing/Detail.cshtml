@@ -25,7 +25,7 @@
                 <th class="center witdh15">E-Mail</th>
                <th class="center witdh10">Telefon</th>
                 <th class="center witdh10">Tarih</th>
-                 <th class="center witdh10">Detay</th>
+                 <th class="center witdh10">İşlemler</th>
             </tr>
         </thead>
          <tbody id="item-list">
@@ -48,6 +48,7 @@
                          <a href="/yonetim/detaylibrifingler/detay/@item.Id">
                         <img id="btn_detail_@item.Id"  src="/Areas/Admin/Content/images/icons/16/edit.png"  title="Detay Bilgisi" class="cursorpointer" >
                         </a>
+                          <img id="DeleteImage_@item.Id"  src="/Areas/Admin/Content/images/icons/16/delete.png" class="cursorpointer"  title="Sil" onclick="DeleteRecord('/Brifing/Delete',@item.Id)">
                     </td>
                     
                     
