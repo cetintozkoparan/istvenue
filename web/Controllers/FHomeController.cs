@@ -31,7 +31,7 @@ namespace web.Controllers
         public ActionResult Index()
         {
             MainContext db = new MainContext();
-            Tags stag = db.Tags.Where(x => x.PageId == 1).FirstOrDefault();
+            Tags stag = db.Tags.Where(x => x.PageId == 1 && x.Lang==lang).FirstOrDefault();
            
             if (stag != null)
             {
