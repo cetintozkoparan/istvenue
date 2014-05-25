@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿using BLL.LanguageBL;
+using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,11 +14,21 @@ namespace web.Areas.Admin.Controllers
  
         public ActionResult Index()
         {
+            string lang ="tr";
+            if (RouteData.Values["lang"] != null)
+            {
+                lang = RouteData.Values["lang"].ToString();
+            }
+            var languages = LanguageManager.GetLanguages();
+            var list = new SelectList(languages, "Culture", "Language",lang);
+            ViewBag.LanguageList = list;
             TagPages tagPages = new TagPages();
                 int id = Convert.ToInt32(RouteData.Values["id"]);
+
+                
                 ViewBag.PageName = tagPages.tagList.Where(x => x.Key == id).FirstOrDefault().Value;
                 DAL.Context.MainContext db = new DAL.Context.MainContext();
-                Tags stag=db.Tags.Where(x => x.PageId == id).FirstOrDefault();
+                Tags stag=db.Tags.Where(x => x.PageId == id && x.Lang==lang).FirstOrDefault();
                 if (stag != null)
                 {
                     return View(stag);
@@ -30,12 +41,15 @@ namespace web.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Index(Tags model)
         {
+            var languages = LanguageManager.GetLanguages();
+            var list = new SelectList(languages, "Culture", "Language");
+            ViewBag.LanguageList = list;
             TagPages tagPAges = new TagPages();
             int id = Convert.ToInt32(RouteData.Values["id"]);
             ViewBag.PageName = tagPAges.tagList.Where(x => x.Key == id).FirstOrDefault().Value;
             DAL.Context.MainContext db = new DAL.Context.MainContext();
-            //Tags stag = db.Tags.Where(x => x.PageId == id).FirstOrDefault();
-            Tags stag=db.Tags.Find(id);
+            Tags stag = db.Tags.Where(x => x.PageId == id && x.Lang==model.Lang).FirstOrDefault();
+            //Tags stag=db.Tags.Find(id);
             if (stag == null)
             {
                 model.PageId = id;

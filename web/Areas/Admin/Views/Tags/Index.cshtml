@@ -74,6 +74,12 @@ font-weight: bold;
         @Html.ValidationSummary(true)
         <fieldset>
         <legend>@ViewBag.PageName Sayfasına Tag Ekle</legend>
+             <p>
+            @Html.Label("Dil Seçimi")
+            @Html.DropDownListFor(m=>m.Lang,(IEnumerable<SelectListItem>)ViewBag.LanguageList)
+            
+           
+        </p>
         <p>
             @Html.Label("Başlık")
             @Html.TextBoxFor(m=>m.Title, new { @class="textwidth50"})
@@ -106,6 +112,33 @@ font-weight: bold;
 <script src="~/Areas/Admin/Content/scripts/plugins/jquery.validate.unobtrusive.js"></script>
 <script src="~/Areas/Admin/Content/scripts/plugins/jquery.ui.datepicker-tr.js"></script>
 <script src="~/Areas/Admin/Content/scripts/pagescripts/reference/addreference.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $("#Lang").change(function () {
+
+
+            var ty = window.location.pathname.split('/');
+          //  alert(ty+";"+ty.length);
+            var lang = $("#Lang option:selected").val();
+           
+            if (ty.length == 4) {
+                var loc = window.location.href;
+                window.location.href = loc + "/" + lang;
+            }
+            if (ty.length == 5) {
+                var host = window.location.host;
+              
+                var newloc = host +  ty[0] + "/" + ty[1] + "/" + ty[2] + "/"+ty[3]+"/" + lang;
+               // alert(newloc);
+                window.location.href = "/yonetim/sayfataglari/"+ty[3]+"/"+lang;
+            }
+
+        });
+    });
+
+</script>
+
 }
            
      

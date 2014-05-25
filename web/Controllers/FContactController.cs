@@ -15,6 +15,7 @@ using System.Drawing.Text;
 using System.Drawing.Drawing2D;
 using DAL.Entities;
 using web.Models;
+using DAL.Context;
 
 namespace web.Controllers
 {
@@ -77,6 +78,16 @@ namespace web.Controllers
         }
         public ActionResult Index()
         {
+            MainContext db = new MainContext();
+            Tags stag = db.Tags.Where(x => x.PageId == 12 && x.Lang == lang).FirstOrDefault();
+
+            if (stag != null)
+            {
+                ViewBag.Title = stag.Title;
+                ViewBag.Description = stag.Description;
+                ViewBag.Keywords = stag.Keyword;
+            }
+
             var contact = ContactManager.GetContact(lang);
             SubscribeModel obj = new SubscribeModel();
             ContactWrapperModel m = new ContactWrapperModel(contact, obj);

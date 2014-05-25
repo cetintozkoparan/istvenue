@@ -11,6 +11,8 @@ using BLL.ProductBL;
 using BLL.ServiceGroupBL;
 using BLL.ContactBL;
 using System.Collections.Generic;
+using DAL.Context;
+using DAL.Entities;
 
 namespace web.Controllers
 {
@@ -28,6 +30,15 @@ namespace web.Controllers
         
         public ActionResult Index()
         {
+            MainContext db = new MainContext();
+            Tags stag = db.Tags.Where(x => x.PageId == 1).FirstOrDefault();
+           
+            if (stag != null)
+            {
+                ViewBag.Title = stag.Title;
+                ViewBag.Description = stag.Description;
+                ViewBag.Keywords = stag.Keyword;
+            }
             //var news = NewsManager.GetNewsListForFront(lang).Take(4);
             //var references = ReferenceManager.GetReferenceListForFront(lang);
             //var docgroup = DocumentManager.GetDocumentGroupListForFront(lang).First();

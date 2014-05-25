@@ -1,5 +1,7 @@
 ﻿using BLL.HRBL;
 using BLL.MailBL;
+using DAL.Context;
+using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +67,16 @@ namespace web.Controllers
 
         public ActionResult Index()
         {
+            MainContext db = new MainContext();
+            Tags stag = db.Tags.Where(x => x.PageId ==13 && x.Lang == lang).FirstOrDefault();
+
+            if (stag != null)
+            {
+                ViewBag.Title = stag.Title;
+                ViewBag.Description = stag.Description;
+                ViewBag.Keywords = stag.Keyword;
+            }
+
             var content = HumanResourceManager.GetHRByLanguage(lang);
             return View(content);
         }

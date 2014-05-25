@@ -1,5 +1,7 @@
 ﻿using BLL.NewsBL;
 using BLL.PhotoBL;
+using DAL.Context;
+using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,17 @@ namespace web.Controllers
 
         public ActionResult Index()
         {
+            MainContext db = new MainContext();
+            Tags stag = db.Tags.Where(x => x.PageId ==10 && x.Lang == lang).FirstOrDefault();
+
+            if (stag != null)
+            {
+                ViewBag.Title = stag.Title;
+                ViewBag.Description = stag.Description;
+                ViewBag.Keywords = stag.Keyword;
+            }
+
+
             var news = NewsManager.GetNewsList(lang, 0);
             //var photos = PhotoManager.GetListForFront((int)web.Areas.Admin.Helpers.PhotoType.News, lang);
             var photos = PhotoManager.GetListForFront((int)web.Areas.Admin.Helpers.PhotoType.News);
@@ -26,6 +39,17 @@ namespace web.Controllers
 
         public ActionResult Basin()
         {
+            MainContext db = new MainContext();
+            Tags stag = db.Tags.Where(x => x.PageId == 10 && x.Lang == lang).FirstOrDefault();
+
+            if (stag != null)
+            {
+                ViewBag.Title = stag.Title;
+                ViewBag.Description = stag.Description;
+                ViewBag.Keywords = stag.Keyword;
+            }
+
+
             var news = NewsManager.GetNewsList(lang, 1);
             var photos = PhotoManager.GetListForFront((int)web.Areas.Admin.Helpers.PhotoType.News, lang);
             NewsWrapperModel m = new NewsWrapperModel(news, photos);

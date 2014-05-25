@@ -10,6 +10,7 @@ using BLL.SectorBL;
 using BLL.SectorGroupBL;
 using DAL.Entities;
 using BLL.ServiceGroupBL;
+using DAL.Context;
 
 namespace web.Controllers
 {
@@ -22,6 +23,17 @@ namespace web.Controllers
 
         public ActionResult Index()
         {
+            MainContext db = new MainContext();
+            Tags stag = db.Tags.Where(x => x.PageId == 7 && x.Lang == lang).FirstOrDefault();
+
+            if (stag != null)
+            {
+                ViewBag.Title = stag.Title;
+                ViewBag.Description = stag.Description;
+                ViewBag.Keywords = stag.Keyword;
+            }
+
+
             var Sector_group_list = SectorGroupManager.GetSectorGroupListForFront(lang);
             //Sector Sector = new Sector();
             //OurSectors ourSectors = new OurSectors();

@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using web.Models;
 using BLL.ServiceGroupBL;
+using DAL.Context;
+using DAL.Entities;
 
 namespace web.Controllers
 {
@@ -18,6 +20,16 @@ namespace web.Controllers
 
         public ActionResult Index()
         {
+            MainContext db = new MainContext();
+            Tags stag = db.Tags.Where(x => x.PageId ==8 && x.Lang == lang).FirstOrDefault();
+
+            if (stag != null)
+            {
+                ViewBag.Title = stag.Title;
+                ViewBag.Description = stag.Description;
+                ViewBag.Keywords = stag.Keyword;
+            }
+
             //var groups = ProjectReferenceGroupManager.GetProjectReferenceGroupListForFront(lang);
             //List<DAL.Entities.ProjectReferences> references = new List<DAL.Entities.ProjectReferences>();
             //int index = 0;
@@ -55,6 +67,16 @@ namespace web.Controllers
 
         public ActionResult Detail(int rid)
         {
+            MainContext db = new MainContext();
+            Tags stag = db.Tags.Where(x => x.PageId == 8 && x.Lang == lang).FirstOrDefault();
+
+            if (stag != null)
+            {
+                ViewBag.Title = stag.Title;
+                ViewBag.Description = stag.Description;
+                ViewBag.Keywords = stag.Keyword;
+            }
+
             var groups = ProjectReferenceGroupManager.GetProjectReferenceGroupListForFront(lang);
             var reference = ProjectReferenceManager.GetProjectReferenceById(rid);
             var grp = ProjectReferenceGroupManager.GetProjectReferenceGroupById(reference.ProjectReferenceGroupId);
