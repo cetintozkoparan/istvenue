@@ -358,6 +358,7 @@
             <div class="tab_icerik">
                 <div class="tabInnerContent">
                     <h2>@CareerRess.CareerStrings.ogrenimdurumu</h2>
+					<!--
                     <label for="educationalinfo-education">@CareerRess.CareerStrings.egitimdurumu</label>
                     <span></span>
                     <div class="formItemCombobox">
@@ -371,7 +372,9 @@
                             <option value="Doktora">@CareerRess.CareerStrings.doktora</option>
                         </select>
                     </div>
+					-->
                     <fieldset>
+					<!--
                         <label>@CareerRess.CareerStrings.okul</label>
                         <span></span>
                         <div class="formItem">
@@ -387,10 +390,57 @@
                         <div class="gradyear">
                             <input type="hidden" id="currentyear" name="currentyear" value="2017">
                             <input type="text" id="agradyear" name="yil" maxlength="4">
-                        </div>
+                        </div>-->
+									<table width="700" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="277">@CareerRess.CareerStrings.egitimdurumu</td>
+                <td width="155">@CareerRess.CareerStrings.okul</td>
+                <td width="64">@CareerRess.CareerStrings.bolum</td>
+                <td width="78">@CareerRess.CareerStrings.baslangictarihi</td>
+                <td width="126">@CareerRess.CareerStrings.mezuniyetyili</td>
+
+              </tr>
+              <tr>
+                <td>@CareerRess.CareerStrings.ilkogretim</td>
+                <td><input type="text"  name="okul" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="bolum" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="baslangicyil" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="yil" maxlength="30" placeholder="..............."></td>
+              </tr>
+              <tr>
+                <td>@CareerRess.CareerStrings.ortaogretim</td>
+                <td><input type="text"  name="okul" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="bolum" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="baslangicyil" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="yil" maxlength="30" placeholder="..............."></td>
+              </tr>
+              <tr>
+                <td>@CareerRess.CareerStrings.yuksekokul</td>
+                <td><input type="text"  name="okul" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="bolum" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="baslangicyil" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="yil" maxlength="30" placeholder="..............."></td>
+              </tr>
+              <tr>
+                <td>@CareerRess.CareerStrings.universite</td>
+                <td><input type="text"  name="okul" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="bolum" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="baslangicyil" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="yil" maxlength="30" placeholder="..............."></td>
+              </tr>
+              <tr>
+                <td>@CareerRess.CareerStrings.yukseklisans</td>
+                <td><input type="text"  name="okul" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="bolum" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="baslangicyil" maxlength="30" placeholder="..............."></td>
+                <td><input type="text"  name="yil" maxlength="30" placeholder="..............."></td>
+              </tr>
+            </table>
                     </fieldset>
+					
                     <br>
-                    @*<a class="additem experience">EKLE</a>
+                    @*<a class="additem experience">EKLE</a> -->
+							
                     <div class="clear"></div>*@
                     <a class="nextstep" rel="4">@CareerRess.CareerStrings.nextstep</a>
                 </div>
@@ -398,7 +448,9 @@
             <div class="tab_icerik">
                 <div class="tabInnerContent">
                     <h2>@CareerRess.CareerStrings.yabancidilbilgisi</h2>
+					
                     <fieldset>
+					<!--
                         <label>@CareerRess.CareerStrings.ingilizce</label>
                         <input type="hidden" name="languageEng" value="İngilizce">
                         <span></span>
@@ -416,8 +468,11 @@
                         <div class="formItem">
                             <input type="text" id="ahowenglish" name="ilgilizceyer" maxlength="30">
                         </div>
+						-->
                     </fieldset>
+					
                     <fieldset>
+					<!--
                         <label for="languages-german">@CareerRess.CareerStrings.almanca</label>
                         <input type="hidden" name="languageGerman" value="Almanca">
                         <span></span>
@@ -435,8 +490,11 @@
                         <div class="formItem">
                             <input type="text" id="ahowgerman" name="almancayer" maxlength="30">
                         </div>
+						-->
+						
                     </fieldset>
                     <fieldset>
+					<!--
                         <label for="languages-french">@CareerRess.CareerStrings.fransizce</label>
                         <input type="hidden" name="languageFrench" value="Fransızca">
                         <span></span>
@@ -454,6 +512,34 @@
                         <div class="formItem">
                             <input type="text" id="ahowfrench" name="fransizcayer" maxlength="30">
                         </div>
+						-->
+						<table width="700" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>@CareerRess.CareerStrings.dil</td>
+              <td>@CareerRess.CareerStrings.dilseviye</td>
+              <td>@CareerRess.CareerStrings.ogreildigiyer</td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="dil"  placeholder=".............................."></td>
+              <td><input type="text"  name="dilseviye"  placeholder="1 - 5"></td>
+              <td><input type="text"  name="dilyer"  placeholder=".............................."></td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="dil"  placeholder=".............................."></td>
+              <td><input type="text"  name="dilseviye"  placeholder="1 - 5"></td>
+              <td><input type="text"  name="dilyer"  placeholder=".............................."></td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="dil"  placeholder=".............................."></td>
+              <td><input type="text"  name="dilseviye"  placeholder="1 - 5"></td>
+              <td><input type="text"  name="dilyer"  placeholder=".............................."></td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="dil"  placeholder=".............................."></td>
+              <td><input type="text"  name="dilseviye"  placeholder="1 - 5"></td>
+              <td><input type="text"  name="dilyer"  placeholder=".............................."></td>
+            </tr>
+          </table>
                     </fieldset>
 
                     <br />
@@ -464,6 +550,7 @@
                 <div class="tabInnerContent">
                     <h2>@CareerRess.CareerStrings.deneyim</h2>
                     <fieldset>
+					<!--
                         <label>@CareerRess.CareerStrings.kurum</label>
                         <span></span>
                         <div class="formItem">
@@ -489,6 +576,44 @@
                         <div class="formItem">
                             <input type="text" name="ayrilmanedeni" maxlength="50">
                         </div>
+						-->
+						<table width="700" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>@CareerRess.CareerStrings.kurum</td>
+              <td>@CareerRess.CareerStrings.gorev</td>
+              <td>@CareerRess.CareerStrings.baslangictarihi</td>
+              <td>@CareerRess.CareerStrings.bitistarihi</td>
+              <td>@CareerRess.CareerStrings.ayrilmanedeni</td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="isfirma"  placeholder=".............................."></td>
+              <td><input type="text"  name="isgorev"  placeholder=".............................."></td>
+              <td><input type="text"  name="isbaslangic"  placeholder=".............................."></td>
+              <td><input type="text"  name="isbitis"  placeholder=".............................."></td>
+              <td><input type="text"  name="isayrilma"  placeholder=".............................."></td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="isfirma"  placeholder=".............................."></td>
+              <td><input type="text"  name="isgorev"  placeholder=".............................."></td>
+              <td><input type="text"  name="isbaslangic"  placeholder=".............................."></td>
+              <td><input type="text"  name="isbitis"  placeholder=".............................."></td>
+              <td><input type="text"  name="isayrilma"  placeholder=".............................."></td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="isfirma"  placeholder=".............................."></td>
+              <td><input type="text"  name="isgorev"  placeholder=".............................."></td>
+              <td><input type="text"  name="isbaslangic"  placeholder=".............................."></td>
+              <td><input type="text"  name="isbitis"  placeholder=".............................."></td>
+              <td><input type="text"  name="isayrilma"  placeholder=".............................."></td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="isfirma"  placeholder=".............................."></td>
+              <td><input type="text"  name="isgorev"  placeholder=".............................."></td>
+              <td><input type="text"  name="isbaslangic"  placeholder=".............................."></td>
+              <td><input type="text"  name="isbitis"  placeholder=".............................."></td>
+              <td><input type="text"  name="isayrilma"  placeholder=".............................."></td>
+            </tr>
+          </table>
                     </fieldset>
                    @* <a class="additem experience">EKLE</a>
                     <div class="clear"></div>*@
@@ -499,6 +624,7 @@
                 <div class="tabInnerContent">
                     <h2>@CareerRess.CareerStrings.referans</h2>
                     <fieldset>
+					<!--
                         <label>@CareerRess.CareerStrings.isim</label>
                         <span></span>
                         <div class="formItem">
@@ -514,6 +640,49 @@
                         <div class="formItem">
                             <input class="referencephone" type="text" name="referanstel" maxlength="20">
                         </div>
+						-->
+						<table width="650" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>@CareerRess.CareerStrings.isim</td>
+              <td>@CareerRess.CareerStrings.kurum</td>
+              <td>@CareerRess.CareerStrings.position</td>
+              <td>@CareerRess.CareerStrings.istel</td>
+              <td>@CareerRess.CareerStrings.ceptel</td>
+              <td>@SharedRess.SharedStrings.email</td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="referansad"  placeholder=".............................."></td>
+              <td><input type="text"  name="referanskurum"  placeholder=".............................."></td>
+              <td><input type="text"  name="referanspozisyon"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansistel"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansceptel"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansemail"  placeholder=".............................."></td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="referansad"  placeholder=".............................."></td>
+              <td><input type="text"  name="referanskurum"  placeholder=".............................."></td>
+              <td><input type="text"  name="referanspozisyon"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansistel"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansceptel"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansemail"  placeholder=".............................."></td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="referansad"  placeholder=".............................."></td>
+              <td><input type="text"  name="referanskurum"  placeholder=".............................."></td>
+              <td><input type="text"  name="referanspozisyon"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansistel"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansceptel"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansemail"  placeholder=".............................."></td>
+            </tr>
+            <tr>
+              <td><input type="text"  name="referansad"  placeholder=".............................."></td>
+              <td><input type="text"  name="referanskurum"  placeholder=".............................."></td>
+              <td><input type="text"  name="referanspozisyon"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansistel"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansceptel"  placeholder=".............................."></td>
+              <td><input type="text"  name="referansemail"  placeholder=".............................."></td>
+            </tr>
+          </table>
                     </fieldset>
                    @* <a class="additem reference">EKLE</a>
                     <div class="clear"></div>*@
@@ -535,3 +704,6 @@
         }
     </div>
 </div>
+<style type="text/css">
+.tabInnerContent table tr td{ padding:0 !important}
+</style>

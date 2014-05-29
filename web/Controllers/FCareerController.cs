@@ -37,10 +37,28 @@ namespace web.Controllers
         public string ceptel { get; set; }
         public string digertel { get; set; }
         public string egitimseviye { get; set; }
-        public string okul { get; set; }
-        public string bolum { get; set; }
-        public string yil { get; set; }
+        public string[] okul { get; set; }
+        public string[] bolum { get; set; }
+        public string[] yil { get; set; }
+        public string[] baslangicyil { get; set; }
 
+        public string[] dil { get; set; }
+        public string[] dilseviye { get; set; }
+        public string[] dilyer { get; set; }
+        public string[] isfirma { get; set; }
+        public string[] isgorev { get; set; }
+        public string[] isbaslangic { get; set; }
+        public string[] isbitis { get; set; }
+        public string[] isayrilma { get; set; }
+
+
+        public string[] referansad { get; set; }
+        public string[] referanskurum { get; set; }
+        public string[] referanspozisyon { get; set; }
+        public string[] referansistel { get; set; }
+        public string[] referansceptel { get; set; }
+        public string[] referansemail { get; set; }
+      
         public string ingilizceseviye { get; set; }
         public string ilgilizceyer { get; set; }
         public string almancaseviye { get; set; }
@@ -51,11 +69,9 @@ namespace web.Controllers
         public string gorev { get; set; }
         public string isbaslangictarihi { get; set; }
         public string isbitistarihi { get; set; }
-        public string ayrilmanedeni { get; set; }
-        public string referansadi { get; set; }
-        public string referanskurum { get; set; }
-        public string referanstel { get; set; }
+       
         public string ilavebilgi { get; set; }
+
     }
 
     public class FCareerController : Controller
@@ -139,7 +155,7 @@ namespace web.Controllers
                 html = html.Replace("[pozisyon]", form.pozisyon);
                 html = html.Replace("[ad]", form.ad);
                 html = html.Replace("[soyad]", form.soyad);
-                html = html.Replace("[dogumyeri]", form.dogumyeri);
+                html = html.Replace("[dogumYeri]", form.dogumyeri);
                 html = html.Replace("[dogumgun]", form.dogumgun);
                 html = html.Replace("[dogumay]", form.dogumay);
                 html = html.Replace("[dogumyil]", form.dogumyil);
@@ -156,31 +172,63 @@ namespace web.Controllers
                 html = html.Replace("[evtel]", form.evtel);
                 html = html.Replace("[ceptel]", form.ceptel);
                 html = html.Replace("[digertel]", form.digertel);
-                html = html.Replace("[egitimseviye]", form.egitimseviye);
-                html = html.Replace("[okul]", form.okul);
-                html = html.Replace("[bolum]", form.bolum);
+                //html = html.Replace("[egitimseviye]", form.egitimseviye);
 
-                html = html.Replace("[yil]", form.bolum);
-                html = html.Replace("[ingilizceseviye]", form.ingilizceseviye);
-                html = html.Replace("[ingilizceyer]", form.ilgilizceyer);
-                html = html.Replace("[almancaseviye]", form.almancaseviye);
-                html = html.Replace("[almancayer]", form.almancayer);
-                html = html.Replace("[fransizcaseviye]", form.fransizcaseviye);
-                html = html.Replace("[fransizcayer]", form.fransizcayer);
-                html = html.Replace("[sirket]", form.sirket);
+                for (int i = 0; i < 5; i++)
+                {
+                    html = html.Replace("[okul" + (i + 1) + "]", form.okul[i]);
+                    html = html.Replace("[bolum" + (i + 1) + "]", form.bolum[i]);
+                    html = html.Replace("[yil" + (i + 1) + "]", form.yil[i]);
+                    html = html.Replace("[baslangicyil" + (i + 1) + "]", form.yil[i]);
+                }
 
-                html = html.Replace("[gorev]", form.gorev);
-                html = html.Replace("[isbaslangictarihi]", form.isbaslangictarihi);
-                html = html.Replace("[isbitistarihi]", form.isbitistarihi);
-                html = html.Replace("[ayrilmanedeni]", form.ayrilmanedeni);
-                html = html.Replace("[referansadi]", form.referansadi);
-                html = html.Replace("[referanskurum]", form.referanskurum);
-                html = html.Replace("[referanstel]", form.referanstel);
+                for (int i = 0; i < 4; i++)
+                {
+                    html = html.Replace("[dil" + (i + 1) + "]", form.dil[i]);
+                    html = html.Replace("[dilseviye" + (i + 1) + "]", form.dilseviye[i]);
+                    html = html.Replace("[dilyer" + (i + 1) + "]", form.dilyer[i]);
+                }
+
+                //html = html.Replace("[ingilizceseviye]", form.ingilizceseviye);
+                //html = html.Replace("[ingilizceyer]", form.ilgilizceyer);
+                //html = html.Replace("[almancaseviye]", form.almancaseviye);
+                //html = html.Replace("[almancayer]", form.almancayer);
+                //html = html.Replace("[fransizcaseviye]", form.fransizcaseviye);
+                //html = html.Replace("[fransizcayer]", form.fransizcayer);
+                //html = html.Replace("[sirket]", form.sirket);
+
+                //html = html.Replace("[gorev]", form.gorev);
+                //html = html.Replace("[isbaslangictarihi]", form.isbaslangictarihi);
+                //html = html.Replace("[isbitistarihi]", form.isbitistarihi);
+                //html = html.Replace("[ayrilmanedeni]", form.ayrilmanedeni);
+
+                for (int i = 0; i < 4; i++)
+                {
+                    html = html.Replace("[isfirma" + (i + 1) + "]", form.isfirma[i]);
+                    html = html.Replace("[isgorev" + (i + 1) + "]", form.isgorev[i]);
+                    html = html.Replace("[isbaslangic" + (i + 1) + "]", form.isbaslangic[i]);
+                    html = html.Replace("[isbitis" + (i + 1) + "]", form.isbitis[i]);
+                    html = html.Replace("[isayrilma" + (i + 1) + "]", form.isayrilma[i]);
+                }
+
+                 for (int i = 0; i < 4; i++)
+                {
+                    html = html.Replace("[referansad" + (i + 1) + "]", form.referansad[i]);
+                    html = html.Replace("[referanskurum" + (i + 1) + "]", form.referanskurum[i]);
+                    html = html.Replace("[referanspozisyon" + (i + 1) + "]", form.referanspozisyon[i]);
+                    html = html.Replace("[referansistel" + (i + 1) + "]", form.referansistel[i]);
+                    html = html.Replace("[referansceptel" + (i + 1) + "]", form.referansceptel[i]);
+                    html = html.Replace("[referansemail" + (i + 1) + "]", form.referansemail[i]);
+                }
+
+                //html = html.Replace("[referansadi]", form.referansadi);
+                //html = html.Replace("[referanskurum]", form.referanskurum);
+                //html = html.Replace("[referanstel]", form.referanstel);
                 html = html.Replace("[ilavebilgi]", form.ilavebilgi);
 
                 var mset = MailManager.GetMailSettings();
                 var msend = MailManager.GetMailUsersList(0);
-
+//#if RELEASE
                 using (var client = new SmtpClient(mset.ServerHost, mset.Port))
                 {
                     client.EnableSsl = mset.Security;
@@ -195,6 +243,7 @@ namespace web.Controllers
 
                     if (mail.To.Count > 0) client.Send(mail);
                 }
+//#endif
                 TempData["sent"] = "true";
                 return RedirectToAction("Index");
             }
