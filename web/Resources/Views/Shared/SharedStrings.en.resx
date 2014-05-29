@@ -385,7 +385,7 @@
     <value>Why Us?</value>
   </data>
   <data name="mision" xml:space="preserve">
-    <value>Our Vision</value>
+    <value>Our Mision</value>
   </data>
   <data name="vision" xml:space="preserve">
     <value>Our Vision</value>
@@ -589,7 +589,7 @@
     <value>Heating Type</value>
   </data>
   <data name="isyeri" xml:space="preserve">
-    <value>Office</value>
+    <value>Office in Plaza</value>
   </data>
   <data name="kiragetirisi" xml:space="preserve">
     <value>Imputed Rent</value>

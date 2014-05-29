@@ -175,7 +175,7 @@
     <value>Suitability for a loan</value>
   </data>
   <data name="kullanimurumu" xml:space="preserve">
-    <value>Tenancy Status ( empty, the tenan is currently residing, etc..)</value>
+    <value>Tenancy Status ( empty, the tenant is currently residing, etc..)</value>
   </data>
   <data name="lokasyon" xml:space="preserve">
     <value>Location</value>
