@@ -466,7 +466,7 @@
     <value>Referans No</value>
   </data>
   <data name="roomcount" xml:space="preserve">
-    <value>Oda/Bölüm Sayısı</value>
+    <value>Bölüm/Oda</value>
   </data>
   <data name="searchbykeyword" xml:space="preserve">
     <value>Anahtar kelimeye göre ara</value>
@@ -493,7 +493,7 @@
     <value>basinda-biz</value>
   </data>
   <data name="brifing" xml:space="preserve">
-    <value>brifingler</value>
+    <value>mesajlar</value>
   </data>
   <data name="aboutusvenue" xml:space="preserve">
     <value>Venue İstanbul Hakkında</value>
@@ -556,13 +556,13 @@
     <value>Binanın Yaşı</value>
   </data>
   <data name="binatamanalani" xml:space="preserve">
-    <value>Bina Taban Alanı m2</value>
+    <value>Proje m²</value>
   </data>
   <data name="brutalan" xml:space="preserve">
     <value>Brüt Alan</value>
   </data>
   <data name="bulunduguarsa" xml:space="preserve">
-    <value>Bulunduğu Arsa m2</value>
+    <value>Arsa m²</value>
   </data>
   <data name="bulundugukat" xml:space="preserve">
     <value>Bulunduğu Kat</value>
@@ -625,7 +625,7 @@
     <value>Adınız</value>
   </data>
   <data name="netalan" xml:space="preserve">
-    <value>Net Alan</value>
+    <value>m²</value>
   </data>
   <data name="oda" xml:space="preserve">
     <value>Bölüm/Oda Sayısı</value>
@@ -706,7 +706,7 @@
     <value>Ara</value>
   </data>
   <data name="plazakati" xml:space="preserve">
-    <value>Plaza Ofis Katı</value>
+    <value>Ofis</value>
   </data>
   <data name="fileDown" xml:space="preserve">
     <value>Mülkün broşürü / sunumu için tıklayınız</value>
