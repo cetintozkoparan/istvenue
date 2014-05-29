@@ -337,7 +337,7 @@
     <value>NEWS FROM US</value>
   </data>
   <data name="addressandgooglemap" xml:space="preserve">
-    <value>Addres and Google Map</value>
+    <value>Address and Google Map</value>
   </data>
   <data name="advancedsearch" xml:space="preserve">
     <value>Advanced Search</value>
@@ -418,10 +418,10 @@
     <value>Center Office</value>
   </data>
   <data name="menupopularestates" xml:space="preserve">
-    <value>popular-estates</value>
+    <value>featured-properties</value>
   </data>
   <data name="popularestates" xml:space="preserve">
-    <value>Popular Estates</value>
+    <value>Featured Properties</value>
   </data>
   <data name="menu_searchestate" xml:space="preserve">
     <value>detailed-search</value>
@@ -430,7 +430,7 @@
     <value>All</value>
   </data>
   <data name="buildingage" xml:space="preserve">
-    <value>Building Age</value>
+    <value>Age of the Building</value>
   </data>
   <data name="city" xml:space="preserve">
     <value>City</value>
@@ -457,13 +457,13 @@
     <value>Price Interval</value>
   </data>
   <data name="roomcount" xml:space="preserve">
-    <value>Room/Section Number</value>
+    <value>Rooms/Sections</value>
   </data>
   <data name="searchbykeyword" xml:space="preserve">
-    <value>Searh for Key Word</value>
+    <value>Search of Key Word</value>
   </data>
   <data name="searchestate1" xml:space="preserve">
-    <value>Search Estate</value>
+    <value>Property Search</value>
   </data>
   <data name="squaremeters" xml:space="preserve">
     <value>Square Meter</value>
@@ -508,7 +508,7 @@
     <value>Industrial and Logistics</value>
   </data>
   <data name="clickonimages" xml:space="preserve">
-    <value>Click on the images for Portfolio details</value>
+    <value>Click to see the property details</value>
   </data>
   <data name="searchresultstring" xml:space="preserve">
     <value>Unfortunately there is no record matching your search. If you wish you can fill in the below document and send to us. We will return to you as soon as possible.</value>
@@ -520,7 +520,7 @@
     <value>Send</value>
   </data>
   <data name="aciklama" xml:space="preserve">
-    <value>Description</value>
+    <value>Explanation</value>
   </data>
   <data name="aidatyonetim" xml:space="preserve">
     <value>Revenues/Management</value>
@@ -532,31 +532,31 @@
     <value>Land</value>
   </data>
   <data name="banyowc" xml:space="preserve">
-    <value>Bath/WC</value>
+    <value>Bathroom/WC</value>
   </data>
   <data name="baslik" xml:space="preserve">
     <value>Header</value>
   </data>
   <data name="binadakikatsayisi" xml:space="preserve">
-    <value>Floor Count of Building</value>
+    <value>Number of floors</value>
   </data>
   <data name="binaninyasi" xml:space="preserve">
-    <value>Age of the Building</value>
+    <value>Age of the building</value>
   </data>
   <data name="binatamanalani" xml:space="preserve">
-    <value>Building Floor Space m2</value>
+    <value>Project m2</value>
   </data>
   <data name="brutalan" xml:space="preserve">
     <value>Gross Area</value>
   </data>
   <data name="bulunduguarsa" xml:space="preserve">
-    <value>Area of Land m2</value>
+    <value>Land m2</value>
   </data>
   <data name="bulundugukat" xml:space="preserve">
-    <value>Floor</value>
+    <value>The property is at floor</value>
   </data>
   <data name="cepheyon" xml:space="preserve">
-    <value>Front/Side</value>
+    <value>Direction</value>
   </data>
   <data name="contactBtn" xml:space="preserve">
     <value>Click for contact</value>
@@ -583,7 +583,7 @@
     <value>Surname</value>
   </data>
   <data name="ilanno" xml:space="preserve">
-    <value>Ref.No</value>
+    <value>Portfolio no</value>
   </data>
   <data name="isinmatipi" xml:space="preserve">
     <value>Heating Type</value>
@@ -595,7 +595,7 @@
     <value>Imputed Rent</value>
   </data>
   <data name="kiralik" xml:space="preserve">
-    <value>Rental</value>
+    <value>For rental</value>
   </data>
   <data name="konut" xml:space="preserve">
     <value>Home</value>
@@ -613,28 +613,28 @@
     <value>Name</value>
   </data>
   <data name="netalan" xml:space="preserve">
-    <value>Net Area</value>
+    <value>m2</value>
   </data>
   <data name="oda" xml:space="preserve">
-    <value>Number of Room </value>
+    <value>Number of independent section</value>
   </data>
   <data name="otopark" xml:space="preserve">
-    <value>Car Park</value>
+    <value>Parking</value>
   </data>
   <data name="parakende" xml:space="preserve">
     <value>Retail</value>
   </data>
   <data name="print" xml:space="preserve">
-    <value>Click for print</value>
+    <value>Click to print</value>
   </data>
   <data name="satilik" xml:space="preserve">
-    <value>On sale</value>
+    <value>For sale</value>
   </data>
   <data name="send1" xml:space="preserve">
     <value>Send</value>
   </data>
   <data name="sendingother" xml:space="preserve">
-    <value>Click for sending someone</value>
+    <value>Click to send to your contacts</value>
   </data>
   <data name="surname" xml:space="preserve">
     <value>Surname</value>
@@ -652,16 +652,16 @@
     <value>Recommend to friend</value>
   </data>
   <data name="tip" xml:space="preserve">
-    <value>Type</value>
+    <value>Portfolio Type</value>
   </data>
   <data name="tipemlak" xml:space="preserve">
-    <value>Estate Type</value>
+    <value>Real Estate Type</value>
   </data>
   <data name="yakittipi" xml:space="preserve">
     <value>Fuel Oil Type</value>
   </data>
   <data name="yapinindurumu" xml:space="preserve">
-    <value>State of Building</value>
+    <value>Status of the building</value>
   </data>
   <data name="your" xml:space="preserve">
     <value>Your</value>
@@ -706,12 +706,21 @@
     <value>Search</value>
   </data>
   <data name="plazakati" xml:space="preserve">
-    <value>Plaza Office</value>
+    <value>Plaza office floor</value>
   </data>
   <data name="referenceno" xml:space="preserve">
     <value>Portfolio Number</value>
   </data>
   <data name="fileDown" xml:space="preserve">
-    <value>Click For estate brochure</value>
+    <value>Click for brochure/presentation</value>
+  </data>
+  <data name="acikotopark" xml:space="preserve">
+    <value>Parking lot</value>
+  </data>
+  <data name="kapaliotopark" xml:space="preserve">
+    <value>Parging garage</value>
+  </data>
+  <data name="yok" xml:space="preserve">
+    <value>Yok</value>
   </data>
 </root>

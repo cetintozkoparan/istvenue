@@ -26,7 +26,7 @@ namespace web
             routes.MapRoute("detayliarama_en", "en/advanced-search", new { action = "SearchEstates", Controller = "FEstates" });
 
             routes.MapRoute("onecikangayrimenkuller_tr", "tr/one-cikan-gayrimenkuller", new { action = "PopularEstates", Controller = "FEstates" });
-            routes.MapRoute("onecikangayrimenkuller_en", "en/popular-estates", new { action = "PopularEstates", Controller = "FEstates" });
+            routes.MapRoute("onecikangayrimenkuller_en", "en/featured-properties", new { action = "PopularEstates", Controller = "FEstates" });
 
             routes.MapRoute("home_tr", "tr/anasayfa", new { action = "Index", Controller = "FHome" });
             routes.MapRoute("home_en", "en/homepage", new { action = "Index", Controller = "FHome" });

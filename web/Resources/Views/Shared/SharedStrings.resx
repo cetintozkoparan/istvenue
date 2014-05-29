@@ -358,7 +358,7 @@
     <value>Firmalar ve Markalar</value>
   </data>
   <data name="leaveyourbrief" xml:space="preserve">
-    <value>Brifing Bırakın, Geri Dönelim</value>
+    <value>Mesaj Bırakın, Geri Dönelim</value>
   </data>
   <data name="marketnews" xml:space="preserve">
     <value>Sektörden Haberler</value>
@@ -710,5 +710,14 @@
   </data>
   <data name="fileDown" xml:space="preserve">
     <value>Mülkün broşürü / sunumu için tıklayınız</value>
+  </data>
+  <data name="acikotopark" xml:space="preserve">
+    <value>Açık otopark</value>
+  </data>
+  <data name="kapaliotopark" xml:space="preserve">
+    <value>Kapalı otopark</value>
+  </data>
+  <data name="yok" xml:space="preserve">
+    <value>Yok</value>
   </data>
 </root>

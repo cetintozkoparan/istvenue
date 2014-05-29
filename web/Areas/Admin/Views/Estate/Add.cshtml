@@ -49,7 +49,9 @@
                 </p>
                 <p>
                     @Html.LabelFor(m => m.TransactionId)
-                    @Html.DropDownListFor(x => x.TransactionId, new SelectList(
+                    @if (Model.Language == "tr")
+                    {
+                        @Html.DropDownListFor(x => x.TransactionId, new SelectList(
                   new List<Object>{ 
                        new { value = "1" , text = "Satılık" },
                        new { value = "0" , text = "Kiralık" },
@@ -57,15 +59,28 @@
                   "value",
                   "text",
                    0), new { @class = "textwidth10" })
+                    }else{
+                    
+                    @Html.DropDownListFor(x => x.TransactionId, new SelectList(
+                  new List<Object>{ 
+                       new { value = "1" , text = "For sale" },
+                       new { value = "0" , text = "For rental" },
+                    },
+                  "value",
+                  "text",
+                   0), new { @class = "textwidth10" })
+                    }
                 </p>
                 <p>
                     <label>Portföy Tipi</label>
+                    @if (Model.Language == "tr")
+                    {
                     @Html.DropDownListFor(x => x.TypeId, new SelectList(
                   new List<Object>{ 
                        new { value = "0" , text = "İşyeri"  },
                        new { value = "1" , text = "Arsa" },
                        new { value = "2" , text = "Konut" },
-                       new { value = "4" , text = "Parakende" },
+                       new { value = "4" , text = "Perakende" },
                        new { value = "5" , text = "Sanayi ve Lojistik" },
                        new { value = "6" , text = "Otel ve Ağırlama" },
                        new { value = "7" , text = "Diğer (Lüks Konut)" },
@@ -74,7 +89,24 @@
                     },
                   "value",
                   "text",
-                   0), new { @class="textwidth10"})
+                   0), new { @class = "textwidth10" })
+                    }else{
+                        @Html.DropDownListFor(x => x.TypeId, new SelectList(
+                  new List<Object>{ 
+                       new { value = "0" , text = "Office"  },
+                       new { value = "1" , text = "Land" },
+                       new { value = "2" , text = "House" },
+                       new { value = "4" , text = "Retail" },
+                       new { value = "5" , text = "Industrial and Logistics" },
+                       new { value = "6" , text = "Hotel and Entertainment" },
+                       new { value = "7" , text = "Other (Luxury property)" },
+                       new { value = "8" , text = "Office in Plaza" },
+                       
+                    },
+                  "value",
+                  "text",
+                   0), new { @class = "textwidth10" })
+                    }
                 </p>
                 <p>
                     @Html.LabelFor(m => m.RoomNumber)
@@ -132,6 +164,8 @@
 
                 <p>
                     <label>Otopark</label>
+                    @if (Model.Language == "tr")
+                    {
                     @Html.DropDownListFor(x => x.Otopark, new SelectList(
                   new List<Object>{ 
                        new { value = "Var" , text = "Yok"  },
@@ -141,6 +175,17 @@
                   "value",
                   "text",
                    0), new { @class = "textwidth10" })
+                    }else{
+                    @Html.DropDownListFor(x => x.Otopark, new SelectList(
+                  new List<Object>{ 
+                       new { value = "No" , text = "No"  },
+                       new { value = "Parking lot" , text = "Parking lot" },
+                       new { value = "Indoor parking" , text = "Indoor parking" },
+                    },
+                  "value",
+                  "text",
+                   0), new { @class = "textwidth10" })
+                    }
                 </p>
 
                 <p>
@@ -207,9 +252,9 @@
                     @Html.CheckBoxFor(m => m.Popular)
 
                 </p>
-                 <p>
+                <p>
                     <label>Dosya</label>
-                   <input type="file" name="fileDosya" />
+                    <input type="file" name="fileDosya" />
                 </p>
                 @*<p>
             @Html.LabelFor(m=>m.Photo)

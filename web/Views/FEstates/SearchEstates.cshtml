@@ -1,10 +1,8 @@
 ﻿@model web.Models.AdvancedSearchModel
 @{
-    ViewBag.Title = "SearchEstates";
+    ViewBag.Title = @SharedRess.SharedStrings.searchestate;
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
-
-
 
 @using (Html.BeginForm("SearchEstates", "FEstates", FormMethod.Post, new { id = "searchform" }))
 {

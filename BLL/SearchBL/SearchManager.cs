@@ -52,21 +52,21 @@ namespace BLL.SearchBL
                 foreach (var item in sectorgs)
                 {
                     if (lang.Equals("tr")) route = "sektorler"; else route = "sectors";
-                    link = "/" + lang + "/" + route + "/" + item.PageSlug + "/" + item.SectorGroupId;
+                    link = "/" + lang + "/" + route;
                     result.Add(Tuple.Create(item.GroupName, link));
                 }
 
-                foreach (var item in sectors)
-                {
-                    if (lang.Equals("tr")) route = "sektorler"; else route = "sectors";
-                    link = "/" + lang + "/" + route + "/" + item.PageSlug + "/" + item.SectorGroupId +"/" + item.SectorId;
-                    result.Add(Tuple.Create(item.Name, link));
-                }
+                //foreach (var item in sectors)
+                //{
+                //    if (lang.Equals("tr")) route = "sektorler"; else route = "sectors";
+                //    link = "/" + lang + "/" + route + "/" + item.PageSlug + "/" + item.SectorGroupId +"/" + item.SectorId;
+                //    result.Add(Tuple.Create(item.Name, link));
+                //}
 
                 foreach (var item in news)
                 {
                     if (lang.Equals("tr")) route = "haberler"; else route = "news";
-                    link = "/" + lang + "/" + route + "/" + item.PageSlug + "/" + item.NewsId;
+                    link = "/" + lang + "/" + route;
                     result.Add(Tuple.Create(item.Header, link));
                 }
 

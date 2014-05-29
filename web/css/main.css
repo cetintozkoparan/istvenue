@@ -290,7 +290,7 @@ border: 1px dashed #DBD1B6;
 .info { width: 456px !important; position: relative; padding: 0 !important; }
 .info ul.detail li { background: #f2de7a; }
 .info ul.detail li { height: 35px; line-height: 35px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center; display: inline-block; float: left; margin-right: 1px; color: #5b3d00; font-size: 12px; }
-.info ul.detail li.room { width: 92px !important; color: #666 !important; }
+.info ul.detail li.room { width: 165px !important; color: #666 !important; }
 .info ul.detail li.area { width: 94px; }
 .info ul.detail li.date { width: 105px; }
 .info ul.detail li.price { width: 162px !important; font-weight: bold; margin: 0; color: #c30d0d; font-size: 14px; }

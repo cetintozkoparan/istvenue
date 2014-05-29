@@ -1,7 +1,7 @@
 ﻿@model web.Models.EstateWrapperModel
 
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = @Model.estate.Header;
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
 <style type="text/css">
@@ -68,7 +68,7 @@
             <div class="highlightsDetailRight">
                 <span class="itemTitle">@SharedRess.SharedStrings.ilanno</span><span class="itemVal">: @Model.estate.ReferenceNo</span><br class="clear">
                 <span class="itemTitle">@SharedRess.SharedStrings.tarih</span><span class="itemVal">: @Model.estate.TimeCreated</span><br class="clear">
-                <span class="itemTitle">@SharedRess.SharedStrings.tip</span><span class="itemVal">: 
+                <span class="itemTitle">@SharedRess.SharedStrings.tipemlak</span><span class="itemVal">: 
 
                     @if (Model.estate.TypeId == 0)
                     {
@@ -100,7 +100,7 @@
                         @SharedRess.SharedStrings.plazakati
                     }
                 </span><br class="clear">
-                <span class="itemTitle">@SharedRess.SharedStrings.tipemlak</span><span class="itemVal">:
+                <span class="itemTitle">@SharedRess.SharedStrings.tip</span><span class="itemVal">:
                     @if (Model.estate.TransactionId == 0)
                     {
                         @SharedRess.SharedStrings.kiralik
@@ -110,7 +110,7 @@
                         @SharedRess.SharedStrings.satilik
                     }
                 </span><br class="clear">
-                <span class="itemTitle">@SharedRess.SharedStrings.fiyat</span><span class="itemVal">: @string.Format("{0:0}", Model.estate.Price) @Model.estate.PriceTypeId</span><br class="clear">
+                <span class="itemTitle">@SharedRess.SharedStrings.fiyat</span><span class="itemVal">: @string.Format("{0:0,0}", Model.estate.Price) @Model.estate.PriceTypeId</span><br class="clear">
                 <span class="itemTitle">@SharedRess.SharedStrings.brutalan</span><span class="itemVal">: @Model.estate.Size</span><br class="clear">
                 <span class="itemTitle">@SharedRess.SharedStrings.netalan</span><span class="itemVal">: @Model.estate.NetAlan</span><br class="clear">
                 <span class="itemTitle">@SharedRess.SharedStrings.bulunduguarsa </span><span class="itemVal">: @Model.estate.BulunduguArsa</span><br class="clear">
@@ -158,11 +158,6 @@
 @*>>>>>>> admin*@
                 </span>
                 <br class="clear">
-                @if (Model.estate.EmlakDosyasi != null)
-                {
-                    <a href="@Model.estate.EmlakDosyasi" class="contactBtn">@SharedRess.SharedStrings.fileDown</a>
-                }
-                <br class="clear">
                 @if (ViewBag.Lang == "tr")
                 {
                     <a href="/tr/iletisim-bilgileri" class="contactBtn">@SharedRess.SharedStrings.contactBtn</a>
@@ -171,7 +166,16 @@
                 {
                     <a href="/en/contact-details" class="contactBtn">@SharedRess.SharedStrings.contactBtn</a>
                 }
+                <br class="clear">
                 <p><a class="inline cboxElement" href="#inline_content">@SharedRess.SharedStrings.sendingother</a></p>
+
+                @if (Model.estate.EmlakDosyasi != null)
+                {
+                    <a href="@Model.estate.EmlakDosyasi" class="contactBtn">@SharedRess.SharedStrings.fileDown</a>
+                }
+                <br class="clear">
+                <a href="#" class="contactBtn" onclick="window.print()">@SharedRess.SharedStrings.print</a>
+                
                 <div style="display: none">
                     <div id='inline_content' style='padding: 10px; background: #fff;'>
                         <div class="dialogBox">
@@ -247,7 +251,6 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="contactBtn" onclick="window.print()">@SharedRess.SharedStrings.print</a>
             </div>
         </div>
     </div>

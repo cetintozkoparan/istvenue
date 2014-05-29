@@ -1,6 +1,6 @@
 ﻿@model List<DAL.Entities.Estate>
 @{
-    ViewBag.Title = "PopularEstates";
+    ViewBag.Title = @SharedRess.SharedStrings.popularestates;
     Layout = "~/Views/Shared/frontlayout.cshtml";
 }
 <div id="containerInner">
@@ -23,25 +23,62 @@
                         </div>
                         <div class="highlightsRight">
                             <div class="info">
-                                 <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.detail/@item.Id" style="text-decoration:none"><h4>@item.Header</h4></a>
+                                <a href="/@SharedRess.SharedStrings.menu_culture/@SharedRess.SharedStrings.detail/@item.Id" style="text-decoration:none">
+                                    <h4>@item.Header</h4>
+                                </a>
 
                                 <span class="location">@item.Country.Name/ @item.Town.Name/ @item.District.Name</span>
                                 <span class="type">
                                     @if (item.TransactionId == 0)
                                     {
                                         @SharedRess.SharedStrings.hired
-                                    }else{
+                                    }
+                                    else
+                                    {
                                         @SharedRess.SharedStrings.sold
                                     }
-                                <i>No:@item.ReferenceNo</i>
+                                    /
+                                    @if (item.TypeId == 0)
+                                    {
+                                        @SharedRess.SharedStrings.isyeri
+                                    }
+                                    else if (item.TypeId == 1)
+                                    {
+                                        @SharedRess.SharedStrings.arsa
+                                    }
+                                    else if (item.TypeId == 2)
+                                    {
+                                        @SharedRess.SharedStrings.konut
+                                    }
+                                    else if (item.TypeId == 4)
+                                    {
+                                        @SharedRess.SharedStrings.parakende
+                                    }
+                                    else if (item.TypeId == 5)
+                                    {
+                                        @SharedRess.SharedStrings.sanayivelojistik
+                                    }
+                                    else if (item.TypeId == 6)
+                                    {
+                                        @SharedRess.SharedStrings.otelveagirlama
+                                    }
+                                    else if (item.TypeId == 7)
+                                    {
+                                        @SharedRess.SharedStrings.digerlukskonut
+                                    }
+                                    else if (item.TypeId == 8)
+                                    {
+                                        @SharedRess.SharedStrings.plazakati
+                                    }
+                                    <i>No:@item.ReferenceNo</i>
                                 </span>
                                 <ul class="detail">
-                                    <li class="room"><i>@SharedRess.SharedStrings.roomcount:</i> @item.RoomNumber
-                                    
+                                    <li class="room" style="width: 160px !important;"><i>@SharedRess.SharedStrings.roomcount:</i> @item.RoomNumber
+
                                     </li>
-                                    <li class="area">@item.Size <i>m²</i></li>
+                                    <li class="area">@item.NetAlan <i>m²</i></li>
                                     <li class="date">@item.TimeCreated</li>
-                                    <li class="price">@string.Format("{0:0}", item.Price) <i>@item.PriceTypeId</i></li>
+                                    <li class="price" style="width: 93px !important;">@string.Format("{0:0,0}", item.Price) <i>@item.PriceTypeId</i></li>
                                 </ul>
                             </div>
 

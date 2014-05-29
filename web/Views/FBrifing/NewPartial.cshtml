@@ -1,6 +1,5 @@
 ﻿@model DAL.Entities.Brifing
 @{
-    ViewBag.Title = "New";
     Layout = null;
 }
 
@@ -69,7 +68,7 @@
               @Html.TextBoxFor(m => m.Email, new { @class="inputText"})
             </p>
             <div class="clear"></div>
-            <p><label>@Briefs.Brief.content</label>
+            <p><label>@Briefs.Brief.mesaj</label>
            @Html.TextAreaFor(m => m.Mesaj, new { @class="inputText"})
             </p>
         <div class="clear"></div>
