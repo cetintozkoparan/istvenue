@@ -43,6 +43,8 @@ h1 { font-weight: 700; font-size: 24px }
 h2 { font-size: 16px; font-weight: 300; }
 h3 { font-size: 14px; font-weight: 700; color: #333; padding: 5px 0 }
 p strong { font-weight: bold; }
+ul{ list-style-position:inside; list-style-type:none;}
+fieldset{ border:none;}
 #container { width: 960px; margin: 0 auto; background: #fff; }
 #content { background: #fff; }
 #header { float: left; width: 100%; height: auto; background: url(../images/headerBg.png) repeat-x !important; min-height: 140px; }
@@ -50,10 +52,10 @@ p strong { font-weight: bold; }
 #logo { float: left; min-height: 97px; }
 #logo a { display: block; }
 #commercial { float: right; width: 500px; text-align: right; }
-#mainMenu { float: left; width: 100%; background: #000 }
+#mainMenu { float: left; width: 100%; background: #000; list-style-type:none; }
 #mainMenu > li { float: left; padding: 0px 7px; color: #fff; font-size: 13px; position: relative; }
 #mainMenu > li > a { float: left }
-#mainMenu li a { display: block; text-decoration: none; padding: 15px 1px 15px 1px; color: #FFFFFF; font-size: 13px; }
+#mainMenu li a { display: block; text-decoration: none; padding: 12px 1px 11px 1px; color: #FFFFFF; font-size: 13px; height:20px; }
 .lastList > a { margin: 0 10px 0 0; }
 .lastList .subMenu { width: 190px }
 #mainMenu li span { float: left; color: #FFFFFF; padding: 9px 0; }
@@ -63,10 +65,10 @@ p strong { font-weight: bold; }
 input[type="text"] { padding: 6px 5px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border: none; color: #555; outline: none; background-color: #f0f0f0; }
 #mainMenu li.lastList { float: right; padding: 0 0 0 7px; }
 #mainMenu li.firstList { padding-left: 0px; }
-.subMenu { display: none; background: #000; width: 240px; left: 0px; top: 43px; }
+.subMenu { display: none; background: #000; width: 240px; left: 0px; top: 42px; }
 .subMenu li a { -moz-transition: all 0.4s ease-in-out 0s; transition: all 0.4s ease-in-out; text-indent: 10px; }
 .subMenu li a:hover { background-color: #a29061; -moz-transition: all 0.4s ease-in-out 0s; transition: all 0.4s ease-in-out; }
-#mainMenu li:hover ul { display: block; position: absolute; z-index: 9999; }
+#mainMenu li:hover ul { display: block; position: absolute; z-index: 9999; list-style-type:none; }
 .border { border: 5px solid #ececec; }
 #containerInner { float: left; padding: 40px 10px 0 10px; width: 940px; background: #fff; min-height: 485px; }
 .leftSection { float: left }
@@ -137,7 +139,8 @@ input[type="text"] { padding: 6px 5px; border-radius: 4px; -webkit-border-radius
 .servicesLeftContent { float: left; width: 370px; padding: 0 0 0 10px; }
 .servicesRightContent { float: left; width: 570px; margin: 0 10px 0 0; }
 .services { border-bottom: 1px solid #333; ; padding: 5px 0 5px 10px; ; margin: 10px 0 20px 0; font-weight: 600; color: #333; }
-.serviceList { float: left; width: 280px; }
+.serviceList { float: left; width: 280px; list-style:none; }
+.serviceList ul{ list-style:none; }
 .serviceList > li { background: url(../images/bulletList.png) no-repeat left 8px; }
 .serviceList li { font-size: 16px; font-weight: 600; padding: 5px 0 5px 10px; color: #333333; float: left; width: 280px; }
 .serviceList li a { display: block; text-decoration: none; color: #666; font-size: 14px; font-weight: 400; padding: 5px 0 5px 20px; background: url(../images/bullet.png) no-repeat left center; transition: color 450ms ease-in-out, background-color 450ms ease-in-out; -moz-transition: color 450ms ease-in-out, background-color 450ms ease-in-out; -webkit-transition: color 450ms ease-in-out, background-color 450ms ease-in-out; -o-transition: color 450ms ease-in-out, background-color 450ms ease-in-out; float: left; }
@@ -185,13 +188,14 @@ input[type="text"] { padding: 6px 5px; border-radius: 4px; -webkit-border-radius
 .addressContent p { font-size: 14px }
 /* Sitemap */
 #sitemap { float: right; margin: 15px 0; }
-#sitemap ul { float: right; }
+#sitemap ul { float: right; list-style-type:none; }
 #sitemap ul li { float: left; border-left: 1px solid #444; }
 #sitemap ul li a { padding: 4px 8px; font-size: 12px; color: #444; display: block; text-decoration: none; margin: 0 3px; border-radius: 3px; }
 #sitemap ul li a:hover { background: #000; color: #fff; }
 #sitemap ul li.first { border-left: 0px solid #444; }
 .referenceArticle { float: left; width: 100%; padding: 10px 0 0 0; }
-.sitemapList { float: left; width: 350px }
+.sitemapList { float: left; width: 350px; list-style:none }
+.siteSubMenu{ list-style:none;}
 .sitemapList li { padding: 0 0 0 10px; float: left; }
 .sitemapList > li.firstList > a { font-weight: 600; font-size: 14px }
 .sitemapList li a { color: #333; font-size: 13px; text-decoration: none; padding: 5px 10px; display: block; float: left; width: 350px; background: url(../images/bullet.png) no-repeat left center; }
@@ -205,7 +209,7 @@ input[type="submit"] { padding: 2px; font-size: 14px; float: left; }
 .uploadBtn { width: 56px; height: 26px; margin: 0 0 0 35px }
 /*Tab Content*/
 .careerTab { float: left; }
-ul#tab { margin-bottom: 50px; float: left; width: 200px; margin-top: 30px; }
+ul#tab { margin-bottom: 50px; float: left; width: 200px; margin-top: 30px; list-style:none; }
 ul#tab li { position: relative; background: #F6F6F6; border-right: 1px solid #ddd; }
 ul#tab li.aktif { border-right: 1px solid #fff; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
 ul#tab li.firstTab.aktif a, ul#tab li.secondTab.aktif a { background-color: #A29061 !important; }
@@ -290,7 +294,7 @@ border: 1px dashed #DBD1B6;
 .info { width: 456px !important; position: relative; padding: 0 !important; }
 .info ul.detail li { background: #f2de7a; }
 .info ul.detail li { height: 35px; line-height: 35px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center; display: inline-block; float: left; margin-right: 1px; color: #5b3d00; font-size: 12px; }
-.info ul.detail li.room { width: 165px !important; color: #666 !important; }
+.info ul.detail li.room { width: 92px !important; color: #666 !important; }
 .info ul.detail li.area { width: 94px; }
 .info ul.detail li.date { width: 105px; }
 .info ul.detail li.price { width: 162px !important; font-weight: bold; margin: 0; color: #c30d0d; font-size: 14px; }
@@ -299,7 +303,7 @@ border: 1px dashed #DBD1B6;
 .highlightsDetailContent { float: left; width: 100%; padding: 0 0 20px 0; }
 .highlightsDetailLeft { float: left; }
 .imageGallery { float: left; position: relative; width: 577px; margin: 15px 0 0 8px; }
-.highlightsDetailRight { float: right;margin-top:20px; }
+.highlightsDetailRight { float: right;margin-top:20px; width:345px; }
 .imageGallery #bx-pager { text-align: left; margin: 0 0 0 2px; }
 .imageGallery #bx-pager a { margin: 5px 7px 5px 0; float: left; }
 .imageGallery #bx-pager a img { padding: 3px; border: solid #ccc 1px; }
@@ -310,10 +314,10 @@ border: 1px dashed #DBD1B6;
 .imageGallery .bx-wrapper .bx-next:hover { background-position: -43px 0; }
 .imageGallery .bx-wrapper .bx-controls-direction a { position: absolute; top: 50%; margin-top: -66px; outline: 0; width: 32px; height: 32px; text-indent: -9999px; z-index: 9999; }
 .imageGallery .bx-wrapper .bx-controls-direction a.disabled { display: none; }
-.itemTitle { display: block; float: left; width: 173px; font-weight: 600; font-size: 12px; color: #87764B; height: 20px; }
+.itemTitle { display: block; float: left; width: 173px; font-weight: 600; font-size: 12px; color: #87764B; height: auto; margin-bottom:5px; }
 .itemVal { display: block; float: left; width: 170px; font: 400 12px/19px 'Open Sans', sans-serif; color: #966400; }
 .colon { float: left }
-.explain { float: left; width: 330px; height: 100px; margin: 0 0 10px 4px; font: 400 12px 'Open Sans', sans-serif; text-indent: 5px; }
+.explain { float: left; width: 310px; height: 100px; margin: 0 0 10px 0; font: 400 12px 'Open Sans', sans-serif; }
 .highlightsDetailRight .contactBtn, .highlightsDetailRight .cboxElement { display: block; float: left; color: #666; width: 243px; font-size: 13px; height: 27px; text-decoration: none; background: #e2e2e2; margin: 5px 0 0 0; line-height: 27px; padding: 0 5px; border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; }
 .highlightsDetailRight .contactBtn:hover, .highlightsDetailRight .cboxElement:hover { background: #333; color: #fff }
 .dialogBox { }
@@ -327,7 +331,7 @@ border: 1px dashed #DBD1B6;
 .dialogContent { float: left; width: 100%; margin: 0 0 10px 0 }
 .rightDialogContent .contactMessage { height: 60px !important }
 .contactMessage { padding: 5px 7px; border: 1px solid #e0e0e0; -webkit-box-shadow: inset 0px 0px 5px 0px #eaeaea; -moz-box-shadow: inset 0px 0px 5px 0px #eaeaea; box-shadow: inset 0px 0px 5px 0px #eaeaea; border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; background-color: #fff; }
-.explain { padding: 5px 0px; border: 1px solid #e0e0e0; -webkit-box-shadow: inset 0px 0px 5px 0px #eaeaea; -moz-box-shadow: inset 0px 0px 5px 0px #eaeaea; box-shadow: inset 0px 0px 5px 0px #eaeaea; border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; background-color: #fff; font-family: 'Open Sans', sans-serif }
+.explain { padding: 10px 20px 10px 10px; border: 1px solid #e0e0e0; -webkit-box-shadow: inset 0px 0px 5px 0px #eaeaea; -moz-box-shadow: inset 0px 0px 5px 0px #eaeaea; box-shadow: inset 0px 0px 5px 0px #eaeaea; border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; background-color: #fff; font-family: 'Open Sans', sans-serif; overflow-y:scroll}
 .searchResults a { display: block; float: left; }
 .fixedImage { float: left; width: 150px; height: 150px; }
 .resultsFormContent { width: auto; padding: 0 20px; }
@@ -372,3 +376,9 @@ border: 1px dashed #DBD1B6;
 .detailBrief a:hover { background: #BDA975; }
 .detailLink a { font: 600 13px/20px 'Open Sans', sans-serif; margin: 0 0 15px 0; color: #FFF; float: left; background: #A29061; text-decoration: none; padding: 10px; border-radius: 4px; }
 .detailLink a:hover { background: #BDA975; }
+.briefContent textarea.inputText{ height:80px;}
+#social{float: right; margin-top: 13px;}
+#social ul{list-style:none;}
+#social li{float: left; margin:0 3px;}
+.itemVal.explain{overflow-y: scroll;
+overflow-x: hidden;}
