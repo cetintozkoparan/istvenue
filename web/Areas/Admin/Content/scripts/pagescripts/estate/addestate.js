@@ -3,7 +3,11 @@
 
     $("#TownId").attr('disabled', true);
     $("#DistrictId").attr('disabled', true);
- 
+
+    $("#Language").change(function () {
+        var lang = $("#Language option:selected").val();
+        window.location.href = "/yonetim/yeniemlak/" + lang;
+    });
 
     $("#CountryId").change(function () {
         var id = $("#CountryId :selected").val();

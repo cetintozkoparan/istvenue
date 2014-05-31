@@ -49,7 +49,8 @@
                 </p>
                 <p>
                     @Html.LabelFor(m => m.TransactionId)
-                    @if (Model.Language == "tr")
+                   
+                    @if (ViewContext.RouteData.Values["lang"] == null || ViewContext.RouteData.Values["lang"].ToString().Equals("tr"))
                     {
                         @Html.DropDownListFor(x => x.TransactionId, new SelectList(
                   new List<Object>{ 
@@ -73,7 +74,7 @@
                 </p>
                 <p>
                     <label>Portföy Tipi</label>
-                    @if (Model.Language == "tr")
+                    @if (ViewContext.RouteData.Values["lang"] == null || ViewContext.RouteData.Values["lang"].ToString().Equals("tr"))
                     {
                     @Html.DropDownListFor(x => x.TypeId, new SelectList(
                   new List<Object>{ 
@@ -90,7 +91,9 @@
                   "value",
                   "text",
                    0), new { @class = "textwidth10" })
-                    }else{
+                    }
+                    else
+                    {
                         @Html.DropDownListFor(x => x.TypeId, new SelectList(
                   new List<Object>{ 
                        new { value = "0" , text = "Office"  },
@@ -164,7 +167,7 @@
 
                 <p>
                     <label>Otopark</label>
-                    @if (Model.Language == "tr")
+                    @if (ViewContext.RouteData.Values["lang"] == null || ViewContext.RouteData.Values["lang"].ToString().Equals("tr"))
                     {
                     @Html.DropDownListFor(x => x.Otopark, new SelectList(
                   new List<Object>{ 
@@ -175,7 +178,9 @@
                   "value",
                   "text",
                    0), new { @class = "textwidth10" })
-                    }else{
+                    }
+                    else
+                    {
                     @Html.DropDownListFor(x => x.Otopark, new SelectList(
                   new List<Object>{ 
                        new { value = "No" , text = "No"  },
