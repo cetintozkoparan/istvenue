@@ -3,6 +3,11 @@
 
     $("#TownId").attr('disabled', true);
     $("#DistrictId").attr('disabled', true);
+    var languga = window.location.href.split('/')[5];
+
+    if (languga != 'undefined') {
+        $("#Language").val(languga);
+    }
 
     $("#Language").change(function () {
         var lang = $("#Language option:selected").val();

@@ -46,10 +46,11 @@ namespace web.Areas.Admin.Controllers
         public ActionResult Add(Estate record, HttpPostedFileBase uploadfile, IEnumerable<HttpPostedFileBase> attachments,HttpPostedFileBase fileDosya)
         {
             var languages = LanguageManager.GetLanguages();
-            string lang = "";
-            if (RouteData.Values["lang"] == null)
-                lang = "tr";
-            else lang = RouteData.Values["lang"].ToString();
+            //string lang = "";
+            //if (RouteData.Values["lang"] == null)
+            //    lang = "tr";
+            //else lang = RouteData.Values["lang"].ToString();
+            //lang =
             var countries = EstateManager.GetCountryList();
             var list = new SelectList(languages, "Culture", "Language");
             ViewBag.LanguageList = list;
@@ -90,9 +91,9 @@ namespace web.Areas.Admin.Controllers
                         p.Online = true;
                         p.SortOrder = 9999;
                        
-                        p.Language = lang;
+                        p.Language = record.Language;
                         p.TimeCreated = DateTime.Now;
-                        p.Title = "Emlak";
+                        p.Title = record.Header;
                         PhotoManager.Save(p);
                     }
                 }
