@@ -90,6 +90,11 @@ namespace web.Areas.Admin.Controllers
             tagList.Add(12, "Adres Bilgileri ve Google Map");
             tagList.Add(13, "Kariyer Olanakları");
 
+            tagList.Add(14, "Öne Çıkan Gayimenkuller");
+            tagList.Add(15, "Detaylı Arama");
+            tagList.Add(16, "Mesaj Bırakın, Sizi Arayalım");
+            tagList.Add(17, "Detaylı Mesaj Bırakma");
+
         }
     }
 

@@ -50,7 +50,14 @@ namespace web.Controllers
         {
             using (MainContext db = new MainContext())
             {
+                Tags stag = db.Tags.Where(x => x.PageId == 14 && x.Lang == lang).FirstOrDefault();
 
+                if (stag != null)
+                {
+                    ViewBag.Title = stag.Title;
+                    ViewBag.Description = stag.Description;
+                    ViewBag.Keywords = stag.Keyword;
+                }
                 //var list = db.Estate.Where(d => d.Popular == true).ToList();
                 var list = db.Estate.Include("Country").Include("Town").Include("District")
                                 .Where(d => d.Language == lang && d.Popular == true)
@@ -65,6 +72,16 @@ namespace web.Controllers
         {
             using (MainContext db = new MainContext())
             {
+                Tags stag = db.Tags.Where(x => x.PageId == 15 && x.Lang == lang).FirstOrDefault();
+
+                if (stag != null)
+                {
+                    ViewBag.Title = stag.Title;
+                    ViewBag.Description = stag.Description;
+                    ViewBag.Keywords = stag.Keyword;
+                }
+
+
                 var list = db.Estate.Include("Country").Include("Town").Include("District").Where(d => d.Language == lang).ToList();
                 if (TypeId == 3)
                 {

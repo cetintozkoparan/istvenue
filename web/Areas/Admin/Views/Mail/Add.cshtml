@@ -39,7 +39,8 @@
              <label>Mail Tipi</label>
              @Html.DropDownListFor(m => m.MailType, new[] {
                     new SelectListItem{ Text="Bilgi Maili", Value="0" },
-                    new SelectListItem{ Text= "Teklif Maili", Value="1" }
+                    new SelectListItem{ Text= "Teklif Maili", Value="1" },
+                    new SelectListItem{ Text= "Brifing Maili", Value="2" }
                  }, new { @class = "textwidth20"})
 
         </p>
