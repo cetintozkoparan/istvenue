@@ -86,6 +86,7 @@
                        new { value = "6" , text = "Otel ve Ağırlama" },
                        new { value = "7" , text = "Diğer (Lüks Konut)" },
                        new { value = "8" , text = "Plaza Ofis Katı" },
+                       new { value = "9" , text = "İşyeri/Konut" },
                        
                     },
                   "value",
@@ -104,6 +105,7 @@
                        new { value = "6" , text = "Hotel and Entertainment" },
                        new { value = "7" , text = "Other (Luxury property)" },
                        new { value = "8" , text = "Office in Plaza" },
+                       new { value = "9" , text = "Commercial/Residential" },
                        
                     },
                   "value",
@@ -171,7 +173,7 @@
                     {
                     @Html.DropDownListFor(x => x.Otopark, new SelectList(
                   new List<Object>{ 
-                       new { value = "Var" , text = "Yok"  },
+                       new { value = "Yok" , text = "Yok"  },
                        new { value = "Açık Otopark" , text = "Açık Otopark" },
                        new { value = "Kapalı Otopark" , text = "Kapalı Otopark" },
                     },
@@ -240,6 +242,7 @@
                   new List<Object>{ 
                        new { value = "TL" , text = "TL"  },
                        new { value = "$" , text = "$" },
+                       new { value = "Euro" , text = "Euro" },
                     },
                   "value",
                   "text",

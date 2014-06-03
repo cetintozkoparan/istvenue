@@ -723,4 +723,7 @@
   <data name="yok" xml:space="preserve">
     <value>Yok</value>
   </data>
+  <data name="isyerikonut" xml:space="preserve">
+    <value>Commercial/Residential</value>
+  </data>
 </root>

@@ -6,6 +6,11 @@
 <script>
     $(".location").removeByContent('-Avrupa');​​
 </script>
+<style>
+    .info ul.detail {
+        width: 470px !important;
+    }
+</style>
 <div id="containerInner">
     <div id="content">
 
@@ -30,7 +35,7 @@
                                     <h4>@item.Header</h4>
                                 </a>
 
-                                <span class="location">@item.Country.Name/ @item.Town.Name/ @item.District.Name</span>
+                                <span class="location"><span class="spsehir">@item.Country.Name</span> / @item.Town.Name / @item.District.Name</span>
                                 <span class="type">
                                     @if (item.TransactionId == 0)
                                     {
@@ -72,6 +77,9 @@
                                     else if (item.TypeId == 8)
                                     {
                                         @SharedRess.SharedStrings.plazakati
+                                    }else if (item.TypeId == 9)
+                                    {
+                                        @SharedRess.SharedStrings.isyerikonut
                                     }
                                     <i>No:@item.ReferenceNo</i>
                                 </span>
@@ -81,7 +89,7 @@
                                     </li>
                                     <li class="area">@item.NetAlan <i>m²</i></li>
                                     <li class="date">@item.TimeCreated</li>
-                                    <li class="price" style="width: 93px !important;">@string.Format("{0:0,0}", item.Price) <i>@item.PriceTypeId</i></li>
+                                    <li class="price" style="width: 108px !important;">@string.Format("{0:0,0}", item.Price) <i>@item.PriceTypeId</i></li>
                                 </ul>
                             </div>
 
@@ -89,6 +97,15 @@
                     </div>
                 </a>
             }
+            <script>
+                $(function(){
+                    $(".spsehir").each(function(){
+                        if ($(this).html() == "İstanbul-Avrupa" || $(this).html() == "İstanbul-Anadolu") {
+                            $(this).html("İstanbul");
+                        }
+                    });
+                });
+            </script>
             @*@foreach (var item in Model)
             {
                 <div class="highlightsContent">

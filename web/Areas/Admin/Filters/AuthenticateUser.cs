@@ -27,12 +27,20 @@ namespace web.Areas.Admin.Filters
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var tags = filterContext.Controller.ValueProvider.GetValue("alttag").AttemptedValue.Split(',');
-            var photoid = filterContext.Controller.ValueProvider.GetValue("photoid").AttemptedValue.Split(',');
-            for (int i = 0; i < tags.Count(); i++)
-			{
-                PhotoManager.Edit(Convert.ToInt32(photoid[i]), tags[i], null, "");
-			}
+            try
+            {
+                var tags = filterContext.Controller.ValueProvider.GetValue("alttag").AttemptedValue.Split(',');
+                var photoid = filterContext.Controller.ValueProvider.GetValue("photoid").AttemptedValue.Split(',');
+                for (int i = 0; i < tags.Count(); i++)
+                {
+                    PhotoManager.Edit(Convert.ToInt32(photoid[i]), tags[i], null, "");
+                }
+            
+            }
+            catch (Exception)
+            {
+
+            }
             
             base.OnActionExecuting(filterContext);
         }
