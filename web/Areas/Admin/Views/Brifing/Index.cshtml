@@ -21,6 +21,7 @@
     <table id="tblcategory" class="table no-border tablesorter">
         <thead>
             <tr>
+                <th class="width10">Brifing No</th>
                 <th class="width10">Ad Soyad</th>
                 <th class="center witdh15">E-Mail</th>
                 <th class="center witdh15">Cep Tel</th>
@@ -34,6 +35,9 @@
             @foreach (var item in Model)
             {
                 <tr id="listItem_@item.Id"  class="handle">
+                      <td>
+                        <span id="spanitem_@item.Id">@item.Id</span>
+                    </td>
                     <td>
                         <span id="spanitem_@item.Id">@item.Ad</span>
                     </td>

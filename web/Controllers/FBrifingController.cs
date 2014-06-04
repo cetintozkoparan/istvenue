@@ -69,7 +69,9 @@ namespace web.Controllers
 
                         mail.Subject = "Yeni Mesaj İletisi";
                         mail.IsBodyHtml = true;
-                        mail.Body = "Yeni Bir Mesaj Gelmiştir." + "<p>Adı:" + model.Ad + "</p>" +
+                        mail.Body = "Yeni Bir Mesaj Gelmiştir." +
+                             "<p>Mesaj No:" + model.Id + "</p>" +
+                            "<p>Adı:" + model.Ad + "</p>" +
                             "<p>E-Mail:" + model.Email + "</p>" +
                             "<p>Mesaj:" + model.Mesaj + "</p>";
                     }
@@ -77,7 +79,9 @@ namespace web.Controllers
                     {
                         mail.Subject = "Mew Message Notification";
                         mail.IsBodyHtml = true;
-                        mail.Body = "A New Message has taken." + "<p>Name:" + model.Ad + "</p>" +
+                        mail.Body = "A New Message has taken." +
+                            "<p>Message Number:" + model.Id + "</p>" +
+                            "<p>Name:" + model.Ad + "</p>" +
                             "<p>E-Mail:" + model.Email + "</p>" +
                             "<p>Message:" + model.Mesaj + "</p>";
                     }
@@ -148,9 +152,6 @@ namespace web.Controllers
             try
             {
                
-               
-              
-
                 MainContext db = new MainContext();
                 Tags stag = db.Tags.Where(x => x.PageId == 17 && x.Lang == lang).FirstOrDefault();
 
@@ -166,6 +167,47 @@ namespace web.Controllers
                 //model.
                 db.Brifing.Add(model);
                 db.SaveChanges();
+
+
+
+                var mset = MailManager.GetMailSettings();
+                var msend = MailManager.GetMailUsersList(2);
+
+                using (var client = new SmtpClient(mset.ServerHost, mset.Port))
+                {
+                    client.EnableSsl = mset.Security;//burası düzeltilecek
+                    client.Credentials = new NetworkCredential(mset.ServerMail, mset.Password);
+                    var mail = new MailMessage();
+                    mail.From = new MailAddress(mset.ServerMail);
+                    foreach (var item in msend)
+                        mail.To.Add(item.MailAddress);
+                    if (lang == "tr")
+                    {
+
+                        mail.Subject = "Yeni Mesaj İletisi";
+                        mail.IsBodyHtml = true;
+                        mail.Body = "Yeni Bir Mesaj Gelmiştir." +
+                             "<p>Mesaj No:" + model.Id + "</p>" +
+                            "<p>Adı:" + model.Ad + "</p>" +
+                            "<p>E-Mail:" + model.Email + "</p>" +
+                            "<p>Mesaj:" + model.Mesaj + "</p>";
+                    }
+                    else
+                    {
+                        mail.Subject = "Mew Message Notification";
+                        mail.IsBodyHtml = true;
+                        mail.Body = "A New Message has taken." +
+                            "<p>Message Number:" + model.Id + "</p>" +
+                            "<p>Name:" + model.Ad + "</p>" +
+                            "<p>E-Mail:" + model.Email + "</p>" +
+                            "<p>Message:" + model.Mesaj + "</p>";
+                    }
+
+                    if (mail.To.Count > 0) client.Send(mail);
+                }
+
+
+
 
                 ViewBag.Result = true;
             }
