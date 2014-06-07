@@ -67,20 +67,18 @@ namespace web.Controllers
                     if (lang == "tr")
                     {
 
-                        mail.Subject = "Yeni Mesaj İletisi";
+                        mail.Subject = "Mesaj Bırakın, Geri Dönelim";
                         mail.IsBodyHtml = true;
-                        mail.Body = "Yeni Bir Mesaj Gelmiştir." +
-                             "<p>Mesaj No:" + model.Id + "</p>" +
+                        mail.Body = "<p>Mesaj No:" + model.Id + "</p>" +
                             "<p>Adı:" + model.Ad + "</p>" +
                             "<p>E-Mail:" + model.Email + "</p>" +
                             "<p>Mesaj:" + model.Mesaj + "</p>";
                     }
                     else
                     {
-                        mail.Subject = "Mew Message Notification";
+                        mail.Subject = "Leave your Brief, We Will Call You";
                         mail.IsBodyHtml = true;
-                        mail.Body = "A New Message has taken." +
-                            "<p>Message Number:" + model.Id + "</p>" +
+                        mail.Body = "<p>Message Number:" + model.Id + "</p>" +
                             "<p>Name:" + model.Ad + "</p>" +
                             "<p>E-Mail:" + model.Email + "</p>" +
                             "<p>Message:" + model.Mesaj + "</p>";
@@ -184,20 +182,18 @@ namespace web.Controllers
                     if (lang == "tr")
                     {
 
-                        mail.Subject = "Yeni Mesaj İletisi";
+                        mail.Subject = "Mesaj Bırakın, Geri Dönelim:Detaylı";
                         mail.IsBodyHtml = true;
-                        mail.Body = "Yeni Bir Mesaj Gelmiştir." +
-                             "<p>Mesaj No:" + model.Id + "</p>" +
+                        mail.Body = "<p>Mesaj No:" + model.Id + "</p>" +
                             "<p>Adı:" + model.Ad + "</p>" +
                             "<p>E-Mail:" + model.Email + "</p>" +
                             "<p>Mesaj:" + model.Mesaj + "</p>";
                     }
                     else
                     {
-                        mail.Subject = "Mew Message Notification";
+                        mail.Subject = "Leave your Brief, We Will Call You: Detailed";
                         mail.IsBodyHtml = true;
-                        mail.Body = "A New Message has taken." +
-                            "<p>Message Number:" + model.Id + "</p>" +
+                        mail.Body = "<p>Message Number:" + model.Id + "</p>" +
                             "<p>Name:" + model.Ad + "</p>" +
                             "<p>E-Mail:" + model.Email + "</p>" +
                             "<p>Message:" + model.Mesaj + "</p>";
@@ -207,7 +203,7 @@ namespace web.Controllers
                 }
 
 
-
+                ModelState.Clear();
 
                 ViewBag.Result = true;
             }
