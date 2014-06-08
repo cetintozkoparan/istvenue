@@ -16,7 +16,7 @@
   <section class="grid_12 form">
   
   @Html.Hidden("ProcessMessage",(object)@ViewBag.ProcessMessage)
-    @using(Html.BeginForm())
+    @using(Html.BeginForm("Hakkimizda","Institutional",FormMethod.Post,new { enctype = "multipart/form-data" }))
     {
          @Html.Hidden("hdfieldcategory")
          @Html.Hidden("hdfieldtaglist")
@@ -30,6 +30,14 @@
         <p>
             @Html.TextAreaFor(m => m.Content, new { id="txtcontent",@class="required"})
             @Html.ValidationMessageFor(m=>m.Content)
+        </p>
+        <p>
+            <label>Resim</label>
+            <input type="file" id="fileUpload" name="fileUpload" />
+        </p>
+        <p>
+            <label>Resim lt Tag</label>
+            @Html.TextAreaFor(m => m.ResimTag, new { id="txtcontent"})
         </p>
         <p>
             <input type="submit" value="Kaydet" id="btnsave" />

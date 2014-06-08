@@ -2472,6 +2472,7 @@
     <Content Include="Content\Images\prettyPhoto\light_square\default_thumbnail.gif" />
     <Content Include="Content\Images\prettyPhoto\light_square\loader.gif" />
     <Content Include="Content\Images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\Images\Windows_7_Wallpaper_by_tfcian.jpg" />
     <Content Include="Content\Scripts\jquery-1.8.3.min.js" />
     <Content Include="Content\Scripts\jquery-ui.js" />
     <Content Include="Content\Scripts\jquery.bxslider.min.js" />

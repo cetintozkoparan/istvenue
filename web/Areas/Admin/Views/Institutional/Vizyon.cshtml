@@ -20,7 +20,7 @@
     </div>  
   <section class="grid_12 form">
   
-    @using(Html.BeginForm())
+    @using(Html.BeginForm("Vizyon","Institutional",FormMethod.Post,new { enctype = "multipart/form-data" }))
     {
          @Html.Hidden("hdfieldcategory")
          @Html.Hidden("hdfieldtaglist")
@@ -39,7 +39,16 @@
             @Html.TextAreaFor(m => m.Content, new { id="txtcontent",@class="required"})
             @Html.ValidationMessageFor(m=>m.Content)
         </p>
+
         <br />
+         <p>
+            <label>Resim</label>
+            <input type="file" id="fileUpload" name="fileUpload" />
+        </p>
+        <p>
+            <label>Resim lt Tag</label>
+            @Html.TextAreaFor(m => m.ResimTag, new { id="txtcontent"})
+        </p>
       
         <p>
             <input type="submit" value="Kaydet" id="btnsave" />

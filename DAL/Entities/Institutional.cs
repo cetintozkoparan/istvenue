@@ -15,5 +15,7 @@ namespace DAL.Entities
         public DateTime TimeUpdated{get;set;}
         public string Language { get; set; }
         public int TypeId{get;set;}
+        public string Resim { get; set; }
+        public string ResimTag { get; set; }
     }
 }

@@ -39,6 +39,12 @@ namespace web.Controllers
             var vizyon = InstituionalManager.GetInstationalByLanguage(lang, Convert.ToInt32(EnumInstituionalTypes.Vizyon));
             ViewBag.MisyonContent = misyon.Content;
             ViewBag.VizyonContent = vizyon.Content;
+
+            ViewBag.MisyonResim = misyon.Resim;
+            ViewBag.MisyonResimTag = misyon.ResimTag;
+
+            ViewBag.VizyonResim = vizyon.Resim;
+            ViewBag.VizyonResimTag = vizyon.ResimTag;
             return View();
         }
 

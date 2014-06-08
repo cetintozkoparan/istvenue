@@ -8,14 +8,14 @@
             <h1>@SharedRess.SharedStrings.visionmision</h1>
         </div>
         <div class="article articleFirst">
-            <img class="alignLeft" src="../images/vizyon.jpg" alt="vizyon" align="left" />
+            <img class="alignLeft" src="@ViewBag.MisyonResim" alt="@ViewBag.MisyonResimTag" align="left" style="width:175px;height:175px;"/>
             <div class="visionContent">
                 <h2>@SharedRess.SharedStrings.vision</h2>
                     @Html.Raw(ViewBag.VizyonContent)
             </div>
         </div>
         <div class="article">
-            <img class="alignLeft" src="../images/misyon.jpg" alt="misyon" align="left" />
+            <img class="alignLeft" src="@ViewBag.VizyonResim" alt="@ViewBag.VizyonResimTag" align="left" style="width:175px;height:175px;"/>
             <div class="visionContent">
                 <h2>@SharedRess.SharedStrings.mision</h2>
                     @Html.Raw(ViewBag.MisyonContent)
