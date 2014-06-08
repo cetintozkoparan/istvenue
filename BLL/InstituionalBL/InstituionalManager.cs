@@ -34,12 +34,22 @@ namespace BLL.InstituionalBL
                         editrecord.TypeId = record.TypeId;
                         editrecord.Language = record.Language;
                         editrecord.Content = record.Content;
+                        if (record.Resim != null)
+                        {
+                            editrecord.Resim = record.Resim;
+                        }
+                        editrecord.ResimTag = record.ResimTag;
                         db.Institutional.Add(editrecord);
                     }
                     else
                     {
                         editrecord.TimeUpdated = DateTime.Now;
                         editrecord.Content = record.Content;
+                        if (record.Resim != null)
+                        {
+                            editrecord.Resim = record.Resim;
+                        }
+                        editrecord.ResimTag = record.ResimTag;
                     }
 
                     db.SaveChanges();
