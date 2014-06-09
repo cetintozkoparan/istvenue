@@ -108,7 +108,7 @@ namespace web.Areas.Admin.Controllers
         public ActionResult Hakkimizda(Institutional record, HttpPostedFileBase fileUpload)
         {
             string lang = FillLanguagesList();
-            record.Language = lang;
+            //record.Language = lang;
             record.TypeId = Convert.ToInt32(EnumInstituionalTypes.Hakkimizda);
             
             if (fileUpload != null)
@@ -116,12 +116,12 @@ namespace web.Areas.Admin.Controllers
                 Random random = new Random();
                 int rand = random.Next(1000, 99999999);
 
-                fileUpload.SaveAs(Server.MapPath("/Content/images/" + fileUpload.FileName));
-                record.Resim = "/Content/images/" +Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName);
+                fileUpload.SaveAs(Server.MapPath("/Content/images/" + Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName)));
+                record.Resim = "/Content/images/" + Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName);
                 
             }
             ViewBag.ProcessMessage = InstituionalManager.EditInstituional(record);
-            return View();
+            return View(record);
         }
 
         public ActionResult Ekibimiz()
@@ -155,19 +155,19 @@ namespace web.Areas.Admin.Controllers
         public ActionResult Vizyon(Institutional record, HttpPostedFileBase fileUpload)
         {
             string lang = FillLanguagesList();
-            record.Language = lang;
+            //record.Language = lang;
             record.TypeId=Convert.ToInt32(EnumInstituionalTypes.Vizyon);
             if (fileUpload != null)
             {
                 Random random = new Random();
                 int rand = random.Next(1000, 99999999);
 
-                fileUpload.SaveAs(Server.MapPath("/Content/images/" + fileUpload.FileName));
+                fileUpload.SaveAs(Server.MapPath("/Content/images/" + Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName)));
                 record.Resim = "/Content/images/" + Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName);
 
             }
             ViewBag.ProcessMessage = InstituionalManager.EditInstituional(record);
-            return View();
+            return View(record);
         }
 
         public ActionResult Misyon()
@@ -182,19 +182,19 @@ namespace web.Areas.Admin.Controllers
         public ActionResult Misyon(Institutional record, HttpPostedFileBase fileUpload)
         {
             string lang = FillLanguagesList();
-            record.Language = lang;
+            //record.Language = lang;
             record.TypeId = Convert.ToInt32(EnumInstituionalTypes.Misyon);
             if (fileUpload != null)
             {
                 Random random = new Random();
                 int rand = random.Next(1000, 99999999);
 
-                fileUpload.SaveAs(Server.MapPath("/Content/images/" + fileUpload.FileName));
+                fileUpload.SaveAs(Server.MapPath("/Content/images/" + Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName)));
                 record.Resim = "/Content/images/" + Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName);
 
             }
             ViewBag.ProcessMessage = InstituionalManager.EditInstituional(record);
-            return View();
+            return View(record);
         }
 
         string FillLanguagesList()

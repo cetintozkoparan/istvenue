@@ -136,7 +136,7 @@
 
         jQuery(function ($) {
 
-            $('img').bind('contextmenu', function (e) {
+            $('img,body,html').bind('contextmenu', function (e) {
                 return false;
             });
             var lcation = window.location.href;
