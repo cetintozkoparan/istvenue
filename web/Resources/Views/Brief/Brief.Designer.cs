@@ -124,7 +124,7 @@ namespace Briefs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MESAJ BIRAKIN SİZİ ARAYALIM.
+        ///   Looks up a localized string similar to MESAJ BIRAKIN, GERİ DÖNELİM.
         /// </summary>
         public static string header {
             get {

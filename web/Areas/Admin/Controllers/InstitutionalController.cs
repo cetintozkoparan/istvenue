@@ -162,7 +162,14 @@ namespace web.Areas.Admin.Controllers
                 Random random = new Random();
                 int rand = random.Next(1000, 99999999);
 
+
                 fileUpload.SaveAs(Server.MapPath("/Content/images/" + Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName)));
+
+                //fileUpload.SaveAs(Server.MapPath("/Content/images/" + fileUpload.FileName));
+
+                fileUpload.SaveAs(Server.MapPath("/Content/images/" + Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName)));
+                
+
                 record.Resim = "/Content/images/" + Utility.SetPagePlug(fileUpload.FileName) + "_" + rand + System.IO.Path.GetExtension(fileUpload.FileName);
 
             }
