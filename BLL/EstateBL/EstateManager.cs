@@ -87,7 +87,7 @@ namespace BLL.EstateBL
         {
             using (MainContext db = new MainContext())
             {
-                var list = db.Estate.Include("Country").Include("Town").Include("District").Where(d => d.Language == language).ToList();
+                var list = db.Estate.Include("Country").Include("Town").Include("District").Where(d => d.Language == language).OrderBy(x=>x.SortOrder).ToList();
                 return list;
             }
         }
@@ -223,5 +223,30 @@ namespace BLL.EstateBL
 
 
         #endregion Estate
+
+        public static bool SortRecords(string[] idsList)
+        {
+            using (MainContext db = new MainContext())
+            {
+                try
+                {
+
+                    int row = 0;
+                    foreach (string id in idsList)
+                    {
+                        int mid = Convert.ToInt32(id);
+                        Estate sortingrecord = db.Estate.SingleOrDefault(d => d.Id == mid);
+                        sortingrecord.SortOrder = Convert.ToInt32(row);
+                        db.SaveChanges();
+                        row++;
+                    }
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

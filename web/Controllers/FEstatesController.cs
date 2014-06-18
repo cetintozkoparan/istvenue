@@ -61,7 +61,8 @@ namespace web.Controllers
                 //var list = db.Estate.Where(d => d.Popular == true).ToList();
                 var list = db.Estate.Include("Country").Include("Town").Include("District")
                                 .Where(d => d.Language == lang && d.Popular == true)
-                                .OrderByDescending(d=>d.Id)
+                                //.OrderByDescending(d=>d.Id)
+                               .OrderBy(x=>x.SortOrder)
                                 .ToList();
 
                 return View(list);

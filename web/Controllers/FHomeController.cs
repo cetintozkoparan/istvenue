@@ -44,7 +44,7 @@ namespace web.Controllers
             //var docgroup = DocumentManager.GetDocumentGroupListForFront(lang).First();
             //var docs = DocumentManager.GetDocumentListForFront(docgroup.DocumentGroupId).Take(5);
             //var projects = ProjectManager.GetProjectListForFront(lang).Take(4);
-            //var photos = PhotoManager.GetListForFront(lang, 0);
+      //      var photos = PhotoManager.GetListForFront(lang, 0);
             //var sectors = SectorGroupManager.GetSectorGroupListForFront(lang);
             //var services = ServiceGroupManager.GetServiceGroupListForFront(0, lang);
             //var prodgroups = ProductManager.GetProductGroupListForFront(lang);

@@ -148,5 +148,7 @@ namespace DAL.Entities
 
         [Display(Name = "Dosya")]
         public string EmlakDosyasi { get; set; }
+
+        public int SortOrder { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using web.Areas.Admin.Filters;
 using web.Areas.Admin.Helpers;
 
@@ -263,7 +264,20 @@ namespace web.Areas.Admin.Controllers
             return Json(isdelete);
             //  else return false;
         }
+        public class JsonList
+        {
+            public string[] list { get; set; }
+        }
 
+        public JsonResult SortRecords(string list)
+        {
+            JsonList psl = (new JavaScriptSerializer()).Deserialize<JsonList>(list);
+            string[] idsList = psl.list;
+            bool issorted = EstateManager.SortRecords(idsList);
+            return Json(issorted);
+
+
+        }
 
     }
 }
