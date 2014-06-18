@@ -5,4 +5,6 @@
         window.location.href = "/yonetim/emlaklistesi/" + lang;
     });
 
+    SortOrder("/Estate/SortRecords");
+
 });
