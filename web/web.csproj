@@ -3033,6 +3033,7 @@
     <Content Include="Views\FBrifing\Detail.cshtml" />
     <Content Include="Views\FInstitutional\SiteHarita.cshtml" />
     <Content Include="Views\FBrifing\NewPartial.cshtml" />
+    <Content Include="Views\Shared\_googleanalytics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

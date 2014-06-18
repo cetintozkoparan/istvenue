@@ -85,5 +85,12 @@ namespace web.Controllers
                 return Redirect("/en/homepage");
             return Redirect("/tr/anasayfa");
         }
+
+        public PartialViewResult _googleanalytics()
+        {
+            MainContext db = new MainContext();
+            var model = db.Analytic.FirstOrDefault();
+            return PartialView("_googleanalytics", model);
+        }
     }
 }
