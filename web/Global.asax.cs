@@ -41,12 +41,14 @@ namespace web
                  CultureInfo ci = new CultureInfo("en");
                  System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
                  System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+                 Session["culture"] = "en";
              }
              else
              {
                  CultureInfo ci = new CultureInfo(HttpContext.Current.Session["culture"].ToString());
                  System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
                  System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+                
              }
          }
      }

@@ -6,6 +6,7 @@ using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Objects.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -18,12 +19,39 @@ namespace web.Controllers
 
     public class FEstatesController : Controller
     {
+         string lang="";
+        public FEstatesController()
+        {
+            string url = System.Web.HttpContext.Current.Request.RawUrl.ToString();
+
+            string [] pth =url.Split('/');
+            if (pth[1] == "tr")
+            {
+                lang = "tr";
+                CultureInfo ci = new CultureInfo("tr");
+                System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+            }
+            else
+            {
+                lang = "en";
+                CultureInfo ci = new CultureInfo("en");
+                System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+                System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+            }
+
+
+            lang = System.Web.HttpContext.Current.Session["culture"].ToString();
+        }
         //
         // GET: /FEstates/
-        string lang = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();
-
+     //   string lang = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();
+     //   string lang = HttpContext.
+        
         public ActionResult Index()
         {
+
+            
             return View();
         }
 
